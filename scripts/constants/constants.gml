@@ -19,4 +19,4 @@
 #macro TILE_SIZE 16 
 
 //How many tiles should the game target to display on screen. 
-#macro DESIGN_TILES_WIDE 11 
+#macro DESIGN_TILES_WIDE 12 

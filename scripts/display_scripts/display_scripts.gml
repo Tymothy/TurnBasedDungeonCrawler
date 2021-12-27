@@ -136,6 +136,8 @@ function test_resolution(_scale)
 	_designHeight = _designHeight * _scale;
 	
 	set_resolution (_designHeight, false, true,  false);
+	WIDTH = WIDTH / _scale;
+	HEIGHT = HEIGHT / _scale;
 }
 
 
