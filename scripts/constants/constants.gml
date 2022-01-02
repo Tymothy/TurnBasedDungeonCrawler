@@ -20,3 +20,27 @@
 
 //How many tiles should the game target to display on screen. 
 #macro DESIGN_TILES_WIDE 12 
+
+//Core Tiles Enum
+enum CORETILES
+{
+	NORMAL = 1, //Light Gray
+	PLACEHOLDER_2 = 2, //Light Teal
+	DOOR_FLOOR = 3, //Light Blue
+	PLACEHOLDER_4 = 4, //Light Pink
+	PLACEHOLDER_5 = 5, //Light Red
+	PLACEHOLDER_6 = 6, //Light Yellow
+	PLACEHOLDER_7 = 7, //Light Purple
+	SPAWN = 8, //Light Green/Lime
+	PLACEHOLDER_9 = 9, //Light Gold/Light Orange
+	PLACEHOLDER_10 = 10, //Split Light Gray/Dark Gray
+	SOLID_WALL = 11, //Dark Gray
+	PLACEHOLDER_12 = 12, //Dark Teal
+	DOOR_WALL = 13, //Dark Blue
+	PLACEHOLDER_14 = 14, //Dark Magenta/Dark Pink
+	PLACEHOLDER_15 = 15, //Dark Red
+	PLACEHOLDER_16 = 16, //Dark Yellow
+	PLACEHOLDER_17 = 17, //Dark Purple
+	PLACEHOLDER_18 = 18, //Dark Green
+	PLACEHOLDER_19 = 19 //Dark Orange/Dark Brown
+}

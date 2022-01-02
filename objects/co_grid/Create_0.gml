@@ -27,12 +27,16 @@ else
 			//Generate the struct for the tile and put into ds grid
 			switch(_coreTile) //TODO: Can be improved by having each case reference a master list
 			{
-				case 1: //Normal floor - light gray
+				case CORETILES.NORMAL: //Normal floor - light gray
 					tileStruct = new NormalFloor(i, j, _coreTile)
 				break;
 				
-				case 3: //Door Spawn - light blue
-					tileStruct = new NormalFloor(i, j, _coreTile)
+				case 2:
+					
+				break;
+				
+				case CORETILES.DOOR_FLOOR: //Door Floor - light blue
+					
 				break;
 				
 				case 8: //Spawn point - lime green
@@ -41,6 +45,10 @@ else
 				
 				case 11: //Solid Wall - dark gray
 					tileStruct = new SolidWall(i, j, _coreTile)
+				break;
+				
+				case CORETILES.DOOR_WALL:
+					tileStruct = new DoorWall(i, j, _coreTile)
 				break;
 			}
 			ds_grid_set(tileGrid, i, j, tileStruct);

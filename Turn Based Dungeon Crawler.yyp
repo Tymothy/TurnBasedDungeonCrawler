@@ -155,7 +155,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/GMRoomPack","resourceVersion":"1.0","name":"std.ndll","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/GMRoomPack","resourceVersion":"1.0","name":"zlib.ndll","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/GMRoomPack","resourceVersion":"1.0","name":"gcmt-dll.dll","resourceType":"GMIncludedFile",},
-    {"CopyToMask":3035461389054378222,"filePath":"datafiles/Game Rooms/Spawn","resourceVersion":"1.0","name":"spawn_1.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Game Rooms/Spawn","resourceVersion":"1.0","name":"spawn_1.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.7.606",
