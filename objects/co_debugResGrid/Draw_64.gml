@@ -9,7 +9,6 @@ draw_sprite(s_tile_ui, 0, 0, TILE_SIZE * (rows - 1));
 
 
 //ui on random tile
-	
 draw_sprite(s_tile_ui_2, 0, random_col, random_row);
 
 

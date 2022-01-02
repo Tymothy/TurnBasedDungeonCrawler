@@ -80,8 +80,8 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "[ts] Tile Sets",
-    "path": "folders/[ts] Tile Sets.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
   "name": "ts_stoneWalls",

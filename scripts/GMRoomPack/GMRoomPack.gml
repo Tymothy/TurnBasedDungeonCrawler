@@ -106,8 +106,10 @@ function room_pack_load_file(l_path1,l_x,l_y,l_flags){
 }
 
 function room_pack_raw_run_cc(l_ccRaw,l_ccPath){
-	// room_pack_raw_run_cc(ccRaw:string, ccPath:string)
-	room_pack_eval_script(l_ccRaw,l_ccPath);
+    // room_pack_raw_run_cc(ccRaw:string, ccPath:string)
+    var _script = room_pack_eval_script;
+    if (is_method(_script)) _script = method_get_index(_script);
+    script_execute(_script, l_ccRaw, l_ccPath);
 }
 
 function room_pack_raw_init_physics(l_phs){

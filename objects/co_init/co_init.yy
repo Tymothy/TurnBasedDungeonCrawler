@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "[co] Controllers",
-    "path": "folders/[co] Controllers.yy",
+    "name": "Initalize",
+    "path": "folders/Controllers/Initalize.yy",
   },
   "resourceVersion": "1.0",
   "name": "co_init",

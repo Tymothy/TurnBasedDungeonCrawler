@@ -16,7 +16,7 @@
 #macro HEIGHT global.ideal_height
 
 //Size of the tiles in game
-#macro TILE_SIZE 16 
+#macro TILE_SIZE 32 
 
 //How many tiles should the game target to display on screen. 
 #macro DESIGN_TILES_WIDE 12 
