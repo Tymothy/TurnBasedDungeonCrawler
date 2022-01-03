@@ -1,6 +1,7 @@
 Notes for near-future Tym:
 Working on multi touch system and integrating it to be able to check GUI layer first,
-then room layer for touch collision.
+then room layer for touch collision.  Whenever screen is touched, grab the grid coord regardless,
+even if it's behind the button.
 
 - Create a touch system
  - Touch system needs to account for what is active
