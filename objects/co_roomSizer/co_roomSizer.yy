@@ -24,7 +24,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Game Generation",
-    "path": "folders/Controllers/Game Generation.yy",
+    "path": "folders/Controllers/Game Control/Game Generation.yy",
   },
   "resourceVersion": "1.0",
   "name": "co_roomSizer",

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Markers",
-    "path": "folders/Sprites/Markers.yy",
+    "name": "Tiles",
+    "path": "folders/Sprites/Markers/Tiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "sp_marker_tile_wall",

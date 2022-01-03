@@ -19,5 +19,5 @@ var _spawnResult = room_pack_load_file("Game Rooms\\Spawn\\spawn_1.json", TILE_S
 if(LOGGING && _spawnResult) show_debug_message("Spawn room created successfully");
 if(LOGGING && !_spawnResult) show_debug_message("ERROR: SPAWN ROOM FAILED CREATION");
 
-//All rooms are created, create the collision grid
-instance_create_depth(x,y, -500, co_grid);
+
+

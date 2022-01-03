@@ -23,11 +23,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Generation",
-    "path": "folders/Controllers/Game Control/Game Generation.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_packedRoomManager",
+  "name": "ob_player",
   "tags": [],
   "resourceType": "GMObject",
 }

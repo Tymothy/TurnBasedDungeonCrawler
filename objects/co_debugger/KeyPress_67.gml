@@ -1,6 +1,9 @@
-/// @description Upscale game
-
-//Used when resizing window on computer
-var _scale = 2; //Used to multiply scale for testing on Windows builds
-test_resolution(_scale);
-alarm[0] = 1;
+/// @description Show player collision
+if(instance_exists(co_debugGridPlayerCollision))
+{
+	instance_destroy(co_debugGridPlayerCollision);
+}
+else
+{
+	instance_create_depth(x, y, -1, co_debugGridPlayerCollision);	
+}

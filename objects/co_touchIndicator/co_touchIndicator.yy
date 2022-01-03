@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sp_touch_indicator",
+    "path": "sprites/sp_touch_indicator/sp_touch_indicator.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -18,16 +21,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Generation",
-    "path": "folders/Controllers/Game Control/Game Generation.yy",
+    "name": "Multitouch",
+    "path": "folders/Controllers/Multitouch.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_packedRoomManager",
+  "name": "co_touchIndicator",
   "tags": [],
   "resourceType": "GMObject",
 }

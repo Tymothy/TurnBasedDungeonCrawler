@@ -19,7 +19,7 @@
 #macro TILE_SIZE 32 
 
 //How many tiles should the game target to display on screen. 
-#macro DESIGN_TILES_WIDE 12 
+#macro DESIGN_TILES_WIDE 13 
 
 //Core Tiles Enum
 enum CORETILES

@@ -1,0 +1,14 @@
+Notes for near-future Tym:
+Working on multi touch system and integrating it to be able to check GUI layer first,
+then room layer for touch collision.
+
+- Create a touch system
+ - Touch system needs to account for what is active
+	- Grid touch system must require player to touch and release on same grid tile.  The touch
+		must be cancelled if player drags finger off the grid tile.  (This may need tweaking
+		to not be too sensitive, like maybe half a tile around could be dragged to).
+	- Player should be able to touch the player object and see valid moves and attacks
+	- Touch a valid move square should move immediately
+	- Touch a valid attack square should attack immediately
+	- Touching an invalid square should provide feedback to the player or do nothing
+	

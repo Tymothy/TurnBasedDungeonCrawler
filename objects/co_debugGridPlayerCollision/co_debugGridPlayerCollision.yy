@@ -18,16 +18,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Generation",
-    "path": "folders/Controllers/Game Control/Game Generation.yy",
+    "name": "Debugging",
+    "path": "folders/Controllers/Debugging.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_packedRoomManager",
+  "name": "co_debugGridPlayerCollision",
   "tags": [],
   "resourceType": "GMObject",
 }
