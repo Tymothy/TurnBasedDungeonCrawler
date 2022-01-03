@@ -33,8 +33,4 @@ function spawn_player(){
 	// Grid does not exist, thus cannot spawn player
 		if(LOGGING) show_debug_message("ERROR: NO GRID EXISTS, CANNOT SPAWN PLAYER");
 	}
-	
-	
-	
-	
 }

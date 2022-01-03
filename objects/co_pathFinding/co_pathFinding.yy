@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sp_touch_indicator",
-    "path": "sprites/sp_touch_indicator/sp_touch_indicator.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -21,18 +18,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Multitouch",
-    "path": "folders/Controllers/Multitouch.yy",
+    "name": "Game Control",
+    "path": "folders/Controllers/Game Control.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_touchIndicator",
+  "name": "co_pathFinding",
   "tags": [],
   "resourceType": "GMObject",
 }

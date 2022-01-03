@@ -59,3 +59,8 @@ else
 	}
 	if(LOGGING) show_debug_message("Grid generation complete");
 }
+
+//Generate collision grids
+mpGrid_collidePlayer = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(room_height / TILE_SIZE), TILE_SIZE, TILE_SIZE);
+mpGrid_collideOther = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(room_height / TILE_SIZE), TILE_SIZE, TILE_SIZE);
+mpGrid_collideProjectile = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(room_height / TILE_SIZE), TILE_SIZE, TILE_SIZE);
