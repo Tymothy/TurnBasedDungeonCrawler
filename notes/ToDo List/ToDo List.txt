@@ -13,3 +13,22 @@ even if it's behind the button.
 	- Touch a valid attack square should attack immediately
 	- Touching an invalid square should provide feedback to the player or do nothing
 	
+- Create Turn State Machine
+	- Starting Player Turn
+		- Calculate available player paths
+	- Player Turn
+		- Wait for player to execute move
+	- Player Moving
+		- Attack depending on rules
+		- Open chest and grab loot (present to player)
+		- Grab loot on tile
+	- Ending Player Turn
+		- Execute trapped tiles
+		- Execute any status effects (poison, burning)
+	- Starting Enemy Turn
+	- Enemy Turn
+	- Ending Enemy Turn
+	
+- Enemy AI
+	- AI should be created to assign to a class with rules
+	- Kind of like how AI classes can be assigned in Minecraft

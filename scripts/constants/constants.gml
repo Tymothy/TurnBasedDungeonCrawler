@@ -44,3 +44,16 @@ enum CORETILES
 	PLACEHOLDER_18 = 18, //Dark Green
 	PLACEHOLDER_19 = 19 //Dark Orange/Dark Brown
 }
+
+//List of all attacks available in game
+//TODO: Put this into structs on what they can do
+enum ATTACK
+{
+	LUNGE, //Attacker moves directly into target
+	DIRECT, //Attacker starts near target and can move along side the target
+	
+	RANGED_PROJECTILE, //Attacker fires a projectile into a target.  Account for piercing for depth
+	RANGED_WALL, //Attacker fires a line of attacks.  All targets in a line X long are damaged
+	
+	
+}
