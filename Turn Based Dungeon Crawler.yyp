@@ -33,6 +33,7 @@
     {"id":{"name":"co_display","path":"objects/co_display/co_display.yy",},"order":1,},
     {"id":{"name":"GMLive_vm","path":"scripts/GMLive_vm/GMLive_vm.yy",},"order":5,},
     {"id":{"name":"GMLive_vm_call","path":"scripts/GMLive_vm_call/GMLive_vm_call.yy",},"order":6,},
+    {"id":{"name":"co_gameState","path":"objects/co_gameState/co_gameState.yy",},"order":4,},
     {"id":{"name":"GMLive_nodeTools","path":"scripts/GMLive_nodeTools/GMLive_nodeTools.yy",},"order":3,},
     {"id":{"name":"gridScripts","path":"scripts/gridScripts/gridScripts.yy",},"order":5,},
     {"id":{"name":"s_tile_ui_2","path":"sprites/s_tile_ui_2/s_tile_ui_2.yy",},"order":2,},
