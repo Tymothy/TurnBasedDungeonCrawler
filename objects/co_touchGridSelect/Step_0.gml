@@ -16,7 +16,7 @@ if(instance_exists(indicatorID))
 }
 else
 {
-	released_at_coords(xGridCoord, yGridCoord);
+	released_at_grid_coords(xGridCoord, yGridCoord);
 	//Touch was released
 	if(LOGGING) show_debug_message("Mouse released, destroying co_touchGridSelect at " + coords_string(xGridCoord, yGridCoord));
 	instance_destroy();

@@ -3,8 +3,11 @@
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": false,
-  "parentObjectId": null,
+  "persistent": true,
+  "parentObjectId": {
+    "name": "co_trueStateActor",
+    "path": "objects/co_trueStateActor/co_trueStateActor.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -27,7 +30,7 @@
     "path": "folders/Controllers/Game Control.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_gameMaster",
+  "name": "co_gameManager",
   "tags": [],
   "resourceType": "GMObject",
 }

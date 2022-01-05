@@ -53,19 +53,53 @@ enum ATTACK
 	DIRECT, //Attacker starts near target and can move along side the target
 	
 	RANGED_PROJECTILE, //Attacker fires a projectile into a target.  Account for piercing for depth
-	RANGED_WALL, //Attacker fires a line of attacks.  All targets in a line X long are damaged
-	
+	RANGED_WALL, //Attacker fires a line of attacks.  All targets in a line X long are damaged	
 	
 }
 
-enum GAME_STATE {
-		GAME_STARTING,
-		PLAYER_STARTING,
-		PLAYER_ACTIVE,
-		PLAYER_ENDING,
-		AI_STARTING,
-		AI_ACTIVE,
-		AI_ENDING,
-		PAUSED,
-		INACTIVE
+enum STATES
+{
+	//Game States
+	SETUP,
+	PLAYER_STARTING,
+	PLAYER_ACTIVE,
+	PLAYER_ENDING,
+	AI_STARTING,
+	AI_ACTIVE,
+	AI_ENDING,
+	TURN_END,
+	PAUSED,
+	INACTIVE,
+	
+	//Player States
+	IDLE,
+	WALK,
+	ATTACK,
+	HURT,
+	ITEM_GET,
 }
+
+
+#region TrueState
+#macro G global
+
+	//Direction
+#macro NO_DIRECTION -1
+#macro EAST 0
+#macro NORTH_EAST 45
+#macro NORTH 90
+#macro NORTH_WEST 135
+#macro WEST 180
+#macro SOUTH_WEST 225
+#macro SOUTH 270
+#macro SOUTH_EAST 315
+#macro HORIZONTAL 0
+#macro VERTICAL 1
+
+	//Input
+#macro HELD 0
+#macro PRESSED 1
+#macro RELEASED 2
+
+
+#endregion

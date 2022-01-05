@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "co_trueStateActor",
-    "path": "objects/co_trueStateActor/co_trueStateActor.yy",
+    "name": "co_trueStateParent",
+    "path": "objects/co_trueStateParent/co_trueStateParent.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -22,15 +22,17 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "State Machines",
+    "path": "folders/Controllers/Game Control/State Machines.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ob_player",
+  "name": "co_trueStateActor",
   "tags": [],
   "resourceType": "GMObject",
 }

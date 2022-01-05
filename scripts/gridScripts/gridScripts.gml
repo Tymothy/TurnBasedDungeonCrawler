@@ -16,6 +16,9 @@ function coords_string(_x, _y){
 	return _str;
 }
 
-function released_at_coords (_x, _y){
+function released_at_grid_coords (_x, _y){
+	/*
+	Send coords to co_gameMaster and have co_gameMaster determine what to do with coords
+	*/
 	
 }
