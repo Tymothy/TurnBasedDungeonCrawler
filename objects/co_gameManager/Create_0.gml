@@ -21,3 +21,6 @@ truestate_create_state(STATES.PAUSED, state_game_paused, "PAUSED");
 //to if you make a mistake and try switching to a state that doesn't exist.
 truestate_set_default(STATES.INACTIVE);
 #endregion
+
+//Methods
+

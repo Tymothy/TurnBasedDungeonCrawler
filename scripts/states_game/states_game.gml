@@ -13,7 +13,7 @@ function state_game_setup(_event){
 
 			//Spawn entities in game room, including player
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
-
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -82,7 +82,8 @@ function state_game_player_active(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//Watch for playing input
+			//Watch for player input
+
 			
 		}break;
 	
