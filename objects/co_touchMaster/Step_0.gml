@@ -12,7 +12,7 @@ for (var i = 0; i < _loopTimes; i += 1) {
 		{
 			my_touch = i;
 			//Create the inst on touchGrid
-			set_touch_grid(my_touch, id, x, y);
+			set_touch_grid(my_touch, id, x, y, false);
 		}
 		
 		/*

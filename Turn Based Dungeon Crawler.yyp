@@ -23,6 +23,7 @@
     {"id":{"name":"GMLive_vm_init","path":"scripts/GMLive_vm_init/GMLive_vm_init.yy",},"order":7,},
     {"id":{"name":"co_trueStateActor","path":"objects/co_trueStateActor/co_trueStateActor.yy",},"order":1,},
     {"id":{"name":"GMLive_seekSetOp","path":"scripts/GMLive_seekSetOp/GMLive_seekSetOp.yy",},"order":6,},
+    {"id":{"name":"configuration","path":"scripts/configuration/configuration.yy",},"order":11,},
     {"id":{"name":"generate_random_room","path":"scripts/generate_random_room/generate_random_room.yy",},"order":0,},
     {"id":{"name":"read_controls","path":"scripts/read_controls/read_controls.yy",},"order":8,},
     {"id":{"name":"truestate_queue_start","path":"scripts/truestate_queue_start/truestate_queue_start.yy",},"order":4,},

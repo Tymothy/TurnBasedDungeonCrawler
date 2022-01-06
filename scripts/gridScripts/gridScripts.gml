@@ -11,6 +11,11 @@ function to_grid(_i){
 	return _gridCoord;
 }
 
+function from_grid(_i){
+	var _roomCoord = _i * TILE_SIZE + TILE_SIZE / 2;
+	return _roomCoord;
+}
+
 function coords_string(_x, _y){
 	var _str = string(_x) + ", " + string(_y);
 	return _str;
