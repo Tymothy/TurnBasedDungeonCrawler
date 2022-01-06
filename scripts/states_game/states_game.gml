@@ -80,6 +80,7 @@ function state_game_player_active(_event){
 			gridY = -1;
 			oldGridX = -1;
 			oldGridY = -1;
+			endTurn = false;
 			
 		}break;
 	
@@ -97,7 +98,6 @@ function state_game_player_active(_event){
 				var gridX = get_gridX();
 				var gridY = get_gridY();
 				switch(_ts) {
-
 					case -1:
 						//No state change, don't do anything
 					break;
@@ -130,11 +130,16 @@ function state_game_player_active(_event){
 								ob_player.x = from_grid(gridX);
 								ob_player.y = from_grid(gridY);					
 								//Check if tile is attackable, if so attack
+								endTurn = true;
 					
 							}						
 					break;
 				}
 				
+				//Check if player took an turn ending action
+				if(endTurn == true) {
+						truestate_switch(STATES.PLAYER_ENDING);	
+				}
 				
 			//	if(LOGGING) show_debug_message("Execute touch code");
 
@@ -199,7 +204,7 @@ function state_game_player_ending(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//This code will be executed during the step event.
+			truestate_switch(STATES.AI_STARTING);	
 		}break;
 	
 		//DRAW---------------------------------------
@@ -229,7 +234,7 @@ function state_game_ai_starting(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//This code will be executed during the step event.
+			truestate_switch(STATES.AI_ACTIVE);	
 		}break;
 	
 		//DRAW---------------------------------------
@@ -259,7 +264,7 @@ function state_game_ai_active(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//This code will be executed during the step event.
+			truestate_switch(STATES.AI_ENDING);	
 		}break;
 	
 		//DRAW---------------------------------------
@@ -289,7 +294,7 @@ function state_game_ai_ending(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//This code will be executed during the step event.
+			truestate_switch(STATES.TURN_END);
 		}break;
 	
 		//DRAW---------------------------------------
@@ -319,7 +324,8 @@ function state_game_turn_end(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//This code will be executed during the step event.
+			//Check for win/loss conditions
+			truestate_switch(STATES.PLAYER_STARTING);
 		}break;
 	
 		//DRAW---------------------------------------

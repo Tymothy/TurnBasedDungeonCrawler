@@ -13,6 +13,7 @@ dragging = false;
 dragTimer = -1;
 
 //if(LOGGING) show_debug_message("Clicked: " + string(xStart) + ", " + string(yStart));
-if(LOGGING) show_debug_message("Grid coord: " + string(gridX) + ", " + string(gridY));
+var _qt = false
+if(_qt) show_debug_message("Grid coord: " + string(gridX) + ", " + string(gridY));
 
 alarm[0] = 1;

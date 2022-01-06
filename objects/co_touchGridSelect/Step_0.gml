@@ -10,7 +10,8 @@ if(instance_exists(indicatorID))
 		//Touch moved to another grid square
 		xGridCoord = _x;
 		yGridCoord = _y;
-		if(LOGGING) show_debug_message("Mouse moved to "+ coords_string(xGridCoord, yGridCoord));
+		var _qt = false;
+		if(_qt) show_debug_message("Mouse moved to "+ coords_string(xGridCoord, yGridCoord));
 	}
 	
 }
@@ -18,6 +19,7 @@ else
 {
 	released_at_grid_coords(xGridCoord, yGridCoord);
 	//Touch was released
-	if(LOGGING) show_debug_message("Mouse released, destroying co_touchGridSelect at " + coords_string(xGridCoord, yGridCoord));
+	var _qt = false;
+	if(_qt) show_debug_message("Mouse released, destroying co_touchGridSelect at " + coords_string(xGridCoord, yGridCoord));
 	instance_destroy();
 }
