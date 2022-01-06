@@ -69,3 +69,39 @@ function get_touch_drag(_my_touch) {
 	var _ret = ds_grid_get(co_touchMaster.touchGrid, _my_touch, 6);	
 	return _ret;
 }
+
+function get_touch_state_on_change() {
+	if(instance_exists(co_touchMaster))
+	{
+		var _tc = co_touchMaster.touchChange;
+		var _ts = co_touchMaster.TOUCH_STATE;
+		if(_tc == true) {
+			return _ts;
+		}
+		else {
+			return -1;	
+		}
+	}
+}
+
+function get_gridY() {
+	if(instance_exists(co_touchMaster)) {
+		var _ret = co_touchMaster.gridY;
+		if(_ret == -1) _ret = co_touchMaster.oldGridY; //Touch was released so we need the old gridY
+	}
+	else {
+		var _ret = -1;	
+	}
+	return _ret;
+}
+
+function get_gridX() {
+	if(instance_exists(co_touchMaster)) {
+		var _ret = co_touchMaster.gridX;
+		if(_ret == -1) _ret = co_touchMaster.oldGridX; //Touch was released so we need the old gridX.
+	}
+	else {
+		var _ret = -1;	
+	}
+	return _ret;
+}

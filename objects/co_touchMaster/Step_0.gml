@@ -28,3 +28,75 @@ for (var i = 0; i < _loopTimes; i += 1) {
 		*/
 	}
 }
+
+#region Determine touch state	
+if(touchChange == true) touchChange = false;
+	currentTouch = get_current_touch();
+			
+	if(currentTouch != -1) {
+		hasTouch = true;	
+		gridX = get_touch_gridX(currentTouch);
+		gridY = get_touch_gridY(currentTouch);
+	}
+	else {
+		hasTouch = false;	
+	}
+			
+	switch(hasTouch) {
+		case true:
+		//Screen is being touched
+			switch(oldTouch) {
+				case -1: 
+					//Touch is new from idle.  We will want to do something
+					TOUCH_STATE = STATES.NEW_TOUCH;
+				break;
+						
+				default:
+					if(oldTouch == currentTouch) {
+						//This is the same touch, nothing new
+						TOUCH_STATE = STATES.SAME_TOUCH;
+					}
+					else {
+						//Screen was being touched before, and it still is, but with different finger.	
+						TOUCH_STATE = STATES.DIFFERENT_TOUCH;
+					}
+				break;
+			}
+				
+		break;
+				
+				
+		case false:
+		//Screen is not being touched
+			switch(oldTouch) {
+				case -1:
+					//No change, stay idle.
+					TOUCH_STATE = STATES.IDLE;
+				break;
+						
+				default:
+					//There was a release, see if we want to execute
+					switch(dragging) {
+						case false:
+							//We were not dragging, we want to perform action/movement
+							TOUCH_STATE = STATES.RELEASE;
+						break;
+								
+						case true:
+							//We were dragging, we don't want to perform actions/movments
+							TOUCH_STATE = STATES.DRAGGING;
+						break;	
+					}
+
+				break;
+						
+			}
+		break;
+				
+	}
+	
+	if(oldTouchState != TOUCH_STATE){
+		touchChange = true;
+	}
+	if(currentTouch != -1)	dragging = get_touch_drag(currentTouch);
+	#endregion

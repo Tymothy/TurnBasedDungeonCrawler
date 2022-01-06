@@ -76,20 +76,10 @@ function state_game_player_active(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			TOUCH_STATE = STATES.IDLE;
-			touchChange = false;
-			oldTouchState = STATES.IDLE;
-			
-			currentTouch = -1; //used to track the current touch to work with later on
 			gridX = -1;
 			gridY = -1;
-			
-			oldTouch = currentTouch;
-			oldGridX = gridX;
-			oldGridY = gridY;
-			
-			hasTouch = false; //True when we are tracking a touch
-			dragging = false;
+			oldGridX = -1;
+			oldGridY = -1;
 			
 		}break;
 	
@@ -97,106 +87,54 @@ function state_game_player_active(_event){
 		case TRUESTATE_STEP:
 		{
 			//Watch for player input
-		#region Determine touch state			
-			currentTouch = get_current_touch();
 			
-			if(currentTouch != -1) {
-				hasTouch = true;	
-				gridX = get_touch_gridX(currentTouch);
-				gridY = get_touch_gridY(currentTouch);
-			}
-			else {
-				hasTouch = false;	
-			}
-			
-			switch(hasTouch) {
-				case true:
-				//Screen is being touched
-					switch(oldTouch) {
-						case -1: 
-							//Touch is new from idle.  We will want to do something
-							TOUCH_STATE = STATES.NEW_TOUCH;
-						break;
-						
-						default:
-							if(oldTouch == currentTouch) {
-								//This is the same touch, nothing new
-								TOUCH_STATE = STATES.SAME_TOUCH;
-							}
-							else {
-								//Screen was being touched before, and it still is, but with different finger.	
-								TOUCH_STATE = STATES.DIFFERENT_TOUCH;
-							}
-						break;
-					}
-				
-				break;
-				
-				
-				case false:
-				//Screen is not being touched
-					switch(oldTouch) {
-						case -1:
-							//No change, stay idle.
-							TOUCH_STATE = STATES.IDLE;
-						break;
-						
-						default:
-							//There was a release, see if we want to execute
-							switch(dragging) {
-								case false:
-									//We were not dragging, we want to perform action/movement
-									TOUCH_STATE = STATES.RELEASE;
-								break;
-								
-								case true:
-									//We were dragging, we don't want to perform actions/movments
-									TOUCH_STATE = STATES.DRAGGING;
-								break;	
-							}
+			//TODO: Move this into the co_touchMaster object
 
-						break;
-						
-					}
-				break;
-				
-			}
-			
-			if(oldTouchState != TOUCH_STATE) touchChange = true;
-			if(currentTouch != -1)	dragging = get_touch_drag(currentTouch);
-			
-	#endregion			
 			//show_debug_message("Touch State Changed: " + string(TOUCH_STATE));
-			if(touchChange == true)
-			{
-				show_debug_message("Touch State Changed: " + string(TOUCH_STATE));
-				switch(TOUCH_STATE) {
+			var _qt = false //quick testing below.  Should be false to disable messages
+			var _ts = get_touch_state_on_change();
+
+				var gridX = get_gridX();
+				var gridY = get_gridY();
+				switch(_ts) {
+
+					case -1:
+						//No state change, don't do anything
+					break;
+					
 					case STATES.IDLE:
-						
+						if(_qt) show_debug_message("TOUCH_STATE Change: Idle");	
 					break;
 					
 					case STATES.NEW_TOUCH:
-					
+						if(_qt) show_debug_message("TOUCH_STATE Change: New touch");	
 					break;
 				
 					case STATES.SAME_TOUCH:
-					
+						if(_qt) show_debug_message("TOUCH_STATE Change: Same touch");	
 					break;
 					
 					case STATES.DIFFERENT_TOUCH:
-					
+						if(_qt) show_debug_message("TOUCH_STATE Change: Diff touch");	
 					break;
 					
 					case STATES.DRAGGING:
-					
+						if(_qt) show_debug_message("TOUCH_STATE Change: Dragging");	
 					break;
 					
 					case STATES.RELEASE:
+						if(_qt) show_debug_message("TOUCH_STATE Change: Release");	
+							if(abs(to_grid(ob_player.x) - gridX) <= ob_player.moveSpeed && abs(to_grid(ob_player.y) - gridY) <= ob_player.moveSpeed)
+							{
+								//Touch has occurred within players move space, attempt to move there/interact with tile
+								ob_player.x = from_grid(gridX);
+								ob_player.y = from_grid(gridY);					
+								//Check if tile is attackable, if so attack
 					
+							}						
 					break;
 				}
 				
-			}
 				
 			//	if(LOGGING) show_debug_message("Execute touch code");
 
@@ -231,11 +169,7 @@ function state_game_player_active(_event){
 			//	if(LOGGING) show_debug_message("Execute release code");	
 			//}
 			
-			oldTouch = currentTouch;
-			oldGridX = gridX;
-			oldGridY = gridY;
-			oldTouchState = TOUCH_STATE; //Used so we can track if state changes on next step
-			touchChange = false; //Reset change back to false as we are done handling it
+
 		}break;
 	
 		//DRAW---------------------------------------
