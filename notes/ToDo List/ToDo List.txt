@@ -30,3 +30,19 @@ Working on implementing TrueState system for a game state and to be able to hand
 - Enemy AI
 	- AI should be created to assign to a class with rules
 	- Kind of like how AI classes can be assigned in Minecraft
+	
+- Player Classes
+	- Warrior/Knight
+		- Can melee when starting and moving next to, or 
+	
+	- Ranger/Archer
+		- Has a jump
+		- Ranged attack
+		- Can only melee when attacking directly
+	
+	- Mage/Wizard
+	
+	
+- Enemy Mechanics
+	- Blind enemy that attacks vibrations/movement (Minecraft Warden)
+	- Strong enemy that tries to push player?

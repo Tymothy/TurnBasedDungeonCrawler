@@ -71,6 +71,13 @@ enum STATES
 	DRAGGING,
 	RELEASE,
 	
+	//Enemy states
+	//IDLE, //Already used above
+	MOVE,
+	FLEE,
+	//ATTACK //Already used above
+	//HURT //Already used above
+	
 }
 
 
