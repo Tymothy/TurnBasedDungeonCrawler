@@ -14,6 +14,13 @@ function state_game_setup(_event){
 			//Spawn entities in game room, including player
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
 			
+			//Create the turn order controller
+			instance_create_layer(x, y, "la_controllers", co_turnOrder)
+			
+			//Create the inital ai turn order.
+			//TODO: Will need to account for multiple rooms in future
+			co_turnOrder.createAiTurnOrder();
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -230,7 +237,8 @@ function state_game_ai_starting(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			//This code will run once when the state is brand new.
+			co_turnOrder.startAiTurn();
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -260,13 +268,35 @@ function state_game_ai_active(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			//This code will run once when the state is brand new.
+			aiActive = false; //This is used to track if an ai is active
+			aiGoing = noone; //Holds the instance id of the ai actively going
+			stateEnding = false;
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			truestate_switch(STATES.AI_ENDING);	
+			//Execute AI turns one by one.
+			//TODO: Add fast mode for AI to all move at once
+			if(aiActive = false)  {
+				aiGoing = co_turnOrder.getNextAiTurn();
+				
+				//Check if any are left to go
+				if(aiGoing == false) {
+					truestate_switch(STATES.AI_ENDING);
+					stateEnding = true;
+				}
+				else {
+					aiGoing.aiActive = true;
+					aiActive = true;
+				}
+			}
+			
+			//Track if AI has finished turn
+			if(stateEnding == false)
+			{
+				if(aiGoing.aiActive == false) aiActive = false; //If this is ran while state is trying to end, game crashes for some reason
+			}
 		}break;
 	
 		//DRAW---------------------------------------

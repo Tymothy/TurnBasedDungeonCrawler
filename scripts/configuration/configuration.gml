@@ -11,8 +11,6 @@
 #macro DRAG_TIME_MIN 45 //Time in steps
 #macro MIN_SPAWN_TILES 2 //Do not allow spawning within this many tiles
 
-
-
 //Config variables
 #macro ADMIN 0
 #macro LOGGING 0

@@ -10,6 +10,7 @@
     {"id":{"name":"co_grid","path":"objects/co_grid/co_grid.yy",},"order":0,},
     {"id":{"name":"rm_ex_spawn_1","path":"rooms/rm_ex_spawn_1/rm_ex_spawn_1.yy",},"order":0,},
     {"id":{"name":"sp_stoneWalls","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},"order":4,},
+    {"id":{"name":"twerp__1_","path":"scripts/twerp__1_/twerp__1_.yy",},"order":21,},
     {"id":{"name":"truestate_create_state","path":"scripts/truestate_create_state/truestate_create_state.yy",},"order":2,},
     {"id":{"name":"co_touchMaster","path":"objects/co_touchMaster/co_touchMaster.yy",},"order":0,},
     {"id":{"name":"co_turnOrder","path":"objects/co_turnOrder/co_turnOrder.yy",},"order":1,},
