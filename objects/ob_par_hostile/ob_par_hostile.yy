@@ -1,15 +1,12 @@
 {
-  "spriteId": {
-    "name": "sp_slime",
-    "path": "sprites/sp_slime/sp_slime.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "ob_par_hostile",
-    "path": "objects/ob_par_hostile/ob_par_hostile.yy",
+    "name": "ob_par_ai",
+    "path": "objects/ob_par_ai/ob_par_ai.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,11 +20,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -35,7 +28,7 @@
     "path": "folders/Objects/Entities/AI/Hostile.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ob_enemy_slime",
+  "name": "ob_par_hostile",
   "tags": [],
   "resourceType": "GMObject",
 }

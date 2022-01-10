@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Entity Creation.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spawn_player",
+  "name": "spawnScripts",
   "tags": [],
   "resourceType": "GMScript",
 }

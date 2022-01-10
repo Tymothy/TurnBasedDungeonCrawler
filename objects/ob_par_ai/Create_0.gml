@@ -6,7 +6,6 @@ event_inherited();
 
 attributes =
 {
-	turnSpeed : 1, //Higher numbers will go first
-	aiName : "Slime",
+	turnSpeed : 0, //Higher numbers will go first
+	aiName : "Default Name",
 }
-truestate_create_state(STATES.IDLE, state_ai_slime_idle);

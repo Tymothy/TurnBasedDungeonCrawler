@@ -20,8 +20,10 @@ function state_game_setup(_event){
 		case TRUESTATE_STEP:
 		{
 			//Waits for the game to be setup before switching to the player's turn
-			if(instance_exists(ob_player)) {
+			if(instance_exists(co_spawnManager)) {
+				if(co_spawnManager.done == true) {
 				truestate_switch(STATES.PLAYER_STARTING);	
+				}
 			}
 		}break;
 	

@@ -4,8 +4,6 @@
 #macro WIDTH global.ideal_width
 #macro HEIGHT global.ideal_height
 
-
-
 //Core Tiles Enum
 enum CORETILES
 {
@@ -79,7 +77,6 @@ enum STATES
 	//HURT //Already used above
 	
 }
-
 
 #region TrueState
 #macro G global

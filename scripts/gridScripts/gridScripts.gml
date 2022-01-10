@@ -27,3 +27,13 @@ function released_at_grid_coords (_x, _y){
 	*/
 	
 }
+
+function gridX_dist_to_player (_x) {
+		var _dist = abs(to_grid(ob_player.x) - _x);
+		return _dist;
+}
+
+function gridY_dist_to_player (_y) {
+		var _dist = abs(to_grid(ob_player.y) - _y);
+		return _dist;
+}

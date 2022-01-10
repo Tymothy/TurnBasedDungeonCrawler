@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "co_trueStateParent",
-    "path": "objects/co_trueStateParent/co_trueStateParent.yy",
+    "name": "co_trueStateActor",
+    "path": "objects/co_trueStateActor/co_trueStateActor.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -22,17 +22,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "State Machines",
-    "path": "folders/Controllers/State Machines.yy",
+    "name": "AI",
+    "path": "folders/Objects/Entities/AI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_trueStateActor",
+  "name": "ob_par_ai",
   "tags": [],
   "resourceType": "GMObject",
 }

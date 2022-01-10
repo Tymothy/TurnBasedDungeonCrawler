@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "State Machines",
-    "path": "folders/Controllers/Game Control/State Machines.yy",
+    "path": "folders/Controllers/State Machines.yy",
   },
   "resourceVersion": "1.0",
   "name": "co_trueStateParent",

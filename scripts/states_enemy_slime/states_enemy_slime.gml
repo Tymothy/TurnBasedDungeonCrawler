@@ -1,4 +1,4 @@
-function _state_ai_slime_idle(_event) {
+function state_ai_slime_idle(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
@@ -31,7 +31,7 @@ function _state_ai_slime_idle(_event) {
 	}
 }
 	
-function _state_ai_slime_move(_event) {
+function state_ai_slime_move(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
@@ -61,7 +61,7 @@ function _state_ai_slime_move(_event) {
 	}
 }
 
-function _state_ai_slime_flee(_event) {
+function state_ai_slime_flee(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
@@ -91,7 +91,7 @@ function _state_ai_slime_flee(_event) {
 	}
 }
 
-function _state_ai_slime_attack(_event) {
+function state_ai_slime_attack(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
@@ -121,7 +121,7 @@ function _state_ai_slime_attack(_event) {
 	}
 }
 
-function _state_ai_slime_hurt(_event) {
+function state_ai_slime_hurt(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
