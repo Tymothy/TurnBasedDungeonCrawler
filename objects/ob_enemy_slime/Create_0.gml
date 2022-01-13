@@ -8,6 +8,7 @@ attributes =
 {
 	turnSpeed : 1, //Higher numbers will go first
 	aiName : "Slime",
+	collisionGrid : co_grid.mpGrid_collideOther,
 }
 truestate_create_state(STATES.IDLE, state_ai_slime_idle);
 truestate_create_state(STATES.MOVE, state_ai_slime_move);

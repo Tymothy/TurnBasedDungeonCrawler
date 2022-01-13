@@ -31,3 +31,23 @@ function mp_forbid_cells(_grid, _type){
 	}
 
 }
+
+function mp_clear_entity(_grid) {
+	//Mark cell as empty for collision logic.
+	var _x = to_grid(self.x);
+	var _y = to_grid(self.y);
+	mp_grid_clear_cell(_grid, _x, _y);
+	with(co_grid) {
+		co_grid.tileGrid[# _x, _y][$ "_entityInTile"] = false;
+	}
+}
+
+function mp_add_entity(_grid) {
+	//Mark cell as empty for collision logic.
+	var _x = to_grid(self.x);
+	var _y = to_grid(self.y);
+	mp_grid_add_cell(_grid, _x, _y);
+	with(co_grid) {
+		co_grid.tileGrid[# _x, _y][$ "_entityInTile"] = true;
+	}
+}

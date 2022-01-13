@@ -44,12 +44,15 @@ function state_ai_slime_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			
+			mp_clear_entity(self.attributes.collisionGrid);
+			
 			targX = -1;
 			targY = -1;
 			twerpTimer = 0;
 			
 			pathToPlayer = path_add();
-			mp_grid_path(co_grid.mpGrid_collideOther, pathToPlayer, x, y, ob_player.x, ob_player.y, true);
+			mp_grid_path(self.attributes.collisionGrid, pathToPlayer, x, y, ob_player.x, ob_player.y, true);
 			//TODO: Track collision with other enemies to prevent them from overlapping
 			
 			//Enemies can only move one tile at a time, per turn
@@ -95,6 +98,7 @@ function state_ai_slime_move(_event) {
 		//FINAL---------------------------------------
 		case TRUESTATE_FINAL:
 		{
+			mp_add_entity(self.attributes.collisionGrid);
 			path_delete(pathToPlayer);
 		}break;
 	}

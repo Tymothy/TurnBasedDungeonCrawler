@@ -13,7 +13,8 @@ function Tile(_x, _y, _id) constructor {
 	id = _id;
 	_collidePlayer = false; //Prevents player from pathing
 	_collideOther = false; //Prevents enemies from pathing
-	_collideProjectile = false; //Used for pits, water, lava, small objects like chests.  Allows projectiles over		
+	_collideProjectile = false; //Used for pits, water, lava, small objects like chests.  Allows projectiles over
+	_entityInTile = false;
 	_aiSpawnable = false;
 	_description = "Default tile"; //Used to track the name of the tile, mainly for debugging	
 }
@@ -24,7 +25,8 @@ function NormalFloor(_x, _y, _id) : Tile() constructor {
 	id = _id;
 	_collidePlayer = false; //Prevents player from pathing
 	_collideOther = false; //Prevents enemies from pathing
-	_collideProjectile = false; //Used for pits, water, lava, small objects like chests.  Allows projectiles over		
+	_collideProjectile = false; //Used for pits, water, lava, small objects like chests.  Allows projectiles over	
+	_entityInTile = false;
 	_aiSpawnable = true;
 	_description = "Normal Floor";
 }
@@ -36,6 +38,7 @@ function SolidWall(_x, _y, _id) : Tile() constructor {
 	_collidePlayer = true; //Prevents player from pathing
 	_collideOther = true; //Prevents enemies from pathing
 	_collideProjectile = true; //Used for pits, water, lava, small objects like chests.  Allows projectiles over		
+	_entityInTile = false;
 	_aiSpawnable = false;
 	_description = "Solid Wall";
 }
@@ -47,6 +50,7 @@ function DoorWall(_x, _y, _id) : Tile() constructor {
 	_collidePlayer = true; //Prevents player from pathing
 	_collideOther = true; //Prevents enemies from pathing
 	_collideProjectile = true; //Used for pits, water, lava, small objects like chests.  Allows projectiles over		
+	_entityInTile = false;
 	_aiSpawnable = false;
 	_description = "Door Wall";
 }

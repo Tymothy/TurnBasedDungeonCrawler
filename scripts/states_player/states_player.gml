@@ -13,7 +13,7 @@ function state_player_idle(_event){
 		case TRUESTATE_STEP:
 		{
 			//If a tile is touched, act on touch if possible
-			
+			//Player waits for a touch
 
 		}break;
 	

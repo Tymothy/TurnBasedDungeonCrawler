@@ -65,6 +65,8 @@ mpGrid_collidePlayer = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(r
 mpGrid_collideOther = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(room_height / TILE_SIZE), TILE_SIZE, TILE_SIZE);
 mpGrid_collideProjectile = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(room_height / TILE_SIZE), TILE_SIZE, TILE_SIZE);
 
+
+
 //Fill mp grids with proper collision
 mp_forbid_cells(co_grid.mpGrid_collidePlayer, "_collidePlayer");
 mp_forbid_cells(co_grid.mpGrid_collideOther, "_collideOther");

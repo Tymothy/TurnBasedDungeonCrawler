@@ -91,6 +91,7 @@ function state_game_player_active(_event){
 			oldGridY = -1;
 			endTurn = false;
 			
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -277,7 +278,6 @@ function state_game_ai_active(_event){
 		case TRUESTATE_STEP:
 		{
 			//Execute AI turns one by one.
-			//TODO: Add fast mode for AI to all move at once
 			if(aiActive = false)  {
 				aiGoing = co_turnOrder.getNextAiTurn();
 				
