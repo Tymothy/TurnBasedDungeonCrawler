@@ -50,6 +50,7 @@ function state_ai_slime_move(_event) {
 			targX = -1;
 			targY = -1;
 			twerpTimer = 0;
+			entity = noone;
 			
 			pathToPlayer = path_add();
 			
@@ -63,28 +64,29 @@ function state_ai_slime_move(_event) {
 				var dir = point_direction(x, y, _xx, _yy);
 							
 				//Calc grid point to move to
-				self.targX = to_grid(_xx);
-				self.targY = to_grid(_yy);
-				self.gridTargX = self.targX;
-				self.gridTargY = self.targY;
+				targX = to_grid(_xx);
+				targY = to_grid(_yy);
+				gridTargX = targX;
+				gridTargY = targY;
 				//Get the room coords back.  This is need to ensure x and y are
 				//On the actual grid coords, and not slightly off
-				self.targX = from_grid(self.targX);
-				self.targY = from_grid(self.targY);
+				targX = from_grid(targX);
+				targY = from_grid(targY);
 				
 				//Check entity grid, if filled, add to collision grid and then repath.
 				//After repathing, clean up the adds
-				
+				entity = check_entity(gridTargX, gridTargY);
 
 			}
 			calcPath();
 			// if(mp_grid_get_cell(co_grid.mpGrid_entity, gridTargX, gridTargY) == -1) {
-			if(check_entity(gridTargX, gridTargY) != false) {	
+			
+			if(entity != false) {	
 				//Target cell is occupied, unable to move there.
 				//Since we cannot move to target cell, set targets to current
 				//Coords so enemy does not move.
-				targX = x;
-				targY = y;
+				//targX = x;
+				//targY = y;
 				//TODO: Improve future logic to try to reroute
 				
 				var i = 0;
@@ -95,11 +97,17 @@ function state_ai_slime_move(_event) {
 					tempEntityY[i] = gridTargY;
 					calcPath();
 					i++;
-					if(check_entity(gridTargX, gridTargY != false)) {
+					if(entity == false) {
 						show_debug_message("Found a path around");
 						}
 				}
-				until (check_entity(gridTargX, gridTargY != false) || i == 4)
+				until (entity == false || i == 4)
+				
+				if(i == 4) {
+					//Path not found, set targets to current position
+					targX = x;
+					targY = y;					
+				}
 				
 				//Clean up to not leave ghost collision
 				for(var i = 0; i < array_length(tempEntityX); i++) {
