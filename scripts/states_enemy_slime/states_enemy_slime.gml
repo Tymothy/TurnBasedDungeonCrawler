@@ -47,7 +47,6 @@ function state_ai_slime_move(_event) {
 			targX = -1;
 			targY = -1;
 			twerpTimer = 0;
-			length = MOVE_LENGTH;
 			
 			pathToPlayer = path_add();
 			mp_grid_path(co_grid.mpGrid_collideOther, pathToPlayer, x, y, ob_player.x, ob_player.y, true);
@@ -76,8 +75,8 @@ function state_ai_slime_move(_event) {
 		case TRUESTATE_STEP:
 		{
 			
-			x = twerp(TwerpType.inout_cubic, x, targX, twerpTimer / length);
-			y = twerp(TwerpType.inout_cubic, y, targY, twerpTimer / length);
+			x = twerp(TwerpType.inout_cubic, x, targX, twerpTimer / global.moveTime);
+			y = twerp(TwerpType.inout_cubic, y, targY, twerpTimer / global.moveTime);
 			twerpTimer += d(1);
 			
 			if(x = targX && y = targY) {

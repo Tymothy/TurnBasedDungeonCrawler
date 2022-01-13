@@ -4,9 +4,12 @@
 room_pack_blank_object = co_blank;
 //randomize();
 
+
 //Setup functions
 game_set_speed(30, gamespeed_fps);
 delta_init();
+
+global.moveTime = seconds(MOVE_LENGTH);
 
 //Init scaling
 instance_create_depth(x,y,0,co_display);
