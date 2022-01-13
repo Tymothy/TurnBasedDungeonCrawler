@@ -1,3 +1,7 @@
+KISS - KEEP IT SIMPLE STUPID
+YAGNI - YOU AREN'T GONNA NEED IT
+
+
 Notes for near-future Tym:
 Working on implementing TrueState system for a game state and to be able to handle player states
 

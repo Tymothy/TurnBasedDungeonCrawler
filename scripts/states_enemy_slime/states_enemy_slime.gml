@@ -47,7 +47,7 @@ function state_ai_slime_move(_event) {
 			targX = -1;
 			targY = -1;
 			twerpTimer = 0;
-			length = room_speed * 2;
+			length = MOVE_LENGTH;
 			
 			pathToPlayer = path_add();
 			mp_grid_path(co_grid.mpGrid_collideOther, pathToPlayer, x, y, ob_player.x, ob_player.y, true);
@@ -78,7 +78,7 @@ function state_ai_slime_move(_event) {
 			
 			x = twerp(TwerpType.inout_cubic, x, targX, twerpTimer / length);
 			y = twerp(TwerpType.inout_cubic, y, targY, twerpTimer / length);
-			twerpTimer++;
+			twerpTimer += d(1);
 			
 			if(x = targX && y = targY) {
 				//Movement complete

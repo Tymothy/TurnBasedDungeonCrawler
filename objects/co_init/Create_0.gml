@@ -4,8 +4,9 @@
 room_pack_blank_object = co_blank;
 //randomize();
 
-//Create global vars
-global.pathMoveSpeed = 4; //Objecs will move 4 pixel per step on pathing
+//Setup functions
+game_set_speed(30, gamespeed_fps);
+delta_init();
 
 //Init scaling
 instance_create_depth(x,y,0,co_display);

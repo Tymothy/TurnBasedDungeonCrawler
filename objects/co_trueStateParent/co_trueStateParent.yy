@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": true,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "ob_delta",
+    "path": "objects/ob_delta/ob_delta.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

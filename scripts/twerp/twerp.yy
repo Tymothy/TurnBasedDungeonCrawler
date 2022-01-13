@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Turn Based Dungeon Crawler",
-    "path": "Turn Based Dungeon Crawler.yyp",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "twerp__1_",
+  "name": "twerp",
   "tags": [],
   "resourceType": "GMScript",
 }
