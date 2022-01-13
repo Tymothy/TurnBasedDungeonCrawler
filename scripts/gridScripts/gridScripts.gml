@@ -37,3 +37,18 @@ function gridY_dist_to_player (_y) {
 		var _dist = abs(to_grid(ob_player.y) - _y);
 		return _dist;
 }
+
+function check_entity(_gridX, _gridY) {
+	/// @desc Checks for entity at given grid coords.  If entity exists, return entity.  Otherwise return false.
+	/// @arg gridX
+	/// @arg gridY
+		if(mp_grid_get_cell(co_grid.mpGrid_entity, gridTargX, gridTargY) == -1) {
+			//Grid is occupied, return object
+			var _inst = instance_position(from_grid(_gridX), from_grid(_gridY), co_trueStateActor);
+			return _inst;
+		}
+		else {
+			return false;
+		}
+
+}

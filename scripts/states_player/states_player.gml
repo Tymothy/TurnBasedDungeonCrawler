@@ -91,7 +91,11 @@ function state_player_idle(_event){
 									//Do not move tiles
 								}
 								else {
-									//Check if move is valid
+									//Check if tile is available to move to
+									//if(mp_grid_get_cell(co_grid.mpGrid_entity, gridTargX, gridTargY) == -1) {
+										//entity is in grid square	
+									
+									//}
 								ob_player.x = from_grid(gridX);
 								ob_player.y = from_grid(gridY);					
 								//Check if tile is attackable, if so attack
