@@ -63,14 +63,14 @@ function state_ai_slime_move(_event) {
 				var dir = point_direction(x, y, _xx, _yy);
 							
 				//Calc grid point to move to
-				targX = to_grid(_xx);
-				targY = to_grid(_yy);
-				gridTargX = targX;
-				gridTargY = targY;
+				self.targX = to_grid(_xx);
+				self.targY = to_grid(_yy);
+				self.gridTargX = self.targX;
+				self.gridTargY = self.targY;
 				//Get the room coords back.  This is need to ensure x and y are
 				//On the actual grid coords, and not slightly off
-				targX = from_grid(targX);
-				targY = from_grid(targY);
+				self.targX = from_grid(self.targX);
+				self.targY = from_grid(self.targY);
 				
 				//Check entity grid, if filled, add to collision grid and then repath.
 				//After repathing, clean up the adds
@@ -87,21 +87,24 @@ function state_ai_slime_move(_event) {
 				targY = y;
 				//TODO: Improve future logic to try to reroute
 				
-				//var i = 0;
-				//do {
-				//	//Cycle through 3 iterations of pathing to see if a proper path can be found
-				//	mp_grid_add_cell(self.attributes.collisionGrid, gridTargX, gridTargY);
-				//	tempEntityX[i] = gridTargX;
-				//	tempEntityY[i] = gridTargY;
-				//	calcPath();
-				//	i++;
-				//}
-				//until (mp_grid_get_cell(co_grid.mpGrid_entity, gridTargX, gridTargY) == -1 || i == 4)
+				var i = 0;
+				do {
+					//Cycle through 3 iterations of pathing to see if a proper path can be found
+					mp_grid_add_cell(self.attributes.collisionGrid, gridTargX, gridTargY);
+					tempEntityX[i] = gridTargX;
+					tempEntityY[i] = gridTargY;
+					calcPath();
+					i++;
+					if(check_entity(gridTargX, gridTargY != false)) {
+						show_debug_message("Found a path around");
+						}
+				}
+				until (check_entity(gridTargX, gridTargY != false) || i == 4)
 				
-				////Clean up to not leave ghost collision
-				//for(var i = 0; i < array_length(tempEntityX); i++) {
-				//	mp_grid_clear_cell(self.attributes.collisionGrid, tempEntityX[i], tempEntityY[i]);
-				//}
+				//Clean up to not leave ghost collision
+				for(var i = 0; i < array_length(tempEntityX); i++) {
+					mp_grid_clear_cell(self.attributes.collisionGrid, tempEntityX[i], tempEntityY[i]);
+				}
 				
 			}
 		}break;

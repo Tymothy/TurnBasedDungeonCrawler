@@ -54,8 +54,8 @@ function state_player_idle(_event){
 			var _qt = false //quick testing below.  Should be false to disable messages
 			var _ts = get_touch_state_on_change();
 
-				var gridX = get_gridX();
-				var gridY = get_gridY();
+				gridX = get_gridX();
+				gridY = get_gridY();
 				switch(_ts) {
 					case -1:
 						//No state change, don't do anything
@@ -92,16 +92,18 @@ function state_player_idle(_event){
 								}
 								else {
 									//Check if tile is available to move to
-									//if(mp_grid_get_cell(co_grid.mpGrid_entity, gridTargX, gridTargY) == -1) {
-										//entity is in grid square	
+									var _entity = check_entity(gridX, gridY);
+									if(_entity != false) {
+										//entity is in grid square.  can't move into it
+										//Possibly could act on it?
+										
+									}
 									
-									//}
-								ob_player.x = from_grid(gridX);
-								ob_player.y = from_grid(gridY);					
-								//Check if tile is attackable, if so attack
-								endTurn = true;									
+									//Tile is available to move to.
+									//Allow player to move to tile
+									truestate_switch(STATES.MOVE);
 								}
-								
+
 
 					
 							}						
@@ -136,12 +138,19 @@ function state_player_move(_event){
 		case TRUESTATE_NEW:
 		{
 			//This code will run once when the state is brand new.
+			//Remove current position from entity grid
+			mp_clear_entity();
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//This code will be run during step event
+			ob_player.x = from_grid(gridX);
+			ob_player.y = from_grid(gridY);					
+			//Check if tile is attackable, if so attack
+			endTurn = true;									
+			truestate_switch(STATES.WAIT);
+								
 
 		}break;
 	
@@ -155,6 +164,8 @@ function state_player_move(_event){
 		case TRUESTATE_FINAL:
 		{
 			//This code will run once right before switching to a new state.
+			//Add current position back to entity grid
+			mp_add_entity();
 		}break;
 	}
 }
