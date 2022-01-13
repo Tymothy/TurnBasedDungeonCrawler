@@ -61,7 +61,6 @@ function state_ai_slime_move(_event) {
 				//Enemies can only move one tile at a time, per turn
 				var _xx = path_get_point_x(pathToPlayer, 1);
 				var _yy = path_get_point_y(pathToPlayer, 1);
-				var dir = point_direction(x, y, _xx, _yy);
 							
 				//Calc grid point to move to
 				targX = to_grid(_xx);
