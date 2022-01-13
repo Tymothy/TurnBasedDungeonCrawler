@@ -45,7 +45,7 @@ function state_ai_slime_move(_event) {
 		case TRUESTATE_NEW:
 		{
 			
-			mp_clear_entity(self.attributes.collisionGrid);
+			mp_clear_entity(); //Clears self from entity grid
 			
 			targX = -1;
 			targY = -1;
@@ -70,6 +70,7 @@ function state_ai_slime_move(_event) {
 			targX = from_grid(targX);
 			targY = from_grid(targY);
 			
+			//TODO: Check entity grid, if filled, search other two nearby tiles
 			
 
 		}break;
@@ -98,7 +99,7 @@ function state_ai_slime_move(_event) {
 		//FINAL---------------------------------------
 		case TRUESTATE_FINAL:
 		{
-			mp_add_entity(self.attributes.collisionGrid);
+			mp_add_entity();  //Adds self to entity grid
 			path_delete(pathToPlayer);
 		}break;
 	}

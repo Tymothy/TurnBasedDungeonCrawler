@@ -85,71 +85,24 @@ function state_game_player_active(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			gridX = -1;
-			gridY = -1;
-			oldGridX = -1;
-			oldGridY = -1;
-			endTurn = false;
-			
-			
+			ob_player.turnActive = true;
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//Watch for player input
+			//Watch for player to complete turn
+			if(ob_player.endTurn == true) truestate_switch(STATES.PLAYER_ENDING);	
+			
+			
 			
 			//TODO: Move this into the co_touchMaster object
 
 			//show_debug_message("Touch State Changed: " + string(TOUCH_STATE));
-			var _qt = false //quick testing below.  Should be false to disable messages
-			var _ts = get_touch_state_on_change();
+			
+				
+				
 
-				var gridX = get_gridX();
-				var gridY = get_gridY();
-				switch(_ts) {
-					case -1:
-						//No state change, don't do anything
-					break;
-					
-					case STATES.IDLE:
-						if(_qt) show_debug_message("TOUCH_STATE Change: Idle");	
-					break;
-					
-					case STATES.NEW_TOUCH:
-						if(_qt) show_debug_message("TOUCH_STATE Change: New touch");	
-					break;
-				
-					case STATES.SAME_TOUCH:
-						if(_qt) show_debug_message("TOUCH_STATE Change: Same touch");	
-					break;
-					
-					case STATES.DIFFERENT_TOUCH:
-						if(_qt) show_debug_message("TOUCH_STATE Change: Diff touch");	
-					break;
-					
-					case STATES.DRAGGING:
-						if(_qt) show_debug_message("TOUCH_STATE Change: Dragging");	
-					break;
-					
-					case STATES.RELEASE:
-						if(_qt) show_debug_message("TOUCH_STATE Change: Release");	
-							if(abs(to_grid(ob_player.x) - gridX) <= ob_player.moveSpeed && abs(to_grid(ob_player.y) - gridY) <= ob_player.moveSpeed)
-							{
-								//Touch has occurred within players move space, attempt to move there/interact with tile
-								ob_player.x = from_grid(gridX);
-								ob_player.y = from_grid(gridY);					
-								//Check if tile is attackable, if so attack
-								endTurn = true;
-					
-							}						
-					break;
-				}
-				
-				//Check if player took an turn ending action
-				if(endTurn == true) {
-						truestate_switch(STATES.PLAYER_ENDING);	
-				}
 				
 			//	if(LOGGING) show_debug_message("Execute touch code");
 

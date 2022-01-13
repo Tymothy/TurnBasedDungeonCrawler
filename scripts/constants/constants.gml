@@ -55,7 +55,9 @@ enum STATES
 	INACTIVE,
 	
 	//Player States
+	WAIT,
 	IDLE,
+	MOVE,
 	WALK,
 	ATTACK,
 	HURT,
@@ -71,7 +73,7 @@ enum STATES
 	
 	//Enemy states
 	//IDLE, //Already used above
-	MOVE,
+	//MOVE, //Already used above
 	FLEE,
 	//ATTACK //Already used above
 	//HURT //Already used above
