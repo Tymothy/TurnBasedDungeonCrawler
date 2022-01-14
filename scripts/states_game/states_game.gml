@@ -86,6 +86,7 @@ function state_game_player_active(_event){
 		case TRUESTATE_NEW:
 		{
 			ob_player.turnActive = true;
+			ob_player.endTurn = false;
 		}break;
 	
 		//STEP---------------------------------------

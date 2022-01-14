@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "co_trueStateActor",
-    "path": "objects/co_trueStateActor/co_trueStateActor.yy",
+    "name": "ob_par_entity",
+    "path": "objects/ob_par_entity/ob_par_entity.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

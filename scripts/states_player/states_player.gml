@@ -6,14 +6,16 @@ function state_player_wait(_event){
 		case TRUESTATE_NEW:
 		{
 			//This code will run once when the state is brand new.
-			truestate_clear_history();
+			//truestate_clear_history();
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
 			//Wait for co_gameManger to make player active
-			if(turnActive == true) truestate_switch(STATES.IDLE);
+			if(turnActive == true) {
+				truestate_switch(STATES.IDLE);
+			}
 
 		}break;
 	
@@ -109,11 +111,6 @@ function state_player_idle(_event){
 							}						
 					break;
 				}
-					
-				//Check if player took an turn ending action
-				if(endTurn == true) {
-						truestate_switch(STATES.WAIT);	
-				}
 
 		}break;
 	
@@ -148,7 +145,8 @@ function state_player_move(_event){
 			ob_player.x = from_grid(gridX);
 			ob_player.y = from_grid(gridY);					
 			//Check if tile is attackable, if so attack
-			endTurn = true;									
+			endTurn = true;					
+			turnActive = false;
 			truestate_switch(STATES.WAIT);
 								
 
@@ -213,6 +211,7 @@ function state_player_hurt(_event){
 		case TRUESTATE_STEP:
 		{
 			//This code will be run during step event
+			truestate_switch(truestate_previous_state);
 
 		}break;
 	

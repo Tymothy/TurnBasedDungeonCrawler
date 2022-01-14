@@ -8,8 +8,11 @@ attributes =
 	moveSpeed : 1, //Can move X tiles per turn
 	name : "Player",
 	collisionGrid : co_grid.mpGrid_collidePlayer,
+	attackStyle : ATTACK.DIRECT,
+	attackRange : 1,
+	attackPower : 1,
+	hp : 3,
 }
-
 
 //Variables that aren't configured
 xGridCoord = to_grid(x);
@@ -18,6 +21,16 @@ yGridCoord = to_grid(y);
 //Init variables for state machine
 turnActive = false;
 endTurn = false;
+
+#region Methods
+takeDamage = function (_damage) {
+	truestate_switch(STATES.HURT);
+	attributes.hp = attributes.hp - _damage;
+	if(LOGGING) show_debug_message("Player took " + string(_damage) + " damage.");
+	if(LOGGING) show_debug_message("Player has " + string(attributes.hp) + " health left.");
+}
+
+#endregion
 
 
 sprite_index = sprite;

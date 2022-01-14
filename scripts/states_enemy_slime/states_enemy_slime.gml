@@ -1,4 +1,4 @@
-function state_ai_slime_idle(_event) {
+function state_ai_slime_wait(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
@@ -16,8 +16,8 @@ function state_ai_slime_idle(_event) {
 			
 			//When AI turn starts, determine movement
 			if(aiActive == true) {
-				//Determine what state to take
-				truestate_switch(STATES.MOVE);
+				//Start attack phase
+				truestate_switch(STATES.ATTACK);
 			}
 			
 			
@@ -36,7 +36,62 @@ function state_ai_slime_idle(_event) {
 		}break;
 	}
 }
+function state_ai_slime_attack(_event) {
+	//So, here's your basic state template
+	switch(_event)
+	{
+		//NEW---------------------------------------
+		case TRUESTATE_NEW:
+		{
+			//This code will run once when the state is brand new.
+			attackValid = false;
+			//Determine if attack is possible
+			switch(attributes.attackStyle) {
+				case ATTACK.DIRECT:
+					//Attacker must start near target, then attack directly
+					var _distX = to_grid(abs(attributes.targetObject.x - self.x));
+					var _distY = to_grid(abs(attributes.targetObject.y - self.y));
+					//Determine if target is within reach
+					if(_distX <= attributes.attackRange && _distY <= attributes.attackRange) {
+						//Target able to be attacked
+						attackValid = true;
+					}
+					else {
+						attackValid = false;
+					}
+				break;
+			
+			}
+			
+			if(attackValid == false) truestate_switch(STATES.MOVE);
+		}break;
 	
+		//STEP---------------------------------------
+		case TRUESTATE_STEP:
+		{
+			//This code will be executed during the step event.
+			if(attackValid == true) {
+				attributes.targetObject.takeDamage(attributes.attackPower);
+				show_debug_message("ATTACKED");
+				attackValid = false;
+				truestate_switch(STATES.MOVE);
+			}
+		}break;
+	
+		//DRAW---------------------------------------
+		case TRUESTATE_DRAW:
+		{
+			//And this code will be exeucted during the draw event
+		}break;
+	
+		//FINAL---------------------------------------
+		case TRUESTATE_FINAL:
+		{
+			//This code will run once right before switching to a new state.
+		}break;
+	}
+}
+
 function state_ai_slime_move(_event) {
 	//So, here's your basic state template
 	switch(_event)
@@ -127,7 +182,7 @@ function state_ai_slime_move(_event) {
 			if(x = targX && y = targY) {
 				//Movement complete
 				aiActive = false;
-				truestate_switch(STATES.IDLE);
+				truestate_switch(STATES.WAIT);
 			}
 		}break;
 	
@@ -176,35 +231,7 @@ function state_ai_slime_flee(_event) {
 	}
 }
 
-function state_ai_slime_attack(_event) {
-	//So, here's your basic state template
-	switch(_event)
-	{
-		//NEW---------------------------------------
-		case TRUESTATE_NEW:
-		{
-			//This code will run once when the state is brand new.
-		}break;
-	
-		//STEP---------------------------------------
-		case TRUESTATE_STEP:
-		{
-			//This code will be executed during the step event.
-		}break;
-	
-		//DRAW---------------------------------------
-		case TRUESTATE_DRAW:
-		{
-			//And this code will be exeucted during the draw event
-		}break;
-	
-		//FINAL---------------------------------------
-		case TRUESTATE_FINAL:
-		{
-			//This code will run once right before switching to a new state.
-		}break;
-	}
-}
+
 
 function state_ai_slime_hurt(_event) {
 	//So, here's your basic state template

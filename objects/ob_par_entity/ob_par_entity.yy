@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "ob_par_entity",
-    "path": "objects/ob_par_entity/ob_par_entity.yy",
+    "name": "co_trueStateActor",
+    "path": "objects/co_trueStateActor/co_trueStateActor.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "AI",
-    "path": "folders/Objects/Entities/AI.yy",
+    "name": "Entities",
+    "path": "folders/Objects/Entities.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ob_par_ai",
+  "name": "ob_par_entity",
   "tags": [],
   "resourceType": "GMObject",
 }
