@@ -10,7 +10,7 @@
 //How long player has to hold on a tile after dragging a tile
 #macro DRAG_TIME_MIN 45 //Time in steps
 #macro MIN_SPAWN_TILES 2 //Do not allow spawning within this many tiles
-#macro MOVE_LENGTH 1 //Seconds for each movement of ai or player, game speed is 30 fps by default
+#macro MOVE_LENGTH .25 //Seconds for each movement of ai or player, game speed is 30 fps by default (Value is 1 by default)
 
 //Config variables
 #macro ADMIN 0

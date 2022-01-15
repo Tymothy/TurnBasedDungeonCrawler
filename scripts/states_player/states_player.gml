@@ -7,6 +7,7 @@ function state_player_wait(_event){
 		{
 			//This code will run once when the state is brand new.
 			//truestate_clear_history();
+			attributes.targetObject = noone;
 		}break;
 	
 		//STEP---------------------------------------
@@ -98,17 +99,22 @@ function state_player_idle(_event){
 									if(_entity != false) {
 										//entity is in grid square.  can't move into it
 										//Possibly could act on it?
-										
+										attributes.targetObject = _entity;
+										var _parOb = object_get_parent(attributes.targetObject.object_index);
+										if(_parOb == ob_par_hostile) {
+											//Entity is a hostile, attack it!
+											truestate_switch(STATES.ATTACK);
+											
+										}
 									}
-									
+									else {
 									//Tile is available to move to.
 									//Allow player to move to tile
 									truestate_switch(STATES.MOVE);
-								}
-
-
+									}
 					
-							}						
+								}	
+							}
 					break;
 				}
 
@@ -174,13 +180,38 @@ function state_player_attack(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			//This code will run once when the state is brand new.
+			attackValid = false;
+			//Determine if attack is possible
+			switch(attributes.attackStyle) {
+				case ATTACK.DIRECT:
+					//Attacker must start near target, then attack directly
+					var _distX = to_grid(abs(attributes.targetObject.x - self.x));
+					var _distY = to_grid(abs(attributes.targetObject.y - self.y));
+					//Determine if target is within reach
+					if(_distX <= attributes.attackRange && _distY <= attributes.attackRange) {
+						//Target able to be attacked
+						attackValid = true;
+					}
+					else {
+						attackValid = false;
+					}
+				break;
+			
+			}
+			
+			if(attackValid == false) truestate_switch(STATES.MOVE);
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//This code will be run during step event
+			//This code will be executed during the step event.
+			if(attackValid == true) {
+				attributes.targetObject.takeDamage(attributes.attackPower);
+				show_debug_message(string(attributes.name) +" attacked " + string(attributes.targetObject.attributes.name));
+				attackValid = false;
+				truestate_switch(STATES.WAIT);
+			}
 
 		}break;
 	

@@ -8,10 +8,12 @@ attributes =
 	moveSpeed : 1, //Can move X tiles per turn
 	name : "Player",
 	collisionGrid : co_grid.mpGrid_collidePlayer,
+	targetObject : noone,
 	attackStyle : ATTACK.DIRECT,
 	attackRange : 1,
 	attackPower : 1,
 	hp : 3,
+
 }
 
 //Variables that aren't configured
