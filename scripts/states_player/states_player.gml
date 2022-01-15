@@ -180,6 +180,12 @@ function state_player_attack(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			validAttacks = check_valid_attacks();
+			if(validAttacks.direct = true) {
+				show_debug_message("Valid attacks working");	
+			}
+			
+			
 			attackValid = false;
 			//Determine if attack is possible
 			switch(attributes.attackStyle) {
@@ -208,9 +214,9 @@ function state_player_attack(_event){
 			//This code will be executed during the step event.
 			if(attackValid == true) {
 				attributes.targetObject.takeDamage(attributes.attackPower);
-				show_debug_message(string(attributes.name) +" attacked " + string(attributes.targetObject.attributes.name));
 				attackValid = false;
-				truestate_switch(STATES.WAIT);
+				//Move into square
+				truestate_switch(STATES.MOVE);
 			}
 
 		}break;

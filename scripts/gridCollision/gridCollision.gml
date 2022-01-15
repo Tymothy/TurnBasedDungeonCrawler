@@ -51,3 +51,18 @@ function mp_add_entity() {
 		co_grid.tileGrid[# _x, _y][$ "_entityInTile"] = true;
 	}
 }
+
+function check_entity(_gridX, _gridY) {
+	/// @desc Checks for entity at given grid coords.  If entity exists, return entity.  Otherwise return false.
+	/// @arg gridX
+	/// @arg gridY
+		if(mp_grid_get_cell(co_grid.mpGrid_entity, _gridX, _gridY) == -1) {
+			//Grid is occupied, return object
+			var _inst = instance_position(from_grid(_gridX), from_grid(_gridY), co_trueStateActor);
+			return _inst;
+		}
+		else {
+			return false;
+		}
+
+}
