@@ -11,6 +11,7 @@ function remove_entity(inst = self.id){
 	if(instance_exists(co_turnOrder)) {
 		co_turnOrder.removeFromQueue(inst);
 	}
-	
+	//Remove from entity grid
+	mp_clear_entity(id)
 	instance_destroy(inst);
 }

@@ -32,10 +32,10 @@ function mp_forbid_cells(_grid, _type){
 
 }
 
-function mp_clear_entity() {
+function mp_clear_entity(inst = self.id) {
 	//Mark cell as empty for collision logic.
-	var _x = to_grid(self.x);
-	var _y = to_grid(self.y);
+	var _x = to_grid(inst.x);
+	var _y = to_grid(inst.y);
 	mp_grid_clear_cell(co_grid.mpGrid_entity, _x, _y);
 	with(co_grid) {
 		co_grid.tileGrid[# _x, _y][$ "_entityInTile"] = false;
