@@ -241,6 +241,7 @@ function state_ai_slime_hurt(_event) {
 			var _removeEntity = false;
 			if(attributes.hp <= 0) _removeEntity = true;
 			
+			//Remove entity
 			if (_removeEntity == true) remove_entity(id);
 			
 		}break;

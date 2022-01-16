@@ -11,4 +11,6 @@ function remove_entity(inst = self.id){
 	if(instance_exists(co_turnOrder)) {
 		co_turnOrder.removeFromQueue(inst);
 	}
+	
+	instance_destroy(inst);
 }

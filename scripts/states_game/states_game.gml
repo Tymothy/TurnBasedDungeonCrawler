@@ -231,6 +231,9 @@ function state_game_ai_active(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
+			//Possible bug, if AI is destoryed during their own turn, not sure
+			//If this would break this state machine
+			
 			//Execute AI turns one by one.
 			if(aiActive = false)  {
 				aiGoing = co_turnOrder.getNextAiTurn();
