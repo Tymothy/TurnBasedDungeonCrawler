@@ -11,3 +11,4 @@ attributes =
 	turnSpeed : 0, //Higher numbers will go first
 	aiName : "Default Name",
 }
+

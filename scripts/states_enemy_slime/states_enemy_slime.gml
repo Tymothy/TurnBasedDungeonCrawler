@@ -1,4 +1,4 @@
-function state_ai_slime_wait(_event) {
+function state_ai_wait(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
@@ -36,7 +36,7 @@ function state_ai_slime_wait(_event) {
 		}break;
 	}
 }
-function state_ai_slime_attack(_event) {
+function state_ai_attack(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
@@ -92,14 +92,14 @@ function state_ai_slime_attack(_event) {
 	}
 }
 
-function state_ai_slime_move(_event) {
+function state_ai_move(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			
+			aiPath = path_add();			
 			mp_clear_entity(); //Clears self from entity grid
 			
 			targX = -1;
@@ -107,15 +107,13 @@ function state_ai_slime_move(_event) {
 			twerpTimer = 0;
 			entity = noone;
 			
-			pathToPlayer = path_add();
-			
 			calcPath = function() {
-				mp_grid_path(self.attributes.collisionGrid, pathToPlayer, x, y, attributes.targetObject.x, attributes.targetObject.y, true);
+				mp_grid_path(self.attributes.collisionGrid, aiPath, x, y, attributes.targetObject.x, attributes.targetObject.y, true);
 				//TODO: Track collision with other enemies to prevent them from overlapping
 				
 				//Enemies can only move one tile at a time, per turn
-				var _xx = path_get_point_x(pathToPlayer, 1);
-				var _yy = path_get_point_y(pathToPlayer, 1);
+				var _xx = path_get_point_x(aiPath, 1);
+				var _yy = path_get_point_y(aiPath, 1);
 							
 				//Calc grid point to move to
 				targX = to_grid(_xx);
@@ -130,7 +128,6 @@ function state_ai_slime_move(_event) {
 				//Check entity grid, if filled, add to collision grid and then repath.
 				//After repathing, clean up the adds
 				entity = check_entity(gridTargX, gridTargY);
-
 			}
 			calcPath();
 			// if(mp_grid_get_cell(co_grid.mpGrid_entity, gridTargX, gridTargY) == -1) {
@@ -186,51 +183,19 @@ function state_ai_slime_move(_event) {
 		//DRAW---------------------------------------
 		case TRUESTATE_DRAW:
 		{
-			draw_path(pathToPlayer, x, y, false);
+			draw_path(aiPath, x, y, false);
 		}break;
 	
 		//FINAL---------------------------------------
 		case TRUESTATE_FINAL:
 		{
 			mp_add_entity();  //Adds self to entity grid
-			path_delete(pathToPlayer);
+			path_delete(aiPath);
 		}break;
 	}
 }
 
-function state_ai_slime_flee(_event) {
-	//So, here's your basic state template
-	switch(_event)
-	{
-		//NEW---------------------------------------
-		case TRUESTATE_NEW:
-		{
-			//This code will run once when the state is brand new.
-		}break;
-	
-		//STEP---------------------------------------
-		case TRUESTATE_STEP:
-		{
-			//This code will be executed during the step event.
-		}break;
-	
-		//DRAW---------------------------------------
-		case TRUESTATE_DRAW:
-		{
-			//And this code will be exeucted during the draw event
-		}break;
-	
-		//FINAL---------------------------------------
-		case TRUESTATE_FINAL:
-		{
-			//This code will run once right before switching to a new state.
-		}break;
-	}
-}
-
-
-
-function state_ai_slime_hurt(_event) {
+function state_ai_hurt(_event) {
 	//So, here's your basic state template
 	switch(_event)
 	{

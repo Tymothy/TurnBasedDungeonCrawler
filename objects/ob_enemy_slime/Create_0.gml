@@ -26,8 +26,7 @@ takeDamage = function (_damage) {
 #endregion
 
 
-truestate_create_state(STATES.WAIT, state_ai_slime_wait);
-truestate_create_state(STATES.ATTACK, state_ai_slime_attack);
-truestate_create_state(STATES.MOVE, state_ai_slime_move);
-truestate_create_state(STATES.FLEE, state_ai_slime_flee);
-truestate_create_state(STATES.HURT, state_ai_slime_hurt);
+truestate_create_state(STATES.WAIT, state_ai_wait);
+truestate_create_state(STATES.ATTACK, state_ai_attack);
+truestate_create_state(STATES.MOVE, state_ai_move);
+truestate_create_state(STATES.HURT, state_ai_hurt);
