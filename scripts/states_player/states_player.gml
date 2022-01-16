@@ -151,9 +151,7 @@ function state_player_move(_event){
 			ob_player.x = from_grid(gridX);
 			ob_player.y = from_grid(gridY);					
 			//Check if tile is attackable, if so attack
-			endTurn = true;					
-			turnActive = false;
-			truestate_switch(STATES.WAIT);
+			truestate_switch(STATES.END);
 								
 
 		}break;
@@ -182,7 +180,7 @@ function state_player_attack(_event){
 		{
 			validAttacks = check_valid_attacks();
 			if(validAttacks.direct = true) {
-				show_debug_message("Valid attacks working");	
+				if(LOGGING) show_debug_message("Direct attack valid");	
 			}
 			
 			
@@ -215,8 +213,13 @@ function state_player_attack(_event){
 			if(attackValid == true) {
 				attributes.targetObject.takeDamage(attributes.attackPower);
 				attackValid = false;
-				//Move into square
+				//Move into square if entity was destroyed, else end turn
+				if(instance_exists(attributes.targetObject)) {
+					truestate_switch(STATES.END)	
+				}
+				else {
 				truestate_switch(STATES.MOVE);
+				}
 			}
 
 		}break;
@@ -279,6 +282,41 @@ function state_player_item_get(_event){
 		case TRUESTATE_STEP:
 		{
 			//This code will be run during step event
+
+		}break;
+	
+		//DRAW---------------------------------------
+		case TRUESTATE_DRAW:
+		{
+			//And this code will be exeucted during the draw event
+		}break;
+	
+		//FINAL---------------------------------------
+		case TRUESTATE_FINAL:
+		{
+			//This code will run once right before switching to a new state.
+		}break;
+	}
+}
+
+function state_player_end(_event){
+	switch(_event)
+	{
+		//NEW---------------------------------------
+		case TRUESTATE_NEW:
+		{
+			//This code will run once when the state is brand new.
+			endTurn = true;					
+			turnActive = false;
+		}break;
+	
+		//STEP---------------------------------------
+		case TRUESTATE_STEP:
+		{
+			//This code will be run during step event
+			
+			//Handled all end turn items, go back to waiting for next turn
+			truestate_switch(STATES.WAIT);
 
 		}break;
 	

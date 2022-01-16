@@ -32,9 +32,8 @@ enum CORETILES
 //TODO: Put this into structs on what they can do
 enum ATTACK
 {
-	LUNGE, //Attacker moves directly into target
+	LUNGE, //Attacker moves directly into target from at least 1 square away
 	DIRECT, //Attacker starts near target and can move along side the target
-	
 	RANGED_PROJECTILE, //Attacker fires a projectile into a target.  Account for piercing for depth
 	RANGED_WALL, //Attacker fires a line of attacks.  All targets in a line X long are damaged	
 	
@@ -62,6 +61,7 @@ enum STATES
 	ATTACK,
 	HURT,
 	ITEM_GET,
+	END,
 	
 	//Touch States
 	//IDLE, //This already exists, that's why it's commented out

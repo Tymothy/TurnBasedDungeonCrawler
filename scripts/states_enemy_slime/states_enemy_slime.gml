@@ -151,11 +151,8 @@ function state_ai_slime_move(_event) {
 					tempEntityY[i] = gridTargY;
 					calcPath();
 					i++;
-					if(entity == false) {
-						show_debug_message("Found a path around");
-						}
 				}
-				until (entity == false || i == 4)
+				until (entity == false || i == 4);
 				
 				if(i == 4) {
 					//Path not found, set targets to current position
@@ -240,13 +237,20 @@ function state_ai_slime_hurt(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			//This code will run once when the state is brand new.
+			//Calculate if AI is dead
+			var _removeEntity = false;
+			if(attributes.hp <= 0) _removeEntity = true;
+			
+			if (_removeEntity == true) remove_entity(id);
+			
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
 			//This code will be executed during the step event.
+			
+			truestate_switch(truestate_previous_state);
 		}break;
 	
 		//DRAW---------------------------------------

@@ -46,7 +46,7 @@ truestate_create_state(STATES.MOVE, state_player_move, "Move");
 truestate_create_state(STATES.ATTACK, state_player_attack, "Attack");
 truestate_create_state(STATES.HURT, state_player_hurt, "Hurt");
 truestate_create_state(STATES.ITEM_GET, state_player_item_get, "Item_Get");
-
+truestate_create_state(STATES.END, state_player_end, "End Turn");
 //Set your default state. 
 //This will be the state your object starts in, as well as the state that is defaulted
 //to if you make a mistake and try switching to a state that doesn't exist.

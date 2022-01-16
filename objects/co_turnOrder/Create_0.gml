@@ -64,3 +64,10 @@ function getNextAiTurn() {
 	var _ret = ds_priority_delete_max(aiCurrentTurnQueue); //Get the value of the max, then delete it	
 	return _ret;
 }
+
+function removeFromQueue(inst) {
+	//Get Instance id of the object being removed from queue
+	
+		ds_priority_delete_value(aiQueue, inst);
+		ds_priority_delete_value(aiCurrentTurnQueue, inst);
+}
