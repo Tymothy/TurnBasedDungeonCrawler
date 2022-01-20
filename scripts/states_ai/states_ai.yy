@@ -6,7 +6,7 @@
     "path": "folders/Scripts/State Scripts/Game State Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "states_enemy_slime",
+  "name": "states_ai",
   "tags": [],
   "resourceType": "GMScript",
 }

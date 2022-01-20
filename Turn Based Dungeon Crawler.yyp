@@ -28,7 +28,7 @@
     {"id":{"name":"GMLive_seekSetOp","path":"scripts/GMLive_seekSetOp/GMLive_seekSetOp.yy",},"order":6,},
     {"id":{"name":"configuration","path":"scripts/configuration/configuration.yy",},"order":1,},
     {"id":{"name":"generate_random_room","path":"scripts/generate_random_room/generate_random_room.yy",},"order":0,},
-    {"id":{"name":"states_enemy_slime","path":"scripts/states_enemy_slime/states_enemy_slime.yy",},"order":2,},
+    {"id":{"name":"states_ai","path":"scripts/states_ai/states_ai.yy",},"order":2,},
     {"id":{"name":"truestate_queue_start","path":"scripts/truestate_queue_start/truestate_queue_start.yy",},"order":4,},
     {"id":{"name":"GMLive_action","path":"scripts/GMLive_action/GMLive_action.yy",},"order":0,},
     {"id":{"name":"spawnScripts","path":"scripts/spawnScripts/spawnScripts.yy",},"order":0,},
