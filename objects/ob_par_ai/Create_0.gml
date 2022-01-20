@@ -76,6 +76,5 @@ setupMove = function() {
 			
 	targX = -1;
 	targY = -1;
-	twerpTimer = 0;
 	entity = noone;	
 }

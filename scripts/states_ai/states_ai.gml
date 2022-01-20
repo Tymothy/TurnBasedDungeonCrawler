@@ -6,6 +6,7 @@ function state_ai_wait(_event) {
 		case TRUESTATE_NEW:
 		{
 			//This code will run once when the state is brand new.
+			aiActive = false;
 			truestate_clear_history();
 		}break;
 	
@@ -108,12 +109,9 @@ function state_ai_move(_event) {
 		case TRUESTATE_STEP:
 		{
 			
-			move_entity(targX, targY);
-
-			if(x = targX && y = targY) {
-				//Movement complete
-				aiActive = false;
-				truestate_switch(STATES.WAIT);
+			if(move_entity(targX, targY)){
+				//When entity is done moving, end entities turn
+				truestate_switch(STATES.WAIT);			
 			}
 		}break;
 	
