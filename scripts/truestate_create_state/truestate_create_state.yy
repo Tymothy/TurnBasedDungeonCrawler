@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "TrueState System",
-    "path": "folders/Scripts/State Scripts/TrueState System.yy",
+    "path": "folders/Scripts/Extension Scripts (No Modifying)/TrueState System.yy",
   },
   "resourceVersion": "1.0",
   "name": "truestate_create_state",

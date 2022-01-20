@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "delta",
-    "path": "folders/Scripts/delta.yy",
+    "path": "folders/Scripts/Extension Scripts (No Modifying)/delta.yy",
   },
   "resourceVersion": "1.0",
   "name": "delta",

@@ -6,7 +6,7 @@ room_pack_blank_object = co_blank;
 
 
 //Setup functions
-game_set_speed(30, gamespeed_fps);
+game_set_speed(GAME_SPEED, gamespeed_fps);
 delta_init();
 
 global.moveTime = seconds(MOVE_LENGTH);

@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Helpers",
-    "path": "folders/Scripts/State Scripts/TrueState System/Helpers.yy",
+    "path": "folders/Scripts/Extension Scripts (No Modifying)/TrueState System/Helpers.yy",
   },
   "resourceVersion": "1.0",
   "name": "truestate_draw_current",
