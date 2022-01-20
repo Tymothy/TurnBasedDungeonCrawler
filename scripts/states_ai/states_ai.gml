@@ -99,54 +99,17 @@ function state_ai_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			aiPath = path_add();			
-			mp_clear_entity(); //Clears self from entity grid
+			setupMove();
+			moveDirect();
 			
-			targX = -1;
-			targY = -1;
-			twerpTimer = 0;
-			entity = noone;
-			
-			calcPath();
-			// if(mp_grid_get_cell(co_grid.mpGrid_entity, gridTargX, gridTargY) == -1) {
-			
-			if(entity != false) {	
-				//Target cell is occupied, unable to move there.
-				//Since we cannot move to target cell, try to reroute to find a valid path
-				
-				var i = 0;
-				do {
-					//Cycle through 3 iterations of pathing to see if a proper path can be found
-					mp_grid_add_cell(self.attributes.collisionGrid, gridTargX, gridTargY);
-					tempEntityX[i] = gridTargX;
-					tempEntityY[i] = gridTargY;
-					calcPath();
-					i++;
-				}
-				until (entity == false || i == 4);
-				
-				if(i == 4) {
-					//Path not found, set targets to current position to exit infinite loop
-					targX = x;
-					targY = y;					
-				}
-				
-				//Clean up to not leave ghost collision
-				for(var i = 0; i < array_length(tempEntityX); i++) {
-					mp_grid_clear_cell(self.attributes.collisionGrid, tempEntityX[i], tempEntityY[i]);
-				}
-				
-			}
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
 			
-			x = twerp(TwerpType.inout_cubic, x, targX, twerpTimer / global.moveTime);
-			y = twerp(TwerpType.inout_cubic, y, targY, twerpTimer / global.moveTime);
-			twerpTimer += d(1);
-			
+			move_entity(targX, targY);
+
 			if(x = targX && y = targY) {
 				//Movement complete
 				aiActive = false;
@@ -157,14 +120,14 @@ function state_ai_move(_event) {
 		//DRAW---------------------------------------
 		case TRUESTATE_DRAW:
 		{
-			draw_path(aiPath, x, y, false);
+			draw_path(entityPath, x, y, false);
 		}break;
 	
 		//FINAL---------------------------------------
 		case TRUESTATE_FINAL:
 		{
 			mp_add_entity();  //Adds self to entity grid
-			path_delete(aiPath);
+			path_delete(entityPath);
 		}break;
 	}
 }

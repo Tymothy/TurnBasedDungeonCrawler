@@ -64,6 +64,7 @@
     {"id":{"name":"truestate_system_init","path":"scripts/truestate_system_init/truestate_system_init.yy",},"order":8,},
     {"id":{"name":"_state_template","path":"scripts/_state_template/_state_template.yy",},"order":9,},
     {"id":{"name":"truestate_cleanup","path":"scripts/truestate_cleanup/truestate_cleanup.yy",},"order":1,},
+    {"id":{"name":"move_entity","path":"scripts/move_entity/move_entity.yy",},"order":13,},
     {"id":{"name":"GMLive_thread","path":"scripts/GMLive_thread/GMLive_thread.yy",},"order":4,},
     {"id":{"name":"touch_grid","path":"scripts/touch_grid/touch_grid.yy",},"order":8,},
     {"id":{"name":"truestate_draw_history","path":"scripts/truestate_draw_history/truestate_draw_history.yy",},"order":5,},
