@@ -59,6 +59,9 @@ function state_player_idle(_event){
 
 				gridX = get_gridX();
 				gridY = get_gridY();
+				
+				targX = from_grid(gridX);
+				targY = from_grid(gridY);
 				switch(_ts) {
 					case -1:
 						//No state change, don't do anything
@@ -148,11 +151,14 @@ function state_player_move(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			ob_player.x = from_grid(gridX);
-			ob_player.y = from_grid(gridY);					
+			//ob_player.x = from_grid(gridX);
+			//ob_player.y = from_grid(gridY);					
 			//Check if tile is attackable, if so attack
-			truestate_switch(STATES.END);
-								
+			//truestate_switch(STATES.END);
+			if(move_entity(targX, targY)){
+				//When entity is done moving, end entities turn
+				truestate_switch(STATES.END);			
+			}								
 
 		}break;
 	
