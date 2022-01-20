@@ -45,7 +45,8 @@ function state_player_idle(_event){
 			gridX = -1;
 			gridY = -1;
 			endTurn = false;
-			
+			startGridX = to_grid(x);
+			startGridY = to_grid(y);
 			
 		}break;
 	
@@ -156,8 +157,8 @@ function state_player_move(_event){
 			//Check if tile is attackable, if so attack
 			//truestate_switch(STATES.END);
 			if(move_entity(targX, targY)){
-				//When entity is done moving, end entities turn
-				truestate_switch(STATES.END);			
+				//When entity is done moving, check for attacks						
+				truestate_switch(STATES.ATTACK);			
 			}								
 
 		}break;
@@ -173,6 +174,8 @@ function state_player_move(_event){
 		{
 			//This code will run once right before switching to a new state.
 			//Add current position back to entity grid
+			xGridCoord = to_grid(x);
+			yGridCoord = to_grid(y);
 			mp_add_entity();
 		}break;
 	}
@@ -184,49 +187,120 @@ function state_player_attack(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			validAttacks = check_valid_attacks();
-			if(validAttacks.direct = true) {
-				if(LOGGING) show_debug_message("Direct attack valid");	
-			}
+			attackArrayCounter = 0;
+			attacking = false;
+			attackValid = false;			
+			//validAttacks = check_valid_attacks();
+			//if(validAttacks.direct = true) {
+			//	if(LOGGING) show_debug_message("Direct attack valid");	
+			//}
+			
+
+			////Determine if attack is possible
 			
 			
-			attackValid = false;
-			//Determine if attack is possible
 			switch(attributes.attackStyle) {
-				case ATTACK.DIRECT:
-					//Attacker must start near target, then attack directly
-					var _distX = to_grid(abs(attributes.targetObject.x - self.x));
-					var _distY = to_grid(abs(attributes.targetObject.y - self.y));
-					//Determine if target is within reach
-					if(_distX <= attributes.attackRange && _distY <= attributes.attackRange) {
-						//Target able to be attacked
-						attackValid = true;
+				case ATTACK.SLIDE:
+					//Add all eligible targets within range to a list
+					
+					//What makes a target eligible?  Being part of the hostile parent
+					for(var i =  xGridCoord - 1; i <= xGridCoord + 1; i++) {
+						for(var j = yGridCoord - 1; j <= yGridCoord + 1; j++) {
+							var _tempEnt = check_entity(i, j);
+							if(_tempEnt != false){
+								//Space is not blank, find out if object is a valid target
+								if(object_is_ancestor(_tempEnt.object_index, ob_par_hostile)){
+									//Object is an attackble hostile, see if it was close at start of turn
+									if(abs(to_grid(_tempEnt.x) - startGridX) <= 1 && abs(to_grid(_tempEnt.y) - startGridY <= 1)) {
+										//Object started turn near player.  Mark for attack
+										attackArray[attackArrayCounter] = _tempEnt;
+										attackArrayCounter++;
+										
+									}
+										
+								}
+									
+							}
+								
+						}
 					}
-					else {
-						attackValid = false;
-					}
+					
+					//List of attackable enemies has been set.
+
+				
+				
+					////Attacker must start near target, then attack directly
+					//var _distX = to_grid(abs(attributes.targetObject.x - self.x));
+					//var _distY = to_grid(abs(attributes.targetObject.y - self.y));
+					////Determine if target is within reach
+					//if(_distX <= attributes.attackRange && _distY <= attributes.attackRange) {
+					//	//Target able to be attacked
+					//	attackValid = true;
+					//}
+					//else {
+					//	attackValid = false;
+					//}
 				break;
 			
 			}
-			
-			if(attackValid == false) truestate_switch(STATES.MOVE);
+
+			if(attackArrayCounter > 0){
+				attackValid = true;
+			}
+
+			if(attackValid == false) truestate_switch(STATES.END);
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
 			//This code will be executed during the step event.
-			if(attackValid == true) {
-				attributes.targetObject.takeDamage(attributes.attackPower);
-				attackValid = false;
-				//Move into square if entity was destroyed, else end turn
-				if(instance_exists(attributes.targetObject)) {
-					truestate_switch(STATES.END)	
+			if(attackValid == true && attacking == false) {
+				//Start attacking enemies
+				//While attacking is true, the animation is playing on an enemy.  Wait for 1 enemy to be
+				//finished being attacked before moving to next one
+				attacking = true; 
+				
+				if(attackArrayCounter > 0) {
+					attackArrayCounter--; //Remove first to account for the off by one setting					
+					//At least one enemy was added to the counter
+					var _tempEnt = attackArray[attackArrayCounter];
+					
+					//Remove the entity that is being attacked from the array
+					array_delete(attackArray, attackArrayCounter, 1);
+			
+					_tempEnt.takeDamage(attributes.attackPower);
+					
+					//Put an animation script here that also turns attacking flag to false
+					attacking = false;
+
+					
 				}
 				else {
-				truestate_switch(STATES.MOVE);
+					//Done attacking
+					attackValid = false;
+					attacking = false;
 				}
 			}
+			
+			if(attackValid == false) {
+				//After finished attacking, end the state.
+				truestate_switch(STATES.END);	
+			}
+			
+			
+			
+			//if(attackValid == true) {
+			//	attributes.targetObject.takeDamage(attributes.attackPower);
+			//	attackValid = false;
+			//	//Move into square if entity was destroyed, else end turn
+			//	if(instance_exists(attributes.targetObject)) {
+			//		truestate_switch(STATES.END)	
+			//	}
+			//	else {
+			//	truestate_switch(STATES.MOVE);
+			//	}
+			//}
 
 		}break;
 	

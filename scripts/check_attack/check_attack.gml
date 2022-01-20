@@ -13,6 +13,7 @@ function check_valid_attacks(obj = self){
 	validAttacks = {
 		direct : false,
 		lunge : false,
+		slide : false,
 		ranged_projectile : false,
 		ranged_wall : false,
 	}

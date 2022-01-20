@@ -33,10 +33,10 @@ enum CORETILES
 enum ATTACK
 {
 	LUNGE, //Attacker moves directly into target from at least 1 square away
-	DIRECT, //Attacker starts near target and can move along side the target
+	DIRECT, //Attacker starts near target, AI only
+	SLIDE, //Attack starts near target and moves while also staying near target
 	RANGED_PROJECTILE, //Attacker fires a projectile into a target.  Account for piercing for depth
 	RANGED_WALL, //Attacker fires a line of attacks.  All targets in a line X long are damaged	
-	
 }
 
 enum STATES

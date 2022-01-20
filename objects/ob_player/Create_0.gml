@@ -9,7 +9,7 @@ attributes =
 	name : "Player",
 	collisionGrid : co_grid.mpGrid_collidePlayer,
 	targetObject : noone,
-	attackStyle : ATTACK.DIRECT,
+	attackStyle : ATTACK.SLIDE,
 	attackRange : 1,
 	attackPower : 1,
 	hp : 3,
