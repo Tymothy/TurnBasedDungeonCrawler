@@ -5,6 +5,9 @@ YAGNI - YOU AREN'T GONNA NEED IT
 Notes for near-future Tym:
 Working on implementing TrueState system for a game state and to be able to handle player states
 
+- Room Generation
+	-
+
 - Player Mechanics
 	- Player has 3 slots for cards (at bottom of screen)
 		- Each card can do something and has an active effect

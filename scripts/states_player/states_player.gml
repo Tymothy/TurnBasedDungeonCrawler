@@ -106,8 +106,8 @@ function state_player_idle(_event){
 										attributes.targetObject = _entity;
 										var _parOb = object_get_parent(attributes.targetObject.object_index);
 										if(_parOb == ob_par_hostile) {
-											//Entity is a hostile, attack it!
-											truestate_switch(STATES.ATTACK);
+											//Entity is a hostile, do not attempt to move into tile.
+											//TODO: Show hostile attack pattern on click
 											
 										}
 									}
