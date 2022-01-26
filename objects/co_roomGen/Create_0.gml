@@ -71,8 +71,8 @@ generateFloorPlan = function() {
 	ds_grid_set(levelGrid, _floorStruct.x, _floorStruct.y, _floorStruct);
 	//Blank slate of rooms generated.
 	goalRooms = goal_rooms();	
-	goalRooms = 5;//Hard set to test
-	var _createdRooms = 1;	//Starts at 1 as spawn room is already created.
+	//goalRooms = 12;//Hard set to test
+	createdRooms = 1;	//Starts at 1 as spawn room is already created.
 
 
 	
@@ -80,32 +80,39 @@ generateFloorPlan = function() {
 	var _x = _spawnX;
 	var _y = _spawnY;
 	
-	for(var i = 0; i < 1000 && _createdRooms < goalRooms; i++) {
+	for(var i = 0; i < 1000 && createdRooms < goalRooms; i++) {
 		//Randomize the start direction
 		var _dir = irandom(3);  //0 = East, goes counter clockwise
 		var _startX = _x; //Holds the room we started at
 		var _startY = _y;
-		//
+		
+		//If the x or y is out of bounds, try to skip it
 		switch(_dir) {
 			case 0:
 			//Search East
-				_x++;
-			break;
-			
+				if(_x < FLOOR_MAX_WIDTH - 1) {
+					_x++;
+					break;
+				}
 			case 1:
 			//Search South
+				if(_y < FLOOR_MAX_HEIGHT - 1) {
 				_y++;
-			break;
-			
+				break;
+				}
+				
 			case 2:
 			//Search West
+				if(_x > 0) {
 				_x--;
-			break;
-			
+				break;
+			}
 			case 3:
 			//Search North
+				if(_y > 0) {
 				_y--;
-			break;			
+				}
+			break;			//This is the last check, so break regardless
 		}
 		
 		var _result = generateARoom(_x, _y);
@@ -115,15 +122,23 @@ generateFloorPlan = function() {
 			//Move the pointer to the created room
 			_floorStruct = new normalRoom(_x, _y);
 			ds_grid_set(levelGrid, _floorStruct.x, _floorStruct.y, _floorStruct);
-			_createdRooms++;
+			createdRooms++;
 			_startX = _x;
 			_startY = _y;
+			
 		}
 		else {
 			//Room was not generated successfully at x and y coords
 			//Set values back to start to try again
 			_x = _startX;
 			_y = _startY;
+			//Random chance to start at the beginning
+			var _rand = irandom(5);
+			if(_rand == 0) {
+				_x = _spawnX;
+				_y = _spawnY;
+			}
+
 		}
 		
 		
@@ -139,27 +154,37 @@ generateARoom = function(_x, _y) {
 		}		
 	
 		//Check if the room already has 2 neighbors
-		//TODO: Implement checking to ensure out of bounds is not being checked
 		var _neighbors = 0;
-		var _tempRoom = levelGrid[# _x - 1, _y][$ "roomType"];
-		if(_tempRoom != ROOMTYPE.NONE) {
-			//Room is a filled cell
-			_neighbors++
+		if(_x > 1){
+			var _tempRoom = levelGrid[# _x - 1, _y][$ "roomType"];
+			if(_tempRoom != ROOMTYPE.NONE) {
+				//Room is a filled cell
+				_neighbors++
+			}
 		}
-		var _tempRoom = levelGrid[# _x + 1, _y][$ "roomType"];
-		if(_tempRoom != ROOMTYPE.NONE) {
-			//Room is a filled cell
-			_neighbors++
+		
+		if(_x < FLOOR_MAX_WIDTH - 1) {
+			var _tempRoom = levelGrid[# _x + 1, _y][$ "roomType"];
+			if(_tempRoom != ROOMTYPE.NONE) {
+				//Room is a filled cell
+				_neighbors++
+			}
 		}
-		var _tempRoom = levelGrid[# _x, _y - 1][$ "roomType"];
-		if(_tempRoom != ROOMTYPE.NONE) {
-			//Room is a filled cell
-			_neighbors++
+		
+		if(_y > 1) {
+			var _tempRoom = levelGrid[# _x, _y - 1][$ "roomType"];
+			if(_tempRoom != ROOMTYPE.NONE) {
+				//Room is a filled cell
+				_neighbors++
+			}
 		}
-		var _tempRoom = levelGrid[# _x, _y + 1][$ "roomType"];
-		if(_tempRoom != ROOMTYPE.NONE) {
-			//Room is a filled cell
-			_neighbors++
+		
+		if(_y < FLOOR_MAX_HEIGHT - 1) {
+			var _tempRoom = levelGrid[# _x, _y + 1][$ "roomType"];
+			if(_tempRoom != ROOMTYPE.NONE) {
+				//Room is a filled cell
+				_neighbors++
+			}
 		}
 		
 		if(_neighbors > 2) {
@@ -180,6 +205,16 @@ generateARoom = function(_x, _y) {
 	//This should never occur, but implemented as a fail safe
 	return false;
 }
+
+//Floor plan is very straight, with no branches.
+//TODO: Come back and revise this to make more branches and not so linear
+//BoI uses a queue and then iterates over the entire queue.  Currently we just create a snake
 generateFloorPlan();
+
+//Validate floor plan
+while(createdRooms != goalRooms) {
+	show_debug_message("Not enough rooms created.  Retrying...");
+	generateFloorPlan();	
+}
 
 if(LOGGING) show_debug_message("Floor of rooms generated.");
