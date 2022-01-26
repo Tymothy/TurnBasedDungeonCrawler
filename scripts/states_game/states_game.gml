@@ -6,7 +6,7 @@ function state_game_setup(_event){
 		case TRUESTATE_NEW:
 		{
 			//Run the packed room generation to generate the game room
-			instance_create_layer(x, y, "la_controllers",co_packedRoomManager);
+			instance_create_layer(x, y, "la_controllers",co_roomGen);
 
 			//All rooms are created, create the collision grid
 			instance_create_layer(x,y, "la_controllers", co_grid);

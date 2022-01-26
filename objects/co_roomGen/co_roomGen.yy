@@ -27,7 +27,7 @@
     "path": "folders/Controllers/Game Control/Game Generation.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_packedRoomManager",
+  "name": "co_roomGen",
   "tags": [],
   "resourceType": "GMObject",
 }

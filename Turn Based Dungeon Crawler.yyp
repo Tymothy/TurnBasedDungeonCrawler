@@ -7,7 +7,7 @@
     {"id":{"name":"GMLive_new","path":"scripts/GMLive_new/GMLive_new.yy",},"order":2,},
     {"id":{"name":"s_tile_ui","path":"sprites/s_tile_ui/s_tile_ui.yy",},"order":3,},
     {"id":{"name":"rm_ex_normal_1","path":"rooms/rm_ex_normal_1/rm_ex_normal_1.yy",},"order":0,},
-    {"id":{"name":"co_packedRoomManager","path":"objects/co_packedRoomManager/co_packedRoomManager.yy",},"order":1,},
+    {"id":{"name":"co_roomGen","path":"objects/co_roomGen/co_roomGen.yy",},"order":1,},
     {"id":{"name":"gridCollision","path":"scripts/gridCollision/gridCollision.yy",},"order":2,},
     {"id":{"name":"co_grid","path":"objects/co_grid/co_grid.yy",},"order":4,},
     {"id":{"name":"rm_ex_spawn_1","path":"rooms/rm_ex_spawn_1/rm_ex_spawn_1.yy",},"order":0,},

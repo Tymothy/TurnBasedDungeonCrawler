@@ -4,7 +4,7 @@
 //global.roomTilesList = ds_list_create();
 //All rooms should go on the same tilemap
 var _xOff = 1;
-var _yOff = 6; //How many tiles down should the game area be
+var _yOff = 7; //How many tiles down should the game area be
 room_pack_reuse_tilemaps = true;
 //room_pack_store_tilemaps(global.roomTilesList);
 
@@ -46,21 +46,22 @@ Minimap (used for debugging initally)
  - Cells that have paths between them should have a blue door
 
 */
-lgWidth = 9;
-lgHeight = 9;
 
 //Init the level grid
-levelGrid = ds_grid_create(lgWidth, lgHeight);
+levelGrid = ds_grid_create(FLOOR_MAX_HEIGHT, FLOOR_MAX_WIDTH);
 
 //Fill the grid with "empty" rooms (Solid earth/no rooms)
 var _floorStruct = new floorRoom(0,0); //Init the floor struct
-for(var i = 0; i < lgWidth; i++) {
-	for(var j = 0; j < lgHeight; j++) {
+for(var i = 0; i < FLOOR_MAX_WIDTH; i++) {
+	for(var j = 0; j < FLOOR_MAX_HEIGHT; j++) {
 		_floorStruct = new floorRoom(i, j);
 		ds_grid_set(levelGrid, i, j, _floorStruct);
 	}
 }
 
-_floorStruct = new spawnRoom(5, 5);
-ds_grid_set(levelGrid, 5, 5, _floorStruct);
+_floorStruct = new spawnRoom(floor(FLOOR_MAX_WIDTH / 2), floor(FLOOR_MAX_HEIGHT / 2));
+ds_grid_set(levelGrid, _floorStruct.x, _floorStruct.y, _floorStruct);
+//Blank slate of rooms generated.
+
+
 if(LOGGING) show_debug_message("Floor of rooms generated.");
