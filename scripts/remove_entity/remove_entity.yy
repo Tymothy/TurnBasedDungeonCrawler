@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Entity Handling",
+    "path": "folders/Scripts/Entity Handling.yy",
   },
   "resourceVersion": "1.0",
   "name": "remove_entity",

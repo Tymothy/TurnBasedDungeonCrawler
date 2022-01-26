@@ -29,5 +29,12 @@ function spawnRoom (_x, _y) constructor {
 	
 	roomType = ROOMTYPE.SPAWN;
 	description = "Spawn Room";
+}
+
+function normalRoom (_x, _y) constructor {
+	x = _x;
+	y = _y;
 	
+	roomType = ROOMTYPE.NORMAL;
+	description = "Normal Room";
 }
