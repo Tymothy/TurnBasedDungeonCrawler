@@ -91,6 +91,7 @@
     {"id":{"name":"display_scripts","path":"scripts/display_scripts/display_scripts.yy",},"order":0,},
     {"id":{"name":"sp_marker_tile_outline","path":"sprites/sp_marker_tile_outline/sp_marker_tile_outline.yy",},"order":1,},
     {"id":{"name":"GMLiveAPI","path":"scripts/GMLiveAPI/GMLiveAPI.yy",},"order":3,},
+    {"id":{"name":"floorConstructors","path":"scripts/floorConstructors/floorConstructors.yy",},"order":3,},
     {"id":{"name":"GMLive_http","path":"scripts/GMLive_http/GMLive_http.yy",},"order":0,},
     {"id":{"name":"co_spawnManager","path":"objects/co_spawnManager/co_spawnManager.yy",},"order":0,},
     {"id":{"name":"truestate_set_default","path":"scripts/truestate_set_default/truestate_set_default.yy",},"order":5,},

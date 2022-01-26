@@ -45,8 +45,12 @@ Minimap (used for debugging initally)
  - Each cell in minimap is 1/2 the size of a normal tile.  This allows minimap to fit into a 4x4 area
  - Cells that have paths between them should have a blue door
 
-
-
-
-
 */
+lgWidth = 8;
+lgHeight = 8;
+
+//Init the level grid
+levelGrid = ds_grid_create(lgWidth, lgHeight);
+
+//Fill the grid with "empty" rooms (Solid earth/no rooms)
+
