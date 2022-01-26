@@ -15,7 +15,7 @@ function state_game_setup(_event){
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
 			
 			//Create the turn order controller
-			instance_create_layer(x, y, "la_controllers", co_turnOrder)
+			instance_create_layer(x, y, "la_controllers", co_turnOrder);
 			
 			//Create the inital ai turn order.
 			//TODO: Will need to account for multiple rooms in future
