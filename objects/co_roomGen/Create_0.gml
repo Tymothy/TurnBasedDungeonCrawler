@@ -3,7 +3,7 @@
 //Configure loader
 //global.roomTilesList = ds_list_create();
 //All rooms should go on the same tilemap
-var _xOff = 1;
+var _xOff = 0;
 var _yOff = 7; //How many tiles down should the game area be
 room_pack_reuse_tilemaps = true;
 //room_pack_store_tilemaps(global.roomTilesList);

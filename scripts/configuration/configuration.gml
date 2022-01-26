@@ -1,7 +1,7 @@
 //Configuring
 
 //How many tiles should the game target to display on screen. 
-#macro DESIGN_TILES_WIDE 13 
+#macro DESIGN_TILES_WIDE 11 
 
 //Size of the tiles in game, displayed in pixels.  Sprites do not adjust to tile size
 #macro TILE_SIZE 32 
