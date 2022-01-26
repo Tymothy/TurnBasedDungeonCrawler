@@ -6,13 +6,12 @@ function <NAME>(_var1, _var2, _var3...) {
 //CODE
 }
 */
-function floorRoom(_x, _y, _id) constructor {
+function floorRoom(_x, _y) constructor {
 	//Create a struct for room in the level
 	
 	//X and Y are the floorCell coords
 	x = _x;
 	y = _y;
-	id = _id;
 	//Sets where doors are valid at
 	doorUp = false; 
 	doorRight = false; 
@@ -21,5 +20,14 @@ function floorRoom(_x, _y, _id) constructor {
 	
 	//Room Type
 	roomType = ROOMTYPE.NONE;
-	_description = "No Room"; //Used to track the name of the room, mainly for debugging	
+	description = "No Room"; //Used to track the name of the room, mainly for debugging	
+}
+
+function spawnRoom (_x, _y) constructor {
+	x = _x;
+	y = _y;
+	
+	roomType = ROOMTYPE.SPAWN;
+	description = "Spawn Room";
+	
 }

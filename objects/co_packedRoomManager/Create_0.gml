@@ -46,11 +46,21 @@ Minimap (used for debugging initally)
  - Cells that have paths between them should have a blue door
 
 */
-lgWidth = 8;
-lgHeight = 8;
+lgWidth = 9;
+lgHeight = 9;
 
 //Init the level grid
 levelGrid = ds_grid_create(lgWidth, lgHeight);
 
 //Fill the grid with "empty" rooms (Solid earth/no rooms)
+var _floorStruct = new floorRoom(0,0); //Init the floor struct
+for(var i = 0; i < lgWidth; i++) {
+	for(var j = 0; j < lgHeight; j++) {
+		_floorStruct = new floorRoom(i, j);
+		ds_grid_set(levelGrid, i, j, _floorStruct);
+	}
+}
 
+_floorStruct = new spawnRoom(5, 5);
+ds_grid_set(levelGrid, 5, 5, _floorStruct);
+if(LOGGING) show_debug_message("Floor of rooms generated.");
