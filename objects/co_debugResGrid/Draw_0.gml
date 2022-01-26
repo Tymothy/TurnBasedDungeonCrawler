@@ -5,7 +5,7 @@ var str;
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_set_font(fo_debug);
+draw_set_font(fo_debugSmall);
 
 for (var i = 0; i < rows; i++)
 {

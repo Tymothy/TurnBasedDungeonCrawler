@@ -9,7 +9,7 @@ for(var i = 0; i < room_height / TILE_SIZE; i++)
 		draw_set_color(c_black);
 		draw_set_valign(fa_middle);
 		draw_set_halign(fa_center);
-		draw_set_font(fo_debug);
+		draw_set_font(fo_debugSmall);
 		var _coordsStr = string(i) + "," + string(j);
 		
 		//Only check for grid if co_grid exists

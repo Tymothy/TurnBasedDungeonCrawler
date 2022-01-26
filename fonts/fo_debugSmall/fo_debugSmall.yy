@@ -132,7 +132,7 @@
     "path": "folders/Fonts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "fo_debug",
+  "name": "fo_debugSmall",
   "tags": [],
   "resourceType": "GMFont",
 }

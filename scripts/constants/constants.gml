@@ -23,7 +23,7 @@ enum CORETILES
 	PLACEHOLDER_14 = 14, //Dark Magenta/Dark Pink
 	PLACEHOLDER_15 = 15, //Dark Red
 	PLACEHOLDER_16 = 16, //Dark Yellow
-	PLACEHOLDER_17 = 17, //Dark Purple
+	OBSTACLE_LOW = 17, //Dark Purple - Used for pits, or walls up to waist height
 	PLACEHOLDER_18 = 18, //Dark Green
 	PLACEHOLDER_19 = 19 //Dark Orange/Dark Brown
 }
