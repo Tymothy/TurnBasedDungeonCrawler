@@ -92,32 +92,42 @@ function state_player_idle(_event){
 						if(_qt) show_debug_message("TOUCH_STATE Change: Release");	
 							if(abs(to_grid(x) - gridX) <= attributes.moveSpeed && abs(to_grid(y) - gridY) <= attributes.moveSpeed)
 							{
+								var _move = true;
 								//Touch has occurred within players move space, attempt to move there/interact with tile
 								if(gridX == to_grid(x) && gridY == to_grid(y)) {
 									//Touch was released on player
 									//Do not move tiles
+									_move = false;
 								}
-								else {
 									//Check if tile is available to move to
-									var _entity = check_entity(gridX, gridY);
-									if(_entity != false) {
-										//entity is in grid square.  can't move into it
-										//Possibly could act on it?
-										attributes.targetObject = _entity;
-										var _parOb = object_get_parent(attributes.targetObject.object_index);
-										if(_parOb == ob_par_hostile) {
-											//Entity is a hostile, do not attempt to move into tile.
-											//TODO: Show hostile attack pattern on click
+																
+								var _entity = check_entity(gridX, gridY);
+								
+								if(_entity != false) {
+									//entity is in grid square.  can't move into it
+									//Possibly could act on it?
+									_move = false;
+									attributes.targetObject = _entity;
+									var _parOb = object_get_parent(attributes.targetObject.object_index);
+									if(_parOb == ob_par_hostile) {
+										//Entity is a hostile, do not attempt to move into tile.
+										//TODO: Show hostile attack pattern on click
 											
-										}
 									}
-									else {
-									//Tile is available to move to.
-									//Allow player to move to tile
+								}
+									
+								//Check if tile has collision restricting movement
+								var _collide = co_grid.tileGrid[# gridX, gridY][$ "_collidePlayer"];
+								if(_collide == true) {
+									_move = false;
+										
+								}
+								if(_move == true) {
+									//If tile is not restricted, allow move.
 									truestate_switch(STATES.MOVE);
 									}
 					
-								}	
+									
 							}
 					break;
 				}
