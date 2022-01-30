@@ -8,16 +8,24 @@ var _yOff = 7; //How many tiles down should the game area be
 room_pack_reuse_tilemaps = true;
 //room_pack_store_tilemaps(global.roomTilesList);
 
+
+roomMapJson = game_rooms(); //Generated from rooms starting with rm_ex
+
+//var _name = ds_map_find_first(roomMapJson);
+//Create a list of all rooms
+
+
+//room_pack_load_map(roomMapJson);
+room_pack_load_map(roomMapJson[?"rm_ex_spawn_1"], TILE_SIZE * _xOff, TILE_SIZE * _yOff, room_pack_flag_tiles);
+
 //Create the spawn room first
-
-
 if(LOGGING) show_debug_message("Attempting to create spawn room");
-var _dir = filename_dir("Game Rooms\\Spawn\\spawn_1.json");
-if(LOGGING) show_debug_message("Directory: " + string(_dir));
+//var _dir = filename_dir("Game Rooms\\Spawn\\spawn_1.json");
+//if(LOGGING) show_debug_message("Directory: " + string(_dir));
 
-var _spawnResult = room_pack_load_file("Game Rooms\\Spawn\\spawn_1.json", TILE_SIZE * _xOff, TILE_SIZE * _yOff, room_pack_flag_tiles);
-if(LOGGING && _spawnResult) show_debug_message("Spawn room created successfully");
-if(LOGGING && !_spawnResult) show_debug_message("ERROR: SPAWN ROOM FAILED CREATION");
+//var _spawnResult = room_pack_load_file("Game Rooms\\Spawn\\spawn_1.json", TILE_SIZE * _xOff, TILE_SIZE * _yOff, room_pack_flag_tiles);
+//if(LOGGING && _spawnResult) show_debug_message("Spawn room created successfully");
+//if(LOGGING && !_spawnResult) show_debug_message("ERROR: SPAWN ROOM FAILED CREATION");
 
 
 /*

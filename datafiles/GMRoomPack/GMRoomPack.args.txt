@@ -1,0 +1,3 @@
+D:/Game Dev/GMS2 Projects Source Code/TurnBasedDungeonCrawler/src/TurnBasedDungeonCrawler/rooms/rm_ex*
+D:/Game Dev/GMS2 Projects Source Code/TurnBasedDungeonCrawler/src/TurnBasedDungeonCrawler/scripts/game_rooms/game_rooms.gml
+--prettyprint
