@@ -5,6 +5,7 @@
 
 //Size of the tiles in game, displayed in pixels.  Sprites do not adjust to tile size
 #macro TILE_SIZE 32 
+#macro ROOM_SIZE 11
 
 //The maximum size a floor of rooms can be
 #macro FLOOR_MAX_WIDTH 9

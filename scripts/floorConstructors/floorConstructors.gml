@@ -20,7 +20,8 @@ function floorRoom(_x, _y) constructor {
 	
 	//Room Type
 	roomType = ROOMTYPE.NONE;
-	description = "No Room"; //Used to track the name of the room, mainly for debugging	
+	description = "No Room"; //Used to track the name of the room, mainly for debugging
+	assignedRoom = "None";
 }
 
 function spawnRoom (_x, _y) constructor {

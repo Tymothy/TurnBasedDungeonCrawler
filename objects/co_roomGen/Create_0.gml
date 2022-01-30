@@ -2,30 +2,7 @@
 
 //Configure loader
 //global.roomTilesList = ds_list_create();
-//All rooms should go on the same tilemap
-var _xOff = 0;
-var _yOff = 7; //How many tiles down should the game area be
-room_pack_reuse_tilemaps = true;
-//room_pack_store_tilemaps(global.roomTilesList);
 
-
-roomMapJson = game_rooms(); //Generated from rooms starting with rm_ex
-
-//var _name = ds_map_find_first(roomMapJson);
-//Create a list of all rooms
-
-
-//room_pack_load_map(roomMapJson);
-room_pack_load_map(roomMapJson[?"rm_ex_spawn_1"], TILE_SIZE * _xOff, TILE_SIZE * _yOff, room_pack_flag_tiles);
-
-//Create the spawn room first
-if(LOGGING) show_debug_message("Attempting to create spawn room");
-//var _dir = filename_dir("Game Rooms\\Spawn\\spawn_1.json");
-//if(LOGGING) show_debug_message("Directory: " + string(_dir));
-
-//var _spawnResult = room_pack_load_file("Game Rooms\\Spawn\\spawn_1.json", TILE_SIZE * _xOff, TILE_SIZE * _yOff, room_pack_flag_tiles);
-//if(LOGGING && _spawnResult) show_debug_message("Spawn room created successfully");
-//if(LOGGING && !_spawnResult) show_debug_message("ERROR: SPAWN ROOM FAILED CREATION");
 
 
 /*
@@ -226,3 +203,84 @@ while(createdRooms != goalRooms) {
 }
 
 if(LOGGING) show_debug_message("Floor of rooms generated.");
+
+//All rooms should go on the same tilemap
+var _xOff = 0;
+var _yOff = 7; //How many tiles down should the game area be
+room_pack_reuse_tilemaps = true;
+//room_pack_store_tilemaps(global.roomTilesList);
+
+
+roomMapJson = game_rooms(); //Generated from rooms starting with rm_ex
+
+//var _name = ds_map_find_first(roomMapJson);
+//Create a list of all rooms
+
+//Find the spawn room location
+
+//Create room type array
+
+	var _w = ds_grid_width(levelGrid);
+	var _h = ds_grid_height(levelGrid);
+
+//Fill arrays with the keys of each type of room
+var _size = ds_map_size(roomMapJson);
+var _key = ds_map_find_first(roomMapJson);
+
+spawnRooms = array_create(1, 0);
+normalRooms = array_create(1, 0);
+
+for(var i = 0; i < _size; i++){
+	//Iterate through map, add keys to respective arrays
+	if(string_count("spawn", string(_key)) > 0) {
+		//Checked key is a spawn room
+		array_insert(spawnRooms, 0, _key);
+	}
+	
+	if(string_count("normal", string(_key)) > 0) {
+		//Checked key is a normal room
+		array_insert(normalRooms, 0, _key);
+	}
+	_key = ds_map_find_next(roomMapJson, _key);
+}
+
+//Remove the 0s from the arrays to make sure arrays only contain the keys
+array_pop(spawnRooms);
+array_pop(normalRooms);
+
+
+//Find the spawn room to create the spawn room there
+	for(var i = 0; i < _w; i++) {
+		for(var j = 0; j < _h; j++) {
+			if(levelGrid[# i, j][$ "roomType"] == ROOMTYPE.SPAWN) {
+				var _spawnX = i;
+				var _spawnY = j;
+			}
+		}
+	}
+	
+	//Create the spawn room at the spawn location
+room_pack_load_map(roomMapJson[?"rm_ex_spawn_1"], TILE_SIZE * ROOM_SIZE * _spawnX, TILE_SIZE * ROOM_SIZE * _spawnY, room_pack_flag_tiles);
+var _rand = irandom_range(0, array_length(normalRooms) - 1);
+_randRoom = string(normalRooms[_rand]);
+//TESTING NORMAL GEN, DELETE ME
+room_pack_load_map(roomMapJson[?_randRoom], TILE_SIZE * ROOM_SIZE * _spawnX, TILE_SIZE * ROOM_SIZE * (_spawnY + 1), room_pack_flag_tiles);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
