@@ -53,6 +53,7 @@
     {"id":{"name":"truestate_state_exists","path":"scripts/truestate_state_exists/truestate_state_exists.yy",},"order":4,},
     {"id":{"name":"fo_debugSmall","path":"fonts/fo_debugSmall/fo_debugSmall.yy",},"order":0,},
     {"id":{"name":"ob_enemy_slime","path":"objects/ob_enemy_slime/ob_enemy_slime.yy",},"order":0,},
+    {"id":{"name":"Script64","path":"scripts/Script64/Script64.yy",},"order":17,},
     {"id":{"name":"co_display","path":"objects/co_display/co_display.yy",},"order":1,},
     {"id":{"name":"remove_entity","path":"scripts/remove_entity/remove_entity.yy",},"order":2,},
     {"id":{"name":"truestate_get_name","path":"scripts/truestate_get_name/truestate_get_name.yy",},"order":2,},
