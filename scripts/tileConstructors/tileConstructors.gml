@@ -43,6 +43,18 @@ function SolidWall(_x, _y, _id) : Tile() constructor {
 	_description = "Solid Wall";
 }
 
+function OutOfPlay(_x, _y, _id) : Tile() constructor {
+	x = _x;
+	y = _y;
+	id = _id;
+	_collidePlayer = true; //Prevents player from pathing
+	_collideOther = true; //Prevents enemies from pathing
+	_collideProjectile = true; //Used for pits, water, lava, small objects like chests.  Allows projectiles over		
+	_entityInTile = false;
+	_aiSpawnable = false;
+	_description = "Solid Wall";
+}
+
 function DoorWall(_x, _y, _id) : Tile() constructor {
 	x = _x;
 	y = _y;

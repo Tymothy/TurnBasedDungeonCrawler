@@ -77,7 +77,7 @@ function spawn_ai_test(_obj, _spawnNum) {
 				//If spawn point is still valid, spawn ai.
 				if(_spawnValid == true) {
 					instance_create_layer(from_grid(_randX), from_grid(_randY), "la_ai", _obj);
-					if(LOGGING) show_debug_message("Spawned AI " + string(_obj.attributes.aiName) + " at " + coords_string(_randX, _randY))
+					if(LOGGING) show_debug_message("Spawned AI " + string(_obj.attributes.aiName) + " at " + coords_string(_randX, _randY) + " after " + string(i) + " attempts");
 					_spawns++;
 				}
 				

@@ -14,10 +14,10 @@ else
 	tileGrid = ds_grid_create(_gridW + 1, _gridH + 1);
 	
 	//Create the columns
-	for(var i = 0; i < room_height / TILE_SIZE; i++)
+	for(var i = 0; i < room_height / TILE_SIZE + 1; i++)
 	{
 		//Create all rows in a column before moving to next column
-		for(var j = 0; j < room_width / TILE_SIZE; j++)
+		for(var j = 0; j < room_width / TILE_SIZE + 1; j++)
 		{
 			//Find what kind of tile is present at X,Y
 			var _coreTile = tilemap_get_at_pixel(_tileID, i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2);
@@ -28,28 +28,32 @@ else
 			switch(_coreTile) //TODO: Can be improved by having each case reference a master list
 			{
 				case CORETILES.NORMAL: //Normal floor - light gray
-					tileStruct = new NormalFloor(i, j, _coreTile)
-				break;
+					tileStruct = new NormalFloor(i, j, _coreTile);
+					break;
 				
 				case 2:
 					
-				break;
+					break;
 				
 				case CORETILES.DOOR_FLOOR: //Door Floor - light blue
 					
-				break;
+					break;
 				
 				case 8: //Spawn point - lime green
-					tileStruct = new NormalFloor(i, j, _coreTile)
-				break;
+					tileStruct = new NormalFloor(i, j, _coreTile);
+					break;
 				
 				case 11: //Solid Wall - dark gray
-					tileStruct = new SolidWall(i, j, _coreTile)
-				break;
+					tileStruct = new SolidWall(i, j, _coreTile);
+					break;
 				
 				case CORETILES.DOOR_WALL:
-					tileStruct = new DoorWall(i, j, _coreTile)
-				break;
+					tileStruct = new DoorWall(i, j, _coreTile);
+					break;
+				
+				default:
+					tileStruct = new OutOfPlay(i, j, _coreTile);
+					break;
 			}
 			ds_grid_set(tileGrid, i, j, tileStruct);
 			
