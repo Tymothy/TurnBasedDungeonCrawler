@@ -23,7 +23,7 @@ else
 			var _coreTile = tilemap_get_at_pixel(_tileID, i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2);
 			
 			//Needed otherwise Gamemaker will crash.  This is reassinged in the switch statement below
-			tileStruct = new SolidWall(i, j, _coreTile);
+			tileStruct = new OutOfPlay(i, j, _coreTile);
 			//Generate the struct for the tile and put into ds grid
 			switch(_coreTile) //TODO: Can be improved by having each case reference a master list
 			{
