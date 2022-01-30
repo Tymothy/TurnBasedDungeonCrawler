@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Script64",
+  "name": "array_rand_value",
   "tags": [],
   "resourceType": "GMScript",
 }

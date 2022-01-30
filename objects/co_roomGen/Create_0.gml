@@ -248,13 +248,11 @@ array_pop(spawnRooms);
 array_pop(normalRooms);
 
 //Run through level grid and start placing the rooms as they are fit
-	var _w = ds_grid_width(levelGrid);
-	var _h = ds_grid_height(levelGrid);
-	
-	for(var i = 0; i < _w; i++) {
-		for(var j = 0; j < _h; j++) {
+	for(var i = 0; i < ds_grid_width(levelGrid); i++) {
+		for(var j = 0; j < ds_grid_height(levelGrid); j++) {
 			var _roomType = levelGrid[# i, j][$ "roomType"];
 			
+			//Get the DS Map for the current room to generate it, if it's a valid room
 			var _randRoom = noone;
 			switch(_roomType) {
 				case ROOMTYPE.SPAWN:
@@ -272,30 +270,6 @@ array_pop(normalRooms);
 			}
 		}
 	}
-
-
-//Find the spawn room to create the spawn room there
-	for(var i = 0; i < _w; i++) {
-		for(var j = 0; j < _h; j++) {
-			if(levelGrid[# i, j][$ "roomType"] == ROOMTYPE.SPAWN) {
-				var _spawnX = i;
-				var _spawnY = j;
-			}
-		}
-	}
-	
-	//Create the spawn room at the spawn location
-room_pack_load_map(roomMapJson[?"rm_ex_spawn_1"], TILE_SIZE * ROOM_SIZE * _spawnX, TILE_SIZE * ROOM_SIZE * _spawnY, room_pack_flag_tiles);
-
-
-
-var _rand = irandom_range(0, array_length(normalRooms) - 1);
-_randRoom = string(normalRooms[_rand]);
-
-room_pack_load_map(roomMapJson[?_randRoom], TILE_SIZE * ROOM_SIZE * _spawnX, TILE_SIZE * ROOM_SIZE * (_spawnY + 1), room_pack_flag_tiles);
-
-
-
 
 
 
