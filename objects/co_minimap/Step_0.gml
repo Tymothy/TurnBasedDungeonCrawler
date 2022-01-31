@@ -1,5 +1,5 @@
 /// @description Check if minimap needs refreshed
-if(!surface_exists(mmSurf)) {
+if(!surface_exists(mmSurf) && waitForLevelGen == false) {
 	//If surface was somehow lost, recreate the surface
 	minimapRefresh = true;
 }

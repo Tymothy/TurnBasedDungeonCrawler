@@ -45,10 +45,12 @@ function truestate_switch() {
 	}
 
 	//Push to stack if not locked.
-	if(!truestate_stack_locked && ds_stack_top(truestate_stack) != truestate_next_state) 
+	if(!truestate_stack_locked && ds_stack_top(truestate_stack) != truestate_next_state) {
 	  ds_stack_push(truestate_stack,truestate_next_state);
-	else
+	}
+	else {
 		truestate_stack_locked=false; //Reset the lock on the stack.
+	}
 
 	if(argument_count>1)
 	  truestate_switch_locked=argument[1];

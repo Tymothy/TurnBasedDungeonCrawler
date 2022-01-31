@@ -1,4 +1,39 @@
 //Scripts for the game state
+function state_game_inactive(_event){
+	switch(_event)
+	{
+		//NEW---------------------------------------
+		case TRUESTATE_NEW:
+		{
+			//This code will run once when the state is brand new.
+			//truestate_switch(STATES.GAME_SETUP);	
+		}break;
+	
+		//STEP---------------------------------------
+		case TRUESTATE_STEP:
+		{
+			//If in the game room, start setting up the game room
+			
+			if(room == rm_game) {
+				truestate_switch(STATES.GAME_SETUP);
+			}
+			
+		}break;
+	
+		//DRAW---------------------------------------
+		case TRUESTATE_DRAW:
+		{
+			//And this code will be exeucted during the draw event
+		}break;
+	
+		//FINAL---------------------------------------
+		case TRUESTATE_FINAL:
+		{
+			//This code will run once right before switching to a new state.
+		}break;
+	}
+
+}
 function state_game_setup(_event){
 	switch(_event)
 	{
@@ -362,36 +397,6 @@ function state_game_paused(_event){
 
 }
 
-function state_game_inactive(_event){
-	switch(_event)
-	{
-		//NEW---------------------------------------
-		case TRUESTATE_NEW:
-		{
-			//This code will run once when the state is brand new.
-		}break;
-	
-		//STEP---------------------------------------
-		case TRUESTATE_STEP:
-		{
-			//If in the game room, start setting up the game room
-			if(room == rm_game) truestate_switch(STATES.SETUP);	
-			
-		}break;
-	
-		//DRAW---------------------------------------
-		case TRUESTATE_DRAW:
-		{
-			//And this code will be exeucted during the draw event
-		}break;
-	
-		//FINAL---------------------------------------
-		case TRUESTATE_FINAL:
-		{
-			//This code will run once right before switching to a new state.
-		}break;
-	}
 
-}
 
 

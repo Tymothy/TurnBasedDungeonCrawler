@@ -2,7 +2,6 @@
 /// Script that executes before all other logic has been performed for the object.
 /// Will perform the ACTUAL state switching, and also resets timers.
 function truestate_begin_step() {
-
 	var _is_new = false;
 	truestate_switch_locked=false; //Release the lock
 

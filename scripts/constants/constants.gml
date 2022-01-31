@@ -48,7 +48,8 @@ enum ATTACK
 enum STATES
 {
 	//Game States
-	SETUP,
+	INACTIVE,
+	GAME_SETUP,
 	PLAYER_STARTING,
 	PLAYER_ACTIVE,
 	PLAYER_ENDING,
@@ -57,7 +58,6 @@ enum STATES
 	AI_ENDING,
 	TURN_END,
 	PAUSED,
-	INACTIVE,
 	
 	//Player States
 	WAIT,

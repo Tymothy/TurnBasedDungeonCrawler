@@ -1,7 +1,7 @@
 /// @description Draw Minimap
 
 
-if(minimapRefresh == true) {
+if(minimapRefresh == true && waitForLevelGen == false) {
 	//Refresh the minimap when changes are in
 	minimapRefresh = false;
 	if(!surface_exists(mmSurf)) {
@@ -14,7 +14,7 @@ if(minimapRefresh == true) {
 	//Draw a standard room for all rooms
 	var _frWidth = minimapWidth * TILE_SIZE / FLOOR_MAX_WIDTH;
 	var _frHeight = minimapHeight * TILE_SIZE / FLOOR_MAX_HEIGHT;
-	
+
 	//Get the height for each cell
 	for(var i = 0; i < FLOOR_MAX_WIDTH; i++) {
 		for(var j = 0; j < FLOOR_MAX_HEIGHT; j++) {
@@ -35,4 +35,6 @@ if(minimapRefresh == true) {
 }
 
 //Always draw the surface
-draw_surface(mmSurf, x1, y1);
+if(surface_exists(mmSurf)){
+	draw_surface(mmSurf, x1, y1);
+}
