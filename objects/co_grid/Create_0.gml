@@ -77,3 +77,8 @@ mp_forbid_cells(co_grid.mpGrid_collidePlayer, "_collidePlayer");
 mp_forbid_cells(co_grid.mpGrid_collideOther, "_collideOther");
 mp_forbid_cells(co_grid.mpGrid_collideProjectile, "_collideProjectile");
 mp_forbid_cells(co_grid.mpGrid_entity, "_entityInTile");
+
+open_door = function(_x, _y) {
+	tileStruct = new DoorOpen(_x, _y);
+	ds_grid_set(tileGrid, _x, _y, tileStruct);
+}

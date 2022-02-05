@@ -66,3 +66,14 @@ function DoorWall(_x, _y, _id) : Tile() constructor {
 	_aiSpawnable = false;
 	_description = "Door Wall";
 }
+
+function DoorOpen(_x, _y) : Tile() constructor {
+	x = _x;
+	y = _y;
+	_collidePlayer = false; //Prevents player from pathing
+	_collideOther = true; //Prevents enemies from pathing
+	_collideProjectile = true; //Used for pits, water, lava, small objects like chests.  Allows projectiles over		
+	_entityInTile = false;
+	_aiSpawnable = false;
+	_description = "Open Door";
+}
