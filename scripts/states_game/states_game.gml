@@ -46,6 +46,9 @@ function state_game_setup(_event){
 			//All rooms are created, create the collision grid
 			instance_create_layer(x,y, "la_controllers", co_grid);
 
+			//Fill the rooms with content
+			instance_create_layer(x, y, "la_controllers", co_fillRooms);
+			
 			//Spawn entities in game room, including player
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
 			
