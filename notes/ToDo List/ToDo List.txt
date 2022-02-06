@@ -1,9 +1,6 @@
 KISS - KEEP IT SIMPLE STUPID
 YAGNI - YOU AREN'T GONNA NEED IT
 
-BUG:
-YYC no longer compiling after door changes.  Probably something in co_fillRooms
-Maybe it's within the check_grid script?
 
 Short-Term TODO:
 - When character enters a door, automatically move character to next room

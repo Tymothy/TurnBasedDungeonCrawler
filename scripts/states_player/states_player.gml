@@ -95,16 +95,23 @@ function state_player_idle(_event){
 						//Check entity clicked on
 						var _entity = check_entity(gridX, gridY);
 						if(_entity != false) {
-							//entity is in grid square.  can't move into it
+							//entity is in grid square.  Can we move onto it?
+							
 							//Possibly could act on it?
-							_move = false;
+							
 							attributes.targetObject = _entity;
 							var _parOb = object_get_parent(attributes.targetObject.object_index);
-							if(_parOb == ob_par_hostile) {
-								//Entity is a hostile, do not attempt to move into tile.
-								//TODO: Show hostile attack pattern on click
-											
+							
+							switch(_parOb) {
+								case ob_par_hostile: 
+									_move = false;
+									break;
+									
+								case ob_par_environment:
+									break;
+								
 							}
+							
 						}
 						
 						//Check if click is on self

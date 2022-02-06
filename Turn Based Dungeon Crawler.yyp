@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"states_door","path":"scripts/states_door/states_door.yy",},"order":3,},
     {"id":{"name":"ob_delta","path":"objects/ob_delta/ob_delta.yy",},"order":3,},
     {"id":{"name":"co_blank","path":"objects/co_blank/co_blank.yy",},"order":0,},
     {"id":{"name":"co_camera","path":"objects/co_camera/co_camera.yy",},"order":0,},
@@ -56,6 +57,7 @@
     {"id":{"name":"ob_enemy_slime","path":"objects/ob_enemy_slime/ob_enemy_slime.yy",},"order":0,},
     {"id":{"name":"array_rand_value","path":"scripts/array_rand_value/array_rand_value.yy",},"order":17,},
     {"id":{"name":"co_display","path":"objects/co_display/co_display.yy",},"order":1,},
+    {"id":{"name":"ob_par_environment","path":"objects/ob_par_environment/ob_par_environment.yy",},"order":1,},
     {"id":{"name":"remove_entity","path":"scripts/remove_entity/remove_entity.yy",},"order":2,},
     {"id":{"name":"check_grid","path":"scripts/check_grid/check_grid.yy",},"order":18,},
     {"id":{"name":"truestate_get_name","path":"scripts/truestate_get_name/truestate_get_name.yy",},"order":2,},
@@ -195,7 +197,7 @@
     {"folderPath":"folders/Scripts/State Scripts/Game State Scripts.yy","order":1,"resourceVersion":"1.0","name":"Game State Scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Entities/AI.yy","order":2,"resourceVersion":"1.0","name":"AI","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Entities/AI/Hostile.yy","order":1,"resourceVersion":"1.0","name":"Hostile","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Objects/Entities.yy","order":1,"resourceVersion":"1.0","name":"Entities","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Entities.yy","order":0,"resourceVersion":"1.0","name":"Entities","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Entities/AI.yy","order":0,"resourceVersion":"1.0","name":"AI","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Entities/AI/Hostile.yy","order":1,"resourceVersion":"1.0","name":"Hostile","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Extension Scripts (No Modifying)/delta.yy","order":1,"resourceVersion":"1.0","name":"delta","tags":[],"resourceType":"GMFolder",},
@@ -203,7 +205,7 @@
     {"folderPath":"folders/Rooms/Exported Game Rooms/Normal.yy","order":3,"resourceVersion":"1.0","name":"Normal","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Controllers/GUI.yy","order":6,"resourceVersion":"1.0","name":"GUI","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Environment.yy","order":2,"resourceVersion":"1.0","name":"Environment","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Objects/Environment.yy","order":2,"resourceVersion":"1.0","name":"Environment","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Environment.yy","order":1,"resourceVersion":"1.0","name":"Environment","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
