@@ -205,6 +205,7 @@ function state_player_move(_event){
 					
 					_dir = round(_dir / 90);
 					
+					//Set targ coord to the next room, then repeat move state to move
 					switch(_dir) {
 						case 0: //EAST
 							if(LOGGING) show_debug_message("Move player east");
@@ -223,7 +224,7 @@ function state_player_move(_event){
 							
 						case 3: //SOUTH
 							if(LOGGING) show_debug_message("Move player south");
-							targY -= TILE_SIZE * 2;
+							targY += TILE_SIZE * 2;
 							break;								
 						
 					}

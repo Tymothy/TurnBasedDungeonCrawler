@@ -3,8 +3,9 @@ YAGNI - YOU AREN'T GONNA NEED IT
 
 
 Short-Term TODO:
-- When character enters a door, automatically move character to next room
 - Create spawning per room
+ - Level grid struct needs a value to track spawning
+ - Rooms should get a easy, medium, hard difficulty
 - Put player indicator on minimap
 - Hide rooms outside current room (shader?)
 - Create additional AI

@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Room Generation.yy",
   },
   "resourceVersion": "1.0",
-  "name": "floorConstructors",
+  "name": "roomConstructors",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -86,6 +86,15 @@ enum STATES
 	
 }
 
+enum DIFFICULTY
+{
+	NONE,
+	PEACEFUL,
+	EASY,
+	MEDIUM,
+	HARD,
+}
+
 #region TrueState
 #macro G global
 
