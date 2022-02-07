@@ -173,8 +173,9 @@ function state_player_move(_event){
 		case TRUESTATE_NEW:
 		{
 			//This code will run once when the state is brand new.
-			//Remove current position from entity grid
+			//Remove current position from entity grid			
 			mp_clear_entity();
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -184,9 +185,64 @@ function state_player_move(_event){
 			//ob_player.y = from_grid(gridY);					
 			//Check if tile is attackable, if so attack
 			//truestate_switch(STATES.END);
+			var _repeatMove = false;
 			if(move_entity(targX, targY)){
-				//When entity is done moving, check for attacks						
-				truestate_switch(STATES.ATTACK);			
+				//When entity is done moving, check if they are on a tile to do something with, like a door
+				if(place_meeting(x,y, ob_door)) {
+					if(LOGGING) show_debug_message("Target square contains a door");
+					
+					//Find the room the player is in
+					var _tempX = to_grid(x);
+					var _tempY = to_grid(y);
+					
+					var _tempX = to_room(_tempX);
+					var _tempY = to_room(_tempY);
+					
+					var _centerX = from_room(_tempX);
+					var _centerY = from_room(_tempY);
+					
+					var _dir = point_direction(_centerX, _centerY, to_grid(targX), to_grid(targY));
+					
+					_dir = round(_dir / 90);
+					
+					switch(_dir) {
+						case 0: //EAST
+							if(LOGGING) show_debug_message("Move player east");
+							targX += TILE_SIZE * 2;
+							break;
+
+						case 1: //NORTH
+							if(LOGGING) show_debug_message("Move player north");
+							targY -= TILE_SIZE * 2;
+							break;
+							
+						case 2: //WEST
+							if(LOGGING) show_debug_message("Move player west");
+							targX -= TILE_SIZE * 2;
+							break;			
+							
+						case 3: //SOUTH
+							if(LOGGING) show_debug_message("Move player south");
+							targY -= TILE_SIZE * 2;
+							break;								
+						
+					}
+					
+					_repeatMove = true;
+					
+					
+					
+				}
+		
+				
+				if(_repeatMove == true) {
+					//Need to move player again, repeat move
+					truestate_switch(STATES.MOVE);
+				}
+				else {
+				//No further movement done, move to attack state						
+					truestate_switch(STATES.ATTACK);			
+				}
 			}								
 
 		}break;
@@ -275,7 +331,6 @@ function state_player_attack(_event){
 			if(attackArrayCounter > 0){
 				attackValid = true;
 			}
-
 			if(attackValid == false) truestate_switch(STATES.END);
 		}break;
 	
@@ -413,7 +468,6 @@ function state_player_end(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			//This code will run once when the state is brand new.
 			endTurn = true;					
 			turnActive = false;
 		}break;

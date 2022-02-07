@@ -6,14 +6,27 @@ function <NAME>(_var1, _var2, _var3...) {
 //CODE
 }
 */
-function to_grid(_i){
-	var _gridCoord = floor(_i / TILE_SIZE);
+function to_grid(_actualCoord){
+	//Returns the grid coord given an actual coord
+	var _gridCoord = floor(_actualCoord / TILE_SIZE);
 	return _gridCoord;
 }
 
-function from_grid(_i){
-	var _roomCoord = _i * TILE_SIZE + TILE_SIZE / 2;
-	return _roomCoord;
+function from_grid(_gridCoord){
+	//Returns actual coord given a grid coord
+	var _actualCoord = _gridCoord * TILE_SIZE + TILE_SIZE / 2;
+	return _actualCoord;
+}
+
+function to_room(_gridCoord){
+	var _roomCoord = floor(_gridCoord / ROOM_SIZE);
+	return _roomCoord;	
+}
+
+function from_room(_roomCoord) {
+	//Returns the center grid coord of a room
+	var _gridCoord = _roomCoord * ROOM_SIZE + floor(ROOM_SIZE / 2);
+	return _gridCoord;
 }
 
 function coords_string(_x, _y){
