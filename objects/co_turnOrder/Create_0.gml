@@ -15,6 +15,7 @@ aiTurnComplete = false; //When true, all ai have complete and game manager can c
 aiTurnNum = 0; //Tracks where ai are at in turn order
 
 //Deactivate all ai objects as they will be activated as player enters each room
+//The code below can be commented out in order to see all enemies in a floor
 instance_deactivate_object(ob_par_ai);
 
 //Called when player enters a new room
