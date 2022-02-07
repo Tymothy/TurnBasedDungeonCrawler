@@ -24,3 +24,42 @@ truestate_set_default(STATES.INACTIVE);
 
 //Methods
 
+function activateRoom(_roomX, _roomY)
+{
+	var _x = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX1"];
+	var _y = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY1"];
+	
+	var _width = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX2"] - _x;
+	var _height = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY2"] - _y;
+	
+	//Change grid coords to actual coords
+	_x = from_grid(_x);
+	_y = from_grid(_y);
+	_width = from_grid(_width);
+	_height = from_grid(_height);
+	
+	
+	//Activate the enemy instances
+	instance_activate_region(_x, _y, _width, _height, true);	
+	
+}
+
+function deactivateRoom(_roomX, _roomY)
+{
+	var _x = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX1"];
+	var _y = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY1"];
+	
+	var _width = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX2"] - _x - (TILE_SIZE /4); // The minus is to keep the bounding box in the room
+	var _height = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY2"] - _y  - (TILE_SIZE /4);
+	
+	//Change grid coords to actual coords
+	_x = from_grid(_x);
+	_y = from_grid(_y);
+	_width = from_grid(_width);
+	_height = from_grid(_height);
+	
+	
+	//Activate the enemy instances
+	instance_deactivate_region(_x, _y, _width, _height, true, true);
+
+}

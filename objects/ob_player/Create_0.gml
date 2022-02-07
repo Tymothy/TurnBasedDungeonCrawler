@@ -32,6 +32,15 @@ takeDamage = function (_damage) {
 	if(LOGGING) show_debug_message("Player has " + string(attributes.hp) + " health left.");
 }
 
+movingRoomsFunc = function() {
+	//Changed back to false from gameManager
+	movingRooms = true;	
+	lastRoomGridX = xGridCoord;
+	lastRoomGridY = xGridCoord;	
+	//Activate instances in the room we are going to prior to actually moving there
+	co_gameManager.activateRoom(to_room(to_grid(targX)), to_room(to_grid(targY)));
+}
+
 #endregion
 
 
@@ -54,3 +63,6 @@ truestate_set_default(STATES.WAIT);
 #endregion
 
 has_sword=false;
+movingRooms = false;
+lastRoomGridX = xGridCoord;
+lastRoomGridY = xGridCoord;

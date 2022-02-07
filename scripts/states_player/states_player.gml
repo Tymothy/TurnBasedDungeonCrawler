@@ -228,7 +228,7 @@ function state_player_move(_event){
 							break;								
 						
 					}
-					
+					movingRoomsFunc();
 					_repeatMove = true;
 					
 					

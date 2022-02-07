@@ -135,6 +135,7 @@ function state_game_player_active(_event){
 			
 			
 			
+			
 			//TODO: Move this into the co_touchMaster object
 
 			//show_debug_message("Touch State Changed: " + string(TOUCH_STATE));
@@ -201,12 +202,22 @@ function state_game_player_ending(_event){
 		case TRUESTATE_NEW:
 		{
 			//This code will run once when the state is brand new.
+			if(ob_player.movingRooms == true) {
+				//Player is in new room, deactivate old room
+				co_gameManager.deactivateRoom(to_room(ob_player.lastRoomGridX), to_room(ob_player.lastRoomGridY));
+				co_turnOrder.createAiTurnOrder();
+				ob_player.movingRooms = false;
+				truestate_switch(STATES.PLAYER_STARTING);
+			}
+			else {
+				truestate_switch(STATES.AI_STARTING);	
+			}
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			truestate_switch(STATES.AI_STARTING);	
+			
 		}break;
 	
 		//DRAW---------------------------------------
