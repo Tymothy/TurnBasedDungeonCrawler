@@ -14,9 +14,15 @@ on which enemies go when, except possibly in order of enemy friendly fire (if im
 aiTurnComplete = false; //When true, all ai have complete and game manager can continue
 aiTurnNum = 0; //Tracks where ai are at in turn order
 
-//Called only once at beginning of the room
+//Deactivate all ai objects as they will be activated as player enters each room
+instance_deactivate_object(ob_par_ai);
+
+//Called when player enters a new room
 function createAiTurnOrder()
 {
+	//Activate the enemy instances
+	//instance_activate_region()
+	
 	//Create aiQueue if needed
 		aiQueue = ds_priority_create();	
 		aiCurrentTurnQueue = ds_priority_create();
