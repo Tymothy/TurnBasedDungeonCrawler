@@ -21,3 +21,4 @@
 //if(instance_exists(co_spawnManager)) {
 //draw_text(global.width_gui * .97, global.height_gui * .15, "spawnManager exists");		
 //}
+
