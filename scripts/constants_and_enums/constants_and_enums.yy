@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "check_grid",
+  "name": "constants_and_enums",
   "tags": [],
   "resourceType": "GMScript",
 }

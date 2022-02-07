@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Grid",
+    "path": "folders/Scripts/Room Generation/Grid.yy",
   },
   "resourceVersion": "1.0",
-  "name": "gridScripts",
+  "name": "gridCalc",
   "tags": [],
   "resourceType": "GMScript",
 }

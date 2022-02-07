@@ -3,11 +3,16 @@ YAGNI - YOU AREN'T GONNA NEED IT
 
 
 Short-Term TODO:
-- Create spawning per room
- - Only add ai per room into turn order
 - Put player indicator on minimap
-- Hide rooms outside current room (shader?)
+	- Minimap needs to be able to be forced to update
+	- Minimap grid needs to be fixed, it's slightly off
+	- Draw a small sprite to indicate player
+	
+- Hide rooms outside current room (shader or surface?)
+
 - Create additional AI
+	- Ranged AI
+	- Need to research interesting AI mechanics that can fit well
 - Create more types of rooms
 
 - Room Generation

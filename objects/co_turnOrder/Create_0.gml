@@ -21,11 +21,8 @@ instance_deactivate_object(ob_par_ai);
 //Called when player enters a new room
 function createAiTurnOrder()
 {
-	var _roomX = to_room(to_grid(ob_player.x));
-	var _roomY = to_room(to_grid(ob_player.y));
-	
-
-	
+	//Create AI turn order with all available AI.  AI outside the room should be deactivated
+	//If AI are not deactivated, they will be put into the queue.
 	//Create aiQueue if needed
 		aiQueue = ds_priority_create();	
 		aiCurrentTurnQueue = ds_priority_create();
