@@ -19,6 +19,7 @@ function from_grid(_gridCoord){
 }
 
 function to_room(_gridCoord){
+	//Returns the room coord of a given grid coord
 	var _roomCoord = floor(_gridCoord / ROOM_SIZE);
 	return _roomCoord;	
 }

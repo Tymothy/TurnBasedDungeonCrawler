@@ -20,8 +20,24 @@ instance_deactivate_object(ob_par_ai);
 //Called when player enters a new room
 function createAiTurnOrder()
 {
+	var _roomX = to_room(to_grid(ob_player.x));
+	var _roomY = to_room(to_grid(ob_player.y));
+	
+	var _x = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX1"];
+	var _y = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY1"];
+	
+	var _width = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX2"] - _x;
+	var _height = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY2"] - _y;
+	
+	//Change grid coords to actual coords
+	_x = from_grid(_x);
+	_y = from_grid(_y);
+	_width = from_grid(_width);
+	_height = from_grid(_height);
+	
+	
 	//Activate the enemy instances
-	//instance_activate_region()
+	instance_activate_region(_x, _y, _width, _height, true);
 	
 	//Create aiQueue if needed
 		aiQueue = ds_priority_create();	

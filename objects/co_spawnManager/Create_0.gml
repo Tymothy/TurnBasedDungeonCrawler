@@ -9,6 +9,7 @@ var _spawnPlayer = spawn_player(); //If player is spawned, return 1
 //Iterate through all rooms and spawn enemies
 for(var i = 0; i < ds_grid_width(co_roomGen.levelGrid); i++) {
 	for(var j = 0; j < ds_grid_height(co_roomGen.levelGrid); j++) {
+		//Spawn in the approriate rooms
 		switch(co_roomGen.levelGrid[# i, j][$"difficulty"]) {
 			case DIFFICULTY.EASY:
 				var _spawnAI = spawn_ai(ob_enemy_slime, 3, i, j); //Spawn 3 enemy slimes in the room	
