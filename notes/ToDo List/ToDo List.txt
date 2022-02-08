@@ -3,12 +3,7 @@ YAGNI - YOU AREN'T GONNA NEED IT
 
 
 Short-Term TODO:
-- Put player indicator on minimap
-	- Minimap needs to be able to be forced to update
-	- Minimap grid needs to be fixed, it's slightly off
-	- Draw a small sprite to indicate player
-	
-- Hide rooms outside current room (shader or surface?)
+
 
 - Create additional AI
 	- Ranged AI
@@ -17,7 +12,13 @@ Short-Term TODO:
 
 - Room Generation
 	-
+- Put player indicator on minimap
+	- Minimap needs to be able to be forced to update
+	- Minimap grid needs to be fixed, it's slightly off
+	- Draw a small sprite to indicate player
 
+- Hide rooms outside current room (shader or surface?)
+	
 - Player Mechanics
 	- Player has 3 slots for cards (at bottom of screen)
 		- Each card can do something and has an active effect

@@ -1,11 +1,11 @@
 //Configuring
 
 //How many tiles should the game target to display on screen. 
-#macro DESIGN_TILES_WIDE 11 
+#macro DESIGN_TILES_WIDE 9 
 
 //Size of the tiles in game, displayed in pixels.  Sprites do not adjust to tile size
 #macro TILE_SIZE 32 
-#macro ROOM_SIZE 11
+#macro ROOM_SIZE 9 //Was 11
 
 //The maximum size a floor of rooms can be
 #macro FLOOR_MAX_WIDTH 9

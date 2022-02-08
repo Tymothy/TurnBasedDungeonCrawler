@@ -11,7 +11,7 @@ targY = y;
 
 //offset in tiles
 xOffset = 0;
-yOffset = 7;
+yOffset = 5;
 
 
 
