@@ -89,6 +89,7 @@ function set_resolution(_design_value, _is_design_value_vertical, _is_orientatio
 
 	application_surface_enable(false);  // false as default behaviour 
 	window_set_size(_ideal_width, _ideal_height);
+	if(ZOOM) window_set_size(_ideal_width * 1.8, _ideal_height * 1.8);
 	surface_resize(application_surface, _real_width, _real_height);
 
 	//remove the temporary scaling if building with Test -> VM and apply results in global vars for further use
