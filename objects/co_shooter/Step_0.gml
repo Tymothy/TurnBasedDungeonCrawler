@@ -47,9 +47,6 @@ switch (_ts) {
 		if(_qt) show_debug_message("TOUCH_STATE Change: Release");
 		determineFire();
 		
-		show_debug_message("Start Coords: " + coords_string(startX, startY));
-		show_debug_message("Release Coords: " + coords_string(currentX, currentY));
-		
 		
 	
 }

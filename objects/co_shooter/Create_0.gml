@@ -23,7 +23,7 @@ determineFire = function() {
 		fire(_dir, vel);	
 	}
 	
-	
+	resetCoords();
 }
 
 fire = function(_dir, _vel) {
@@ -33,4 +33,11 @@ fire = function(_dir, _vel) {
 		vel = _vel;
 		dir = _dir;
 	}
+}
+
+resetCoords = function() {
+	startX = -1;
+	startY = -1;
+	currentX = -1;
+	currentY = -1;
 }
