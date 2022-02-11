@@ -1,5 +1,6 @@
 /// @description Setup at game start
 randomize();
+init(); //Creates the global vars from the configuration script
 //Used for YAL's room pack extension.  Required at game start
 room_pack_blank_object = co_blank;
 //randomize();

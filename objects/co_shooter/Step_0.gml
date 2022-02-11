@@ -3,7 +3,7 @@
 //var _ts = get_touch_state_on_change();
 var _ct = get_current_touch();
 var _ts = get_touch_state_on_change();
-var _qt = true //quick testing below.  Should be false to disable messages
+var _qt = false //quick testing below.  Should be false to disable messages
 
 if(_ct != -1) {
 	var _tx = get_touch_x(_ct);
@@ -41,8 +41,11 @@ switch (_ts) {
 					
 	case STATES.RELEASE:
 		if(_qt) show_debug_message("TOUCH_STATE Change: Release");
+		determineFire();
 		
 		show_debug_message("Start Coords: " + coords_string(startX, startY));
 		show_debug_message("Release Coords: " + coords_string(currentX, currentY));
+		
+		
 	
 }

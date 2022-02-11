@@ -1,4 +1,9 @@
-//Configuring
+//Variables that can be possibly changed after compile
+function init() {
+	global.minDistToFire = 40; //Minimum distance to fire	
+}
+//Macros for the global vars
+#macro MIN_DIST_TO_FIRE global.minDistToFire
 
 //How many tiles should the game target to display on screen. 
 #macro DESIGN_TILES_WIDE 9 
@@ -36,5 +41,4 @@
 #macro test:CONFIGURATION 1 
 #macro test:live_enabled 1 // flip this value to 0 to disable GMLive!
 #macro test:ZOOM 1
-
 

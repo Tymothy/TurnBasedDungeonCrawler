@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Controllers",
-    "path": "folders/Controllers.yy",
+    "name": "Game Control",
+    "path": "folders/Controllers/Game Control.yy",
   },
   "resourceVersion": "1.0",
   "name": "co_shooter",

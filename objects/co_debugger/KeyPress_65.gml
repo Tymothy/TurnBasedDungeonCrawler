@@ -1,8 +1,6 @@
 /// @description Test formula in output
+/*
 var _testNum = 100;
-//global.currentFloor = 3;
-//var _str = goal_rooms();
-
 for(var i = 0; i < _testNum; i++) {
 	array[i] = goal_rooms();	
 }
@@ -16,3 +14,5 @@ for(var i = 0; i < 80; i++) {
 	if(_count > 0) show_debug_message("Rooms: " + string(i) + " | Count: " + string(_count));
 	_count = 0;
 }
+*/
+
