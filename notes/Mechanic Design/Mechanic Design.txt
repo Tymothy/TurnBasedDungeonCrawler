@@ -1,0 +1,50 @@
+
+
+Types of AI Mechanics
+	Basic
+		Seek player and attack using direct
+		Seek player and damage every turn with aoe(like a flame around it)
+		Leave trail of damaging liquid
+		Throw damaging liquid that stays for a turn
+		Creature explodes and does extra damage (Maybe stands still to allow character a turn to get away?)
+		Liquid that does not allow turn to end on (will set targ grid to one further kinda like doors)
+		Charges at target when meeting certain rules (like within a range)
+		Has after death regen (mummy in Stardew)
+		Shoots an X or + pattern every X turns
+		
+		
+		
+	
+	Advanced
+		Summoning
+		
+		
+
+MECHANIC
+	Click and drag to fire a projectile (Like retrobowl)
+		
+		
+
+Possible player abilities
+	Ignore first hit per floor
+	
+	
+Types of Attacks
+	Melee
+		Direct
+			Start turn near target, no move and attack target directly
+	
+		Slide
+			Start turn near target, move a tile and end move near target.
+		
+		Shield
+			Protect against attacks coming from direction the opponent is facing (Front 3 squares?, would require AI to be smart enough to try to target behind the player.  Might need a cooldown on use)
+			
+		
+		
+	Ranged
+		Line
+			Target shoots along a cone the way they are facing
+			
+	Spells
+		TBD
