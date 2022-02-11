@@ -90,61 +90,63 @@ function state_player_idle(_event){
 					
 					case STATES.RELEASE:
 						if(_qt) show_debug_message("TOUCH_STATE Change: Release");	
-						var _move = true;
+						if(get_drag() == false) {
+							//If dragging, we don't want to move
+							var _move = true;
 						
-						//Check entity clicked on
-						var _entity = check_entity(gridX, gridY);
-						if(_entity != false) {
-							//entity is in grid square.  Can we move onto it?
+							//Check entity clicked on
+							var _entity = check_entity(gridX, gridY);
+							if(_entity != false) {
+								//entity is in grid square.  Can we move onto it?
 							
-							//Possibly could act on it?
+								//Possibly could act on it?
 							
-							attributes.targetObject = _entity;
-							var _parOb = object_get_parent(attributes.targetObject.object_index);
+								attributes.targetObject = _entity;
+								var _parOb = object_get_parent(attributes.targetObject.object_index);
 							
-							switch(_parOb) {
-								case ob_par_hostile: 
-									_move = false;
-									break;
+								switch(_parOb) {
+									case ob_par_hostile: 
+										_move = false;
+										break;
 									
-								case ob_par_environment:
-									break;
+									case ob_par_environment:
+										break;
 								
-							}
+								}
 							
-						}
+							}
 						
-						//Check if click is on self
-						if(gridX == to_grid(x) && gridY == to_grid(y)) {
-							//Touch was released on player
-							//Do not move tiles
-							_move = false;
-						}
+							//Check if click is on self
+							if(gridX == to_grid(x) && gridY == to_grid(y)) {
+								//Touch was released on player
+								//Do not move tiles
+								_move = false;
+							}
 
 
-						//Check if tile has collision restricting movement
-						var _collide = co_grid.tileGrid[# gridX, gridY][$ "_collidePlayer"];
-						if(_collide == true) {
-							//Tile has collision and player cannot move to it
-							_move = false;
+							//Check if tile has collision restricting movement
+							var _collide = co_grid.tileGrid[# gridX, gridY][$ "_collidePlayer"];
+							if(_collide == true) {
+								//Tile has collision and player cannot move to it
+								_move = false;
 										
-						}
+							}
 						
-						//Check if touch is inside of movement area
-						if(abs(to_grid(x) - gridX) <= attributes.moveSpeed && abs(to_grid(y) - gridY) <= attributes.moveSpeed)
-						{
-							//Touch is inside of movement area, do not disallow movement
-						}
-						else {
-							_move = false;	
-						}
+							//Check if touch is inside of movement area
+							if(abs(to_grid(x) - gridX) <= attributes.moveSpeed && abs(to_grid(y) - gridY) <= attributes.moveSpeed)
+							{
+								//Touch is inside of movement area, do not disallow movement
+							}
+							else {
+								_move = false;	
+							}
 
 
-						if(_move == true) {
-							//If tile is not restricted, allow move.
-							truestate_switch(STATES.MOVE);
+							if(_move == true) {
+								//If tile is not restricted, allow move.
+								truestate_switch(STATES.MOVE);
+							}
 						}
-					
 									
 							
 					break;

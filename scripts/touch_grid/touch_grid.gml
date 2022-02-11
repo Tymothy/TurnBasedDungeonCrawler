@@ -54,7 +54,17 @@ function get_current_touch() {
 				return -1;	
 			}
 }
-	
+
+function get_touch_x(_my_touch){
+	var _ret = ds_grid_get(co_touchMaster.touchGrid,_my_touch, 2);
+	return _ret;
+}
+
+function get_touch_y(_my_touch){
+	var _ret = ds_grid_get(co_touchMaster.touchGrid,_my_touch, 3);
+	return _ret;
+}
+
 function get_touch_gridX(_my_touch){
 	var _ret = ds_grid_get(co_touchMaster.touchGrid,_my_touch, 4);
 	return _ret;
@@ -104,4 +114,11 @@ function get_gridX() {
 		var _ret = -1;	
 	}
 	return _ret;
+}
+
+function get_drag(){
+	if(instance_exists(co_touchMaster)) {
+	var _ret = co_touchMaster.dragging;
+	return _ret;
+	}
 }

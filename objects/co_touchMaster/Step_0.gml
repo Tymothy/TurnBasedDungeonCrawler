@@ -42,7 +42,7 @@ if(currentTouch != -1) {
 else {
 	hasTouch = false;	
 }
-		
+if(currentTouch != -1)	dragging = get_touch_drag(currentTouch);		
 switch(hasTouch) {
 	case true:
 	//Screen is being touched
@@ -77,17 +77,18 @@ switch(hasTouch) {
 					
 			default:
 				//There was a release, see if we want to execute
-				switch(dragging) {
-					case false:
-						//We were not dragging, we want to perform action/movement
-						TOUCH_STATE = STATES.RELEASE;
-					break;
+				TOUCH_STATE = STATES.RELEASE;
+				//switch(dragging) {
+				//	case false:
+				//		//We were not dragging, we want to perform action/movement
+				//		TOUCH_STATE = STATES.RELEASE;
+				//	break;
 							
-					case true:
-						//We were dragging, we don't want to perform actions/movments
-						TOUCH_STATE = STATES.DRAGGING;
-					break;	
-				}
+				//	case true:
+				//		//We were dragging, we don't want to perform actions/movments
+				//		TOUCH_STATE = STATES.DRAGGING;
+				//	break;	
+				//}
 
 			break;
 					
@@ -99,5 +100,5 @@ switch(hasTouch) {
 if(oldTouchState != TOUCH_STATE){
 	touchChange = true;
 }
-if(currentTouch != -1)	dragging = get_touch_drag(currentTouch);
+
 #endregion
