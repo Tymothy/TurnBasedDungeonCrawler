@@ -56,7 +56,8 @@ function state_game_setup(_event){
 			instance_create_layer(x, y, "la_controllers", co_turnOrder);
 			
 			//Create the shooter controller
-			instance_create_layer(x, y, "la_controllers", co_shooter);
+			//Arrows have been disabled, don't really fit theme
+			//instance_create_layer(x, y, "la_controllers", co_shooter);
 			
 			//Create the inital ai turn order.
 			//TODO: Will need to account for multiple rooms in future
@@ -70,7 +71,7 @@ function state_game_setup(_event){
 			//Waits for the game to be setup before switching to the player's turn
 			if(instance_exists(co_spawnManager)) {
 				if(co_spawnManager.done == true) {
-				truestate_switch(STATES.PLAYER_ACTIVE);	
+					truestate_switch(STATES.PLAYER_ACTIVE);	
 				}
 			}
 		}break;

@@ -3,7 +3,7 @@ YAGNI - YOU AREN'T GONNA NEED IT
 
 
 Short-Term TODO:
-
+ - Queue walk script to press a tile farther away and start moving to it.
 
 - Create additional AI
 	- Ranged AI

@@ -138,7 +138,14 @@ function state_player_idle(_event){
 								//Touch is inside of movement area, do not disallow movement
 							}
 							else {
-								_move = false;	
+								_move = false;
+								
+								//Touch is outside movement area, we can queue moves to get there
+								if(_collide == false) {
+									//tile touched is a valid tile to get to
+									//path_add
+									
+								}
 							}
 
 
