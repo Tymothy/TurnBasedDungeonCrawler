@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Entity Handling.yy",
   },
   "resourceVersion": "1.0",
-  "name": "move_entity",
+  "name": "Movement",
   "tags": [],
   "resourceType": "GMScript",
 }

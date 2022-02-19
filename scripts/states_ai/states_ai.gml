@@ -119,14 +119,14 @@ function state_ai_move(_event) {
 		//DRAW---------------------------------------
 		case TRUESTATE_DRAW:
 		{
-			draw_path(entityPath, x, y, false);
+			//draw_path(entityPath, x, y, false);
 		}break;
 	
 		//FINAL---------------------------------------
 		case TRUESTATE_FINAL:
 		{
 			mp_add_entity();  //Adds self to entity grid
-			path_delete(entityPath);
+			
 		}break;
 	}
 }
