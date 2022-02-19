@@ -41,6 +41,7 @@
     {"id":{"name":"spawnScripts","path":"scripts/spawnScripts/spawnScripts.yy",},"order":0,},
     {"id":{"name":"fo_debugNormal","path":"fonts/fo_debugNormal/fo_debugNormal.yy",},"order":1,},
     {"id":{"name":"GMLive_node","path":"scripts/GMLive_node/GMLive_node.yy",},"order":2,},
+    {"id":{"name":"co_debugEntityGrid","path":"objects/co_debugEntityGrid/co_debugEntityGrid.yy",},"order":4,},
     {"id":{"name":"ob_par_ai","path":"objects/ob_par_ai/ob_par_ai.yy",},"order":2,},
     {"id":{"name":"co_debugResGrid","path":"objects/co_debugResGrid/co_debugResGrid.yy",},"order":1,},
     {"id":{"name":"co_debugger","path":"objects/co_debugger/co_debugger.yy",},"order":0,},

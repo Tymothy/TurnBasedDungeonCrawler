@@ -100,16 +100,17 @@ function state_ai_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			setupMove();
-			moveDirect();
+			targArr = moveDirect(self.attributes.collisionGrid, attributes.targetObject.x, attributes.targetObject.y);
+
+			//targArr = calcPath(); //get the X and Y coords to move to (room coords)
+			
 			
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			
-			if(move_entity(targX, targY)){
+			if(move_entity(targArr[0], targArr[1])){
 				//When entity is done moving, end entities turn
 				truestate_switch(STATES.WAIT);			
 			}
