@@ -188,6 +188,7 @@ function state_player_move(_event){
 			//This code will run once when the state is brand new.
 			//Remove current position from entity grid			
 			targArr = move_direct(self.attributes.collisionGrid, targX, targY);
+			doorFlag = false; //Used to ensure once a door is used, player will go to next room
 			
 		}break;
 	
@@ -200,8 +201,10 @@ function state_player_move(_event){
 			if(move_entity(targArr[0], targArr[1])){
 				
 				//When entity is done moving, check if they are on a tile to do something with, like a door
-				if(place_meeting(x,y, ob_door)) {
+				if(place_meeting(x,y, ob_door) && doorFlag == false) {
+					doorFlag = true;
 					if(LOGGING) show_debug_message("Target square contains a door");
+					
 					
 					//Find the room the player is in
 					var _tempX = to_grid(x);
