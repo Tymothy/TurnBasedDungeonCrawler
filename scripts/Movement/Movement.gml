@@ -35,7 +35,7 @@ function remove_entity(inst = self.id){
 	instance_destroy(inst);
 }
 	
-function cleanTempEntities(_pathID, tempEntity) {
+function clean_grid_entities(_pathID, tempEntity) {
 	for(var i = 0; i < array_length(tempEntity); i++) {
 		//Put the x and y array from the top array into a temp array
 		var _tempArr = tempEntity[i];
@@ -51,7 +51,7 @@ function cleanTempEntities(_pathID, tempEntity) {
 	}	
 }
 
-function blockGridSquare(_pathID, _coordArray, tempEntity) {
+function block_grid_tile(_pathID, _coordArray, tempEntity) {
 	//Finds an alternate path after removing a specific grid square
 	//PathID = Square to block
 	//rx = x to block
@@ -68,7 +68,7 @@ function blockGridSquare(_pathID, _coordArray, tempEntity) {
 	return tempEntity;
 }
 	
-function checkPath(_xg, _yg) {
+function check_path(_xg, _yg) {
 	//Give function a target x and y
 	//If spot is occupied by entity, try other spots
 	
@@ -88,7 +88,7 @@ function checkPath(_xg, _yg) {
 	return true; // Return true if given coordinates are valid
 }
 
-function calcPath(_pathID, _xg, _yg) {
+function calc_path(_pathID, _xg, _yg) {
 	//Init array
 	_retArray[0] = -1;
 	_retArray[1] = -1;
@@ -123,31 +123,31 @@ function calcPath(_pathID, _xg, _yg) {
 		return _retArray;
 }
 
-function setupMove() {
+function setup_move() {
 	entityPath = path_add();
 	mp_clear_entity(); //Clears self from entity grid
 			
 	//Is below needed?
-	targX = -1;
-	targY = -1;
+	//targX = -1;
+	//targY = -1;
 	entity = noone;
 	return entityPath;
 }
 
-function moveDirect(_pathID, _xg, _yg) {
+function move_direct(_pathID, _xg, _yg) {
 	tempArr[0] = 0;
 	tempArr[1] = 0;
-	tempEntity[0] = [0, 0];//Sets up the array to be able to hold tempEntities from blockGridSquare
+	tempEntity[0] = [0, 0];//Sets up the array to be able to hold tempEntities from block_grid_tile
 	
-	setupMove();
-	targArr = calcPath(_pathID, _xg, _yg); //Finds a path, then returns the x and y of one square along that path	
-	var _valid = checkPath(targArr[0], targArr[1]);
+	setup_move();
+	targArr = calc_path(_pathID, _xg, _yg); //Finds a path, then returns the x and y of one square along that path	
+	var _valid = check_path(targArr[0], targArr[1]);
 	
 	var i = 0;
 	while(_valid != true && i <= 5) {
-		tempEntity = blockGridSquare(_pathID, targArr, tempEntity); //Block the spot on the grid that is currently filled with an entity.
-		targArr = calcPath(_pathID, _xg, _yg);
-		_valid = checkPath(targArr[0], targArr[1]);
+		tempEntity = block_grid_tile(_pathID, targArr, tempEntity); //Block the spot on the grid that is currently filled with an entity.
+		targArr = calc_path(_pathID, _xg, _yg);
+		_valid = check_path(targArr[0], targArr[1]);
 		i++;
 	}
 	
@@ -156,7 +156,7 @@ function moveDirect(_pathID, _xg, _yg) {
 		targArr[0] = x;
 		targArr[1] = y;
 	}
-	cleanTempEntities(_pathID, tempEntity);
+	clean_grid_entities(_pathID, tempEntity);
 	path_delete(entityPath);
 	return targArr;
 }

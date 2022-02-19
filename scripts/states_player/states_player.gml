@@ -143,7 +143,11 @@ function state_player_idle(_event){
 								//Touch is outside movement area, we can queue moves to get there
 								if(_collide == false) {
 									//tile touched is a valid tile to get to
-									//path_add
+									
+									//Check for an empty room
+									if(!instance_exists(ob_par_hostile)) {
+										_move = true;	
+									}
 									
 								}
 							}
@@ -183,19 +187,18 @@ function state_player_move(_event){
 		{
 			//This code will run once when the state is brand new.
 			//Remove current position from entity grid			
-			mp_clear_entity();
+			targArr = move_direct(self.attributes.collisionGrid, targX, targY);
 			
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			//ob_player.x = from_grid(gridX);
-			//ob_player.y = from_grid(gridY);					
-			//Check if tile is attackable, if so attack
-			//truestate_switch(STATES.END);
+			//targX/targY
 			var _repeatMove = false;
-			if(move_entity(targX, targY)){
+			//targArr holds the pathed variables
+			if(move_entity(targArr[0], targArr[1])){
+				
 				//When entity is done moving, check if they are on a tile to do something with, like a door
 				if(place_meeting(x,y, ob_door)) {
 					if(LOGGING) show_debug_message("Target square contains a door");
@@ -239,12 +242,14 @@ function state_player_move(_event){
 					}
 					movingRoomsFunc();
 					_repeatMove = true;
-					
-					
-					
+		
 				}
 		
-				
+				//Check to see if we are moving farther
+				if(targArr[0] != targX || targArr[1] != targY) {
+					targArr = move_direct(self.attributes.collisionGrid, targX, targY);
+					_repeatMove = true;	
+				}
 				if(_repeatMove == true) {
 					//Need to move player again, repeat move
 					truestate_switch(STATES.MOVE);

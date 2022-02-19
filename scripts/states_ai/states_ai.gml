@@ -100,9 +100,9 @@ function state_ai_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			targArr = moveDirect(self.attributes.collisionGrid, attributes.targetObject.x, attributes.targetObject.y);
+			targArr = move_direct(self.attributes.collisionGrid, attributes.targetObject.x, attributes.targetObject.y);
 
-			//targArr = calcPath(); //get the X and Y coords to move to (room coords)
+			//targArr = calc_path(); //get the X and Y coords to move to (room coords)
 			
 			
 		}break;
