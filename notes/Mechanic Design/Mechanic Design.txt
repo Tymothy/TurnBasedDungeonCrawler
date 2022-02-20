@@ -21,7 +21,7 @@ Types of AI Mechanics
 		
 
 MECHANIC
-	Click and drag to fire a projectile (Like retrobowl)
+	Click and drag to fire a projectile (Like retrobowl) Implemented with c_shooter, but removed as it doesn't fit theme.  At least for now.
 		
 		
 
