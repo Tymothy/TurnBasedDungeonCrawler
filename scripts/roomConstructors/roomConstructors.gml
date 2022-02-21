@@ -19,6 +19,8 @@ function floorRoom(_x, _y) constructor {
 	difficulty = undefined; //Room doesn't exist, so difficulty is undefined
 	cleared = false; //Whether the room has been cleared already
 	minimap = true; //Whether the room should show on the minimap or not  Set to false for live
+	endroom = false; //Whether the room is an end room
+	distanceToSpawn = 0; //How many tiles to spawn room, including self
 }
 
 function spawnRoom (_x, _y) : floorRoom(_x, _y) constructor {
@@ -31,4 +33,8 @@ function normalRoom (_x, _y) : floorRoom(_x, _y) constructor {
 	roomType = ROOMTYPE.NORMAL;
 	description = "Normal Room";
 	difficulty = choose(DIFFICULTY.EASY, DIFFICULTY.MEDIUM, DIFFICULTY.HARD); //Choose a random difficulty
+}
+
+function setEndRoom (_x, _y) : floorRoom(_x, _y) constructor {
+	endRoom = true;
 }

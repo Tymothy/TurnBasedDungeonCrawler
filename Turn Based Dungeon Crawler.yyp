@@ -3,6 +3,7 @@
     {"id":{"name":"states_door","path":"scripts/states_door/states_door.yy",},"order":3,},
     {"id":{"name":"ob_delta","path":"objects/ob_delta/ob_delta.yy",},"order":3,},
     {"id":{"name":"co_blank","path":"objects/co_blank/co_blank.yy",},"order":0,},
+    {"id":{"name":"rm_ex_boss_1","path":"rooms/rm_ex_boss_1/rm_ex_boss_1.yy",},"order":1,},
     {"id":{"name":"co_camera","path":"objects/co_camera/co_camera.yy",},"order":0,},
     {"id":{"name":"co_gameManager","path":"objects/co_gameManager/co_gameManager.yy",},"order":2,},
     {"id":{"name":"GMLive_new","path":"scripts/GMLive_new/GMLive_new.yy",},"order":2,},
@@ -149,6 +150,7 @@
     {"roomId":{"name":"rm_ex_spawn_1","path":"rooms/rm_ex_spawn_1/rm_ex_spawn_1.yy",},},
     {"roomId":{"name":"rm_ex_normal_1","path":"rooms/rm_ex_normal_1/rm_ex_normal_1.yy",},},
     {"roomId":{"name":"rm_ex_normal_2","path":"rooms/rm_ex_normal_2/rm_ex_normal_2.yy",},},
+    {"roomId":{"name":"rm_ex_boss_1","path":"rooms/rm_ex_boss_1/rm_ex_boss_1.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":19,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -180,7 +182,6 @@
     {"folderPath":"folders/Controllers/Debugging.yy","order":0,"resourceVersion":"1.0","name":"Debugging","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Rooms/Exported Game Rooms.yy","order":2,"resourceVersion":"1.0","name":"Exported Game Rooms","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Room Generation.yy","order":3,"resourceVersion":"1.0","name":"Room Generation","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Rooms/Exported Game Rooms/Spawn.yy","order":2,"resourceVersion":"1.0","name":"Spawn","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Controllers/Game Control/Game Generation.yy","order":0,"resourceVersion":"1.0","name":"Game Generation","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Controllers/Rendering.yy","order":1,"resourceVersion":"1.0","name":"Rendering","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Controllers/Initalize.yy","order":2,"resourceVersion":"1.0","name":"Initalize","tags":[],"resourceType":"GMFolder",},
@@ -211,6 +212,7 @@
     {"folderPath":"folders/Objects/Environment.yy","order":1,"resourceVersion":"1.0","name":"Environment","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Room Generation/Constructors.yy","order":9,"resourceVersion":"1.0","name":"Constructors","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Room Generation/Grid.yy","order":10,"resourceVersion":"1.0","name":"Grid","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Rooms/Exported Game Rooms/Unique.yy","order":4,"resourceVersion":"1.0","name":"Unique","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

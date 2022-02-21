@@ -35,25 +35,22 @@ Minimap (used for debugging initally)
 //Init the level grid
 levelGrid = ds_grid_create(FLOOR_MAX_HEIGHT, FLOOR_MAX_WIDTH);
 
+
+
 generateFloorPlan = function() {
 	if(!ds_exists(levelGrid, ds_type_grid)) {
 		levelGrid = ds_grid_create(FLOOR_MAX_HEIGHT, FLOOR_MAX_WIDTH);
 	}
 	//Fill the grid with "empty" rooms (Solid earth/no rooms)
-	
-	var _floorStruct = new floorRoom(0,0); //Init the floor struct
 	for(var i = 0; i < FLOOR_MAX_WIDTH; i++) {
 		for(var j = 0; j < FLOOR_MAX_HEIGHT; j++) {
-			_floorStruct = new floorRoom(i, j);
-			ds_grid_set(levelGrid, i, j, _floorStruct);
+			generateRoom(i, j, ROOMTYPE.NONE);
 		}
 	}	
 	//Generate spawn room in the middle
 	var _spawnX = floor(FLOOR_MAX_WIDTH / 2);
 	var _spawnY = floor(FLOOR_MAX_HEIGHT / 2);
-	_floorStruct = new spawnRoom(_spawnX, _spawnY);
-	
-	ds_grid_set(levelGrid, _floorStruct.x, _floorStruct.y, _floorStruct);
+	generateRoom(_spawnX, _spawnY, ROOMTYPE.SPAWN);
 	//Blank slate of rooms generated.
 	goalRooms = goal_rooms();	
 	//goalRooms = 12;//Hard set to test
@@ -66,47 +63,22 @@ generateFloorPlan = function() {
 	var _y = _spawnY;
 	
 	for(var i = 0; i < 1000 && createdRooms < goalRooms; i++) {
-		//Randomize the start direction
-		var _dir = irandom(3);  //0 = East, goes counter clockwise
-		var _startX = _x; //Holds the room we started at
+		//Holds the room we started at
+		var _startX = _x; 
 		var _startY = _y;
+
+		//Randomize the start direction
+		var _dir = irandom(3);  //0 = East, goes counter clockwise		
+
+		_x = getDirectionCoordX(_dir, _x);
+		_y = getDirectionCoordY(_dir, _y);
 		
-		//If the x or y is out of bounds, try to skip it
-		switch(_dir) {
-			case 0:
-			//Search East
-				if(_x < FLOOR_MAX_WIDTH - 1) {
-					_x++;
-					break;
-				}
-			case 1:
-			//Search South
-				if(_y < FLOOR_MAX_HEIGHT - 1) {
-				_y++;
-				break;
-				}
-				
-			case 2:
-			//Search West
-				if(_x > 0) {
-				_x--;
-				break;
-			}
-			case 3:
-			//Search North
-				if(_y > 0) {
-				_y--;
-				}
-			break;			//This is the last check, so break regardless
-		}
-		
-		var _result = generateARoom(_x, _y);
+		var _result = determineRoomGen(_x, _y);
 		//See if room has already been filled
 		if(_result == true) {
 			//Room was generated successfully at x and y coords	
 			//Move the pointer to the created room
-			_floorStruct = new normalRoom(_x, _y);
-			ds_grid_set(levelGrid, _floorStruct.x, _floorStruct.y, _floorStruct);
+			generateRoom(_x, _y, ROOMTYPE.NORMAL);
 			createdRooms++;
 			_startX = _x;
 			_startY = _y;
@@ -130,16 +102,68 @@ generateFloorPlan = function() {
 	}	
 }
 
-generateARoom = function(_x, _y) {
+getDirectionCoordX = function(_dir, _x) {
+		//If the x or y is out of bounds, try to skip it
+		switch(_dir) {
+			case 0:
+			//Search East
+				if(_x < FLOOR_MAX_WIDTH - 1) {
+					_x++;
+					break;
+				}
+			case 1:
+			//Search South
+				break;
+			case 2:
+			//Search West
+				if(_x > 0) {
+				_x--;
+				break;
+			}
+			case 3:
+
+			break;			//This is the last check, so break regardless
+		}	
+		return _x;
+}
+
+getDirectionCoordY = function(_dir, _y) {
+		//If the x or y is out of bounds, try to skip it
+		switch(_dir) {
+			case 0:
+			//Search East
+				break;
 				
-		//Check has already been generated. 
-		var _roomType = levelGrid[# _x, _y][$ "roomType"];
-		if(_roomType != ROOMTYPE.NONE) {
-			return false;
-		}		
-	
-		//Check if the room already has 2 neighbors
+			case 1:
+			//Search South
+				if(_y < FLOOR_MAX_HEIGHT - 1) {
+				_y++;
+				break;
+				}
+				
+			case 2:
+			//Search West
+				break;
+			case 3:
+			//Search North
+				if(_y > 0) {
+				_y--;
+				}
+			break;			//This is the last check, so break regardless
+		}	
+		return _y;
+}
+
+getCountOfNeighbors = function(_x, _y) {
+//Check if the room already has 2 neighbors
 		var _neighbors = 0;
+		
+		//Check to ensure we are not checking a blank/none room
+		var _tempRoom = levelGrid[# _x, _y][$ "roomType"];
+		if(_tempRoom == ROOMTYPE.NONE) {
+			return -1;	
+		}
+		
 		if(_x > 1){
 			var _tempRoom = levelGrid[# _x - 1, _y][$ "roomType"];
 			if(_tempRoom != ROOMTYPE.NONE) {
@@ -172,6 +196,21 @@ generateARoom = function(_x, _y) {
 			}
 		}
 		
+		return _neighbors;
+	
+}
+
+determineRoomGen = function(_x, _y) {
+				
+		//Check has already been generated. 
+		var _roomType = levelGrid[# _x, _y][$ "roomType"];
+		if(_roomType != ROOMTYPE.NONE) {
+			return false;
+		}		
+	
+		//Check if the room already has 2 neighbors
+		var _neighbors = getCountOfNeighbors(_x, _y);
+		
 		if(_neighbors > 2) {
 			//Stop if the cell has at least 2 neighbors to prevent loops
 			return false;	
@@ -191,9 +230,56 @@ generateARoom = function(_x, _y) {
 	return false;
 }
 
+generateRoom = function(_x, _y, _roomType) {
+	//Sets the room type given x, y coords, and the room type to set through ENUM
+	/*
+	Blank/No			ROOMTYPE.NONE
+	Normal/Standard		ROOMTYPE.NORMAL
+	Spawn				ROOMTYPE.SPAWN
+	Boss				ROOMTYPE.BOSS
+	
+	*/
+			var	_floorStruct = new floorRoom(0, 0);
+			switch(_roomType) {
+				case ROOMTYPE.NONE:
+					_floorStruct = new floorRoom(_x, _y);
+				break;
+				
+				case ROOMTYPE.NORMAL:
+					_floorStruct = new normalRoom(_x, _y);
+				break;
+				
+				case ROOMTYPE.SPAWN:
+					_floorStruct = new spawnRoom(_x, _y);
+				break;
+			}
+			ds_grid_set(levelGrid, _floorStruct.x, _floorStruct.y, _floorStruct);		
+	
+}
 //Floor plan is very straight, with no branches.
 //TODO: Come back and revise this to make more branches and not so linear
 //BoI uses a queue and then iterates over the entire queue.  Currently we just create a snake
+
+findEndRooms = function(){
+	//Iterate through level grid, finding all rooms that only have a single neighbor
+	for(var _x = 0; _x < FLOOR_MAX_WIDTH; _x++) {
+		for(var _y = 0; _y < FLOOR_MAX_HEIGHT; _y++) {
+			var _neighbors = getCountOfNeighbors(_x, _y);
+			if(_neighbors == 1) {
+				//This is an end room
+				setEndRoom(_x, _y);
+			}
+		}
+	}
+	//Ensure spawn room is not removed
+	
+}
+
+findDistanceToSpawn = function() {
+	
+	
+}
+
 generateFloorPlan();
 
 //Validate floor plan

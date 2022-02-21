@@ -3,8 +3,6 @@ YAGNI - YOU AREN'T GONNA NEED IT
 
 
 Short-Term TODO:
-- Improve dungeon generation
-	- More side rooms within the branching
 - Create a boss room that creates an end tile after killing all enemies (or the enemy)
 
 - Create additional AI
@@ -27,7 +25,8 @@ Short-Term TODO:
 		- Each card can do something and has an active effect
 		- Relics that have passive effects
 
-
+- Improve dungeon generation
+	- More side rooms within the branching
 
 	
 - Create Turn State Machine
