@@ -289,7 +289,7 @@ while(createdRooms != goalRooms) {
 }
 
 if(LOGGING) show_debug_message("Floor of rooms generated.");
-
+findEndRooms();
 //All rooms should go on the same tilemap
 var _xOff = 0;
 var _yOff = 7; //How many tiles down should the game area be

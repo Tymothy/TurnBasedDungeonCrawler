@@ -20,7 +20,7 @@ function spawn_player(){
 				if(_spawnTile == CORETILES.SPAWN)
 				{
 					instance_create_layer(i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2, "la_player", ob_player);	
-					if(LOGGING) show_debug_message("Player spawned at grid coords: " + string(i) + ", " + string(j));
+					//if(LOGGING) show_debug_message("Player spawned at grid coords: " + string(i) + ", " + string(j));
 					return 1;
 				}
 			}
@@ -84,7 +84,7 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 			//If spawn point is still valid, spawn ai.
 			if(_spawnValid == true) {
 				instance_create_layer(from_grid(_randX), from_grid(_randY), "la_ai", _obj);
-				if(LOGGING) show_debug_message("Spawned AI " + string(_obj.attributes.aiName) + " at " + coords_string(_randX, _randY) + " after " + string(i) + " attempts");
+				//if(LOGGING) show_debug_message("Spawned AI " + string(_obj.attributes.aiName) + " at " + coords_string(_randX, _randY) + " after " + string(i) + " attempts");
 				_spawns++;
 			}
 				
