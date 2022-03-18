@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sp_marker_tile_wall","path":"sprites/sp_marker_tile_wall/sp_marker_tile_wall.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sp_marker_tile_wall",
     "tags": [],
     "resourceType": "GMSequence",

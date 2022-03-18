@@ -549,6 +549,28 @@ function gml_builder(l_pg,l_src)constructor{
 						l_proc=false;
 					}
 					break;
+				case 26:
+					if((l_flags&1)==0){
+						l_node=self.h_out_node;
+						self.h_offset+=1;
+						if(self.h_build_expr(0))return true;
+						l_flags|=2;
+						self.h_out_node=gml_node_null_co(l_tk.h_d,l_node,self.h_out_node);
+					} else l_proc=false;
+					break;
+				case 27:
+					var l_p4=l_tk.h_d;
+					if((l_flags&4)!=0){
+						l_node=self.h_out_node;
+						self.h_offset+=1;
+						if(self.h_build_expr(0))return true;
+						self.h_out_node=gml_node_set_op(l_p4,-1,gml_node_tools_clone(l_node),self.h_out_node);
+						l_node2=gml_node_undefined(l_p4);
+						l_node=gml_node_bin_op(l_p4,64,l_node,l_node2);
+						self.h_out_node=gml_node_if_then(l_p4,l_node,self.h_out_node);
+					}
+					l_proc=false;
+					break;
 				case 7:
 					if((l_flags&1)==0){
 						self.h_offset+=1;
@@ -1049,7 +1071,7 @@ function gml_builder(l_pg,l_src)constructor{
 			l_scr.h_node=l_scrNode;
 			l_scr=self.h_scripts[0];
 			var l__g=l_scr.h_node;
-			if(l__g.__enumIndex__==102)l_nodes=l__g.h_nodes; else l_nodes=[l_scr.h_node];
+			if(l__g.__enumIndex__==103)l_nodes=l__g.h_nodes; else l_nodes=[l_scr.h_node];
 		} else if(l_prefixStatements!=undefined){
 			l_nodes=l_prefixStatements;
 		} else l_nodes=[];

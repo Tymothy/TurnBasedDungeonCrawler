@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sp_projectile_arrow","path":"sprites/sp_projectile_arrow/sp_projectile_arrow.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sp_projectile_arrow",
     "tags": [],
     "resourceType": "GMSequence",

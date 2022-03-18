@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sp_marker_tile_outline","path":"sprites/sp_marker_tile_outline/sp_marker_tile_outline.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sp_marker_tile_outline",
     "tags": [],
     "resourceType": "GMSequence",

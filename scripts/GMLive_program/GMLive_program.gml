@@ -113,7 +113,7 @@ function gml_program(l_sources)constructor{
 		switch(l__g.__enumIndex__){
 			case 1:l_r=l__g.h_value;break;
 			case 2:l_r=l__g.h_value;break;
-			case 46:
+			case 47:
 				var l__hx_tmp=l__g.h_x;
 				if(l__hx_tmp.__enumIndex__==12){
 					var l_d=l__g.h_d;
@@ -185,7 +185,7 @@ function gml_program(l_sources)constructor{
 					if(l_scr.h_name==l_main){
 						var l__g3=variable_struct_get(self.h_script_map.h_obj,l_main).h_node;
 						var l_tmp;
-						if(l__g3.__enumIndex__==102)l_tmp=array_length(l__g3.h_nodes)==0; else l_tmp=false;
+						if(l__g3.__enumIndex__==103)l_tmp=array_length(l__g3.h_nodes)==0; else l_tmp=false;
 						if(l_tmp){
 							var l_w=self.h_script_array;
 							var l_i=0;

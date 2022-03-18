@@ -87,6 +87,7 @@ function vm_v2_gml_thread_v2_handlers_init(){
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"bool_or",vm_group_jump_on_bool_or);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"switch",vm_group_jump_on_switch);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"switch_case",vm_group_jump_on_switch_case);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"null_co",vm_group_jump_on_null_co);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"repeat_pre",vm_group_jump_on_repeat_pre);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"repeat_jump",vm_group_jump_on_repeat_jump);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"break",vm_group_jump_on_break);

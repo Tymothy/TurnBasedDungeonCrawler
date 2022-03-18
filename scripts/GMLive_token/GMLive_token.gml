@@ -426,3 +426,33 @@ function gml_token_arg_const(l_h_d,l_h_i){
 	l_this.h_i=l_h_i;
 	return l_this
 }
+
+if(live_enabled)
+/// @implements {gml_token}
+function mc_gml_token_null_co():mc_gml_token()constructor{
+	/// @hint {gml_pos} :h_d
+	static __enumParams__=["h_d"];
+	static __enumIndex__=26;
+}
+
+if(live_enabled)
+function gml_token_null_co(l_h_d){
+	var l_this=new mc_gml_token_null_co();
+	l_this.h_d=l_h_d;
+	return l_this
+}
+
+if(live_enabled)
+/// @implements {gml_token}
+function mc_gml_token_null_co_set():mc_gml_token()constructor{
+	/// @hint {gml_pos} :h_d
+	static __enumParams__=["h_d"];
+	static __enumIndex__=27;
+}
+
+if(live_enabled)
+function gml_token_null_co_set(l_h_d){
+	var l_this=new mc_gml_token_null_co_set();
+	l_this.h_d=l_h_d;
+	return l_this
+}

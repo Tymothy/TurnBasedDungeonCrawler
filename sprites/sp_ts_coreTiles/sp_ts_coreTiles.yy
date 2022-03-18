@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sp_ts_coreTiles","path":"sprites/sp_ts_coreTiles/sp_ts_coreTiles.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sp_ts_coreTiles",
     "tags": [],
     "resourceType": "GMSequence",

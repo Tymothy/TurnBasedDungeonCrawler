@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sp_stoneWalls","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sp_stoneWalls",
     "tags": [],
     "resourceType": "GMSequence",

@@ -803,6 +803,19 @@ function vm_group_jump_on_switch_case(l_th,l_act){
 }
 
 if(live_enabled)
+function vm_group_jump_on_null_co(l_th,l_act){
+	var l_p=l_act.h_p;
+	var l_q=l_th.h_scope;
+	var l_st=l_q.h_stack;
+	var l_val=l_st[l_st[0]];
+	if(l_val!=undefined&&l_val!=pointer_null){
+		l_q.h_offset=l_p;
+		return gml_thread_proc_result_sync_pos;
+	} else gml_stack_discard(l_st);
+	return gml_thread_proc_result_ok;
+}
+
+if(live_enabled)
 function vm_group_jump_on_repeat_pre(l_th,l_act){
 	var l_p=l_act.h_p;
 	var l_q=l_th.h_scope;

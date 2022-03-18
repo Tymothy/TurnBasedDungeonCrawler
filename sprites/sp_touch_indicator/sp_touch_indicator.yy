@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sp_touch_indicator","path":"sprites/sp_touch_indicator/sp_touch_indicator.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sp_touch_indicator",
     "tags": [],
     "resourceType": "GMSequence",

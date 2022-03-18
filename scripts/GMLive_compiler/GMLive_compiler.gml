@@ -16,7 +16,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 	var l_diff=(l_inc?1:-1);
 	var l__g=l_x;
 	switch(l__g.__enumIndex__){
-		case 40:
+		case 41:
 			var l_localInd=variable_struct_get(gml_compile_curr_script.h_local_map.h_obj,l__g.h_id);
 			ds_list_add(l_r,gml_action_local(l_d,l_localInd));
 			if(l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
@@ -24,7 +24,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 			if(!l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
 			ds_list_add(l_r,gml_action_local_set(l_d,l_localInd));
 			break;
-		case 43:
+		case 44:
 			var l_s=l__g.h_id;
 			ds_list_add(l_r,gml_action_global(l_d,l_s));
 			if(l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
@@ -32,7 +32,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 			if(!l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
 			ds_list_add(l_r,gml_action_global_set(l_d,l_s));
 			break;
-		case 46:
+		case 47:
 			var l_obj=l__g.h_x;
 			var l_field=l__g.h_fd;
 			if(gml_compile_node(l_obj,l_r,true))return true;
@@ -43,7 +43,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 			if(!l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
 			ds_list_add(l_r,gml_action_field_set(l_d,l_field));
 			break;
-		case 61:
+		case 62:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
 			ds_list_add(l_r,gml_action_dup2x(l_d));
@@ -53,7 +53,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 			if(!l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
 			ds_list_add(l_r,gml_action_index_set(l_d));
 			break;
-		case 71:
+		case 72:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
 			ds_list_add(l_r,gml_action_dup2x(l_d));
@@ -63,7 +63,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 			if(!l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
 			ds_list_add(l_r,gml_action_index_set(l_d));
 			break;
-		case 76:
+		case 77:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
@@ -74,7 +74,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 			if(!l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
 			ds_list_add(l_r,gml_action_index2d_set(l_d));
 			break;
-		case 66:
+		case 67:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
@@ -85,7 +85,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 			if(!l_isPrefix)ds_list_add(l_r,gml_action_add_int(l_d,l_diff));
 			ds_list_add(l_r,gml_action_index2d_set(l_d));
 			break;
-		case 96:
+		case 97:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
 			if(variable_struct_exists(gml_func_script.h_obj,"variable_struct_get")&&variable_struct_exists(gml_func_script.h_obj,"variable_struct_set")){
@@ -97,7 +97,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l_d,variable_struct_get(gml_func_script.h_obj,"variable_struct_set"),3,variable_struct_get(gml_func_args.h_obj,"variable_struct_set"),variable_struct_get(gml_func_rest.h_obj,"variable_struct_set"),0,false));
 				return false;
 			} else return gml_compile_error("Operation not supported - requires variable_struct_get and variable_struct_set functions.",l_d);
-		case 81:
+		case 82:
 			if(gml_compile_node(l__g.h_lx,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
 			if(variable_struct_exists(gml_func_script.h_obj,"ds_list_find_value")&&variable_struct_exists(gml_func_script.h_obj,"ds_list_set")){
@@ -109,7 +109,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l_d,variable_struct_get(gml_func_script.h_obj,"ds_list_set"),3,variable_struct_get(gml_func_args.h_obj,"ds_list_set"),variable_struct_get(gml_func_rest.h_obj,"ds_list_set"),0,false));
 				return false;
 			} else return gml_compile_error("Operation not supported - requires ds_list_find_value and ds_list_set functions.",l_d);
-		case 86:
+		case 87:
 			if(gml_compile_node(l__g.h_lx,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
 			if(variable_struct_exists(gml_func_script.h_obj,"ds_map_find_value")&&variable_struct_exists(gml_func_script.h_obj,"ds_map_set")){
@@ -121,7 +121,7 @@ function gml_compile_prefix_or_postfix(l_d,l_x,l_isPrefix,l_inc,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l_d,variable_struct_get(gml_func_script.h_obj,"ds_map_set"),3,variable_struct_get(gml_func_args.h_obj,"ds_map_set"),variable_struct_get(gml_func_rest.h_obj,"ds_map_set"),0,false));
 				return false;
 			} else return gml_compile_error("Operation not supported - requires ds_map_find_value and ds_map_set functions.",l_d);
-		case 91:
+		case 92:
 			if(gml_compile_node(l__g.h_lx,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
@@ -172,7 +172,7 @@ function gml_compile_node(l_q,l_r,l_out){
 			if(gml_compile_node(l__g.h_ind2,l_r,true))return true;
 			ds_list_add(l_r,gml_action_ensure_array_for_index2d(l__g.h_d));
 			break;
-		case 39:
+		case 40:
 			if(gml_compile_node(l__g.h_fd,l_r,true))return true;
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_in(l__g.h_d,l__g.h_not));
@@ -202,162 +202,162 @@ function gml_compile_node(l_q,l_r,l_out){
 			}
 			ds_list_add(l_r,gml_action_object_decl(l__g.h_d,l_fields));
 			break;
-		case 101:
+		case 102:
 			l_x=l__g.h_value;
 			if(l_x!=undefined){
 				if(gml_compile_node(l_x,l_r,true))return true;
 				ds_list_add(l_r,gml_action_local_set(l__g.h_d,variable_struct_get(gml_compile_curr_script.h_local_map.h_obj,l__g.h_name)));
 			}
 			break;
-		case 40:ds_list_add(l_r,gml_action_local(l__g.h_d,variable_struct_get(gml_compile_curr_script.h_local_map.h_obj,l__g.h_id)));break;
-		case 41:
+		case 41:ds_list_add(l_r,gml_action_local(l__g.h_d,variable_struct_get(gml_compile_curr_script.h_local_map.h_obj,l__g.h_id)));break;
+		case 42:
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_local_set(l__g.h_d,variable_struct_get(gml_compile_curr_script.h_local_map.h_obj,l__g.h_id)));
 			break;
-		case 42:
+		case 43:
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_local_aop(l__g.h_d,l__g.h_op,variable_struct_get(gml_compile_curr_script.h_local_map.h_obj,l__g.h_id)));
 			break;
-		case 43:ds_list_add(l_r,gml_action_global(l__g.h_d,l__g.h_id));break;
-		case 44:
+		case 44:ds_list_add(l_r,gml_action_global(l__g.h_d,l__g.h_id));break;
+		case 45:
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_global_set(l__g.h_d,l__g.h_id));
 			break;
-		case 45:
+		case 46:
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_global_aop(l__g.h_d,l__g.h_op,l__g.h_id));
 			break;
-		case 46:
-			if(gml_compile_node(l__g.h_x,l_r,true))return true;
-			ds_list_add(l_r,gml_action_field(l__g.h_d,l__g.h_fd));
-			break;
 		case 47:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
-			if(gml_compile_node(l__g.h_val,l_r,true))return true;
-			ds_list_add(l_r,gml_action_field_set(l__g.h_d,l__g.h_fd));
+			ds_list_add(l_r,gml_action_field(l__g.h_d,l__g.h_fd));
 			break;
 		case 48:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
-			ds_list_add(l_r,gml_action_field_aop(l__g.h_d,l__g.h_op,l__g.h_fd));
+			ds_list_add(l_r,gml_action_field_set(l__g.h_d,l__g.h_fd));
 			break;
-		case 58:
+		case 49:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
-			if(gml_compile_node(l__g.h_i,l_r,true))return true;
-			ds_list_add(l_r,gml_action_alarm(l__g.h_d));
+			if(gml_compile_node(l__g.h_val,l_r,true))return true;
+			ds_list_add(l_r,gml_action_field_aop(l__g.h_d,l__g.h_op,l__g.h_fd));
 			break;
 		case 59:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i,l_r,true))return true;
-			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_alarm_set(l__g.h_d));
+			ds_list_add(l_r,gml_action_alarm(l__g.h_d));
 			break;
 		case 60:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i,l_r,true))return true;
 			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_alarm_aop(l__g.h_d,l__g.h_op));
+			ds_list_add(l_r,gml_action_alarm_set(l__g.h_d));
 			break;
 		case 61:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
-			if(gml_compile_node(l__g.h_id,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index(l__g.h_d));
-			break;
-		case 71:
-			if(gml_compile_node(l__g.h_x,l_r,true))return true;
-			if(gml_compile_node(l__g.h_id,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index(l__g.h_d));
+			if(gml_compile_node(l__g.h_i,l_r,true))return true;
+			if(gml_compile_node(l__g.h_v,l_r,true))return true;
+			ds_list_add(l_r,gml_action_alarm_aop(l__g.h_d,l__g.h_op));
 			break;
 		case 72:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
-			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index_set(l__g.h_d));
+			ds_list_add(l_r,gml_action_index(l__g.h_d));
 			break;
 		case 62:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
-			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index_set(l__g.h_d));
+			ds_list_add(l_r,gml_action_index(l__g.h_d));
 			break;
 		case 73:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
 			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index_aop(l__g.h_d,l__g.h_o));
+			ds_list_add(l_r,gml_action_index_set(l__g.h_d));
 			break;
 		case 63:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_id,l_r,true))return true;
 			if(gml_compile_node(l__g.h_v,l_r,true))return true;
+			ds_list_add(l_r,gml_action_index_set(l__g.h_d));
+			break;
+		case 64:
+			if(gml_compile_node(l__g.h_x,l_r,true))return true;
+			if(gml_compile_node(l__g.h_id,l_r,true))return true;
+			if(gml_compile_node(l__g.h_v,l_r,true))return true;
 			ds_list_add(l_r,gml_action_index_aop(l__g.h_d,l__g.h_o));
 			break;
-		case 66:
+		case 74:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
-			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
-			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index2d(l__g.h_d));
-			break;
-		case 76:
-			if(gml_compile_node(l__g.h_x,l_r,true))return true;
-			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
-			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index2d(l__g.h_d));
+			if(gml_compile_node(l__g.h_id,l_r,true))return true;
+			if(gml_compile_node(l__g.h_v,l_r,true))return true;
+			ds_list_add(l_r,gml_action_index_aop(l__g.h_d,l__g.h_o));
 			break;
 		case 77:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
-			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index2d_set(l__g.h_d));
+			ds_list_add(l_r,gml_action_index2d(l__g.h_d));
 			break;
 		case 67:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
-			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index2d_set(l__g.h_d));
+			ds_list_add(l_r,gml_action_index2d(l__g.h_d));
 			break;
 		case 68:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
 			if(gml_compile_node(l__g.h_v,l_r,true))return true;
-			ds_list_add(l_r,gml_action_index2d_aop(l__g.h_d,l__g.h_o));
+			ds_list_add(l_r,gml_action_index2d_set(l__g.h_d));
 			break;
 		case 78:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
 			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
 			if(gml_compile_node(l__g.h_v,l_r,true))return true;
+			ds_list_add(l_r,gml_action_index2d_set(l__g.h_d));
+			break;
+		case 79:
+			if(gml_compile_node(l__g.h_x,l_r,true))return true;
+			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
+			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
+			if(gml_compile_node(l__g.h_v,l_r,true))return true;
 			ds_list_add(l_r,gml_action_index2d_aop(l__g.h_d,l__g.h_o));
 			break;
-		case 49:ds_list_add(l_r,gml_action_env(l__g.h_d,variable_struct_get(gml_var_refs.h_obj,l__g.h_id)));break;
-		case 50:
+		case 69:
+			if(gml_compile_node(l__g.h_x,l_r,true))return true;
+			if(gml_compile_node(l__g.h_i1,l_r,true))return true;
+			if(gml_compile_node(l__g.h_i2,l_r,true))return true;
+			if(gml_compile_node(l__g.h_v,l_r,true))return true;
+			ds_list_add(l_r,gml_action_index2d_aop(l__g.h_d,l__g.h_o));
+			break;
+		case 50:ds_list_add(l_r,gml_action_env(l__g.h_d,variable_struct_get(gml_var_refs.h_obj,l__g.h_id)));break;
+		case 51:
 			var l_s1=l__g.h_id;
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_env_set(l__g.h_d,variable_struct_get(gml_var_refs.h_obj,l_s1),variable_struct_get(gml_var_types.h_obj,l_s1)));
 			break;
-		case 51:
+		case 52:
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_env_aop(l__g.h_d,l__g.h_op,variable_struct_get(gml_var_refs.h_obj,l__g.h_id)));
 			break;
-		case 55:
+		case 56:
 			if(gml_compile_node(l__g.h_k,l_r,true))return true;
 			ds_list_add(l_r,gml_action_env1d(l__g.h_d,variable_struct_get(gml_var_refs.h_obj,l__g.h_id)));
 			break;
-		case 56:
+		case 57:
 			var l_s1=l__g.h_id;
 			if(gml_compile_node(l__g.h_k,l_r,true))return true;
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_env1d_set(l__g.h_d,variable_struct_get(gml_var_refs.h_obj,l_s1),variable_struct_get(gml_var_types.h_obj,l_s1)));
 			break;
-		case 57:
+		case 58:
 			if(gml_compile_node(l__g.h_k,l_r,true))return true;
 			if(gml_compile_node(l__g.h_val,l_r,true))return true;
 			ds_list_add(l_r,gml_action_env1d_aop(l__g.h_d,l__g.h_op,variable_struct_get(gml_var_refs.h_obj,l__g.h_id)));
 			break;
-		case 81:
+		case 82:
 			l_s="ds_list_find_value";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
@@ -365,7 +365,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),2,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 82:
+		case 83:
 			l_s="ds_list_set";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
@@ -374,7 +374,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),3,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 83:
+		case 84:
 			if(variable_struct_exists(gml_func_script.h_obj,"ds_list_find_value")&&variable_struct_exists(gml_func_script.h_obj,"ds_list_set")){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
 				if(gml_compile_node(l__g.h_id,l_r,true))return true;
@@ -382,7 +382,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_ds_aop(l__g.h_d,l__g.h_o,3,variable_struct_get(gml_func_script.h_obj,"ds_list_find_value"),variable_struct_get(gml_func_script.h_obj,"ds_list_set"),l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 86:
+		case 87:
 			l_s="ds_map_find_value";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
@@ -390,7 +390,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),2,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 87:
+		case 88:
 			l_s="ds_map_set";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
@@ -399,7 +399,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),3,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 88:
+		case 89:
 			if(variable_struct_exists(gml_func_script.h_obj,"ds_map_find_value")&&variable_struct_exists(gml_func_script.h_obj,"ds_map_set")){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
 				if(gml_compile_node(l__g.h_id,l_r,true))return true;
@@ -407,7 +407,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_ds_aop(l__g.h_d,l__g.h_o,3,variable_struct_get(gml_func_script.h_obj,"ds_map_find_value"),variable_struct_get(gml_func_script.h_obj,"ds_map_set"),l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 96:
+		case 97:
 			l_s="variable_struct_get";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_x,l_r,true))return true;
@@ -415,7 +415,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),2,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 97:
+		case 98:
 			l_s="variable_struct_set";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_x,l_r,true))return true;
@@ -424,7 +424,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),3,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 98:
+		case 99:
 			if(variable_struct_exists(gml_func_script.h_obj,"variable_struct_get")&&variable_struct_exists(gml_func_script.h_obj,"variable_struct_set")){
 				if(gml_compile_node(l__g.h_x,l_r,true))return true;
 				if(gml_compile_node(l__g.h_id,l_r,true))return true;
@@ -432,7 +432,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_ds_aop(l__g.h_d,l__g.h_o,3,variable_struct_get(gml_func_script.h_obj,"variable_struct_get"),variable_struct_get(gml_func_script.h_obj,"variable_struct_set"),l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 91:
+		case 92:
 			l_s="ds_grid_get";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
@@ -441,7 +441,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),3,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 92:
+		case 93:
 			l_s="ds_grid_set";
 			if(variable_struct_exists(gml_func_script.h_obj,l_s)){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
@@ -451,7 +451,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_add(l_r,gml_action_call_func(l__g.h_d,variable_struct_get(gml_func_script.h_obj,l_s),4,variable_struct_get(gml_func_args.h_obj,l_s),variable_struct_get(gml_func_rest.h_obj,l_s),0,l_out));
 			} else return gml_compile_error("Accessor not supported",l__g.h_d);
 			break;
-		case 93:
+		case 94:
 			if(variable_struct_exists(gml_func_script.h_obj,"ds_grid_get")&&variable_struct_exists(gml_func_script.h_obj,"ds_grid_set")){
 				if(gml_compile_node(l__g.h_lx,l_r,true))return true;
 				if(gml_compile_node(l__g.h_i1,l_r,true))return true;
@@ -612,7 +612,7 @@ function gml_compile_node(l_q,l_r,l_out){
 			if(l_out&&l_i==-5)ds_list_add(l_r,gml_action_result(l_d));
 			break;
 		case 31:ds_list_add(l_r,gml_action_func_literal(l__g.h_d,l__g.h_name));break;
-		case 102:
+		case 103:
 			l_w=l__g.h_nodes;
 			l_n=array_length(l_w);
 			if(l_n>0){
@@ -623,7 +623,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				if(gml_compile_node(l_w[l_i],l_r,l_out))return true;
 			}
 			break;
-		case 103:
+		case 104:
 			l_d=l__g.h_d;
 			l_x=l__g.h_not;
 			if(gml_compile_node(l__g.h_cond,l_r,true))return true;
@@ -638,7 +638,7 @@ function gml_compile_node(l_q,l_r,l_out){
 				ds_list_set(l_r,l_n,gml_action_jump(l_d,ds_list_size(l_r)));
 			} else ds_list_set(l_r,l_i,gml_action_jump_unless(l_d,ds_list_size(l_r)));
 			break;
-		case 104:
+		case 105:
 			l_d=l__g.h_d;
 			if(gml_compile_node(l__g.h_cond,l_r,true))return true;
 			l_i=ds_list_size(l_r);
@@ -650,7 +650,16 @@ function gml_compile_node(l_q,l_r,l_out){
 			if(gml_compile_node(l__g.h_not,l_r,l_out))return true;
 			ds_list_set(l_r,l_n,gml_action_jump(l_d,ds_list_size(l_r)));
 			break;
-		case 111:
+		case 37:
+			l_d=l__g.h_d;
+			if(gml_compile_node(l__g.h_a,l_r,true))return true;
+			l_i=ds_list_size(l_r);
+			ds_list_add(l_r,gml_action_jump_placeholder(l_d));
+			if(gml_compile_node(l__g.h_b,l_r,true))return true;
+			ds_list_set(l_r,l_i,gml_action_null_co(l_d,ds_list_size(l_r)));
+			if(!l_out)ds_list_add(l_r,gml_action_discard(l_d));
+			break;
+		case 112:
 			l_d=l__g.h_d;
 			if(gml_compile_node(l__g.h_times,l_r,true))return true;
 			l_n=ds_list_size(l_r);
@@ -670,13 +679,13 @@ function gml_compile_node(l_q,l_r,l_out){
 			for(l_k=l_p0;l_k<l_p2;l_k++){
 				var l__g1=ds_list_find_value(l_r,l_k);
 				switch(l__g1.__enumIndex__){
-					case 69:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
-					case 68:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
+					case 71:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
+					case 70:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
 				}
 			}
 			ds_list_set(l_r,l_n,gml_action_repeat_pre(l_d,ds_list_size(l_r)));
 			break;
-		case 108:
+		case 109:
 			l_d=l__g.h_d;
 			l_p0=ds_list_size(l_r);
 			if(gml_compile_node(l__g.h_cond,l_r,true))return true;
@@ -695,8 +704,33 @@ function gml_compile_node(l_q,l_r,l_out){
 			for(l_k=l_p1;l_k<l_p2;l_k++){
 				var l__g1=ds_list_find_value(l_r,l_k);
 				switch(l__g1.__enumIndex__){
-					case 69:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p0));break;
-					case 68:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
+					case 71:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p0));break;
+					case 70:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
+				}
+			}
+			break;
+		case 111:
+			l_d=l__g.h_d;
+			l_p0=ds_list_size(l_r);
+			l_pc=gml_compile_curr_continue;
+			l_pb=gml_compile_curr_break;
+			gml_compile_curr_continue=l_p0;
+			gml_compile_curr_break=l_p0;
+			if(gml_compile_node(l__g.h_node,l_r,false))return true;
+			gml_compile_curr_continue=l_pc;
+			gml_compile_curr_break=l_pb;
+			l_p1=ds_list_size(l_r);
+			if(gml_compile_node(l__g.h_cond,l_r,true))return true;
+			var l__g1=l_q;
+			var l_tmp;
+			if(l__g1.__enumIndex__==110)l_tmp=true; else l_tmp=false;
+			if(l_tmp)ds_list_add(l_r,gml_action_jump_unless(l_d,l_p0)); else ds_list_add(l_r,gml_action_jump_if(l_d,l_p0));
+			l_p2=ds_list_size(l_r);
+			for(l_k=l_p0;l_k<l_p1;l_k++){
+				var l__g1=ds_list_find_value(l_r,l_k);
+				switch(l__g1.__enumIndex__){
+					case 71:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
+					case 70:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
 				}
 			}
 			break;
@@ -714,43 +748,18 @@ function gml_compile_node(l_q,l_r,l_out){
 			if(gml_compile_node(l__g.h_cond,l_r,true))return true;
 			var l__g1=l_q;
 			var l_tmp;
-			if(l__g1.__enumIndex__==109)l_tmp=true; else l_tmp=false;
+			if(l__g1.__enumIndex__==110)l_tmp=true; else l_tmp=false;
 			if(l_tmp)ds_list_add(l_r,gml_action_jump_unless(l_d,l_p0)); else ds_list_add(l_r,gml_action_jump_if(l_d,l_p0));
 			l_p2=ds_list_size(l_r);
 			for(l_k=l_p0;l_k<l_p1;l_k++){
 				var l__g1=ds_list_find_value(l_r,l_k);
 				switch(l__g1.__enumIndex__){
-					case 69:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
-					case 68:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
+					case 71:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
+					case 70:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
 				}
 			}
 			break;
-		case 109:
-			l_d=l__g.h_d;
-			l_p0=ds_list_size(l_r);
-			l_pc=gml_compile_curr_continue;
-			l_pb=gml_compile_curr_break;
-			gml_compile_curr_continue=l_p0;
-			gml_compile_curr_break=l_p0;
-			if(gml_compile_node(l__g.h_node,l_r,false))return true;
-			gml_compile_curr_continue=l_pc;
-			gml_compile_curr_break=l_pb;
-			l_p1=ds_list_size(l_r);
-			if(gml_compile_node(l__g.h_cond,l_r,true))return true;
-			var l__g1=l_q;
-			var l_tmp;
-			if(l__g1.__enumIndex__==109)l_tmp=true; else l_tmp=false;
-			if(l_tmp)ds_list_add(l_r,gml_action_jump_unless(l_d,l_p0)); else ds_list_add(l_r,gml_action_jump_if(l_d,l_p0));
-			l_p2=ds_list_size(l_r);
-			for(l_k=l_p0;l_k<l_p1;l_k++){
-				var l__g1=ds_list_find_value(l_r,l_k);
-				switch(l__g1.__enumIndex__){
-					case 69:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
-					case 68:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
-				}
-			}
-			break;
-		case 112:
+		case 113:
 			l_d=l__g.h_d;
 			if(gml_compile_node(l__g.h_pre,l_r,false))return true;
 			l_p0=ds_list_size(l_r);
@@ -772,12 +781,12 @@ function gml_compile_node(l_q,l_r,l_out){
 			for(l_k=l_p1;l_k<l_p2;l_k++){
 				var l__g1=ds_list_find_value(l_r,l_k);
 				switch(l__g1.__enumIndex__){
-					case 69:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
-					case 68:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p3));break;
+					case 71:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p2));break;
+					case 70:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p3));break;
 				}
 			}
 			break;
-		case 105:
+		case 106:
 			var l__cc=l__g.h_list;
 			l_d=l__g.h_d;
 			var l_jt=ds_map_create();
@@ -845,13 +854,13 @@ function gml_compile_node(l_q,l_r,l_out){
 			l_p2=ds_list_size(l_r);
 			for(l_k=l_p0;l_k<l_p2;l_k++){
 				var l__g1=ds_list_find_value(l_r,l_k);
-				if(l__g1.__enumIndex__==68){
+				if(l__g1.__enumIndex__==70){
 					var l_d1=l__g1.h_d;
 					if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l_d1,l_p2));
 				}
 			}
 			break;
-		case 113:
+		case 114:
 			l_d=l__g.h_d;
 			if(gml_compile_node(l__g.h_ctx,l_r,true))return true;
 			ds_list_add(l_r,gml_action_with_pre(l_d));
@@ -871,12 +880,12 @@ function gml_compile_node(l_q,l_r,l_out){
 			for(l_k=l_p0;l_k<l_p1;l_k++){
 				var l__g1=ds_list_find_value(l_r,l_k);
 				switch(l__g1.__enumIndex__){
-					case 69:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p0));break;
-					case 68:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
+					case 71:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p0));break;
+					case 70:if(l__g1.h_lp==l_p0)ds_list_set(l_r,l_k,gml_action_jump(l__g1.h_d,l_p1));break;
 				}
 			}
 			break;
-		case 120:
+		case 121:
 			l_d=l__g.h_d;
 			l_p0=ds_list_size(l_r);
 			ds_list_add(l_r,gml_action_try(l_d,0));
@@ -888,34 +897,34 @@ function gml_compile_node(l_q,l_r,l_out){
 			if(gml_compile_node(l__g.h_cat,l_r,false))return true;
 			ds_list_set(l_r,l_p1,gml_action_finally(l_d,ds_list_size(l_r)));
 			break;
-		case 121:
+		case 122:
 			if(gml_compile_node(l__g.h_x,l_r,true))return true;
 			ds_list_add(l_r,gml_action_throw(l__g.h_d));
 			break;
-		case 117:
+		case 118:
 			l_d=l__g.h_d;
 			l_i=gml_compile_curr_break;
 			if(l_i>=0)ds_list_add(l_r,gml_action_break(l_d,l_i)); else return gml_compile_error("Cannot `break` here",l_d);
 			break;
-		case 118:
+		case 119:
 			l_d=l__g.h_d;
 			l_i=gml_compile_curr_continue;
 			if(l_i>=0)ds_list_add(l_r,gml_action_continue(l_d,l_i)); else return gml_compile_error("Cannot `continue` here",l_d);
 			break;
-		case 115:
+		case 116:
 			if(gml_compile_node(l__g.h_v,l_r,true))return true;
 			ds_list_add(l_r,gml_action_return(l__g.h_d));
 			break;
-		case 116:
+		case 117:
 			l_d=l__g.h_d;
 			ds_list_add(l_r,gml_action_number(l_d,0));
 			ds_list_add(l_r,gml_action_return(l_d));
 			break;
-		case 106:
+		case 107:
 			if(gml_compile_node(l__g.h_time,l_r,true))return true;
 			ds_list_add(l_r,gml_action_wait(l__g.h_d));
 			break;
-		case 107:ds_list_add(l_r,gml_action_fork(l__g.h_d,l_out));break;
+		case 108:ds_list_add(l_r,gml_action_fork(l__g.h_d,l_out));break;
 		default:return gml_compile_error("Cannot compile "+gml_std_Type_enumConstructor(l_q),gml_std_haxe_enum_tools_getParameter(l_q,0));
 	}
 	return false;

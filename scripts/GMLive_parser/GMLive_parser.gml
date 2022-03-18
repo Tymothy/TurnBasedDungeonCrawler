@@ -94,7 +94,15 @@ function gml_parser_run(l_src,l_temStart){
 				} else ds_list_add(l_out,gml_token_period(l_d));
 				break;
 			case 58:ds_list_add(l_out,gml_token_colon(l_d));break;
-			case 63:ds_list_add(l_out,gml_token_qmark(l_d));break;
+			case 63:
+				if(buffer_peek(l_buf,l_pos,buffer_u8)==63){
+					l_pos++;
+					if(buffer_peek(l_buf,l_pos,buffer_u8)==61){
+						l_pos++;
+						ds_list_add(l_out,gml_token_null_co_set(l_d));
+					} else ds_list_add(l_out,gml_token_null_co(l_d));
+				} else ds_list_add(l_out,gml_token_qmark(l_d));
+				break;
 			case 64:
 				l_c=buffer_peek(l_buf,l_pos,buffer_u8);
 				if(l_c==34||l_c==39){
@@ -485,7 +493,8 @@ function gml_parser_run(l_src,l_temStart){
 					l_c=buffer_peek(l_buf,l_pos,buffer_u8);
 					if(l_c==95||l_c>=97&&l_c<=122||l_c>=65&&l_c<=90||l_c>=48&&l_c<=57)l_pos++; else break;
 				}
-				switch(gml_parser_buf_sub(l_buf,l_sub_buf,l_start,l_pos)){
+				var l_ident=gml_parser_buf_sub(l_buf,l_sub_buf,l_start,l_pos);
+				switch(l_ident){
 					case "define":
 						l_start=l_pos;
 						while(l_pos<l_len){
@@ -514,8 +523,33 @@ function gml_parser_run(l_src,l_temStart){
 						}
 						break;
 					default:
-						ds_list_add(l_out,gml_token_hash(l_d));
-						l_pos=l_start;
+						l_z=true;
+						if(string_length(l_ident)==6){
+							l_z=false;
+							l_n=-1;
+							l_i=0;
+							while(++l_n<6){
+								l_c=string_ord_at(l_ident,l_n+1);
+								if(l_c>=48&&l_c<=57){
+									l_i=((l_i<<4)|l_c-48);
+								} else if(l_c>=97&&l_c<=102){
+									l_i=((l_i<<4)|l_c-87);
+								} else if(l_c>=65&&l_c<=70){
+									l_i=((l_i<<4)|l_c-55);
+								} else {
+									l_z=true;
+									break;
+								}
+							}
+							if(!l_z){
+								l_i=(((l_i&65280)|((l_i&16711680)>>16))|((l_i&255)<<16));
+								ds_list_add(l_out,gml_token_number(l_d,l_i,undefined));
+							}
+						}
+						if(l_z){
+							ds_list_add(l_out,gml_token_hash(l_d));
+							l_pos=l_start;
+						}
 				}
 				break;
 			case 36:

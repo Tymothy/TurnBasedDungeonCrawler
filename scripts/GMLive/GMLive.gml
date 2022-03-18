@@ -2,7 +2,7 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
-// Generated at 2021-11-29 15:37:40 (10663ms) for v2.3.7+
+// Generated at 2022-03-11 21:25:52 (11006ms) for v2.3.7+
 /// @lint nullToAny true
 globalvar gml_std_haxe_type_markerValue;if(live_enabled)gml_std_haxe_type_markerValue=[];
 globalvar mt_gml_std_Date;if(live_enabled)mt_gml_std_Date=new gml_std_haxe_class(-1,"gml_std_Date");
@@ -11,18 +11,18 @@ globalvar mt_gml_program;if(live_enabled)mt_gml_program=new gml_std_haxe_class(-
 globalvar mt_gml_enum;if(live_enabled)mt_gml_enum=new gml_std_haxe_class(-1,"gml_enum");
 globalvar mt_gml_enum_ctr;if(live_enabled)mt_gml_enum_ctr=new gml_std_haxe_class(-1,"gml_enum_ctr");
 globalvar mt_gml_macro;if(live_enabled)mt_gml_macro=new gml_std_haxe_class(-1,"gml_macro");
-globalvar mt_gml_node;if(live_enabled)mt_gml_node=new gml_std_haxe_enum(-1,"gml_node",["undefined","number","cstring","other_const","enum_ctr","array_decl","object_decl","ensure_array_for_local","ensure_array_for_global","ensure_array_for_field","ensure_array_for_index","ensure_array_for_index2d","ident","self","other","global_ref","script","native_script","const","arg_const","arg_index","arg_count","call","call_script","call_script_at","call_script_id","call_script_with_array","call_field","call_func","call_func_at","construct","func_literal","prefix","postfix","un_op","bin_op","set_op","to_bool","from_bool","in","local","local_set","local_aop","global","global_set","global_aop","field","field_set","field_aop","env","env_set","env_aop","env_fd","env_fd_set","env_fd_aop","env1d","env1d_set","env1d_aop","alarm","alarm_set","alarm_aop","index","index_set","index_aop","index_prefix","index_postfix","index2d","index2d_set","index2d_aop","index2d_prefix","index2d_postfix","raw_id","raw_id_set","raw_id_aop","raw_id_prefix","raw_id_postfix","raw_id2d","raw_id2d_set","raw_id2d_aop","raw_id2d_prefix","raw_id2d_postfix","ds_list","ds_list_set","ds_list_aop","ds_list_prefix","ds_list_postfix","ds_map","ds_map_set","ds_map_aop","ds_map_prefix","ds_map_postfix","ds_grid","ds_grid_set","ds_grid_aop","ds_grid_prefix","ds_grid_postfix","key_id","key_id_set","key_id_aop","key_id_prefix","key_id_postfix","var_decl","block","if_then","ternary","switch","wait","fork","while","do_until","do_while","repeat","for","with","once","return","exit","break","continue","debugger","try_catch","throw","comment_line","comment_line_pre","comment_line_post","comment_line_sep","comment_block","comment_block_pre","comment_block_post"]);
+globalvar mt_gml_node;if(live_enabled)mt_gml_node=new gml_std_haxe_enum(-1,"gml_node",["undefined","number","cstring","other_const","enum_ctr","array_decl","object_decl","ensure_array_for_local","ensure_array_for_global","ensure_array_for_field","ensure_array_for_index","ensure_array_for_index2d","ident","self","other","global_ref","script","native_script","const","arg_const","arg_index","arg_count","call","call_script","call_script_at","call_script_id","call_script_with_array","call_field","call_func","call_func_at","construct","func_literal","prefix","postfix","un_op","bin_op","set_op","null_co","to_bool","from_bool","in","local","local_set","local_aop","global","global_set","global_aop","field","field_set","field_aop","env","env_set","env_aop","env_fd","env_fd_set","env_fd_aop","env1d","env1d_set","env1d_aop","alarm","alarm_set","alarm_aop","index","index_set","index_aop","index_prefix","index_postfix","index2d","index2d_set","index2d_aop","index2d_prefix","index2d_postfix","raw_id","raw_id_set","raw_id_aop","raw_id_prefix","raw_id_postfix","raw_id2d","raw_id2d_set","raw_id2d_aop","raw_id2d_prefix","raw_id2d_postfix","ds_list","ds_list_set","ds_list_aop","ds_list_prefix","ds_list_postfix","ds_map","ds_map_set","ds_map_aop","ds_map_prefix","ds_map_postfix","ds_grid","ds_grid_set","ds_grid_aop","ds_grid_prefix","ds_grid_postfix","key_id","key_id_set","key_id_aop","key_id_prefix","key_id_postfix","var_decl","block","if_then","ternary","switch","wait","fork","while","do_until","do_while","repeat","for","with","once","return","exit","break","continue","debugger","try_catch","throw","comment_line","comment_line_pre","comment_line_post","comment_line_sep","comment_block","comment_block_pre","comment_block_post"]);
 globalvar mt_gml_pos;if(live_enabled)mt_gml_pos=new gml_std_haxe_class(-1,"gml_pos");
 globalvar mt_gml_script;if(live_enabled)mt_gml_script=new gml_std_haxe_class(-1,"gml_script");
 globalvar mt_gml_source;if(live_enabled)mt_gml_source=new gml_std_haxe_class(-1,"gml_source");
-globalvar mt_gml_token;if(live_enabled)mt_gml_token=new gml_std_haxe_enum(-1,"gml_token",["header","macro","hash","semico","comma","period","colon","qmark","at_sign","dollar_sign","keyword","ident","undefined","number","cstring","un_op","adjfix","bin_op","set_op","par_open","par_close","sqb_open","sqb_close","cub_open","cub_close","arg_const"]);
+globalvar mt_gml_token;if(live_enabled)mt_gml_token=new gml_std_haxe_enum(-1,"gml_token",["header","macro","hash","semico","comma","period","colon","qmark","at_sign","dollar_sign","keyword","ident","undefined","number","cstring","un_op","adjfix","bin_op","set_op","par_open","par_close","sqb_open","sqb_close","cub_open","cub_close","arg_const","null_co","null_co_set"]);
 globalvar mt_gml_std_haxe_class;if(live_enabled)mt_gml_std_haxe_class=new gml_std_haxe_class(-1,"gml_std_haxe_class");
 globalvar mt_gml_std_haxe_enum;if(live_enabled)mt_gml_std_haxe_enum=new gml_std_haxe_class(-1,"gml_std_haxe_enum");
 globalvar mt_gml_std_haxe_Exception;if(live_enabled)mt_gml_std_haxe_Exception=new gml_std_haxe_class(-1,"gml_std_haxe_Exception");
 globalvar mt_haxe_ds_basic_map;if(live_enabled)mt_haxe_ds_basic_map=new gml_std_haxe_class(-1,"haxe_ds_basic_map");
 globalvar mt_haxe_ds_string_map;if(live_enabled)mt_haxe_ds_string_map=new gml_std_haxe_class(-1,"haxe_ds_string_map");
 if(live_enabled)mt_haxe_ds_string_map.h_superClass=mt_haxe_ds_basic_map;
-globalvar mt_gml_action;if(live_enabled)mt_gml_action=new gml_std_haxe_enum(-1,"gml_action",["discard","dup","dup2x","dup3x","dup_in","undefined","number","cstring","array_decl","object_decl","const","self","other","local","local_set","local_aop","global","global_set","global_aop","field","field_set","field_aop","index","index_set","index_aop","index2d","index2d_set","index2d_aop","env","env_set","env_aop","env1d","env1d_set","env1d_aop","ds_aop","arg_const","arg_const_set","arg_const_aop","arg_index","arg_index_set","arg_index_aop","arg_count","add_int","equ_op","neq_op","concat","bin_op","un_op","in","call_script","call_script_id","call_script_with_array","call_func","call_field","construct","func_literal","jump","jump_if","jump_unless","bool_and","bool_or","switch","switch_case","repeat_jump","repeat_pre","with_pre","with_next","with_post","break","continue","return","result","try","catch","finally","throw","wait","fork","ensure_array_for_local","ensure_array_for_global","ensure_array_for_field","ensure_array_for_index","ensure_array_for_index2d","alarm","alarm_set","alarm_aop"]);
+globalvar mt_gml_action;if(live_enabled)mt_gml_action=new gml_std_haxe_enum(-1,"gml_action",["discard","dup","dup2x","dup3x","dup_in","undefined","number","cstring","array_decl","object_decl","const","self","other","local","local_set","local_aop","global","global_set","global_aop","field","field_set","field_aop","index","index_set","index_aop","index2d","index2d_set","index2d_aop","env","env_set","env_aop","env1d","env1d_set","env1d_aop","ds_aop","arg_const","arg_const_set","arg_const_aop","arg_index","arg_index_set","arg_index_aop","arg_count","add_int","equ_op","neq_op","concat","bin_op","un_op","in","call_script","call_script_id","call_script_with_array","call_func","call_field","construct","func_literal","jump","jump_if","jump_unless","jump_placeholder","bool_and","bool_or","null_co","switch","switch_case","repeat_jump","repeat_pre","with_pre","with_next","with_post","break","continue","return","result","try","catch","finally","throw","wait","fork","ensure_array_for_local","ensure_array_for_global","ensure_array_for_field","ensure_array_for_index","ensure_array_for_index2d","alarm","alarm_set","alarm_aop"]);
 globalvar mt_gml_thread_scope;if(live_enabled)mt_gml_thread_scope=new gml_std_haxe_class(-1,"gml_thread_scope");
 globalvar mt_gml_with_scope;if(live_enabled)mt_gml_with_scope=new gml_std_haxe_class(-1,"gml_with_scope");
 globalvar mt_gml_thread_proc_result;if(live_enabled)mt_gml_thread_proc_result=new gml_std_haxe_enum(-1,"gml_thread_proc_result",["ok","error","sync_pos","sync_scope"]);
@@ -478,7 +478,7 @@ function gml_script(l_src,l_name,l_pos)constructor{
 			var l_i=0;
 			for(var l__g1=ds_list_size(l_this1);l_i<l__g1;l_i++){
 				var l_q=ds_list_find_value(l_this1,l_i);
-				if(l_q.__enumIndex__==61)ds_map_destroy(l_q.h_jumptable);
+				if(l_q.__enumIndex__==63)ds_map_destroy(l_q.h_jumptable);
 			}
 			ds_list_destroy(l_this1);
 		}
@@ -763,19 +763,19 @@ function gml_seek_adjfix_proc(l_q,l_st){
 			if(l_pre||l_inBlock){
 				var l__g=l_x;
 				switch(l__g.__enumIndex__){
-					case 86:
+					case 87:
 						l_o=(l_b?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_ds_map_aop(l_d,l__g.h_lx,l__g.h_id,l_o,gml_node_number(l_d,1,undefined)));
 						break;
-					case 81:
+					case 82:
 						l_o=(l_b?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_ds_list_aop(l_d,l__g.h_lx,l__g.h_id,l_o,gml_node_number(l_d,1,undefined)));
 						break;
-					case 91:
+					case 92:
 						l_o=(l_b?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_ds_grid_aop(l_d,l__g.h_lx,l__g.h_i1,l__g.h_i2,l_o,gml_node_number(l_d,1,undefined)));
 						break;
-					case 96:
+					case 97:
 						l_o=(l_b?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_key_id_aop(l_d,l__g.h_x,l__g.h_id,l_o,gml_node_number(l_d,1,undefined)));
 						break;
@@ -797,19 +797,19 @@ function gml_seek_adjfix_proc(l_q,l_st){
 			if(l_pre||l_inBlock){
 				var l__g1=l_x;
 				switch(l__g1.__enumIndex__){
-					case 86:
+					case 87:
 						l_o=(l__g.h_inc?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_ds_map_aop(l_d,l__g1.h_lx,l__g1.h_id,l_o,gml_node_number(l_d,1,undefined)));
 						break;
-					case 81:
+					case 82:
 						l_o=(l__g.h_inc?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_ds_list_aop(l_d,l__g1.h_lx,l__g1.h_id,l_o,gml_node_number(l_d,1,undefined)));
 						break;
-					case 91:
+					case 92:
 						l_o=(l__g.h_inc?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_ds_grid_aop(l_d,l__g1.h_lx,l__g1.h_i1,l__g1.h_i2,l_o,gml_node_number(l_d,1,undefined)));
 						break;
-					case 96:
+					case 97:
 						l_o=(l__g.h_inc?16:17);
 						gml_std_haxe_enum_tools_setTo(l_q,gml_node_key_id_aop(l_d,l__g1.h_x,l__g1.h_id,l_o,gml_node_number(l_d,1,undefined)));
 						break;
@@ -828,7 +828,7 @@ function gml_seek_adjfix_proc(l_q,l_st){
 if(live_enabled)
 function gml_seek_alarms_check(l_x){
 	var l__g=l_x;
-	if(l__g.__enumIndex__==46){
+	if(l__g.__enumIndex__==47){
 		if(l__g.h_fd=="alarm")return l__g.h_x; else return undefined;
 	} else return undefined;
 }
@@ -838,11 +838,11 @@ function gml_seek_alarms_proc(l_q,l_st){
 	var l_r;
 	var l__g=l_q;
 	switch(l__g.__enumIndex__){
-		case 71:
+		case 72:
 			l_r=gml_seek_alarms_check(l__g.h_x);
 			if(l_r!=undefined)gml_std_haxe_enum_tools_setTo(l_q,gml_node_alarm(l__g.h_d,l_r,l__g.h_id));
 			break;
-		case 61:
+		case 62:
 			l_r=gml_seek_alarms_check(l__g.h_x);
 			if(l_r!=undefined)gml_std_haxe_enum_tools_setTo(l_q,gml_node_alarm(l__g.h_d,l_r,l__g.h_id));
 			break;
@@ -877,7 +877,7 @@ function gml_seek_calls_proc(l_q,l_st){
 				l_s=l_o.h_name;
 				gml_std_haxe_enum_tools_setTo(l_q,gml_node_call_script(l_d,l_s,l_w));
 				break;
-			case 46:
+			case 47:
 				var l_s=l__g.h_fd;
 				if(variable_struct_exists(gml_func_arg0.h_obj,l_s)){
 					if(variable_struct_exists(gml_inst_data.h_obj,l_s))gml_std_haxe_enum_tools_setTo(l_q,gml_node_call_func_at(l_d,l__g.h_x,l_s,l_w)); else return gml_program_seek_inst.h_error("`"+l_s+"` cannot be called on an instance",l__g.h_d);
@@ -943,7 +943,7 @@ function gml_seek_calls_proc(l_q,l_st){
 if(live_enabled)
 function gml_seek_enum_fields_proc_one(l_q,l_st){
 	var l__g=l_q;
-	if(l__g.__enumIndex__==46){
+	if(l__g.__enumIndex__==47){
 		var l_d=l__g.h_d;
 		var l_x=l__g.h_x;
 		var l_f=l__g.h_fd;
@@ -1022,7 +1022,7 @@ function gml_seek_enum_values_proc(){
 if(live_enabled)
 function gml_seek_fields_proc(l_q,l_st){
 	var l__g=l_q;
-	if(l__g.__enumIndex__==46){
+	if(l__g.__enumIndex__==47){
 		var l_d=l__g.h_d;
 		var l_x=l__g.h_x;
 		var l_s=l__g.h_fd;
@@ -1075,12 +1075,12 @@ function gml_seek_idents_proc(l_q,l_st){
 			if(ds_list_size(l_st)>0){
 				var l__g=ds_list_find_value(l_st,0);
 				switch(l__g.__enumIndex__){
-					case 61:
+					case 62:
 						var l_d1=l__g.h_d;
 						var l_k=l__g.h_id;
 						if((l_flags&2)!=0)gml_std_haxe_enum_tools_setTo(ds_list_find_value(l_st,0),gml_node_env1d(l_d1,l_s,l_k)); else return gml_program_seek_inst.h_error("`"+l_s+"` is not an array.",l_d1);
 						break;
-					case 66:return gml_program_seek_inst.h_error("`"+l_s+"` is not a 2d array.",l__g.h_d);
+					case 67:return gml_program_seek_inst.h_error("`"+l_s+"` is not a 2d array.",l__g.h_d);
 					default:if((l_flags&2)!=0)gml_std_haxe_enum_tools_setTo(l_q,gml_node_env1d(l_d,l_s,gml_node_number(l_d,0,undefined)));
 				}
 			}
@@ -1105,11 +1105,11 @@ if(live_enabled)
 function gml_seek_locals_proc(l_q,l_st){
 	var l__g=l_q;
 	switch(l__g.__enumIndex__){
-		case 120:
+		case 121:
 			var l_s=l__g.h_cap;
 			if(!variable_struct_exists(gml_program_seek_script.h_local_map.h_obj,l_s))variable_struct_set(gml_program_seek_script.h_local_map.h_obj,l_s,gml_program_seek_script.h_locals++);
 			break;
-		case 101:
+		case 102:
 			var l_s=l__g.h_name;
 			if(!variable_struct_exists(gml_program_seek_script.h_local_map.h_obj,l_s))variable_struct_set(gml_program_seek_script.h_local_map.h_obj,l_s,gml_program_seek_script.h_locals++);
 			break;
