@@ -13,6 +13,12 @@ attributes =
 	attackStyle : ATTACK.SLIDE,
 	attackRange : 1,
 	attackPower : 1,
+	
+	attacks:
+	{
+		direct : true,	
+	},
+	
 	hp : 3,
 	
 }

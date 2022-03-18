@@ -48,6 +48,9 @@ function state_player_idle(_event){
 			startGridX = to_grid(x);
 			startGridY = to_grid(y);
 			
+			//Reset attack variables
+			directAttack = false;
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -98,7 +101,13 @@ function state_player_idle(_event){
 							var _entity = check_entity(gridX, gridY);
 							if(_entity != false) {
 								//entity is in grid square.  Can we move onto it?
-								direct_attack(gridX, gridY);
+								
+								//Check first to see if we want to attack entity
+								if(attributes.attacks.direct == true){
+									directAttack = direct_attack(gridX, gridY);
+									//If we are attacking, don't move.									
+									if(directAttack != false) _move = false;
+								}
 								//Possibly could act on it?
 							
 								attributes.targetObject = _entity;
@@ -114,8 +123,7 @@ function state_player_idle(_event){
 								
 								}
 							
-							}
-						
+							}							
 							//Check if click is on self
 							if(gridX == to_grid(x) && gridY == to_grid(y)) {
 								//Touch was released on player
