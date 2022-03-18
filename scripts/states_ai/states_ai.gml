@@ -60,6 +60,8 @@ function state_ai_attack(_event) {
 					else {
 						attackValid = false;
 					}
+					
+					
 				break;
 			
 			}

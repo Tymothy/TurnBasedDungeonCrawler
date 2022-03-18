@@ -5,6 +5,7 @@ event_inherited();
 
 attributes =
 {
+	attackable : true,
 	turnSpeed : 1, //Higher numbers will go first
 	aiName : "Slime",
 	collisionGrid : co_grid.mpGrid_collideOther,

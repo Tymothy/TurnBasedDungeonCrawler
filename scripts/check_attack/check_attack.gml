@@ -23,8 +23,11 @@ function check_valid_attacks(obj = self){
 	gridY = to_grid(obj.y);	
 	
 	//Check if direct attack is possible
-	//Check the 9 grid squares around player for an entity other than self
-	//TODO: Ensure co_grid is tracking entities properly
+
+	/*
+	Direct Attack
+	Attacking entity starts turn near target and uses their turn to attack a single target
+	*/
 	direct = false;
 	for(var i = gridX - 1; i <= gridX + 1; i++) {
 		for(var j = gridY - 1; j <= gridY + 1; j++) {
@@ -45,4 +48,42 @@ function check_valid_attacks(obj = self){
 
 	return validAttacks;
 
+}
+
+function direct_attack(gridX, gridY, obj = self) {
+	/// @desc Given grid coords, returns whether direct attack is possible by given object.  If no object is given, return self
+	/// @desc If attack is possible, returns the entity.
+	/// @arg gridX
+	/// @arg gridY
+	/// @arg object(optional)	
+	
+	/*
+		Direct attack is where the attacking entity starts turn near target and uses their turn to attack
+		a single target.
+	*/
+	var _entityInTile = co_grid.tileGrid[# gridX, gridY][$ "_entityInTile"];
+	
+	if(_entityInTile == false) {
+		//No entity in tile, attack not possible.
+		return false;	
+	}
+	
+	//Check range
+	var _distX = abs(gridX - to_grid(obj.x));
+	var _distY = abs(gridY - to_grid(obj.y));
+	
+	if(_distX > 1 || _distY > 1) {
+		//Entity is outside range	
+		return false;
+	}
+	
+	var _ent = check_entity(gridX, gridY);
+	if(_ent.attributes.attackable == true) {
+		//Target entity is attackable.  Return entity
+		show_debug_message("Direct attack entity " + string(_ent));
+		return _ent;
+	}
+	
+	//If entity is not attackable, return false
+	return false;
 }

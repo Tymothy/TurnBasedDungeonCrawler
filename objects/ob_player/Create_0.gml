@@ -5,6 +5,7 @@ sprite = sp_player_core;
 
 attributes =
 {
+	attackable : true,
 	moveSpeed : 1, //Can move X tiles per turn
 	name : "Player",
 	collisionGrid : co_grid.mpGrid_collidePlayer,
@@ -13,7 +14,7 @@ attributes =
 	attackRange : 1,
 	attackPower : 1,
 	hp : 3,
-
+	
 }
 
 //Variables that aren't configured

@@ -98,7 +98,7 @@ function state_player_idle(_event){
 							var _entity = check_entity(gridX, gridY);
 							if(_entity != false) {
 								//entity is in grid square.  Can we move onto it?
-							
+								direct_attack(gridX, gridY);
 								//Possibly could act on it?
 							
 								attributes.targetObject = _entity;
