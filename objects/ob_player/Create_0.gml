@@ -17,6 +17,7 @@ attributes =
 	attacks:
 	{
 		direct : true,	
+		slide: true,
 	},
 	
 	hp : 3,

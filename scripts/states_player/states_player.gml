@@ -108,10 +108,8 @@ function state_player_idle(_event){
 									//If we are attacking, don't move.									
 									if(directAttack != false) _move = false;
 								}
-								//Possibly could act on it?
-							
-								attributes.targetObject = _entity;
-								var _parOb = object_get_parent(attributes.targetObject.object_index);
+
+								var _parOb = object_get_parent(_entity.object_index);
 							
 								switch(_parOb) {
 									case ob_par_hostile: 
@@ -158,6 +156,12 @@ function state_player_idle(_event){
 									}
 									
 								}
+							}
+							
+							
+							//If direct attack is being used, go directly to attack
+							if(directAttack != false) {
+								truestate_switch(STATES.ATTACK);	
 							}
 
 
@@ -300,6 +304,9 @@ function state_player_attack(_event){
 			attackArrayCounter = 0;
 			attacking = false;
 			attackValid = false;			
+			attackFlag = false; //Used to track if an attack has been selected and prevents multiple attacks
+			originX = x;
+			originaY = y;
 			//validAttacks = check_valid_attacks();
 			//if(validAttacks.direct = true) {
 			//	if(LOGGING) show_debug_message("Direct attack valid");	
@@ -308,11 +315,22 @@ function state_player_attack(_event){
 
 			////Determine if attack is possible
 			
-			
-			switch(attributes.attackStyle) {
-				case ATTACK.SLIDE:
-					//Add all eligible targets within range to a list
+			//Direct Attack
+			if(attackFlag == false && attributes.attacks.direct == true) {
+				//Object is able to attack
+				
+				//Check if direct attack is being used
+				if(directAttack != false) {
+					//We do want to direct attack
+					attackArray[attackArrayCounter] = directAttack;
+					attackArrayCounter++;
 					
+					attackFlag = true;
+				}
+				
+			} //End Direct Attack
+			
+			if(attackFlag == false && attributes.attacks.slide == true) {
 					//What makes a target eligible?  Being part of the hostile parent
 					for(var i =  xGridCoord - 1; i <= xGridCoord + 1; i++) {
 						for(var j = yGridCoord - 1; j <= yGridCoord + 1; j++) {
@@ -325,6 +343,7 @@ function state_player_attack(_event){
 										//Object started turn near player.  Mark for attack
 										attackArray[attackArrayCounter] = _tempEnt;
 										attackArrayCounter++;
+										attackFlag = true;
 										
 									}
 										
@@ -334,25 +353,7 @@ function state_player_attack(_event){
 								
 						}
 					}
-					
-					//List of attackable enemies has been set.
-
-				
-				
-					////Attacker must start near target, then attack directly
-					//var _distX = to_grid(abs(attributes.targetObject.x - self.x));
-					//var _distY = to_grid(abs(attributes.targetObject.y - self.y));
-					////Determine if target is within reach
-					//if(_distX <= attributes.attackRange && _distY <= attributes.attackRange) {
-					//	//Target able to be attacked
-					//	attackValid = true;
-					//}
-					//else {
-					//	attackValid = false;
-					//}
-				break;
-			
-			}
+			}//End Slide attack
 
 			if(attackArrayCounter > 0){
 				attackValid = true;
@@ -377,9 +378,15 @@ function state_player_attack(_event){
 					
 					//Remove the entity that is being attacked from the array
 					array_delete(attackArray, attackArrayCounter, 1);
-			
+					
+					//if(move_entity(targArr[0], targArr[1])){
+					//	//move towards enemy half a square	
+					//}
 					_tempEnt.takeDamage(attributes.attackPower);
 					
+					//if(move_entity(x, y)){
+					//	//Move back to original square	
+					//}
 					//Put an animation script here that also turns attacking flag to false
 					attacking = false;
 
