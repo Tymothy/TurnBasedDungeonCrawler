@@ -368,7 +368,7 @@ function state_player_attack(_event){
 		case TRUESTATE_STEP:
 		{
 			//This code will be executed during the step event.
-			var _animationSpeed = 10;
+			var _animationSpeed = 5;
 			if(attackValid == true) {
 				//Start attacking enemies
 				//While attacking is true, the animation is playing on an enemy.  Wait for 1 enemy to be

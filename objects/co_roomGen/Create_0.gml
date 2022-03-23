@@ -82,6 +82,20 @@ generateFloorPlan = function() {
 			createdRooms++;
 			_startX = _x;
 			_startY = _y;
+		
+			//BONUS ROOM
+			if(true) {
+					var _bdir = irandom(3);  //0 = East, goes counter clockwise	
+					var _bx = _x;
+					var _by = _y;
+					_bx = getDirectionCoordX(_bdir, _bx);
+					_by = getDirectionCoordY(_bdir, _by);	
+					_result = determineRoomGen(_bx, _by);
+					if(_result == true){
+						generateRoom(_bx, _by, ROOMTYPE.NORMAL);
+						createdRooms++;
+					}
+			}
 			
 		}
 		else {
@@ -282,11 +296,21 @@ findDistanceToSpawn = function() {
 
 generateFloorPlan();
 
+
 //Validate floor plan
+//Ensure spawn room has at least 2 exits
+	var _spawnX = floor(FLOOR_MAX_WIDTH / 2);
+	var _spawnY = floor(FLOOR_MAX_HEIGHT / 2);
+if(getCountOfNeighbors(_spawnX, _spawnY) < 2) {
+	generateFloorPlan();	
+}
+
 while(createdRooms != goalRooms) {
 	show_debug_message("Not enough rooms created.  Retrying...");
 	generateFloorPlan();	
 }
+
+
 
 if(LOGGING) show_debug_message("Floor of rooms generated.");
 findEndRooms();
