@@ -77,10 +77,13 @@ function direct_attack(gridX, gridY, obj = self) {
 		return false;
 	}
 	
-	var _ent = check_entity(gridX, gridY);
-	if(_ent.attributes.attackable == true) {
+	var _ent = check_entity(gridX, gridY);	
+	
+	if(_ent.attributes.attackable == true && _ent != self.id) {
 		//Target entity is attackable.  Return entity
+		//Prevents self attacks
 		show_debug_message("Direct attack entity " + string(_ent));
+		
 		return _ent;
 	}
 	
