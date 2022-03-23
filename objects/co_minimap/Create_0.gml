@@ -5,6 +5,8 @@ minimapRefresh = false; //Used to track when to update the minimap, we want to c
 minimapWidth = 4; //Width in tiles
 minimapHeight = 4;
 
+gridLineWidth = 1;
+
 waitForLevelGen = true;
 
 xOff = 1;

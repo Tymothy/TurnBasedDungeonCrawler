@@ -12,25 +12,45 @@ if(minimapRefresh == true && waitForLevelGen == false) {
 	draw_clear_alpha(c_black, 1); //Set a black background to the minimap surface	
 	
 	//Draw a standard room for all rooms
-	var _frWidth = minimapWidth * TILE_SIZE / FLOOR_MAX_WIDTH;
-	var _frHeight = minimapHeight * TILE_SIZE / FLOOR_MAX_HEIGHT;
+	var _frWidth = floor(minimapWidth * TILE_SIZE / FLOOR_MAX_WIDTH);
+	var _frHeight = floor(minimapHeight * TILE_SIZE / FLOOR_MAX_HEIGHT);
 
 	//Get the height for each cell
 	for(var i = 0; i < FLOOR_MAX_WIDTH; i++) {
 		for(var j = 0; j < FLOOR_MAX_HEIGHT; j++) {
-			//These two lines set a grid
-			draw_set_color(c_gray);
-			draw_rectangle(i * _frWidth, j * _frHeight, i * _frWidth + _frWidth, j * _frHeight + _frHeight, true);			
-			
 			//Draw non-empty rooms
 			var _roomType = co_roomGen.levelGrid[# i, j][$ "roomType"];
-			if(_roomType != ROOMTYPE.NONE) {
-				//Room is an open room.  Draw it as such
-				draw_set_color(c_ltgray);
-				draw_rectangle(i * _frWidth, j * _frHeight, i * _frWidth + _frWidth, j * _frHeight + _frHeight, false);							
+			switch(_roomType) {
+				case ROOMTYPE.SPAWN:
+					draw_set_color(c_lime);						
+				break;
+				
+				case ROOMTYPE.NORMAL:
+					draw_set_color(c_ltgray);				
+				break;
+				
+				case ROOMTYPE.NONE:
+					draw_set_color(c_black);
+				break;
 			}
+			//Draw the grid square with approriate color
+			draw_rectangle(i * _frWidth, j * _frHeight, i * _frWidth + _frWidth, j * _frHeight + _frHeight, false);							
+			
 		}
 	}
+	
+	//Draw the grid lines over the minimap
+	draw_set_color(c_gray);	
+	for(var i = 0; i <= FLOOR_MAX_WIDTH; i++) {
+		draw_rectangle(i * _frWidth, 0, i * _frWidth + gridLineWidth, minimapHeight * TILE_SIZE, false);			
+	}
+	for(var j = 0; j <= FLOOR_MAX_HEIGHT; j++) {
+		draw_rectangle(0, j * _frHeight, minimapWidth * TILE_SIZE, j * _frHeight + gridLineWidth, false);	
+
+	}
+
+
+	
 	surface_reset_target();
 }
 
