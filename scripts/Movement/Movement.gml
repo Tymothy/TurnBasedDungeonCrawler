@@ -7,16 +7,16 @@ function <NAME>(_var1, _var2, _var3...) {
 }
 */
 
-function move_entity(_targX, _targY, _twerpType = TwerpType.inout_cubic){
+function move_entity(_targX, _targY, _timeMulti = 1, _twerpType = TwerpType.inout_cubic){
 	/// @desc Move entity to a position nicely. Returns true when done
 	/// @arg ....
 	/// @arg ....
 	static twerpTimer = 0;
-	x = twerp(_twerpType, x, _targX, twerpTimer / global.moveTime);
-	y = twerp(_twerpType, y, _targY, twerpTimer / global.moveTime);
+	x = twerp(_twerpType, x, _targX, twerpTimer / (global.moveTime * _timeMulti));
+	y = twerp(_twerpType, y, _targY, twerpTimer / (global.moveTime * _timeMulti));
 	twerpTimer += d(1);
 	
-	if(x == _targX && y == _targY) {
+	if(floor(x) == floor(_targX) && floor(y) == floor(_targY)) {
 		twerpTimer = 0;
 		return true;	
 	} 

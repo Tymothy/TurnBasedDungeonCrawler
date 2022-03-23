@@ -306,7 +306,10 @@ function state_player_attack(_event){
 			attackValid = false;			
 			attackFlag = false; //Used to track if an attack has been selected and prevents multiple attacks
 			originX = x;
-			originaY = y;
+			originY = y;
+			targX = x;
+			targY = y;
+			target = noone; //Target of attack used in step
 			//validAttacks = check_valid_attacks();
 			//if(validAttacks.direct = true) {
 			//	if(LOGGING) show_debug_message("Direct attack valid");	
@@ -365,58 +368,52 @@ function state_player_attack(_event){
 		case TRUESTATE_STEP:
 		{
 			//This code will be executed during the step event.
-			if(attackValid == true && attacking == false) {
+			var _animationSpeed = 10;
+			if(attackValid == true) {
 				//Start attacking enemies
 				//While attacking is true, the animation is playing on an enemy.  Wait for 1 enemy to be
 				//finished being attacked before moving to next one
-				attacking = true; 
 				
-				if(attackArrayCounter > 0) {
-					attackArrayCounter--; //Remove first to account for the off by one setting					
-					//At least one enemy was added to the counter
-					var _tempEnt = attackArray[attackArrayCounter];
-					
-					//Remove the entity that is being attacked from the array
-					array_delete(attackArray, attackArrayCounter, 1);
-					
-					//if(move_entity(targArr[0], targArr[1])){
-					//	//move towards enemy half a square	
-					//}
-					_tempEnt.takeDamage(attributes.attackPower);
-					
-					//if(move_entity(x, y)){
-					//	//Move back to original square	
-					//}
-					//Put an animation script here that also turns attacking flag to false
-					attacking = false;
-
+				//Get Target
+				if(attackArrayCounter >= 0 && attacking == false) {
+					//runs once per enemy
+					attacking = true;
+					attackArrayCounter--;//Remove first to account for the off by one setting
+					target = attackArray[attackArrayCounter];
+					var _dir = point_direction(originX, originY, target.x, target.y);
+					targX = lengthdir_x(TILE_SIZE / 2, _dir);
+					targY = lengthdir_y(TILE_SIZE / 2, _dir);
+				}
+				
+				if(target != noone) {
+					//Animate towards target
+					if(move_entity(originX + targX, originY + targY, _animationSpeed)) {
+						//Move towards enemy as part of attack
+						//This runs when done with movement
+						array_delete(attackArray, attackArrayCounter, 1);		
+						target.takeDamage(attributes.attackPower);
+						target = noone; //Reset target to start moving back
+					}
+				}
+				
+				if(target == noone && attacking == true) {
+					if(move_entity(originX, originY, _animationSpeed)) {
+						//Runs after attack is done and object is back at the original state.
+						attacking = false;
+					}					
 					
 				}
-				else {
-					//Done attacking
-					attackValid = false;
-					attacking = false;
+				
+				if(attackArrayCounter <= 0 && attacking == false) {
+					attackValid = false;					
 				}
 			}
-			
+	
 			if(attackValid == false) {
 				//After finished attacking, end the state.
 				truestate_switch(STATES.END);	
 			}
 			
-			
-			
-			//if(attackValid == true) {
-			//	attributes.targetObject.takeDamage(attributes.attackPower);
-			//	attackValid = false;
-			//	//Move into square if entity was destroyed, else end turn
-			//	if(instance_exists(attributes.targetObject)) {
-			//		truestate_switch(STATES.END)	
-			//	}
-			//	else {
-			//	truestate_switch(STATES.MOVE);
-			//	}
-			//}
 
 		}break;
 	
