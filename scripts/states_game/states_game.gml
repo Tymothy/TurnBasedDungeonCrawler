@@ -55,6 +55,9 @@ function state_game_setup(_event){
 			//Create the turn order controller
 			instance_create_layer(x, y, "la_controllers", co_turnOrder);
 			
+			//Create the overlay of tiles
+			instance_create_layer(x, y, "la_controllers", co_tileOverlay);
+			
 			//Create the shooter controller
 			//Arrows have been disabled, don't really fit theme
 			//instance_create_layer(x, y, "la_controllers", co_shooter);

@@ -1,0 +1,28 @@
+===Dungeon Floor Tile Numbers====
+	Standard Floor
+		1
+		15
+		16
+		63
+		
+	Tiled Floor
+		2
+		3
+		4
+		17
+		18
+		19
+		
+	Switch
+		5 - Up
+		6 - Down/Pressed
+		
+	Spikes
+		20 - Down/Below
+		21 - Up/Activated
+		
+	Stairs
+		64 - Down
+		51 - Up
+	
+	

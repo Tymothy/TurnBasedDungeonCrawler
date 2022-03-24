@@ -52,8 +52,8 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Markers",
+    "path": "folders/Tile Sets/Markers.yy",
   },
   "resourceVersion": "1.0",
   "name": "ts_coreTiles",
