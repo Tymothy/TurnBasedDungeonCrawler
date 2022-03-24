@@ -10,7 +10,9 @@ function init() {
 
 //Size of the tiles in game, displayed in pixels.  Sprites do not adjust to tile size
 #macro TILE_SIZE 32 
-#macro ROOM_SIZE 9 //Was 11
+#macro ROOM_SIZE 9 //Was 11 - Want to deprecate this
+#macro ROOM_SIZE_WIDTH 9
+#macro ROOM_SIZE_HEIGHT 11
 
 //The maximum size a floor of rooms can be
 #macro FLOOR_MAX_WIDTH 9

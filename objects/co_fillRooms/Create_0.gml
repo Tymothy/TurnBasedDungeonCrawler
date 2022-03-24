@@ -18,10 +18,10 @@ For each room:
 				//Room exists, create the doors
 				
 				//Get grid x and y of center of room to be able to work door placement
-				var _x = i * ROOM_SIZE + floor(ROOM_SIZE / 2);
-				var _y = j * ROOM_SIZE + floor(ROOM_SIZE / 2);
-				var _offset = floor(ROOM_SIZE / 2);
-				
+				var _x = i * ROOM_SIZE_WIDTH + floor(ROOM_SIZE_WIDTH / 2);
+				var _y = j * ROOM_SIZE_HEIGHT + floor(ROOM_SIZE_HEIGHT / 2);
+				var _xOffset = floor(ROOM_SIZE_WIDTH / 2);
+				var _yOffset = floor(ROOM_SIZE_HEIGHT / 2);
 				//Check each neighboring room to see if a room exists.  If it does, create a door
 				//TODO: Future will need special doors to determine special rooms
 				
@@ -35,8 +35,8 @@ For each room:
 				//Handle the doors
 				if(_roomUp != ROOMTYPE.NONE && _roomUp != noone) {
 					//Create the door
-					var _inst = instance_create_layer(from_grid(_x), from_grid(_y - _offset), "la_doors", ob_door);
-					co_grid.open_door(_x, _y - _offset);
+					var _inst = instance_create_layer(from_grid(_x), from_grid(_y - _yOffset + 2), "la_doors", ob_door);
+					co_grid.open_door(_x, _y - _yOffset);
 					with (_inst) {
 						//If we want to do anything with the door we just created, do it here.
 							
@@ -44,8 +44,8 @@ For each room:
 				}
 				if(_roomRight != ROOMTYPE.NONE && _roomRight != noone) {
 					//Create the door
-					var _inst = instance_create_layer(from_grid(_x + _offset), from_grid(_y), "la_doors", ob_door);
-					co_grid.open_door(_x + _offset, _y);
+					var _inst = instance_create_layer(from_grid(_x + _xOffset), from_grid(_y), "la_doors", ob_door);
+					co_grid.open_door(_x + _xOffset, _y);
 					with (_inst) {
 						//If we want to do anything with the door we just created, do it here.
 							
@@ -53,8 +53,8 @@ For each room:
 				}				
 				if(_roomDown != ROOMTYPE.NONE && _roomDown != noone) {
 					//Create the door
-					var _inst = instance_create_layer(from_grid(_x), from_grid(_y + _offset), "la_doors", ob_door);
-					co_grid.open_door(_x, _y + _offset);
+					var _inst = instance_create_layer(from_grid(_x), from_grid(_y + _yOffset), "la_doors", ob_door);
+					co_grid.open_door(_x, _y + _yOffset);
 					with (_inst) {
 						//If we want to do anything with the door we just created, do it here.
 							
@@ -62,8 +62,8 @@ For each room:
 				}
 				if(_roomLeft != ROOMTYPE.NONE && _roomLeft != noone) {
 					//Create the door
-					var _inst = instance_create_layer(from_grid(_x - _offset), from_grid(_y), "la_doors", ob_door);
-					co_grid.open_door(_x - _offset, _y);
+					var _inst = instance_create_layer(from_grid(_x - _xOffset), from_grid(_y), "la_doors", ob_door);
+					co_grid.open_door(_x - _xOffset, _y);
 					with (_inst) {
 						//If we want to do anything with the door we just created, do it here.
 							

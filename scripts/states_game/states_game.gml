@@ -124,7 +124,7 @@ function state_game_player_active(_event){
 			//This code will run once right before switching to a new state.
 			if(ob_player.movingRooms == true) {
 				//Player is in new room, deactivate old room
-				co_gameManager.deactivateRoom(to_room(ob_player.lastRoomGridX), to_room(ob_player.lastRoomGridY));
+				co_gameManager.deactivateRoom(to_room_x(ob_player.lastRoomGridX), to_room_y(ob_player.lastRoomGridY));
 				co_turnOrder.createAiTurnOrder();
 				ob_player.movingRooms = false;
 				truestate_switch(STATES.PLAYER_ACTIVE);

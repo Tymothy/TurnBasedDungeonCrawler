@@ -19,8 +19,8 @@ tilemap_tileset(floorTileID, ts_floor_dungeon_white);
 tilemap_tileset(wallTileID, ts_wall_dungeon_white);
 
 //Get floor width/heights in tiles
-var _floorWidth = ROOM_SIZE * FLOOR_MAX_WIDTH;
-var _floorHeight = ROOM_SIZE * FLOOR_MAX_HEIGHT;
+var _floorWidth = ROOM_SIZE_WIDTH * FLOOR_MAX_WIDTH;
+var _floorHeight = ROOM_SIZE_HEIGHT * FLOOR_MAX_HEIGHT;
 
 //Iterate through entire floor and set tile
 for(var i = 0; i < _floorWidth; i++) {

@@ -42,8 +42,8 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 	//Spawn AI within the given room
 
 	//Get center of room to work spawn points
-	//var _centerGridX = from_room(_roomX);
-	//var _centerGridY = from_room(_roomY);
+	//var _centerGridX = from_room_x(_roomX);
+	//var _centerGridY = from_room_y(_roomY);
 	
 	//Get top left of room to determine X1 and Y1
 	var _x1 =  co_roomGen.levelGrid[# _roomX, _roomY][$"gridX1"];
@@ -61,8 +61,8 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 		for(var i = 0; i < _maxSpawnAttempts && _spawns < _spawnNum; i++)
 		{
 			//Grab a random grid x and y to attempt spawn at
-			var _randX = irandom(ROOM_SIZE - 1) + _x1;
-			var _randY = irandom(ROOM_SIZE - 1) + _y1;
+			var _randX = irandom(ROOM_SIZE_WIDTH - 1) + _x1;
+			var _randY = irandom(ROOM_SIZE_HEIGHT - 1) + _y1;
 			
 			//Start _spawnValid as true, and set to false if it breaks any rules
 			var _spawnValid = true;

@@ -222,11 +222,11 @@ function state_player_move(_event){
 					var _tempX = to_grid(x);
 					var _tempY = to_grid(y);
 					
-					var _tempX = to_room(_tempX);
-					var _tempY = to_room(_tempY);
+					var _tempX = to_room_x(_tempX);
+					var _tempY = to_room_y(_tempY);
 					
-					var _centerX = from_room(_tempX);
-					var _centerY = from_room(_tempY);
+					var _centerX = from_room_x(_tempX);
+					var _centerY = from_room_y(_tempY);
 					
 					var _dir = point_direction(_centerX, _centerY, to_grid(targX), to_grid(targY));
 					
@@ -236,23 +236,50 @@ function state_player_move(_event){
 					switch(_dir) {
 						case 0: //EAST
 							if(LOGGING) show_debug_message("Move player east");
-							targX += TILE_SIZE * 2;
+							//targX += TILE_SIZE * 2;
+							//Find next available tile
+							do {
+								targX += TILE_SIZE;	
+								var _result = mp_grid_get_cell(self.attributes.collisionGrid, to_grid(targX), to_grid(targY));
+							}
+							until (_result == 0);
+							targX += TILE_SIZE; //Move one past door
+
 							break;
 
 						case 1: //NORTH
 							if(LOGGING) show_debug_message("Move player north");
-							targY -= TILE_SIZE * 2;
+							do {
+								targY -= TILE_SIZE;	
+								var _result = co_grid.tileGrid[# to_grid(targX), to_grid(targY)][$ "_collidePlayer"];//Find if the player can collide with current tile
+							}
+							until (_result == 0);
+							targY -= TILE_SIZE * 2;	//Move one past door
+							
 							break;
 							
 						case 2: //WEST
 							if(LOGGING) show_debug_message("Move player west");
-							targX -= TILE_SIZE * 2;
-							break;			
+							//targX -= TILE_SIZE * 2;
+							//Find next available tile
+							do {
+								targX -= TILE_SIZE;	
+								var _result = mp_grid_get_cell(self.attributes.collisionGrid, to_grid(targX), to_grid(targY));
+							}
+							until (_result == 0);
+							targX -= TILE_SIZE;	//Move one past door
+							break;		
 							
 						case 3: //SOUTH
 							if(LOGGING) show_debug_message("Move player south");
-							targY += TILE_SIZE * 2;
-							break;								
+							do {
+								targY += TILE_SIZE;	
+								var _result = co_grid.tileGrid[# to_grid(targX), to_grid(targY)][$ "_collidePlayer"];//Find if the player can collide with current tile
+							}
+							until (_result == true);
+							targY += TILE_SIZE * 2;	//Move one past door
+							
+							break;						
 						
 					}
 					movingRoomsFunc();
@@ -262,7 +289,14 @@ function state_player_move(_event){
 		
 				//Check to see if we are moving farther
 				if(targArr[0] != targX || targArr[1] != targY) {
-					targArr = move_direct(self.attributes.collisionGrid, targX, targY);
+					//If we are moving, we do not want to be stopped by collision
+					if(movingRooms == true){
+						var _cg = co_grid.mpGrid_noCollision;
+					} else {
+						var _cg = self.attributes.collisionGrid;
+					}
+					
+					targArr = move_direct(_cg, targX, targY);
 					_repeatMove = true;	
 				}
 				if(_repeatMove == true) {

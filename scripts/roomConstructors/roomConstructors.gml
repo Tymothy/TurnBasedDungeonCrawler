@@ -8,10 +8,10 @@ function floorRoom(_x, _y) constructor {
 	x = _x;
 	y = _y;
 
-	gridX1 = from_room(x) - floor(ROOM_SIZE / 2);  //Grid top left X
-	gridY1 = from_room(y) - floor(ROOM_SIZE / 2);  //Grid top left Y
-	gridX2 = gridX1 + ROOM_SIZE - 1;  //Grid bottom right X
-	gridY2 = gridY1 + ROOM_SIZE - 1;  //Grid bottom right Y
+	gridX1 = from_room_x(x) - floor(ROOM_SIZE_WIDTH / 2);  //Grid top left X
+	gridY1 = from_room_y(y) - floor(ROOM_SIZE_HEIGHT / 2);  //Grid top left Y
+	gridX2 = gridX1 + ROOM_SIZE_WIDTH - 1;  //Grid bottom right X
+	gridY2 = gridY1 + ROOM_SIZE_HEIGHT - 1;  //Grid bottom right Y
 	
 	//Room Type
 	roomType = ROOMTYPE.NONE;

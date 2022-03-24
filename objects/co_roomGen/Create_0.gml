@@ -376,7 +376,7 @@ array_pop(normalRooms);
 			
 			//If room should exist, create approriate room
 			if(_randRoom != noone) {
-				room_pack_load_map(roomMapJson[?_randRoom], TILE_SIZE * ROOM_SIZE * i, TILE_SIZE * ROOM_SIZE * j, room_pack_flag_tiles);				
+				room_pack_load_map(roomMapJson[?_randRoom], TILE_SIZE * ROOM_SIZE_WIDTH * i, TILE_SIZE * ROOM_SIZE_HEIGHT * j, room_pack_flag_tiles);				
 			}
 		}
 	}

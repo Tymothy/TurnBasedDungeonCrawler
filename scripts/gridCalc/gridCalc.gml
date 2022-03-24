@@ -18,15 +18,27 @@ function from_grid(_gridCoord){
 	return _actualCoord;
 }
 
-function to_room(_gridCoord){
+function to_room_x(_gridCoord){
 	//Returns the room coord of a given grid coord
-	var _roomCoord = floor(_gridCoord / ROOM_SIZE);
+	var _roomCoord = floor(_gridCoord / ROOM_SIZE_WIDTH);
 	return _roomCoord;	
 }
 
-function from_room(_roomCoord) {
+function to_room_y(_gridCoord){
+	//Returns the room coord of a given grid coord
+	var _roomCoord = floor(_gridCoord / ROOM_SIZE_HEIGHT);
+	return _roomCoord;	
+}
+
+function from_room_x(_roomCoord) {
 	//Returns the center grid coord of a room
-	var _gridCoord = _roomCoord * ROOM_SIZE + floor(ROOM_SIZE / 2);
+	var _gridCoord = _roomCoord * ROOM_SIZE_WIDTH + floor(ROOM_SIZE_WIDTH / 2);
+	return _gridCoord;
+}
+
+function from_room_y(_roomCoord) {
+	//Returns the center grid coord of a room
+	var _gridCoord = _roomCoord * ROOM_SIZE_HEIGHT + floor(ROOM_SIZE_HEIGHT / 2);
 	return _gridCoord;
 }
 
