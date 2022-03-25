@@ -48,7 +48,7 @@ for(var i = 0; i < _floorWidth; i++) {
 				var _tileLeft = tilemap_get(foundationTileID, i - 1, j);
 				var _tileRight = tilemap_get(foundationTileID, i + 1, j);
 				
-				var _newTileID =
+				var _bitmaskTile =
 					(_tileTop ? 1:0) +
 					(_tileDown ? 2:0) +
 					(_tileLeft ? 4:0) +
@@ -72,9 +72,76 @@ for(var i = 0; i < _floorWidth; i++) {
 				14 = Right, Left, Down
 				15 = Right, Left, Up, Down
 				*/
+				var _newTileID = 0; //0 is transparent 
+				switch(_bitmaskTile) {
+					case 0:
+						_newTileID = 0;
+						break;
+						
+					case 1:
+						_newTileID = 73;
+						break;
+						
+					case 2:
+						_newTileID = 36;
+						break;
+						
+					case 3:
+						_newTileID = 24;
+						break;
+						
+					case 4:
+						_newTileID = 3;
+						break;
+						
+					case 5:
+						_newTileID = 39;
+						break;
+						
+					case 6:
+						_newTileID = 15;
+						break;
+						
+					case 7:
+						
+						break;
+						
+					case 8:
+						
+						break;
+						
+					case 9:
+						
+						break;
+					
+					case 10:
+					
+						break;
+						
+					case 11:
+					
+						break;
+						
+					case 12:
+					
+						break;
+						
+					case 13:
+						_newTileID = 74;
+						break;
+						
+					case 14:
+						_newTileID = 14;
+						break;
+						
+					case 15:
+					_newTileID = 62;
+						break;
+				}
 				
 				//Testing only
-				_newTileID = 50; 
+				
+				
 				
 				tilemap_set(wallTileID, _newTileID, i, j);
 				
