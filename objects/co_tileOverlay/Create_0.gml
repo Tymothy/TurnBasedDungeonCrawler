@@ -67,74 +67,65 @@ for(var i = 0; i < _floorWidth; i++) {
 				var _bitmaskTile = autotile_bitmask(_t, _b, _l, _r, _tl, _tr, _bl, _br);
 				ds_grid_set(bitmaskGrid, i, j, _bitmaskTile);
 				
-				var _newTileID = 0; //0 is transparent 
+				var _newTileID = ds_map_find_value(co_tilesetMapping.wallTileMap, _bitmaskTile);
 				
-				switch(_bitmaskTile) {
-					case 0:
-					//Tile is byitself
-						_newTileID = 0;
-						break;
-						
-					case 1:
-						_newTileID = 73;
-						break;
-						
-					case 2:
-						_newTileID = 36;
-						break;
-						
-					case 3:
-						_newTileID = 24;
-						break;
-						
-					case 4:
-						_newTileID = 3;
-						break;
-						
-					case 5:
-						_newTileID = 39;
-						break;
-						
-					case 6:
-						_newTileID = 15;
-						break;
-						
-					case 7:
-						
-						break;
-						
-					case 8:
-						
-						break;
-						
-					case 9:
-						
-						break;
-					
-					case 10:
-					
-						break;
-						
-					case 11:
-					
-						break;
-						
-					case 12:
-					
-						break;
-						
-					case 13:
-						_newTileID = 74;
-						break;
-						
-					case 14:
-						_newTileID = 14;
-						break;
-						
-					case 15:
-					_newTileID = 62;
-						break;
+				if is_undefined(_newTileID)
+				{
+					show_debug_message("Bitmask " + string(_bitmaskTile) + " does not have an assigned tile!");
+					_newTileID = 0;
 				}
+				
+				//switch(_bitmaskTile) {
+				//	case 0:
+				//	//Tile is byitself
+				//		_newTileID = 0;
+				//		break;
+						
+				//	case 28:
+				//		_newTileID = 13;
+				//		break;
+						
+				//	case 124:
+				//		_newTileID = 14;
+				//		break;
+						
+				//	case 112:
+				//		_newTileID = 15;
+				//		break;
+						
+				//	case 241:
+				//		_newTileID = 26;
+				//		break;
+						
+				//	case 193:
+				//		_newTileID = 39;
+				//		break;
+						
+				//	case 199:
+				//		_newTileID = 38;
+				//		break;
+						
+				//	case 7:
+				//		_newTileID = 37;
+				//		break;					
+						
+				//	case 31:
+				//		_newTileID = 25;
+				//		break;									
+
+				//	case 16:
+				//		_newTileID = 12;
+				//		break;			
+						
+				//	case 17:
+				//		_newTileID = 24;
+				//		break;
+						
+				//	case 1:
+				//		_newTileID = 48;
+				//		break;									
+						
+				//}
 				
 				//Testing only
 				

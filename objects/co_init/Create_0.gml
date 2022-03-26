@@ -13,6 +13,9 @@ delta_init();
 global.moveTime = seconds(MOVE_LENGTH);
 global.currentFloor = 1;
 
+//Create objects that control referenced values
+instance_create_depth(x, y, -1000, co_tilesetMapping);
+
 //Init scaling
 instance_create_depth(x,y,0,co_display);
 instance_create_depth(x, y, -1000, co_touchMaster);

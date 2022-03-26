@@ -10,6 +10,7 @@
     {"id":{"name":"s_tile_ui","path":"sprites/s_tile_ui/s_tile_ui.yy",},"order":3,},
     {"id":{"name":"GMLive_tools","path":"scripts/GMLive_tools/GMLive_tools.yy",},"order":1,},
     {"id":{"name":"sp_wall_dungeon_white","path":"sprites/sp_wall_dungeon_white/sp_wall_dungeon_white.yy",},"order":0,},
+    {"id":{"name":"co_tilesetMapping","path":"objects/co_tilesetMapping/co_tilesetMapping.yy",},"order":2,},
     {"id":{"name":"GMLive_thread","path":"scripts/GMLive_thread/GMLive_thread.yy",},"order":4,},
     {"id":{"name":"rm_ex_normal_1","path":"rooms/rm_ex_normal_1/rm_ex_normal_1.yy",},"order":0,},
     {"id":{"name":"co_roomGen","path":"objects/co_roomGen/co_roomGen.yy",},"order":1,},
