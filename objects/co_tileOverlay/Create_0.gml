@@ -22,6 +22,9 @@ tilemap_tileset(wallTileID, ts_wall_dungeon_white);
 var _floorWidth = ROOM_SIZE_WIDTH * FLOOR_MAX_WIDTH;
 var _floorHeight = ROOM_SIZE_HEIGHT * FLOOR_MAX_HEIGHT;
 
+bitmaskGrid = ds_grid_create(_floorWidth, _floorHeight);
+
+
 //Iterate through entire floor and set tile
 for(var i = 0; i < _floorWidth; i++) {
 	for(var j = 0; j < _floorHeight; j++) {
@@ -43,38 +46,32 @@ for(var i = 0; i < _floorWidth; i++) {
 			case CORETILES.SOLID_WALL:
 				//First determine what kind of wall this is
 				//IE, top, bottom, corner
-				var _tileTop = tilemap_get(foundationTileID, i, j - 1);
-				var _tileDown = tilemap_get(foundationTileID, i, j + 1);
-				var _tileLeft = tilemap_get(foundationTileID, i - 1, j);
-				var _tileRight = tilemap_get(foundationTileID, i + 1, j);
+				var _t= tilemap_get(foundationTileID, i, j - 1);
+				var _b = tilemap_get(foundationTileID, i, j + 1);
+				var _l = tilemap_get(foundationTileID, i - 1, j);
+				var _r = tilemap_get(foundationTileID, i + 1, j);
+				var _tl = tilemap_get(foundationTileID, i - 1, j - 1);
+				var _tr = tilemap_get(foundationTileID, i + 1, j - 1);
+				var _bl = tilemap_get(foundationTileID, i - 1, j + 1);
+				var _br = tilemap_get(foundationTileID, i + 1, j + 1);
 				
-				var _bitmaskTile =
-					(_tileTop ? 1:0) +
-					(_tileDown ? 2:0) +
-					(_tileLeft ? 4:0) +
-					(_tileRight ? 8:0)
+				_t = autotile_check_tile(_t, _coreTile);
+				_b = autotile_check_tile(_b, _coreTile);
+				_l = autotile_check_tile(_l, _coreTile);
+				_r = autotile_check_tile(_r, _coreTile);
+				_tl = autotile_check_tile(_tl, _coreTile);
+				_tr = autotile_check_tile(_tr, _coreTile);
+				_bl = autotile_check_tile(_bl, _coreTile);
+				_br = autotile_check_tile(_br, _coreTile);
 				
-				/*
-				0 = No walls around
-				1 = Up
-				2 = Down
-				3 = Top, down
-				4 = Left
-				5 = Left, Up
-				6 = Left, Down
-				7 = Left, Up, Down
-				8 = Right
-				9 = Right, Up
-				10 = Right, Down
-				11 = Right, Up, Down
-				12 = Right, Left
-				13 = Right, Left, Up
-				14 = Right, Left, Down
-				15 = Right, Left, Up, Down
-				*/
+				var _bitmaskTile = autotile_bitmask(_t, _b, _l, _r, _tl, _tr, _bl, _br);
+				ds_grid_set(bitmaskGrid, i, j, _bitmaskTile);
+				
 				var _newTileID = 0; //0 is transparent 
+				
 				switch(_bitmaskTile) {
 					case 0:
+					//Tile is byitself
 						_newTileID = 0;
 						break;
 						
