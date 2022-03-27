@@ -65,7 +65,7 @@ for(var i = 0; i < _floorWidth; i++) {
 				_br = autotile_check_tile(_br, _coreTile);
 				
 				var _bitmaskTile = autotile_bitmask(_t, _b, _l, _r, _tl, _tr, _bl, _br);
-				ds_grid_set(bitmaskGrid, i, j, _bitmaskTile);
+
 				
 
 				
@@ -113,8 +113,32 @@ for(var i = 0; i < _floorWidth; i++) {
 							
 						}
 						break;
+						
+					case 124:
+						var _up = tilemap_get(foundationTileID, i, j - 1);
+						if(_up != 0) {
+							//Tile above is an actual room
+							_bitmaskTile = 403;
+							
+						}
+						
+					case 241:
+						var _right = tilemap_get(foundationTileID, i + 1, j);
+						if(_right == 0) {
+							//The right is empty/solid earth
+							_bitmaskTile = 404;
+						}
+						
+					case 31:
+						var _left = tilemap_get(foundationTileID, i - 1, j);
+						if(_left == 0) {
+							//Left is solid earth
+							_bitmaskTile = 405;
+							
+						}
+						
 				}
-				
+				ds_grid_set(bitmaskGrid, i, j, _bitmaskTile);				
 				//Set tile ID according to bitmask value
 				var _newTileID = ds_map_find_value(co_tilesetMapping.wallTileMap, _bitmaskTile);
 				

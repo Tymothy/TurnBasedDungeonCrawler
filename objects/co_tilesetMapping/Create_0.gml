@@ -8,7 +8,8 @@ ds_map_add(wallTileMap, 68, 2);
 ds_map_add(wallTileMap, 64, 3);
 
 ds_map_add(wallTileMap, 16, 12);
-ds_map_add(wallTileMap, 28, 13);
+
+ds_map_add(wallTileMap, 28, 16);
 
 
 
@@ -21,10 +22,10 @@ ds_map_add(wallTileMap, 112, 25);
 ds_map_add(wallTileMap, 223, 25);
 ds_map_add(wallTileMap, 209, 25);
 ds_map_add(wallTileMap, 223, 25);
-ds_map_add(wallTileMap, 241, 25);
+ds_map_add(wallTileMap, 31, 25);
+ds_map_add(wallTileMap, 241, 27);
 ds_map_add(wallTileMap, 23, 27);
 ds_map_add(wallTileMap, 247, 27);
-ds_map_add(wallTileMap, 31, 27);
 ds_map_add(wallTileMap, 5, 28);
 ds_map_add(wallTileMap, 197, 28);
 ds_map_add(wallTileMap, 221, 28);
@@ -52,8 +53,9 @@ ds_map_add(wallTileMap, 300, 38);
 ds_map_add(wallTileMap, 400, 27);
 ds_map_add(wallTileMap, 401, 25);
 ds_map_add(wallTileMap, 402, 14);
-//ds_map_add(wallTileMap, 
-//ds_map_add(wallTileMap, 
+ds_map_add(wallTileMap, 403, 14);
+ds_map_add(wallTileMap, 404, 25);
+ds_map_add(wallTileMap, 405, 27);
 //ds_map_add(wallTileMap, 
 //ds_map_add(wallTileMap, 
 //ds_map_add(wallTileMap, 
