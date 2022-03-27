@@ -67,6 +67,55 @@ for(var i = 0; i < _floorWidth; i++) {
 				var _bitmaskTile = autotile_bitmask(_t, _b, _l, _r, _tl, _tr, _bl, _br);
 				ds_grid_set(bitmaskGrid, i, j, _bitmaskTile);
 				
+
+				
+				//Special handling for extended tiles
+				
+				//Tile 255 is the solid wall tile, but we need to chck 2 tiles up to see if it's the top of a room
+				switch(_bitmaskTile)
+				{
+					case 255:
+						//This is the full tile
+						var _farUp = tilemap_get(foundationTileID, i, j - 2);
+						
+						//Check to see if two tiles above is empty/solid earth.
+						if(_farUp != 0) {
+							_farUp = autotile_check_tile(_farUp, _coreTile);
+						
+							if(_farUp == 1) {
+								//Two above is a wall.  Keep as is.	
+							}
+							if(_farUp == 0) {
+								_bitmaskTile = 300;
+							}
+						}
+						break;
+					case 17:
+						//This is an edge tile.  If this is not connecting to a room, have the dark part
+						//Face out.
+						
+						var _farLeft = tilemap_get(foundationTileID, i - 1, j );
+						var _farRight = tilemap_get(foundationTileID, i + 1, j );
+						if(_farLeft == 0) {
+							//Left side does not have a tile, it's considered solid earth
+							_bitmaskTile = 400;
+							
+						}
+						if(_farRight == 0) {
+							_bitmaskTile = 401;	
+						}
+						break;
+					
+					case 68:
+						var _farDown = tilemap_get(foundationTileID, i, j + 2);
+						if(_farDown == 0) {
+							_bitmaskTile = 402;
+							
+						}
+						break;
+				}
+				
+				//Set tile ID according to bitmask value
 				var _newTileID = ds_map_find_value(co_tilesetMapping.wallTileMap, _bitmaskTile);
 				
 				if is_undefined(_newTileID)

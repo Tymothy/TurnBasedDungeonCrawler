@@ -1,6 +1,6 @@
 /// @description Move player left one room
 	roomX = floor(ob_player.x / TILE_SIZE / ROOM_SIZE_WIDTH);
-	roomY = floor(ob_player.y / TILE_SIZE / ROOM_SIZE_WIDTH);
+	roomY = floor(ob_player.y / TILE_SIZE / ROOM_SIZE_HEIGHT);
 	
 	roomX = roomX - 1;
 	roomY = roomY;

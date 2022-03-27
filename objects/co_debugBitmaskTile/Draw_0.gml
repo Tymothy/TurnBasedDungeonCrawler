@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 if ds_exists(co_tileOverlay.bitmaskGrid, ds_type_grid) {
-	for(var i = 0; i < room_height / TILE_SIZE; i++)
+	for(var i = 0; i < room_height / TILE_SIZE - 2; i++)
 	{
 		//Create all rows in a column before moving to next column
-		for(var j = 0; j < room_width / TILE_SIZE; j++)
+		for(var j = 0; j < room_width / TILE_SIZE - 2; j++)
 		{
 			//Find what kind of tile is present at X,Y
 			//var _coreTile = tilemap_get_at_pixel(_tileID, i + TILE_SIZE / 2, j + TILE_SIZE / 2);
