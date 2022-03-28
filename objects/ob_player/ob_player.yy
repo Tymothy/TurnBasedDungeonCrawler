@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sp_player_hero1",
+    "path": "sprites/sp_player_hero1/sp_player_hero1.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

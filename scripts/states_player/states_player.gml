@@ -201,6 +201,8 @@ function state_player_move(_event){
 			//Remove current position from entity grid			
 			targArr = move_direct(self.attributes.collisionGrid, targX, targY);
 			doorFlag = false; //Used to ensure once a door is used, player will go to next room
+			currentRoomX = to_room_x(to_grid(x));
+			currentRoomY = to_room_y(to_grid(y));
 			
 		}break;
 	
@@ -234,18 +236,7 @@ function state_player_move(_event){
 					
 					//Set targ coord to the next room, then repeat move state to move
 					switch(_dir) {
-						case 0: //EAST
-							if(LOGGING) show_debug_message("Move player east");
-							//targX += TILE_SIZE * 2;
-							//Find next available tile
-							do {
-								targX += TILE_SIZE;	
-								var _result = mp_grid_get_cell(self.attributes.collisionGrid, to_grid(targX), to_grid(targY));
-							}
-							until (_result == 0);
-							targX += TILE_SIZE; //Move one past door
 
-							break;
 
 						case 1: //NORTH
 							if(LOGGING) show_debug_message("Move player north");
@@ -254,7 +245,7 @@ function state_player_move(_event){
 								var _result = co_grid.tileGrid[# to_grid(targX), to_grid(targY)][$ "_collidePlayer"];//Find if the player can collide with current tile
 							}
 							until (_result == 0);
-							targY -= TILE_SIZE * 2;	//Move one past door
+							targY -= TILE_SIZE;	//Move one past door
 							
 							break;
 							
@@ -264,7 +255,7 @@ function state_player_move(_event){
 							//Find next available tile
 							do {
 								targX -= TILE_SIZE;	
-								var _result = mp_grid_get_cell(self.attributes.collisionGrid, to_grid(targX), to_grid(targY));
+								var _result = co_grid.tileGrid[# to_grid(targX), to_grid(targY)][$ "_collidePlayer"];//Find if the player can collide with current tile
 							}
 							until (_result == 0);
 							targX -= TILE_SIZE;	//Move one past door
@@ -277,11 +268,25 @@ function state_player_move(_event){
 								var _result = co_grid.tileGrid[# to_grid(targX), to_grid(targY)][$ "_collidePlayer"];//Find if the player can collide with current tile
 							}
 							until (_result == true);
-							targY += TILE_SIZE * 2;	//Move one past door
+							targY += TILE_SIZE * 3;	//Move one past door
 							
-							break;						
+							break;	
+							
+						case 4: //EAST
+							if(LOGGING) show_debug_message("Move player east");
+							//targX += TILE_SIZE * 2;
+							//Find next available tile
+							do {
+								targX += TILE_SIZE;	
+								var _result = co_grid.tileGrid[# to_grid(targX), to_grid(targY)][$ "_collidePlayer"];//Find if the player can collide with current tile
+							}
+							until (_result == 0);
+							targX += TILE_SIZE; //Move one past door
+
+							break;
 						
 					}
+					
 					movingRoomsFunc();
 					_repeatMove = true;
 		

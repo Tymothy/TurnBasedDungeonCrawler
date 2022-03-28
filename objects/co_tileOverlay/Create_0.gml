@@ -5,15 +5,20 @@ foundationLayerID = layer_get_id("ts_foundation");
 foundationTileID = layer_tilemap_get_id(foundationLayerID);
 
 //Get Floor layer
-floorLayerID = layer_get_id("ts_floor");
+floorLayerID = layer_get_id("ts_floor_1");
 floorTileID = layer_tilemap_get_id(floorLayerID);
+
+//Get Floor layer 2
+floorLayer2ID = layer_get_id("ts_floor_2");
+floorTile2ID = layer_tilemap_get_id(floorLayer2ID);
 
 //Get Wall Layer
 wallLayerID = layer_get_id("ts_walls");
 wallTileID = layer_tilemap_get_id(wallLayerID);
 
-//Set the floor tileset
-tilemap_tileset(floorTileID, ts_floor_dungeon_white);
+//Set the floor tilesets
+tilemap_tileset(floorTileID, ts_floor_dungeon_gray);
+tilemap_tileset(floorTile2ID, ts_floor_dungeon_white);
 
 //Set wall tileset
 tilemap_tileset(wallTileID, ts_wall_dungeon_white);
@@ -25,7 +30,7 @@ var _floorHeight = ROOM_SIZE_HEIGHT * FLOOR_MAX_HEIGHT;
 bitmaskGrid = ds_grid_create(_floorWidth, _floorHeight);
 
 
-//Iterate through entire floor and set tile
+//First pass iterate through entire floor and set tile
 for(var i = 0; i < _floorWidth; i++) {
 	for(var j = 0; j < _floorHeight; j++) {
 		//var _x = i * TILE_SIZE + (TILE_SIZE / 2);
@@ -39,11 +44,12 @@ for(var i = 0; i < _floorWidth; i++) {
 		switch(_coreTile) {
 			case CORETILES.NORMAL:
 				//Choose from a set of tiles that assigned to normal floor
-				var _tile = choose(1, 15, 16, 63);
+				var _tile = choose(1, 15, 16, 63, 63, 63, 63, 63, 63, 63, 63, 63);
 				tilemap_set(floorTileID, _tile, i, j);
 				break;
 			
 			case CORETILES.SOLID_WALL:
+			#region solid wall
 				//First determine what kind of wall this is
 				//IE, top, bottom, corner
 				var _t= tilemap_get(foundationTileID, i, j - 1);
@@ -208,7 +214,39 @@ for(var i = 0; i < _floorWidth; i++) {
 				
 				
 				break;
+				#endregion
 		}
 	
+	}
+}
+	
+for(var i = 0; i < _floorWidth; i++) {
+	for(var j = 0; j < _floorHeight; j++) {
+		var _coreTile = tilemap_get(foundationTileID, i, j);
+			switch(_coreTile) {
+				case CORETILES.SPAWN:
+					//Set the spawn pyramid
+					//tilemap_set(floorTile2ID, 52, i - 1, j - 1);
+					//tilemap_set(floorTile2ID, 53, i , j - 1);
+					//tilemap_set(floorTile2ID, 54, i + 1, j - 1);
+					//tilemap_set(floorTile2ID, 67, i - 1, j);
+					//tilemap_set(floorTile2ID, 63, i, j); //Spawn tile
+					//tilemap_set(floorTile2ID, 69, i + 1, j);
+					//tilemap_set(floorTile2ID, 82, i - 1, j + 1);
+					//tilemap_set(floorTile2ID, 83, i, j + 1);
+					//tilemap_set(floorTile2ID, 84, i + 1, j + 1);
+					
+					tilemap_set(floorTile2ID, 31, i - 1, j - 1);
+					tilemap_set(floorTile2ID, 32, i , j - 1);
+					tilemap_set(floorTile2ID, 30, i + 1, j - 1);
+					tilemap_set(floorTile2ID, 19, i - 1, j);
+					tilemap_set(floorTile2ID, 2, i, j); //Spawn tile
+					tilemap_set(floorTile2ID, 18, i + 1, j);
+					tilemap_set(floorTile2ID, 46, i - 1, j + 1);
+					tilemap_set(floorTile2ID, 33, i, j + 1);
+					tilemap_set(floorTile2ID, 45, i + 1, j + 1);
+					
+				break;
+			}
 	}
 }

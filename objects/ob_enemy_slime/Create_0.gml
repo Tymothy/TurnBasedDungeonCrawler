@@ -32,4 +32,3 @@ truestate_create_state(STATES.ATTACK, state_ai_attack);
 truestate_create_state(STATES.MOVE, state_ai_move);
 truestate_create_state(STATES.HURT, state_ai_hurt);
 sprite_index = sp_slime;
-d_image_speed = 1;

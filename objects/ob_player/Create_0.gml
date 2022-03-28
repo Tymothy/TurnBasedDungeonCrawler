@@ -1,7 +1,7 @@
 /// @description Init
 event_inherited();
 //Put into a JSON file to allow easy changing and reference
-sprite = sp_player_core;
+sprite = sp_player_hero1;
 
 attributes =
 {
