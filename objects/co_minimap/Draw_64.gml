@@ -5,15 +5,15 @@ if(minimapRefresh == true && waitForLevelGen == false) {
 	//Refresh the minimap when changes are in
 	minimapRefresh = false;
 	if(!surface_exists(mmSurf)) {
-		mmSurf = surface_create(x2 - x1, y2 - y1);
+		mmSurf = surface_create(minimapWidth * TILE_SIZE, minimapHeight * TILE_SIZE);
 	}
 	
 	surface_set_target(mmSurf);
-	draw_clear_alpha(c_black, 1); //Set a black background to the minimap surface	
+	//draw_clear_alpha(c_black, 1); //Set a black background to the minimap surface	
 	
-	//Draw a standard room for all rooms
-	var _frWidth = floor(minimapWidth * TILE_SIZE / FLOOR_MAX_WIDTH);
-	var _frHeight = floor(minimapHeight * TILE_SIZE / FLOOR_MAX_HEIGHT);
+	//TODO: Sizing isn't very accurate
+	var _frWidth = ceil(minimapWidth * floor(TILE_SIZE / FLOOR_MAX_WIDTH));
+	var _frHeight = ceil(minimapHeight * floor(TILE_SIZE / FLOOR_MAX_HEIGHT));
 
 	//Get the height for each cell
 	for(var i = 0; i < FLOOR_MAX_WIDTH; i++) {

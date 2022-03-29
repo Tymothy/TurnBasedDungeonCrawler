@@ -7,6 +7,7 @@ function init() {
 
 //How many tiles should the game target to display on screen. 
 #macro DESIGN_TILES_WIDE 9 
+#macro PLAY_AREA_OFFSET_Y 4 //Sets how far up or down the play area is
 
 //Size of the tiles in game, displayed in pixels.  Sprites do not adjust to tile size
 #macro TILE_SIZE 32 

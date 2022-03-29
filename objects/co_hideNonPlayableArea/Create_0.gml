@@ -3,7 +3,9 @@ event_inherited();
 //Figure out the top left and bottom right coords of minimap
 refresh = false; //Used to track when to update the minimap, we want to create first so start as true
 width = DESIGN_TILES_WIDE; //Width in tiles
-height = 5;
+height = PLAY_AREA_OFFSET_Y;
+
+height2 = ROOM_SIZE_HEIGHT + PLAY_AREA_OFFSET_Y;
 
 waitForLevelGen = true;
 
@@ -15,4 +17,6 @@ y1 = yOff * TILE_SIZE;
 x2 = (xOff + width) * TILE_SIZE;
 y2 = (yOff + height) * TILE_SIZE;
 
-surf = surface_create(x2 - x1, y2 - y1);
+y3 = height2 * TILE_SIZE;
+y4 = y3 + 3000; //Draw far off the bottom of the screen
+surf = surface_create(WIDTH, HEIGHT);
