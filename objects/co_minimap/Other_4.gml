@@ -1,0 +1,1 @@
+/// @description Preventing game from creating itself again

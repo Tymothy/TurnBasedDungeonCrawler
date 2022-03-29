@@ -33,7 +33,7 @@
     "path": "folders/Controllers/GUI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_minimap",
+  "name": "co_hideNonPlayableArea",
   "tags": [],
   "resourceType": "GMObject",
 }

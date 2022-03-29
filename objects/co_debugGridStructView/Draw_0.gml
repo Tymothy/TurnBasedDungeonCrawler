@@ -8,8 +8,9 @@ if(instance_exists(co_grid))
 	{
 		for(var j = 0; j < room_width / TILE_SIZE; j++)
 		{
-			var _collide = co_grid.tileGrid[# i, j][$ "_collidePlayer"];//Find if the player can collide with current tile
-			switch(_collide)
+			var _structValue = co_grid.tileGrid[# i, j][$ "_collidePlayer"];//Find if the player can collide with current tile
+			//var _structValue = co_grid.tileGrid[# i, j][$ "_aiSpawnable"];//Find if the player can collide with current tile
+			switch(_structValue)
 			{
 				case false:
 					draw_set_color(c_lime);			

@@ -27,7 +27,7 @@
     "path": "folders/Controllers/Debugging.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_debugGridPlayerCollision",
+  "name": "co_debugGridStructView",
   "tags": [],
   "resourceType": "GMObject",
 }

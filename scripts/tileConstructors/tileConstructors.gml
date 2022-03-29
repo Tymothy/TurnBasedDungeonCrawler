@@ -17,6 +17,8 @@ function Tile(_x, _y, _id) constructor {
 	_entityInTile = false;
 	_aiSpawnable = false;
 	_description = "Default tile"; //Used to track the name of the tile, mainly for debugging	
+	
+	_door = false;
 }
 
 function NormalFloor(_x, _y, _id) : Tile() constructor {
@@ -76,4 +78,13 @@ function DoorOpen(_x, _y) : Tile() constructor {
 	_entityInTile = false;
 	_aiSpawnable = false;
 	_description = "Open Door";
+	
+	_door = true;
+}
+
+function set_aiSpawnable(_x, _y, _id, _value) : Tile() constructor {
+	x = _x;
+	y = _y;
+	id = _id;
+	_aiSpawnable = _value;	
 }

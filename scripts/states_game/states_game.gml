@@ -49,6 +49,9 @@ function state_game_setup(_event){
 			//Fill the rooms with content
 			instance_create_layer(x, y, "la_controllers", co_fillRooms);
 			
+			//Restrict spawns
+			restrict_spawns_near_doors();
+			
 			//Spawn entities in game room, including player
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
 			
