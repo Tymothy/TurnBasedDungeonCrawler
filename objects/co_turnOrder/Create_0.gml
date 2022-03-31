@@ -34,7 +34,7 @@ function createAiTurnOrder()
 	//Cycle through all ai in the room and add them to the turn order
 	for (var i = 0; i <  instance_number(ob_par_ai); i++) {
 		var _aiID = instance_find(ob_par_ai, i);
-		var _aiSpeed = _aiID.attributes.turnSpeed;
+		var _aiSpeed = _aiID.property.turnSpeed;
 		
 		////Find if turn speed already exists, if so, add .01 until no match to avoid mismatches
 		//var _prio = ds_priority_find_priority(aiQueue, _aiSpeed);
@@ -42,7 +42,7 @@ function createAiTurnOrder()
 		//	_aiSpeed += .01;
 		//	_prio = ds_priority_find_priority(aiQueue, _aiSpeed);
 		//}
-		if(LOGGING) show_debug_message("Adding " + string(_aiID.attributes.aiName) + "/" + string(_aiID) 
+		if(LOGGING) show_debug_message("Adding " + string(_aiID.property.name) + "/" + string(_aiID) 
 										+ " with value " + string(_aiSpeed) + " to the turn order.");
 		ds_priority_add(aiQueue, _aiID, _aiSpeed);
 	}

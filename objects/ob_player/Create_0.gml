@@ -1,28 +1,20 @@
-/// @description Init
+/// @description Create Player
 event_inherited();
 //Put into a JSON file to allow easy changing and reference
 sprite = sp_player_hero1;
 
-attributes =
-{
-	attackable : true,
-	moveSpeed : 1, //Can move X tiles per turn
-	name : "Player",
-	collisionGrid : co_grid.mpGrid_collidePlayer,
-	targetObject : noone,
-	attackStyle : ATTACK.SLIDE,
-	attackRange : 1,
-	attackPower : 1,
-	
-	attacks:
-	{
-		direct : true,	
-		slide: true,
-	},
-	
-	hp : 3,
-	
-}
+
+property.attackable = true;
+property.moveSpeed = 1;
+property.name = "Player";
+property.collisionGrid = co_grid.mpGrid_collidePlayer;
+property.targetObject = noone;
+property.hp = 5;
+property.attackRange = 1;
+property.attackPower = 1;
+property.attacks.direct = true;
+property.attacks.slide = true;
+property.hp = 3;
 
 //Variables that aren't configured
 xGridCoord = to_grid(x);
@@ -35,9 +27,9 @@ endTurn = false;
 #region Methods
 takeDamage = function (_damage) {
 	truestate_switch(STATES.HURT);
-	attributes.hp = attributes.hp - _damage;
+	property.hp = property.hp - _damage;
 	if(LOGGING) show_debug_message("Player took " + string(_damage) + " damage.");
-	if(LOGGING) show_debug_message("Player has " + string(attributes.hp) + " health left.");
+	if(LOGGING) show_debug_message("Player has " + string(property.hp) + " health left.");
 }
 
 movingRoomsFunc = function() {

@@ -3,25 +3,26 @@
 // Inherit the parent event
 event_inherited();
 
-attributes =
-{
-	attackable : true,
-	turnSpeed : 1, //Higher numbers will go first
-	aiName : "Slime",
-	collisionGrid : co_grid.mpGrid_collideOther,
-	targetObject : ob_player,
-	attackStyle : ATTACK.DIRECT,
-	attackRange : 1,
-	attackPower : 1,
-	hp : 1,
-}
+property.attackable = true;
+property.moveSpeed = 1;
+property.turnSpeed = 1;
+property.name = "Slime";
+property.collisionGrid = co_grid.mpGrid_collideOther;
+property.targetObject = ob_player;
+property.hp = 1;
+property.attackRange = 1;
+property.attackPower = 1;
+property.attacks.direct = true;
+property.attacks.slide = false;
+property.hp = 1;
 
 #region Methods
+
 takeDamage = function (_damage) {
 	truestate_switch(STATES.HURT);
-	attributes.hp = attributes.hp - _damage;
+	property.hp = property.hp - _damage;
 	if(LOGGING) show_debug_message("Slime took " + string(_damage) + " damage.");
-	if(LOGGING) show_debug_message("Slime has " + string(attributes.hp) + " health left.");
+	if(LOGGING) show_debug_message("Slime has " + string(property.hp) + " health left.");
 }
 
 #endregion

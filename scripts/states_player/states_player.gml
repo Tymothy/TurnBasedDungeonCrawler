@@ -7,7 +7,7 @@ function state_player_wait(_event){
 		{
 			//This code will run once when the state is brand new.
 			//truestate_clear_history();
-			attributes.targetObject = noone;
+			property.targetObject = noone;
 		}break;
 	
 		//STEP---------------------------------------
@@ -103,7 +103,7 @@ function state_player_idle(_event){
 								//entity is in grid square.  Can we move onto it?
 								
 								//Check first to see if we want to attack entity
-								if(attributes.attacks.direct == true){
+								if(property.attacks.direct == true){
 									directAttack = direct_attack(gridX, gridY);
 									//If we are attacking, don't move.									
 									if(directAttack != false) _move = false;
@@ -139,7 +139,7 @@ function state_player_idle(_event){
 							}
 						
 							//Check if touch is inside of movement area
-							if(abs(to_grid(x) - gridX) <= attributes.moveSpeed && abs(to_grid(y) - gridY) <= attributes.moveSpeed)
+							if(abs(to_grid(x) - gridX) <= property.moveSpeed && abs(to_grid(y) - gridY) <= property.moveSpeed)
 							{
 								//Touch is inside of movement area, do not disallow movement
 							}
@@ -199,7 +199,7 @@ function state_player_move(_event){
 		{
 			//This code will run once when the state is brand new.
 			//Remove current position from entity grid			
-			targArr = move_direct(self.attributes.collisionGrid, targX, targY);
+			targArr = move_direct(self.property.collisionGrid, targX, targY);
 			doorFlag = false; //Used to ensure once a door is used, player will go to next room
 			currentRoomX = to_room_x(to_grid(x));
 			currentRoomY = to_room_y(to_grid(y));
@@ -298,7 +298,7 @@ function state_player_move(_event){
 					if(movingRooms == true){
 						var _cg = co_grid.mpGrid_noCollision;
 					} else {
-						var _cg = self.attributes.collisionGrid;
+						var _cg = self.property.collisionGrid;
 					}
 					
 					targArr = move_direct(_cg, targX, targY);
@@ -358,7 +358,7 @@ function state_player_attack(_event){
 			////Determine if attack is possible
 			
 			//Direct Attack
-			if(attackFlag == false && attributes.attacks.direct == true) {
+			if(attackFlag == false && property.attacks.direct == true) {
 				//Object is able to attack
 				
 				//Check if direct attack is being used
@@ -372,7 +372,7 @@ function state_player_attack(_event){
 				
 			} //End Direct Attack
 			
-			if(attackFlag == false && attributes.attacks.slide == true) {
+			if(attackFlag == false && property.attacks.slide == true) {
 					//What makes a target eligible?  Being part of the hostile parent
 					for(var i =  xGridCoord - 1; i <= xGridCoord + 1; i++) {
 						for(var j = yGridCoord - 1; j <= yGridCoord + 1; j++) {
@@ -430,7 +430,7 @@ function state_player_attack(_event){
 						//Move towards enemy as part of attack
 						//This runs when done with movement
 						array_delete(attackArray, attackArrayCounter, 1);		
-						target.takeDamage(attributes.attackPower);
+						target.takeDamage(property.attackPower);
 						target = noone; //Reset target to start moving back
 					}
 				}

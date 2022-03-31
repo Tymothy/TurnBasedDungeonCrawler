@@ -47,13 +47,13 @@ function state_ai_attack(_event) {
 			//This code will run once when the state is brand new.
 			attackValid = false;
 			//Determine if attack is possible
-			switch(attributes.attackStyle) {
+			switch(property.attackStyle) {
 				case ATTACK.DIRECT:
 					//Attacker must start near target, then attack directly
-					var _distX = to_grid(abs(attributes.targetObject.x - self.x));
-					var _distY = to_grid(abs(attributes.targetObject.y - self.y));
+					var _distX = to_grid(abs(property.targetObject.x - self.x));
+					var _distY = to_grid(abs(property.targetObject.y - self.y));
 					//Determine if target is within reach
-					if(_distX <= attributes.attackRange && _distY <= attributes.attackRange) {
+					if(_distX <= property.attackRange && _distY <= property.attackRange) {
 						//Target able to be attacked
 						attackValid = true;
 					}
@@ -74,7 +74,7 @@ function state_ai_attack(_event) {
 		{
 			//This code will be executed during the step event.
 			if(attackValid == true) {
-				attributes.targetObject.takeDamage(attributes.attackPower);
+				property.targetObject.takeDamage(property.attackPower);
 				show_debug_message("ATTACKED");
 				attackValid = false;
 				truestate_switch(STATES.MOVE);
@@ -102,7 +102,7 @@ function state_ai_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			targArr = move_direct(self.attributes.collisionGrid, attributes.targetObject.x, attributes.targetObject.y);
+			targArr = move_direct(self.property.collisionGrid, property.targetObject.x, property.targetObject.y);
 
 			//targArr = calc_path(); //get the X and Y coords to move to (room coords)
 			
@@ -142,7 +142,7 @@ function state_ai_hurt(_event) {
 		{
 			//Calculate if AI is dead
 			var _removeEntity = false;
-			if(attributes.hp <= 0) _removeEntity = true;
+			if(property.hp <= 0) _removeEntity = true;
 			
 			//Remove entity
 			if (_removeEntity == true) remove_entity(id);
