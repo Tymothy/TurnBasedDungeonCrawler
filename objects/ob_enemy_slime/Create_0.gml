@@ -18,16 +18,11 @@ property.hp = 1;
 
 #region Methods
 
-takeDamage = function (_damage) {
-	truestate_switch(STATES.HURT);
-	property.hp = property.hp - _damage;
-	if(LOGGING) show_debug_message("Slime took " + string(_damage) + " damage.");
-	if(LOGGING) show_debug_message("Slime has " + string(property.hp) + " health left.");
-}
+
 
 #endregion
 
-
+stateMachine = true;
 truestate_create_state(STATES.WAIT, state_ai_wait);
 truestate_create_state(STATES.ATTACK, state_ai_attack);
 truestate_create_state(STATES.MOVE, state_ai_move);

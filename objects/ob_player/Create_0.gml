@@ -25,13 +25,6 @@ turnActive = false;
 endTurn = false;
 
 #region Methods
-takeDamage = function (_damage) {
-	truestate_switch(STATES.HURT);
-	property.hp = property.hp - _damage;
-	if(LOGGING) show_debug_message("Player took " + string(_damage) + " damage.");
-	if(LOGGING) show_debug_message("Player has " + string(property.hp) + " health left.");
-}
-
 movingRoomsFunc = function() {
 	//Changed back to false from gameManager
 	movingRooms = true;	
@@ -51,6 +44,7 @@ sprite_index = sprite;
 #region State Machine
 //State machine is initialized in the in herited event.
 //Define your states for this actor here.
+stateMachine = true;
 truestate_create_state(STATES.WAIT, state_player_wait, "Wait");
 truestate_create_state(STATES.IDLE, state_player_idle, "Idle");
 truestate_create_state(STATES.MOVE, state_player_move, "Move");

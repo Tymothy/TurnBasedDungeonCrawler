@@ -46,7 +46,7 @@ function clean_grid_entities(_pathID, tempEntity) {
 			
 		//_x = to_grid(_x);
 		//_y = to_grid(_y);
-		if(LOGGING) show_debug_message("Clearing block at: " + coords_string(_x, _y))
+		//if(LOGGING) show_debug_message("Clearing block at: " + coords_string(_x, _y))
 		mp_grid_clear_cell(_pathID, _x, _y);
 	}	
 }
@@ -61,7 +61,7 @@ function block_grid_tile(_pathID, _coordArray, tempEntity) {
 	var _ry = _coordArray[1];
 	_rx = to_grid(_rx);
 	_ry = to_grid(_ry);
-	if(LOGGING) show_debug_message("Blocking grid square: " + coords_string(_rx, _ry));
+	//if(LOGGING) show_debug_message("Blocking grid square: " + coords_string(_rx, _ry));
 	mp_grid_add_cell(_pathID, _rx, _ry);
 	var _arrL = array_length(tempEntity);
 	tempEntity[_arrL] = [_rx, _ry]; //No +1 required as array length will return 1, yet the value is in the 0 spot.

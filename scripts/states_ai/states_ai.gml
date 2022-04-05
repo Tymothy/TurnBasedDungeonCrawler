@@ -75,7 +75,6 @@ function state_ai_attack(_event) {
 			//This code will be executed during the step event.
 			if(attackValid == true) {
 				property.targetObject.takeDamage(property.attackPower);
-				show_debug_message("ATTACKED");
 				attackValid = false;
 				truestate_switch(STATES.MOVE);
 			}
@@ -102,7 +101,12 @@ function state_ai_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			targArr = move_direct(self.property.collisionGrid, property.targetObject.x, property.targetObject.y);
+			switch(property.attackStyle) {
+				case ATTACK.DIRECT:
+					targArr = move_direct(self.property.collisionGrid, property.targetObject.x, property.targetObject.y);	
+					break;
+			}
+			
 
 			//targArr = calc_path(); //get the X and Y coords to move to (room coords)
 			
