@@ -51,7 +51,7 @@ function state_ai_attack(_event) {
 			//meleeSlide
 			chosenAttack = noone;
 			
-			//Run checks
+			//Run checks, from least desirable attack to most desirable
 			if(property.attacks.meleeDirect == true) {
 				meleeDirect = check_direct_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
 				if(meleeDirect != false){
@@ -65,12 +65,17 @@ function state_ai_attack(_event) {
 			
 			if(property.attacks.rangeLine == true) {
 				rangeLine = check_range_line_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
-			
+				if(rangeLine != false){
+					chosenAttack = ATTACK.RANGED_PROJECTILE;	
+				}				
 				
 			}
 			
 			if(property.attacks.rangeDiag == true) {
-				
+				rangeDiag = check_range_diag_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
+				if(rangeDiag != false){
+					chosenAttack = ATTACK.RANGED_PROJECTILE;	
+				}		
 				
 				
 			}
@@ -92,8 +97,14 @@ function state_ai_attack(_event) {
 						//Run the direct attack
 						property.targetObject.takeDamage(property.meleeAttackPower);
 						show_debug_message("TODO: ADD ANIMATION HERE");
+						if(LOGGING) show_debug_message(string(property.name)+ " " + string(id) +" direct attacked " + string(property.targetObject.property.name) + " " + string(property.targetObject.id));
 					break;
 				
+				case ATTACK.RANGED_PROJECTILE:
+						property.targetObject.takeDamage(property.rangeAttackPower);
+						show_debug_message("TODO: ADD ANIMATION HERE");
+						if(LOGGING) show_debug_message(string(property.name)+ " " + string(id) +" range projectiled attacked " + string(property.targetObject.property.name) + " " + string(property.targetObject.id));
+					break;
 				
 				
 			}

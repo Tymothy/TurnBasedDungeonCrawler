@@ -3,6 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
+image_yscale = PIXEL_ART_SCALE;
+image_xscale = PIXEL_ART_SCALE;
 
 draw_set_font(fo_debugNormal);
 draw_set_color(c_black);

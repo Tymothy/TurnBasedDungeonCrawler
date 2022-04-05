@@ -19,7 +19,8 @@ Short-Term TODO:
 ==========================================================
 Known Bugs:
 - If player is surrounded and tries to move diagonally, they are unable to do so.  This is due to the MP function calculating a path, but unable to find a valid path.
-
+- Range attacks do not consider blocks.
+	- Make scripts use projectile pathing grid
 
 
 =========================================================

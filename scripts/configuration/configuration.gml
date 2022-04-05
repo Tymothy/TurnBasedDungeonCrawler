@@ -1,9 +1,11 @@
 //Variables that can be possibly changed after compile
 function init() {
 	global.minDistToFire = 40; //Minimum distance to fire	
+	global.pixelArtScale = 2;
 }
 //Macros for the global vars
-#macro MIN_DIST_TO_FIRE global.minDistToFire
+#macro MIN_DIST_TO_FIRE global.minDistToFire;
+#macro PIXEL_ART_SCALE global.pixelArtScale;
 
 //How many tiles should the game target to display on screen. 
 #macro DESIGN_TILES_WIDE 9 

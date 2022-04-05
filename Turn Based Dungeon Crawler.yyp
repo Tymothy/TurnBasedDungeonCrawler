@@ -150,6 +150,7 @@
     {"id":{"name":"truestate_switch","path":"scripts/truestate_switch/truestate_switch.yy",},"order":6,},
     {"id":{"name":"copar_GUI","path":"objects/copar_GUI/copar_GUI.yy",},"order":0,},
     {"id":{"name":"sp_door_wave_purple","path":"sprites/sp_door_wave_purple/sp_door_wave_purple.yy",},"order":4,},
+    {"id":{"name":"sp_golem_stone","path":"sprites/sp_golem_stone/sp_golem_stone.yy",},"order":2,},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},"order":0,},
   ],
   "Options": [
