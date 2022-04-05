@@ -109,6 +109,8 @@
     {"id":{"name":"sp_door_wave_orange","path":"sprites/sp_door_wave_orange/sp_door_wave_orange.yy",},"order":2,},
     {"id":{"name":"truestate_draw","path":"scripts/truestate_draw/truestate_draw.yy",},"order":2,},
     {"id":{"name":"sp_door_wave_green","path":"sprites/sp_door_wave_green/sp_door_wave_green.yy",},"order":1,},
+    {"id":{"name":"co_gui_version","path":"objects/co_gui_version/co_gui_version.yy",},"order":3,},
+    {"id":{"name":"ob_hurtVisual","path":"objects/ob_hurtVisual/ob_hurtVisual.yy",},"order":2,},
     {"id":{"name":"GMLive_compiler","path":"scripts/GMLive_compiler/GMLive_compiler.yy",},"order":1,},
     {"id":{"name":"co_touchGridSelect","path":"objects/co_touchGridSelect/co_touchGridSelect.yy",},"order":2,},
     {"id":{"name":"truestate_enqueue","path":"scripts/truestate_enqueue/truestate_enqueue.yy",},"order":3,},
