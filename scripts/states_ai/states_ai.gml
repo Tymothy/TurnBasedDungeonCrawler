@@ -46,47 +46,42 @@ function state_ai_attack(_event) {
 		{
 			
 			//This code will run once when the state is brand new.
-			attackValid = false;
-			directAttack = false;
-			property.chosenAttack = noone;
+			meleeDirect = false;
+			rangeLine = false;
+			//meleeSlide
+			chosenAttack = noone;
 			
 			//Run checks
-			if(property.attacks.direct == true) {
-				directAttack = check_direct_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
-				if(directAttack != false){
-					property.chosenAttack = ATTACK.DIRECT;	
+			if(property.attacks.meleeDirect == true) {
+				meleeDirect = check_direct_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
+				if(meleeDirect != false){
+					chosenAttack = ATTACK.DIRECT;	
 				}
 			}	
-			//Determine if attack is possible
-			//switch(property.chosenAttack) {
-			//	case ATTACK.DIRECT:
-			//		//Attacker must start near target, then attack directly
-					
-					
-			//		var _distX = to_grid(abs(property.targetObject.x - self.x));
-			//		var _distY = to_grid(abs(property.targetObject.y - self.y));
-			//		//Determine if target is within reach
-			//		if(_distX <= property.meleeAttackRange && _distY <= property.meleeAttackRange) {
-			//			//Target able to be attacked
-			//			attackValid = true;
-			//		}
-			//		else {
-			//			attackValid = false;
-			//		}
-					
-					
-			//	break;
 			
-			//}
+			if(property.attacks.meleeSlide == true) {
+			//Nothing here, need for player scripts though	
+			}
 			
-			//if(property.chosenAttack == noone) truestate_switch(STATES.MOVE);
+			if(property.attacks.rangeLine == true) {
+				rangeLine = check_range_line_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
+			
+				
+			}
+			
+			if(property.attacks.rangeDiag == true) {
+				
+				
+				
+			}
+			
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
 			//This code will be executed during the step event.
-			switch(property.chosenAttack) {
+			switch(chosenAttack) {
 				case noone:
 					//No attack is valid, go to move state
 					truestate_switch(STATES.MOVE);
@@ -104,7 +99,7 @@ function state_ai_attack(_event) {
 			}
 			
 			//This should run only after animation is completed (once animation is put in
-			property.chosenAttack = noone;
+			chosenAttack = noone;
 			
 		}break;
 	

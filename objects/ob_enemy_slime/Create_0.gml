@@ -12,8 +12,12 @@ property.targetObject = ob_player;
 property.hp = 1;
 property.meleeAttackRange = 1;
 property.meleeAttackPower = 1;
-property.attacks.direct = true;
-property.attacks.slide = false;
+property.rangeAttackRange = 4;
+property.rangeAttackPower = 1;
+property.attacks.meleeDirect = true;
+//Ranged only in for testing
+property.attacks.rangeLine = true;
+property.attacks.rangeDiag = true;
 property.hp = 1;
 
 #region Methods

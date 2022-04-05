@@ -12,8 +12,8 @@ property.targetObject = noone;
 property.hp = 5;
 property.meleeAttackRange = 1;
 property.meleeAttackPower = 1;
-property.attacks.direct = true;
-property.attacks.slide = true;
+property.attacks.meleeDirect = true;
+property.attacks.meleeSlide = true;
 property.hp = 3;
 
 //Variables that aren't configured

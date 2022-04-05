@@ -40,7 +40,7 @@ function check_valid_attacks(obj = self){
 				direct = co_grid.tileGrid[# i, j][$ "_entityInTile"];
 			}
 			//Set direct attacking to true if at least one entity present
-			if(direct == true) validAttacks.direct = true;
+			if(direct == true) validattacks.meleeDirect = true;
 			
 		}
 		
@@ -50,8 +50,14 @@ function check_valid_attacks(obj = self){
 
 }
 
+function entity_in_tile(gridX, gridY) {
+	var _entityInTile = co_grid.tileGrid[# gridX, gridY][$ "_entityInTile"];
+		return _entityInTile;	
+		
+}
+
 function check_direct_attack(gridX, gridY, obj = self) {
-	/// @desc Given grid coords, returns whether direct attack is possible by given object.  If no object is given, return self
+	/// @desc Given grid coords, returns whether direct attack for a grid square is possible by given object.  If no object is given, return self
 	/// @desc If attack is possible, returns the entity.
 	/// @arg gridX
 	/// @arg gridY
@@ -61,7 +67,7 @@ function check_direct_attack(gridX, gridY, obj = self) {
 		Direct attack is where the attacking entity starts turn near target and uses their turn to attack
 		a single target.
 	*/
-	var _entityInTile = co_grid.tileGrid[# gridX, gridY][$ "_entityInTile"];
+	var _entityInTile = entity_in_tile(gridX, gridY);
 	
 	if(_entityInTile == false) {
 		//No entity in tile, attack not possible.
@@ -82,7 +88,53 @@ function check_direct_attack(gridX, gridY, obj = self) {
 	if(_ent.property.attackable == true && _ent != self.id) {
 		//Target entity is attackable.  Return entity
 		//Prevents self attacks
-		show_debug_message("Direct attack entity " + string(_ent));
+		if(LOGGING) show_debug_message(string(self.property.name) +" can direct melee attack " + string(_ent.property.name) + " " + string(_ent));
+		
+		return _ent;
+	}
+	
+	//If entity is not attackable, return false
+	return false;
+}
+	
+function check_range_line_attack(gridX, gridY, obj = self) {
+	/// @desc Given grid coords, returns whether range line attack for a grid square is possible by given object.  If no object is given, return self
+	/// @desc If attack is possible, returns the entity.
+	/// @arg gridX
+	/// @arg gridY
+	/// @arg object(optional)		
+	
+	/*
+		Direct attack is where the attacking entity starts turn near target and uses their turn to attack
+		a single target.
+	*/
+	var _entityInTile = entity_in_tile(gridX, gridY);
+	
+	if(_entityInTile == false) {
+		//No entity in tile, attack not possible.
+		return false;	
+	}
+	
+	//Check range
+	var _distX = abs(gridX - to_grid(obj.x));
+	var _distY = abs(gridY - to_grid(obj.y));	
+	
+	if(_distX > self.property.rangeAttackRange || _distY > self.property.rangeAttackRange) {
+		//Entity is outside range	
+		return false;
+	}
+	
+	if(_distX != 0 && _distY != 0) {
+		//Entity is not along the same x/y value, not attackable
+		return false;
+		
+	}
+	
+	var _ent = check_entity(gridX, gridY);	
+	if(_ent.property.attackable == true && _ent != self.id) {
+		//Target entity is attackable.  Return entity
+		//Prevents self attacks
+		if(LOGGING) show_debug_message(string(self.property.name) +" can range line attack " + string(_ent.property.name) + " " + string(_ent));
 		
 		return _ent;
 	}

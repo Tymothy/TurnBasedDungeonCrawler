@@ -49,7 +49,7 @@ function state_player_idle(_event){
 			startGridY = to_grid(y);
 			
 			//Reset attack variables
-			directAttack = false;
+			meleeDirect = false;
 			
 		}break;
 	
@@ -103,10 +103,10 @@ function state_player_idle(_event){
 								//entity is in grid square.  Can we move onto it?
 								
 								//Check first to see if we want to attack entity
-								if(property.attacks.direct == true){
-									directAttack = check_direct_attack(gridX, gridY);
+								if(property.attacks.meleeDirect == true){
+									meleeDirect = check_direct_attack(gridX, gridY);
 									//If we are attacking, don't move.									
-									if(directAttack != false) _move = false;
+									if(meleeDirect != false) _move = false;
 								}
 
 								var _parOb = object_get_parent(_entity.object_index);
@@ -160,7 +160,7 @@ function state_player_idle(_event){
 							
 							
 							//If direct attack is being used, go directly to attack
-							if(directAttack != false) {
+							if(meleeDirect != false) {
 								truestate_switch(STATES.ATTACK);	
 							}
 
@@ -350,7 +350,7 @@ function state_player_attack(_event){
 			targY = y;
 			target = noone; //Target of attack used in step
 			//validAttacks = check_valid_attacks();
-			//if(validAttacks.direct = true) {
+			//if(validattacks.meleeDirect = true) {
 			//	if(LOGGING) show_debug_message("Direct attack valid");	
 			//}
 			
@@ -358,13 +358,13 @@ function state_player_attack(_event){
 			////Determine if attack is possible
 			
 			//Direct Attack
-			if(attackFlag == false && property.attacks.direct == true) {
+			if(attackFlag == false && property.attacks.meleeDirect == true) {
 				//Object is able to attack
 				
 				//Check if direct attack is being used
-				if(directAttack != false) {
+				if(meleeDirect != false) {
 					//We do want to direct attack
-					attackArray[attackArrayCounter] = directAttack;
+					attackArray[attackArrayCounter] = meleeDirect;
 					attackArrayCounter++;
 					
 					attackFlag = true;
@@ -372,7 +372,7 @@ function state_player_attack(_event){
 				
 			} //End Direct Attack
 			
-			if(attackFlag == false && property.attacks.slide == true) {
+			if(attackFlag == false && property.attacks.meleeSlide == true) {
 					//What makes a target eligible?  Being part of the hostile parent
 					for(var i =  xGridCoord - 1; i <= xGridCoord + 1; i++) {
 						for(var j = yGridCoord - 1; j <= yGridCoord + 1; j++) {

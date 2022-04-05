@@ -1,7 +1,7 @@
 KISS - KEEP IT SIMPLE STUPID
 YAGNI - YOU AREN'T GONNA NEED IT
 
-
+============================================================
 Short-Term TODO:
 - Create a boss room that creates an end tile after killing all enemies (or the enemy)
 
@@ -16,10 +16,13 @@ Short-Term TODO:
 	- Minimap grid needs to be fixed, it's slightly off
 	- Draw a small sprite to indicate player
 
-- Hide rooms outside current room (shader or surface?)
+==========================================================
+Known Bugs:
+- If player is surrounded and tries to move diagonally, they are unable to do so.  This is due to the MP function calculating a path, but unable to find a valid path.
 
-- Touching a square in a room without enemies should allow player to move there
 
+
+=========================================================
 - Player Mechanics
 	- Player has 3 slots for cards (at bottom of screen)
 		- Each card can do something and has an active effect

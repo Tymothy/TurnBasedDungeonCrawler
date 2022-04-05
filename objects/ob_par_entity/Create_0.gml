@@ -6,6 +6,7 @@ mp_add_entity();
 
 d_image_speed = 1; //Set entities to animate at standard speed
 stateMachine = false;
+chosenAttack = noone; 
 
 property =
 {
@@ -14,19 +15,26 @@ property =
 	name : "Default Name", //Name of the entity
 	collisionGrid : co_grid.mpGrid_noCollision, //collision grid to use for colliding
 	targetObject : noone, 
-	chosenAttack : noone, //Basic attack sytle
+
 	movePattern : MOVE.SEEK_DIRECT,
-	
+	//Create a move setup like attacks
 	attacks:
 	{
 		//Melee Attacks
-		direct : false,	 //Determines whether or not entity can attack directly
-		slide: false, //Determines if entity can slide attack
+		meleeDirect : false,	 //Determines whether or not entity can attack directly
+		meleeSlide: false, //Determines if entity can slide attack
 		
 		//Range Attacks
+		rangeLine : false, //Determines if the entity can attack in a straight line
+		rangeDiag : false, //Determines if the entity can attack in a diagonal line
+		
 	},
-	meleeAttackRange : 1, //How far away basic attack can hit
-	meleeAttackPower : 1, //How far away basic attack can hit
+	meleeAttackRange : 0, //How far away melee attack can hit
+	meleeAttackPower : 0, //How strong melee attack is
+	
+	rangeAttackRange : 0, //How far away range attack can hit
+	rangeAttackPower : 0, //How strong range attack is
+	
 	hp : 1, 
 }
 	
