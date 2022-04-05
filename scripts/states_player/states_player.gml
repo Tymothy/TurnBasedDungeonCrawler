@@ -7,7 +7,7 @@ function state_player_wait(_event){
 		{
 			//This code will run once when the state is brand new.
 			//truestate_clear_history();
-			property.targetObject = noone;
+			targetObject = noone;
 		}break;
 	
 		//STEP---------------------------------------

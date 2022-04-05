@@ -51,6 +51,7 @@ enum MOVE {
 }
 enum STATES
 {
+	BLANK, //Holder for no code
 	//Game States
 	INACTIVE,
 	GAME_SETUP,

@@ -7,6 +7,7 @@ mp_add_entity();
 d_image_speed = 1; //Set entities to animate at standard speed
 stateMachine = false;
 chosenAttack = noone; 
+targetObject = noone;
 
 property =
 {
@@ -14,7 +15,6 @@ property =
 	turnSpeed : 0, //Higher numbers will go first
 	name : "Default Name", //Name of the entity
 	collisionGrid : co_grid.mpGrid_noCollision, //collision grid to use for colliding
-	targetObject : noone, 
 
 	movePattern : MOVE.SEEK_DIRECT,
 	//Create a move setup like attacks

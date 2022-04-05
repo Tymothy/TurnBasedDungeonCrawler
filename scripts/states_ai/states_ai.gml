@@ -53,7 +53,7 @@ function state_ai_attack(_event) {
 			
 			//Run checks, from least desirable attack to most desirable
 			if(property.attacks.meleeDirect == true) {
-				meleeDirect = check_direct_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
+				meleeDirect = check_direct_attack(to_grid(targetObject.x), to_grid(targetObject.y));
 				if(meleeDirect != false){
 					chosenAttack = ATTACK.DIRECT;	
 				}
@@ -64,7 +64,7 @@ function state_ai_attack(_event) {
 			}
 			
 			if(property.attacks.rangeLine == true) {
-				rangeLine = check_range_line_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
+				rangeLine = check_range_line_attack(to_grid(targetObject.x), to_grid(targetObject.y));
 				if(rangeLine != false){
 					chosenAttack = ATTACK.RANGED_PROJECTILE;	
 				}				
@@ -72,7 +72,7 @@ function state_ai_attack(_event) {
 			}
 			
 			if(property.attacks.rangeDiag == true) {
-				rangeDiag = check_range_diag_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
+				rangeDiag = check_range_diag_attack(to_grid(targetObject.x), to_grid(targetObject.y));
 				if(rangeDiag != false){
 					chosenAttack = ATTACK.RANGED_PROJECTILE;	
 				}		
@@ -95,21 +95,29 @@ function state_ai_attack(_event) {
 				
 				case ATTACK.DIRECT:
 						//Run the direct attack
-						property.targetObject.takeDamage(property.meleeAttackPower);
+						targetObject.takeDamage(property.meleeAttackPower);
 						show_debug_message("TODO: ADD ANIMATION HERE");
-						if(LOGGING) show_debug_message(string(property.name)+ " " + string(id) +" direct attacked " + string(property.targetObject.property.name) + " " + string(property.targetObject.id));
+						if(LOGGING) show_debug_message(string(property.name)+ " " + string(id) +" direct attacked " + string(targetObject.property.name) + " " + string(targetObject.id));
 					break;
 				
 				case ATTACK.RANGED_PROJECTILE:
-						property.targetObject.takeDamage(property.rangeAttackPower);
+						targetObject.takeDamage(property.rangeAttackPower);
 						show_debug_message("TODO: ADD ANIMATION HERE");
-						if(LOGGING) show_debug_message(string(property.name)+ " " + string(id) +" range projectiled attacked " + string(property.targetObject.property.name) + " " + string(property.targetObject.id));
+						if(LOGGING) show_debug_message(string(property.name)+ " " + string(id) +" range projectiled attacked " + string(targetObject.property.name) + " " + string(targetObject.id));
+						
+						with(instance_create_layer(x, y, "la_projectiles", ob_projectile)){
+							vel = 5;
+							targetObject = other.targetObject;
+							dir = point_direction(x, y, targetObject.x, targetObject.y);
+							
+						}
+						 
 					break;
 				
 				
 			}
 			
-			//This should run only after animation is completed (once animation is put in
+			//This should run only after animation is completed (once animation is put in)
 			chosenAttack = noone;
 			
 		}break;
@@ -137,7 +145,7 @@ function state_ai_move(_event) {
 		{
 			switch(property.movePattern) {
 				case MOVE.SEEK_DIRECT:
-					targArr = move_direct(self.property.collisionGrid, property.targetObject.x, property.targetObject.y);	
+					targArr = move_direct(self.property.collisionGrid, targetObject.x, targetObject.y);	
 					break;
 			}
 			
