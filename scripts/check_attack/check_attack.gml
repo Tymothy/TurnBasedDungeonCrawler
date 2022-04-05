@@ -50,7 +50,7 @@ function check_valid_attacks(obj = self){
 
 }
 
-function direct_attack(gridX, gridY, obj = self) {
+function check_direct_attack(gridX, gridY, obj = self) {
 	/// @desc Given grid coords, returns whether direct attack is possible by given object.  If no object is given, return self
 	/// @desc If attack is possible, returns the entity.
 	/// @arg gridX
@@ -72,7 +72,7 @@ function direct_attack(gridX, gridY, obj = self) {
 	var _distX = abs(gridX - to_grid(obj.x));
 	var _distY = abs(gridY - to_grid(obj.y));
 	
-	if(_distX > 1 || _distY > 1) {
+	if(_distX > self.property.meleeAttackRange || _distY > self.property.meleeAttackRange) {
 		//Entity is outside range	
 		return false;
 	}

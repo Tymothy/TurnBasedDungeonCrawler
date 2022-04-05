@@ -44,40 +44,68 @@ function state_ai_attack(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			
 			//This code will run once when the state is brand new.
 			attackValid = false;
+			directAttack = false;
+			property.chosenAttack = noone;
+			
+			//Run checks
+			if(property.attacks.direct == true) {
+				directAttack = check_direct_attack(to_grid(property.targetObject.x), to_grid(property.targetObject.y));
+				if(directAttack != false){
+					property.chosenAttack = ATTACK.DIRECT;	
+				}
+			}	
 			//Determine if attack is possible
-			switch(property.attackStyle) {
-				case ATTACK.DIRECT:
-					//Attacker must start near target, then attack directly
-					var _distX = to_grid(abs(property.targetObject.x - self.x));
-					var _distY = to_grid(abs(property.targetObject.y - self.y));
-					//Determine if target is within reach
-					if(_distX <= property.attackRange && _distY <= property.attackRange) {
-						//Target able to be attacked
-						attackValid = true;
-					}
-					else {
-						attackValid = false;
-					}
+			//switch(property.chosenAttack) {
+			//	case ATTACK.DIRECT:
+			//		//Attacker must start near target, then attack directly
 					
 					
-				break;
+			//		var _distX = to_grid(abs(property.targetObject.x - self.x));
+			//		var _distY = to_grid(abs(property.targetObject.y - self.y));
+			//		//Determine if target is within reach
+			//		if(_distX <= property.meleeAttackRange && _distY <= property.meleeAttackRange) {
+			//			//Target able to be attacked
+			//			attackValid = true;
+			//		}
+			//		else {
+			//			attackValid = false;
+			//		}
+					
+					
+			//	break;
 			
-			}
+			//}
 			
-			if(attackValid == false) truestate_switch(STATES.MOVE);
+			//if(property.chosenAttack == noone) truestate_switch(STATES.MOVE);
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
 			//This code will be executed during the step event.
-			if(attackValid == true) {
-				property.targetObject.takeDamage(property.attackPower);
-				attackValid = false;
-				truestate_switch(STATES.MOVE);
+			switch(property.chosenAttack) {
+				case noone:
+					//No attack is valid, go to move state
+					truestate_switch(STATES.MOVE);
+					break;
+				
+				
+				case ATTACK.DIRECT:
+						//Run the direct attack
+						property.targetObject.takeDamage(property.meleeAttackPower);
+						show_debug_message("TODO: ADD ANIMATION HERE");
+					break;
+				
+				
+				
 			}
+			
+			//This should run only after animation is completed (once animation is put in
+			property.chosenAttack = noone;
+			
 		}break;
 	
 		//DRAW---------------------------------------
@@ -101,8 +129,8 @@ function state_ai_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
-			switch(property.attackStyle) {
-				case ATTACK.DIRECT:
+			switch(property.movePattern) {
+				case MOVE.SEEK_DIRECT:
 					targArr = move_direct(self.property.collisionGrid, property.targetObject.x, property.targetObject.y);	
 					break;
 			}

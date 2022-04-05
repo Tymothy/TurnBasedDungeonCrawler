@@ -14,7 +14,9 @@ property =
 	name : "Default Name", //Name of the entity
 	collisionGrid : co_grid.mpGrid_noCollision, //collision grid to use for colliding
 	targetObject : noone, 
-	attackStyle : ATTACK.DIRECT, //Basic attack sytle
+	chosenAttack : noone, //Basic attack sytle
+	movePattern : MOVE.SEEK_DIRECT,
+	
 	attacks:
 	{
 		//Melee Attacks
@@ -23,8 +25,8 @@ property =
 		
 		//Range Attacks
 	},
-	attackRange : 1, //How far away basic attack can hit
-	attackPower : 1, //How far away basic attack can hit
+	meleeAttackRange : 1, //How far away basic attack can hit
+	meleeAttackPower : 1, //How far away basic attack can hit
 	hp : 1, 
 }
 	

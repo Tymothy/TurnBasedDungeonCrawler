@@ -45,6 +45,10 @@ enum ATTACK
 	RANGED_WALL, //Attacker fires a line of attacks.  All targets in a line X long are damaged	
 }
 
+enum MOVE {
+	SEEK_DIRECT,
+	
+}
 enum STATES
 {
 	//Game States

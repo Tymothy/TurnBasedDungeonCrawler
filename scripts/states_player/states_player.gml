@@ -70,7 +70,7 @@ function state_player_idle(_event){
 					case -1:
 						//No state change, don't do anything
 					break;
-					
+					//TODO: Handle hold touch
 					case STATES.IDLE:
 						if(_qt) show_debug_message("TOUCH_STATE Change: Idle");	
 					break;
@@ -104,7 +104,7 @@ function state_player_idle(_event){
 								
 								//Check first to see if we want to attack entity
 								if(property.attacks.direct == true){
-									directAttack = direct_attack(gridX, gridY);
+									directAttack = check_direct_attack(gridX, gridY);
 									//If we are attacking, don't move.									
 									if(directAttack != false) _move = false;
 								}
@@ -430,7 +430,7 @@ function state_player_attack(_event){
 						//Move towards enemy as part of attack
 						//This runs when done with movement
 						array_delete(attackArray, attackArrayCounter, 1);		
-						target.takeDamage(property.attackPower);
+						target.takeDamage(property.meleeAttackPower);
 						target = noone; //Reset target to start moving back
 					}
 				}
