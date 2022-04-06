@@ -45,6 +45,10 @@ takeDamage = function (_damage) {
 	}
 	
 	property.hp = property.hp - _damage;
+	temp = _damage;
+	with(instance_create_layer(x, y, "la_gui_2", ob_hurtVisual)){
+		value = other.temp;
+	}
 	if(LOGGING) show_debug_message(string(property.name) + " took " + string(_damage) + " damage.");
 	if(LOGGING) show_debug_message(string(property.name) + " has " + string(property.hp) + " health left.");
 }

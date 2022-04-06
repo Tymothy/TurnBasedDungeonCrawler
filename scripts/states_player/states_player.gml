@@ -477,7 +477,7 @@ function state_player_hurt(_event){
 		case TRUESTATE_NEW:
 		{
 			//This code will run once when the state is brand new.
-			instance_create_layer(x, y, "la_gui_2", ob_hurtVisual);
+			
 		}break;
 	
 		//STEP---------------------------------------
