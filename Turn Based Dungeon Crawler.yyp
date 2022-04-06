@@ -4,7 +4,6 @@
     {"id":{"name":"ob_delta","path":"objects/ob_delta/ob_delta.yy",},"order":3,},
     {"id":{"name":"sp_door_sh_white","path":"sprites/sp_door_sh_white/sp_door_sh_white.yy",},"order":5,},
     {"id":{"name":"co_blank","path":"objects/co_blank/co_blank.yy",},"order":0,},
-    {"id":{"name":"rm_ex_boss_1","path":"rooms/rm_ex_boss_1/rm_ex_boss_1.yy",},"order":1,},
     {"id":{"name":"co_camera","path":"objects/co_camera/co_camera.yy",},"order":0,},
     {"id":{"name":"co_gameManager","path":"objects/co_gameManager/co_gameManager.yy",},"order":2,},
     {"id":{"name":"ts_wall_dungeon_white","path":"tilesets/ts_wall_dungeon_white/ts_wall_dungeon_white.yy",},"order":0,},
@@ -184,7 +183,6 @@
     {"roomId":{"name":"rm_ex_spawn_1","path":"rooms/rm_ex_spawn_1/rm_ex_spawn_1.yy",},},
     {"roomId":{"name":"rm_ex_normal_1","path":"rooms/rm_ex_normal_1/rm_ex_normal_1.yy",},},
     {"roomId":{"name":"rm_ex_normal_2","path":"rooms/rm_ex_normal_2/rm_ex_normal_2.yy",},},
-    {"roomId":{"name":"rm_ex_boss_1","path":"rooms/rm_ex_boss_1/rm_ex_boss_1.yy",},},
     {"roomId":{"name":"rm_testBuild","path":"rooms/rm_testBuild/rm_testBuild.yy",},},
   ],
   "Folders": [

@@ -16,7 +16,7 @@ enum CORETILES
 	PLACEHOLDER_7 = 7, //Light Purple
 	SPAWN = 8, //Light Green/Lime
 	PLACEHOLDER_9 = 9, //Light Gold/Light Orange
-	PLACEHOLDER_10 = 10, //Split Light Gray/Dark Gray
+	FRONT_WALL = 10, //Split Light Gray/Dark Gray
 	SOLID_WALL = 11, //Dark Gray
 	PLACEHOLDER_12 = 12, //Dark Teal
 	DOOR_WALL = 13, //Dark Blue

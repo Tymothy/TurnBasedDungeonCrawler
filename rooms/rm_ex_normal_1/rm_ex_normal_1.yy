@@ -16,8 +16,8 @@
     {"instances":[],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"ts_coreTiles","path":"tilesets/ts_coreTiles/ts_coreTiles.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":9,"SerialiseHeight":11,"TileSerialiseData":[
 11,11,11,11,11,11,11,11,11,
-11,11,11,11,11,11,11,11,11,
-11,11,11,11,11,11,11,11,11,
+11,10,10,10,10,10,10,10,11,
+11,10,10,10,10,10,10,10,11,
 11,1,1,1,1,1,1,1,11,
 11,1,1,1,1,1,1,1,11,
 11,1,1,1,1,9,9,1,11,

@@ -33,10 +33,7 @@ bitmaskGrid = ds_grid_create(_floorWidth, _floorHeight);
 //First pass iterate through entire floor and set tile
 for(var i = 0; i < _floorWidth; i++) {
 	for(var j = 0; j < _floorHeight; j++) {
-		//var _x = i * TILE_SIZE + (TILE_SIZE / 2);
-		//var _y = j * TILE_SIZE + (TILE_SIZE / 2);
-		
-		
+
 		//Get what kind of tile it is
 		var _coreTile = tilemap_get(foundationTileID, i, j);
 		
@@ -46,6 +43,12 @@ for(var i = 0; i < _floorWidth; i++) {
 				//Choose from a set of tiles that assigned to normal floor
 				var _tile = choose(1, 15, 16, 63, 63, 63, 63, 63, 63, 63, 63, 63);
 				tilemap_set(floorTileID, _tile, i, j);
+				break;
+				
+			case CORETILES.FRONT_WALL:
+			
+				var _tile = 62;
+				tilemap_set(wallTileID, _tile, i, j);
 				break;
 			
 			case CORETILES.SOLID_WALL:
@@ -80,22 +83,38 @@ for(var i = 0; i < _floorWidth; i++) {
 				//Tile 255 is the solid wall tile, but we need to chck 2 tiles up to see if it's the top of a room
 				switch(_bitmaskTile)
 				{
-					case 255:
-						//This is the full tile
-						var _farUp = tilemap_get(foundationTileID, i, j - 2);
+					//case 255:
+					//	//This is the full tile
+					//	var _farUp = tilemap_get(foundationTileID, i, j - 2);
 						
-						//Check to see if two tiles above is empty/solid earth.
-						if(_farUp != 0) {
-							_farUp = autotile_check_tile(_farUp, _coreTile);
+					//	//Check to see if two tiles above is empty/solid earth.
+					//	if(_farUp != 0) {
+					//		_farUp = autotile_check_tile(_farUp, _coreTile);
 						
-							if(_farUp == 1) {
-								//Two above is a wall.  Keep as is.	
-							}
-							if(_farUp == 0) {
-								_bitmaskTile = 300;
-							}
+					//		if(_farUp == 1) {
+					//			//Two above is a wall.  Keep as is.	
+					//		}
+					//		if(_farUp == 0) {
+					//			_bitmaskTile = 300;
+					//		}
+					//	}
+					//	break;
+					case 119:
+						var _downRight = tilemap_get(foundationTileID, i + 1, j + 1);
+						if(_downRight == CORETILES.FRONT_WALL) {
+								_bitmaskTile = 406;
+							
 						}
 						break;
+						
+					case 221:
+						var _upRight = tilemap_get(foundationTileID, i + 1, j - 1);
+						if(_upRight != 0) {
+								_bitmaskTile = 407;
+							
+						}
+						break;					
+					
 					case 17:
 						//This is an edge tile.  If this is not connecting to a room, have the dark part
 						//Face out.
@@ -153,60 +172,6 @@ for(var i = 0; i < _floorWidth; i++) {
 					show_debug_message("Bitmask " + string(_bitmaskTile) + " does not have an assigned tile!");
 					_newTileID = 0;
 				}
-				
-				//switch(_bitmaskTile) {
-				//	case 0:
-				//	//Tile is byitself
-				//		_newTileID = 0;
-				//		break;
-						
-				//	case 28:
-				//		_newTileID = 13;
-				//		break;
-						
-				//	case 124:
-				//		_newTileID = 14;
-				//		break;
-						
-				//	case 112:
-				//		_newTileID = 15;
-				//		break;
-						
-				//	case 241:
-				//		_newTileID = 26;
-				//		break;
-						
-				//	case 193:
-				//		_newTileID = 39;
-				//		break;
-						
-				//	case 199:
-				//		_newTileID = 38;
-				//		break;
-						
-				//	case 7:
-				//		_newTileID = 37;
-				//		break;					
-						
-				//	case 31:
-				//		_newTileID = 25;
-				//		break;									
-
-				//	case 16:
-				//		_newTileID = 12;
-				//		break;			
-						
-				//	case 17:
-				//		_newTileID = 24;
-				//		break;
-						
-				//	case 1:
-				//		_newTileID = 48;
-				//		break;									
-						
-				//}
-				
-				//Testing only
 				
 				
 				

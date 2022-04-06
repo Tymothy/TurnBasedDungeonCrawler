@@ -24,6 +24,10 @@ Known Bugs:
 
 
 =========================================================
+Ideas
+
+- Review Minecraft plugin "Mythic Mobs" to design better enemies
+
 - Player Mechanics
 	- Player has 3 slots for cards (at bottom of screen)
 		- Each card can do something and has an active effect
