@@ -47,7 +47,7 @@ enum ATTACK
 
 enum MOVE {
 	SEEK_DIRECT,
-	
+	SEEK_RANGE,
 }
 enum STATES
 {

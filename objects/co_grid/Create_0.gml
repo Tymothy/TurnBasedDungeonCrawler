@@ -64,6 +64,9 @@ else
 	if(LOGGING) show_debug_message("Grid generation complete");
 }
 
+rangeLineGrid = ds_grid_create(ROOM_SIZE_WIDTH, ROOM_SIZE_HEIGHT);
+rangeDiagGrid = ds_grid_create(ROOM_SIZE_WIDTH, ROOM_SIZE_HEIGHT);
+
 //Generate collision grids
 mpGrid_collidePlayer = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(room_height / TILE_SIZE), TILE_SIZE, TILE_SIZE);
 mpGrid_collideOther = mp_grid_create(0, 0, ceil(room_width / TILE_SIZE), ceil(room_height / TILE_SIZE), TILE_SIZE, TILE_SIZE);
@@ -81,4 +84,39 @@ mp_forbid_cells(co_grid.mpGrid_entity, "_entityInTile");
 open_door = function(_x, _y) {
 	tileStruct = new DoorOpen(_x, _y);
 	ds_grid_set(tileGrid, _x, _y, tileStruct);
+}
+
+refreshRangeGrids = function(){
+	var _gridPlayerX = to_grid(ob_player.x);
+	var _gridPlayerY = to_grid(ob_player.y);
+	var _offX = co_gameManager.leftGridX;
+	var _offY = co_gameManager.topGridY;
+	
+	
+	for(var i = 0; i < ROOM_SIZE_WIDTH; i++) {
+		for(var j = 0; j < ROOM_SIZE_HEIGHT; j++) {
+			var _line = check_range_line_attack(_gridPlayerX, _gridPlayerY, self, i + _offX, j + _offY, ROOM_SIZE_HEIGHT);
+			var _diag = check_range_diag_attack(_gridPlayerX, _gridPlayerY, self, i + _offX, j + _offY, ROOM_SIZE_HEIGHT)
+			
+			if(i == 4){
+				show_debug_message("Debugger");	
+			}
+			if(_line != false){
+				var _dist = abs(point_distance(_gridPlayerX, _gridPlayerY, i + _offX, j + _offY));
+				ds_grid_set(rangeLineGrid, i, j, _dist);
+			}
+			else {
+				ds_grid_set(rangeLineGrid, i, j, 0);	
+			}
+			
+			if(_diag != false) {
+				var _dist = abs(_gridPlayerX - i - _offX);
+				ds_grid_set(rangeDiagGrid, i, j, _dist);				
+			}
+			else {
+				ds_grid_set(rangeDiagGrid, i, j, 0);	
+			}
+		}
+	}
+	show_debug_message("Refreshed Range Grids");
 }

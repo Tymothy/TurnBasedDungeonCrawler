@@ -1,9 +1,9 @@
-/// @description Resolution debug grid
-if(instance_exists(co_debugResGrid))
+/// @description Range Grid
+if(instance_exists(co_debugRangeGrid))
 {
-	instance_destroy(co_debugResGrid);
+	instance_destroy(co_debugRangeGrid);
 }
 else
 {
-	instance_create_depth(x, y, -1, co_debugResGrid);	
+	instance_create_depth(x, y, -1, co_debugRangeGrid);	
 }

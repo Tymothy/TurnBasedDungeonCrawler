@@ -97,13 +97,22 @@ function check_direct_attack(gridX, gridY, obj = self) {
 	return false;
 }
 	
-function check_range_line_attack(gridX, gridY, obj = self) {
+function check_range_line_attack(
+gridX, 
+gridY, 
+obj = self, 
+objGridX = to_grid(obj.x), 
+objGridY = to_grid(obj.y), 
+attackRange = obj.property.rangeAttackRange) {
 	/// @desc Given grid coords, returns whether range line attack for a grid square is possible by given object.  If no object is given, return self
 	/// @desc If attack is possible, returns the entity.
 	/// @arg gridX
 	/// @arg gridY
 	/// @arg object(optional)		
-	
+	/// @arg object(optional)		
+	/// @arg objGridX (optional)
+	/// @arg objGridy (optional)
+	/// @arg attackRange (optional)	
 	/*
 		Direct attack is where the attacking entity starts turn near target and uses their turn to attack
 		a single target.
@@ -116,10 +125,10 @@ function check_range_line_attack(gridX, gridY, obj = self) {
 	}
 	
 	//Check range
-	var _distX = abs(gridX - to_grid(obj.x));
-	var _distY = abs(gridY - to_grid(obj.y));	
+	var _distX = abs(gridX - objGridX);
+	var _distY = abs(gridY - objGridY);	
 	
-	if(_distX > obj.property.rangeAttackRange || _distY > obj.property.rangeAttackRange) {
+	if(_distX > attackRange || _distY > attackRange) {
 		//Entity is outside range	
 		return false;
 	}
@@ -131,25 +140,32 @@ function check_range_line_attack(gridX, gridY, obj = self) {
 	}
 	
 	var _ent = check_entity(gridX, gridY);	
-	if(_ent.property.attackable == true && _ent != obj.id) {
+	//if(_ent.property.attackable == true && _ent != obj.id) {
 		//Target entity is attackable.  Return entity
 		//Prevents self attacks
-		if(LOGGING) show_debug_message(string(obj.property.name)+ " " + string(obj.id) +" can range line attack " + string(_ent.property.name) + " " + string(_ent));
+		//if(LOGGING) show_debug_message(string(obj.property.name)+ " " + string(obj.id) +" can range line attack " + string(_ent.property.name) + " " + string(_ent));
 		
 		return _ent;
-	}
+	//}
 	
 	//If entity is not attackable, return false
 	return false;
 }
 
-function check_range_diag_attack(gridX, gridY, obj = self) {
+function check_range_diag_attack(gridX, 
+gridY, 
+obj = self,
+objGridX = to_grid(obj.x), 
+objGridY = to_grid(obj.y), 
+attackRange = obj.property.rangeAttackRange) {
 	/// @desc Given grid coords, returns whether range line attack for a grid square is possible by given object.  If no object is given, return self
 	/// @desc If attack is possible, returns the entity.
 	/// @arg gridX
 	/// @arg gridY
 	/// @arg object(optional)		
-	
+	/// @arg objGridX (optional)
+	/// @arg objGridy (optional)
+	/// @arg attackRange (optional)
 	/*
 		Direct attack is where the attacking entity starts turn near target and uses their turn to attack
 		a single target.
@@ -162,10 +178,10 @@ function check_range_diag_attack(gridX, gridY, obj = self) {
 	}
 	
 	//Check range
-	var _distX = abs(gridX - to_grid(obj.x));
-	var _distY = abs(gridY - to_grid(obj.y));	
+	var _distX = abs(gridX - objGridX);
+	var _distY = abs(gridY - objGridY);	
 	
-	if(_distX > obj.property.rangeAttackRange || _distY > obj.property.rangeAttackRange) {
+	if(_distX > attackRange || _distY > attackRange) {
 		//Entity is outside range	
 		return false;
 	}
@@ -177,13 +193,13 @@ function check_range_diag_attack(gridX, gridY, obj = self) {
 	}
 	
 	var _ent = check_entity(gridX, gridY);	
-	if(_ent.property.attackable == true && _ent != obj.id) {
+	//if(_ent.property.attackable == true && _ent != obj.id) {
 		//Target entity is attackable.  Return entity
 		//Prevents self attacks
-		if(LOGGING) show_debug_message(string(obj.property.name)+ " " + string(obj.id) +" can range diag attack " + string(_ent.property.name) + " " + string(_ent));
+		//if(LOGGING) show_debug_message(string(obj.property.name)+ " " + string(obj.id) +" can range diag attack " + string(_ent.property.name) + " " + string(_ent));
 		
 		return _ent;
-	}
+	//}
 	
 	//If entity is not attackable, return false
 	return false;

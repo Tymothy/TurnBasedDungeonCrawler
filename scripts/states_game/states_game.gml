@@ -66,7 +66,7 @@ function state_game_setup(_event){
 			//instance_create_layer(x, y, "la_controllers", co_shooter);
 			
 			//Create the inital ai turn order.
-			//TODO: Will need to account for multiple rooms in future
+			co_gameManager.refreshRoomValues();
 			co_turnOrder.createAiTurnOrder();
 			
 		}break;
@@ -138,6 +138,7 @@ function state_game_player_active(_event){
 			else {
 				truestate_switch(STATES.AI_ACTIVE);	
 			}
+			co_grid.refreshRangeGrids();
 		}break;
 	}
 

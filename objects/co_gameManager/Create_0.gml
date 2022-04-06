@@ -17,6 +17,16 @@ truestate_create_state(STATES.PAUSED, state_game_paused, "PAUSED");
 truestate_set_default(STATES.INACTIVE);
 #endregion
 
+function refreshRoomValues() {
+	currentRoomX = to_room_x(to_grid(ob_player.x));
+	currentRoomY = to_room_y(to_grid(ob_player.y));
+	leftGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX1"];
+	rightGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX2"];
+	topGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY1"];
+	bottomGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY2"];
+	
+}
+
 //Methods
 
 function activateRoom(_roomX, _roomY)
@@ -62,5 +72,7 @@ function deactivateRoom(_roomX, _roomY)
 	//co_debugger.drawY1 = _y;
 	//co_debugger.drawX2 = _x + _width;
 	//co_debugger.drawY2 = _y + _height;
-
+	refreshRoomValues();
 }
+
+

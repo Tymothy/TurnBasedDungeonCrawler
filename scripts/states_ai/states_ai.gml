@@ -147,6 +147,30 @@ function state_ai_move(_event) {
 				case MOVE.SEEK_DIRECT:
 					targArr = move_direct(self.property.collisionGrid, targetObject.x, targetObject.y);	
 					break;
+					
+				case MOVE.SEEK_RANGE:
+					//Apply a score to all tiles in room based on distance player has to walk
+					//The higher the weight, the more valuable the square is
+					
+					//Search for highest weight that is within 2 tiles and that is still within attack range
+					for(var i = co_gameManager.leftGridX; i < co_gameManager.rightGridX; i++) {
+						for(var j = co_gameManager.topGridY; j < co_gameManager.bottomGridY; j++) {
+							
+							
+							
+						}
+						
+					}
+					
+					
+					
+					//Use check line attacks to see if object can be attacked
+					
+					//For loop that loops through the entire room for the target object.
+					//Run check_attack for each square
+					
+					break;
+				
 			}
 			
 
