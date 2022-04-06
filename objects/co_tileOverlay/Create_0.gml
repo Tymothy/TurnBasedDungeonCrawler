@@ -16,6 +16,9 @@ floorTile2ID = layer_tilemap_get_id(floorLayer2ID);
 wallLayerID = layer_get_id("ts_walls");
 wallTileID = layer_tilemap_get_id(wallLayerID);
 
+//Get Decor Layer
+decorBottomLayerID = layer_get_id("ts_decor_bottom");
+decorBottomTileID = layer_tilemap_get_id(decorBottomLayerID);
 //Set the floor tilesets
 tilemap_tileset(floorTileID, ts_floor_dungeon_gray);
 tilemap_tileset(floorTile2ID, ts_floor_dungeon_white);
@@ -51,6 +54,13 @@ for(var i = 0; i < _floorWidth; i++) {
 				tilemap_set(wallTileID, _tile, i, j);
 				break;
 			
+			case CORETILES.OBSTACLE_LOW:		
+				var _tile = choose(1, 15, 16, 63, 63, 63, 63, 63, 63, 63, 63, 63);
+				tilemap_set(floorTileID, _tile, i, j);
+				break;
+				
+			break;
+			
 			case CORETILES.SOLID_WALL:
 			#region solid wall
 				//First determine what kind of wall this is
@@ -74,7 +84,7 @@ for(var i = 0; i < _floorWidth; i++) {
 				_br = autotile_check_tile(_br, _coreTile);
 				
 				var _bitmaskTile = autotile_bitmask(_t, _b, _l, _r, _tl, _tr, _bl, _br);
-
+				
 				
 
 				
@@ -212,6 +222,59 @@ for(var i = 0; i < _floorWidth; i++) {
 					tilemap_set(floorTile2ID, 45, i + 1, j + 1);
 					
 				break;
+				
+			case CORETILES.OBSTACLE_LOW:	
+				var _t= tilemap_get(foundationTileID, i, j - 1);
+				var _b = tilemap_get(foundationTileID, i, j + 1);
+				var _l = tilemap_get(foundationTileID, i - 1, j);
+				var _r = tilemap_get(foundationTileID, i + 1, j);
+				
+				_t = autotile_check_tile(_t, _coreTile);
+				_b = autotile_check_tile(_b, _coreTile);
+				_l = autotile_check_tile(_l, _coreTile);
+				_r = autotile_check_tile(_r, _coreTile);
+				
+				var _bitmaskTile = autotile_bitmask(_t, _b, _l, _r);
+				switch(_bitmaskTile)
+				{
+					
+					case 0:
+						var _tile = 1;
+						break;
+						
+					case 1:
+						var _tile = 42;
+						break;
+					
+					case 4:
+						var _tile = 2;
+						break;
+						
+					case 16:
+						var _tile = 14;
+						break;			
+						
+					case 17:
+						var _tile = 28;
+						break;
+						
+					case 64: 
+						var _tile = 4;
+						break;
+						
+					case 68:
+						var _tile = 3;
+						break;
+					
+					default:
+						var _tile =1;
+						break;
+				}
+				tilemap_set(decorBottomTileID, _tile, i, j);
+				ds_grid_set(bitmaskGrid, i, j, _bitmaskTile);		
+			break;
 			}
+			
+
 	}
 }
