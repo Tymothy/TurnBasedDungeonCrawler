@@ -10,6 +10,7 @@ property.moveSpeed = 1;
 property.turnSpeed = 1;
 property.name = "Slime";
 property.collisionGrid = co_grid.mpGrid_collideOther;
+property.movePattern = MOVE.NONE;
 property.hp = 1;
 property.meleeAttackRange = 1;
 property.meleeAttackPower = 1;

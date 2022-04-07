@@ -144,6 +144,10 @@ function state_ai_move(_event) {
 		case TRUESTATE_NEW:
 		{
 			switch(property.movePattern) {
+				case MOVE.NONE:
+					targArr = move_direct(self.property.collisionGrid, self.x, self.y);	
+					break;
+					
 				case MOVE.SEEK_DIRECT:
 					targArr = move_direct(self.property.collisionGrid, targetObject.x, targetObject.y);	
 					break;
@@ -153,15 +157,63 @@ function state_ai_move(_event) {
 					//The higher the weight, the more valuable the square is
 					
 					//Search for highest weight that is within 2 tiles and that is still within attack range
-					for(var i = co_gameManager.leftGridX; i < co_gameManager.rightGridX; i++) {
-						for(var j = co_gameManager.topGridY; j < co_gameManager.bottomGridY; j++) {
+					var _goal = false;
+					var _line = 0;
+					var _diag = 0;
+					var _tempScore = 0;
+					var _topScore = 0;
+					var _targX = 0;
+					var _targY = 0;
+
+					var _xOff = co_gameManager.leftGridX;
+					var _yOff = co_gameManager.topGridY;
+					
+					for(var i = 0; i < ROOM_SIZE_WIDTH; i++) {
+						for(var j = 0; j < ROOM_SIZE_HEIGHT; j++) {
+							if(property.attacks.rangeDiag == true) {
+								_diag = ds_grid_get(co_grid.rangeDiagGrid, i, j);
+								if(_diag > 0 && _diag < property.rangeAttackRange){
+										_goal = true;
+									
+								}
+								_tempScore = _diag;
+							}
+					
+							if(property.attacks.rangeLine == true) {
+								_line = ds_grid_get(co_grid.rangeLineGrid, i, j);
+								if(_line > 0 && _line < property.rangeAttackRange) {									
+										_goal = true;
+									}
+								if(_line > _tempScore) _tempScore = _line;
+							}	
 							
+							//Possible Bug, all range enemies will target the same tile
+							_tempScore = max(.5, _tempScore - point_distance(i + _xOff, j + _yOff, _targX, _targY) * .25);
 							
+							if(_goal = true) {
+								//Check if tile is even a possible pathable tile
+								var _path = mp_grid_get_cell(self.property.collisionGrid, i + _xOff, j + _yOff);
+								var _ent = co_grid.tileGrid[# i + _xOff, j + _yOff][$ "_entityInTile"];
+								if(_tempScore > _topScore && _path == 0 && _ent == false) {
+									//Spot is more desirable, target it
+									_topScore = _tempScore;
+									_targX = i + _xOff;
+									_targY = j + _yOff;
+								}
+								
+							}
 							
+							_goal = false;
+							_tempScore = 0;
+							_line = 0;
+							_diag = 0;
 						}
 						
 					}
 					
+					//Possible bug, could target unreachable tiles
+					if(LOGGING) show_debug_message(string(property.name)+ " " + string(id) +" target square " + coords_string(_targX, _targY));
+					targArr = move_direct(self.property.collisionGrid, from_grid(_targX), from_grid(_targY));
 					
 					
 					//Use check line attacks to see if object can be attacked

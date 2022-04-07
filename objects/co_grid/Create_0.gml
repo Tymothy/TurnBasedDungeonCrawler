@@ -98,9 +98,6 @@ refreshRangeGrids = function(){
 			var _line = check_range_line_attack(_gridPlayerX, _gridPlayerY, self, i + _offX, j + _offY, ROOM_SIZE_HEIGHT);
 			var _diag = check_range_diag_attack(_gridPlayerX, _gridPlayerY, self, i + _offX, j + _offY, ROOM_SIZE_HEIGHT)
 			
-			if(i == 4){
-				show_debug_message("Debugger");	
-			}
 			if(_line != false){
 				var _dist = abs(point_distance(_gridPlayerX, _gridPlayerY, i + _offX, j + _offY));
 				ds_grid_set(rangeLineGrid, i, j, _dist);

@@ -46,6 +46,7 @@ enum ATTACK
 }
 
 enum MOVE {
+	NONE,
 	SEEK_DIRECT,
 	SEEK_RANGE,
 }

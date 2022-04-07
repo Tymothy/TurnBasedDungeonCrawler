@@ -24,6 +24,7 @@
     {"id":{"name":"co_grid","path":"objects/co_grid/co_grid.yy",},"order":4,},
     {"id":{"name":"GMLiveAPI","path":"scripts/GMLiveAPI/GMLiveAPI.yy",},"order":3,},
     {"id":{"name":"GMLive_seekEval","path":"scripts/GMLive_seekEval/GMLive_seekEval.yy",},"order":5,},
+    {"id":{"name":"co_gui_health","path":"objects/co_gui_health/co_gui_health.yy",},"order":4,},
     {"id":{"name":"ts_floor_dungeon_gray","path":"tilesets/ts_floor_dungeon_gray/ts_floor_dungeon_gray.yy",},"order":1,},
     {"id":{"name":"rm_ex_spawn_1","path":"rooms/rm_ex_spawn_1/rm_ex_spawn_1.yy",},"order":0,},
     {"id":{"name":"sp_stoneWalls","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},"order":4,},
@@ -117,6 +118,7 @@
     {"id":{"name":"co_touchGridSelect","path":"objects/co_touchGridSelect/co_touchGridSelect.yy",},"order":2,},
     {"id":{"name":"truestate_enqueue","path":"scripts/truestate_enqueue/truestate_enqueue.yy",},"order":3,},
     {"id":{"name":"Mechanic Design","path":"notes/Mechanic Design/Mechanic Design.yy",},"order":1,},
+    {"id":{"name":"rm_ex_normal_3","path":"rooms/rm_ex_normal_3/rm_ex_normal_3.yy",},"order":2,},
     {"id":{"name":"co_roomSizer","path":"objects/co_roomSizer/co_roomSizer.yy",},"order":2,},
     {"id":{"name":"GMRoomPack","path":"scripts/GMRoomPack/GMRoomPack.yy",},"order":2,},
     {"id":{"name":"sp_ts_coreTiles","path":"sprites/sp_ts_coreTiles/sp_ts_coreTiles.yy",},"order":3,},
@@ -186,6 +188,7 @@
     {"roomId":{"name":"rm_ex_normal_1","path":"rooms/rm_ex_normal_1/rm_ex_normal_1.yy",},},
     {"roomId":{"name":"rm_ex_normal_2","path":"rooms/rm_ex_normal_2/rm_ex_normal_2.yy",},},
     {"roomId":{"name":"rm_testBuild","path":"rooms/rm_testBuild/rm_testBuild.yy",},},
+    {"roomId":{"name":"rm_ex_normal_3","path":"rooms/rm_ex_normal_3/rm_ex_normal_3.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":19,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
