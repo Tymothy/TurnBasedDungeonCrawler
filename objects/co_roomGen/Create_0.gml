@@ -113,7 +113,27 @@ generateFloorPlan = function() {
 		}
 		
 		
+	}
+	
+	
+findDistanceToSpawn();
+findEndRooms();
+
+
+		var _spawnX = floor(FLOOR_MAX_WIDTH / 2);
+		var _spawnY = floor(FLOOR_MAX_HEIGHT / 2);
+	if(getCountOfNeighbors(_spawnX, _spawnY) < 2) {
+		generateFloorPlan();	
+	}
+
+	while(createdRooms != goalRooms) {
+		show_debug_message("Not enough rooms created.  Retrying...");
+		generateFloorPlan();	
 	}	
+
+	if(array_length(endRoomArray) < 3) {
+		generateFloorPlan();	
+	}
 }
 
 getDirectionCoordX = function(_dir, _x) {
@@ -276,47 +296,105 @@ generateRoom = function(_x, _y, _roomType) {
 
 findEndRooms = function(){
 	//Iterate through level grid, finding all rooms that only have a single neighbor
+	if(variable_instance_exists(id, "endRoomArray")) {
+		array_delete(endRoomArray, 0, array_length(endRoomArray));
+	}
+	endRoomArray = [[]]; //Initalize array of all end rooms that can be used for later generation
+	array_pop(endRoomArray); //Get rid of the empty value to prevent off by one errors
 	for(var _x = 0; _x < FLOOR_MAX_WIDTH; _x++) {
 		for(var _y = 0; _y < FLOOR_MAX_HEIGHT; _y++) {
 			var _neighbors = getCountOfNeighbors(_x, _y);
 			if(_neighbors == 1) {
 				//This is an end room
+				endRoomArray = store_coordinate(endRoomArray, _x, _y);
 				setEndRoom(_x, _y);
 			}
 		}
 	}
 	//Ensure spawn room is not removed
+	show_debug_message("End Rooms: " + string(array_length(endRoomArray)));
+
 	
 }
 
 findDistanceToSpawn = function() {
+	//Iterate through level grid, getting direct distance to spawn room.  Does not account for winding passages
+	//TODO: Improve this to take account for winding passages.  Maybe set distance at room creation
+	for(var _x = 0; _x < FLOOR_MAX_WIDTH; _x++) {
+		for(var _y = 0; _y < FLOOR_MAX_HEIGHT; _y++) {
+			var _dist = abs(_x - floor(FLOOR_MAX_WIDTH / 2)) + abs(_y - floor(FLOOR_MAX_HEIGHT / 2));
+			setDistanceToSpawn(_x, _y, _dist);
+		}
+	}	
 	
+}
+
+generateEndRooms = function() {
+	var _x = 0;
+	var _y = 0;
+	var _topDist = 0;
+	var _selection = 0;
 	
+	#region Boss Room
+	for(var _i = 0; _i < array_length(endRoomArray); _i++) {	
+		_x = endRoomArray[_i][0]; //Get the x value of coord
+		_y = endRoomArray[_i][1]; //Get the y value of coord
+		
+		var _dist = check_grid(co_roomGen.levelGrid, _x, _y, "distanceToSpawn");
+		//Find farthest end room and set it to a boss room
+		
+		//TODO: Put a little more randomness here, otherwise we are favoring bottom right rooms in a tie.
+		if(_topDist <= _dist){
+			_selection = _i;
+		}
+	}
+	_x = endRoomArray[_selection][0];
+	_y = endRoomArray[_selection][1];
+			
+	bossRoom(_x, _y);
+	if(LOGGING) show_debug_message("Boss room at: " + coords_string(_x, _y));
+	array_delete(endRoomArray, _selection, 1); //Remove the room from the array so it's not used below
+	#endregion End Boss Room
+	
+	#region Item Room
+	//Grab a random available end room and make it the item room
+	_selection = irandom(array_length(endRoomArray) - 1); //-1 is required as array starts at 0, but the randomizer is inclusive
+	_x = endRoomArray[_selection][0];
+	_y = endRoomArray[_selection][1];
+	itemRoom(_x, _y);
+	if(LOGGING) show_debug_message("Item room at: " + coords_string(_x, _y));
+	array_delete(endRoomArray, _selection, 1); //Remove the room from the array so it's not used below
+	#endregion End Item Room
+	
+	#region Shopp Room
+	//Grab a random available end room and make it the shop room
+	_selection = irandom(array_length(endRoomArray) - 1); //-1 is required as array starts at 0, but the randomizer is inclusive
+	_x = endRoomArray[_selection][0];
+	_y = endRoomArray[_selection][1];
+	shopRoom(_x, _y);
+	if(LOGGING) show_debug_message("Shop room at: " + coords_string(_x, _y));
+	array_delete(endRoomArray, _selection, 1); //Remove the room from the array so it's not used below
+	#endregion End Item Room		
+		
 }
 
 generateFloorPlan();
 
+//Floor plan is valid
+generateEndRooms();
 
 //Validate floor plan
 //Ensure spawn room has at least 2 exits
-	var _spawnX = floor(FLOOR_MAX_WIDTH / 2);
-	var _spawnY = floor(FLOOR_MAX_HEIGHT / 2);
-if(getCountOfNeighbors(_spawnX, _spawnY) < 2) {
-	generateFloorPlan();	
-}
 
-while(createdRooms != goalRooms) {
-	show_debug_message("Not enough rooms created.  Retrying...");
-	generateFloorPlan();	
-}
 
 
 
 if(LOGGING) show_debug_message("Floor of rooms generated.");
-findEndRooms();
+
+
+
 //All rooms should go on the same tilemap
-var _xOff = 0;
-var _yOff = 7; //How many tiles down should the game area be
+
 room_pack_reuse_tilemaps = true;
 //room_pack_store_tilemaps(global.roomTilesList);
 

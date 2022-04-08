@@ -32,7 +32,10 @@ enum ROOMTYPE
 {
 	NONE, //Not an accessible cell, solid earth
 	SPAWN, //The spawn room for the level
-	NORMAL // A standard room
+	NORMAL, // A standard room
+	BOSS, // Boss room
+	SHOP, // Shop room
+	ITEM, //Item room
 }
 //List of all attacks available in game
 //TODO: Put this into structs on what they can do

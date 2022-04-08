@@ -35,7 +35,26 @@ function normalRoom (_x, _y) : floorRoom(_x, _y) constructor {
 	difficulty = choose(DIFFICULTY.EASY, DIFFICULTY.MEDIUM, DIFFICULTY.HARD); //Choose a random difficulty
 }
 
+function bossRoom (_x, _y) : floorRoom(_x, _y) constructor {
+	roomType = ROOMTYPE.BOSS;
+	description = "Boss Room";
+}
+
+function itemRoom (_x, _y) : floorRoom(_x, _y) constructor {
+	roomType = ROOMTYPE.ITEM;
+	description = "Item Room";
+}
+
+function shopRoom (_x, _y) : floorRoom(_x, _y) constructor {
+	roomType = ROOMTYPE.SHOP;
+	description = "Shop Room";
+}
+
 function setEndRoom (_x, _y) : floorRoom(_x, _y) constructor {
 	endRoom = true;
-	show_debug_message("End room at " + coords_string(_x, _y));
+	if(LOGGING) show_debug_message("End room at " + coords_string(_x, _y));
+}
+
+function setDistanceToSpawn (_x, _y, _dist) : floorRoom(_x, _y) constructor {
+	distanceToSpawn = _dist;
 }
