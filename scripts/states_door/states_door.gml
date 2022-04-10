@@ -7,7 +7,7 @@ function state_door_locked(_event){
 		{
 			//This code will run once when the state is brand new.
 			truestate_clear_history();
-			lockDoor();
+			if(!DOOR_UNLOCK) lockDoor(); //Only allow locked doors with DOOR_UNLOCK
 		}break;
 	
 		//STEP---------------------------------------
@@ -48,8 +48,8 @@ function state_door_open(_event){
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
-		{
-			if(co_gameManager.hostilesInRoom == true) {
+		{ 
+			if(co_gameManager.hostilesInRoom == true && ob_player.truestate_current_state == STATES.IDLE) {
 				truestate_switch(STATES.LOCKED);	
 			}
 

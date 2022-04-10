@@ -58,8 +58,16 @@ function mp_clear_entity_player_collision(inst = self.id) {
 	mp_grid_clear_cell(co_grid.mpGrid_collidePlayer, _x, _y);
 	with(co_grid) {
 		co_grid.tileGrid[# _x, _y][$ "_collidePlayer"] = false;
-	}
-	
+	}	
+}
+
+function mp_add_entity_player_collision(inst = self.id) {
+	var _x = to_grid(inst.x);
+	var _y = to_grid(inst.y);
+	mp_grid_clear_cell(co_grid.mpGrid_collidePlayer, _x, _y);
+	with(co_grid) {
+		co_grid.tileGrid[# _x, _y][$ "_collidePlayer"] = true;
+	}	
 }
 
 function check_entity(_gridX, _gridY) {

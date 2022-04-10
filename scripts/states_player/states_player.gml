@@ -204,6 +204,7 @@ function state_player_move(_event){
 			currentRoomX = to_room_x(to_grid(x));
 			currentRoomY = to_room_y(to_grid(y));
 			
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -215,6 +216,7 @@ function state_player_move(_event){
 			if(move_entity(targArr[0], targArr[1])){
 				
 				//When entity is done moving, check if they are on a tile to do something with, like a door
+								
 				if(place_meeting(x,y, ob_door) && doorFlag == false) {
 					doorFlag = true;
 					if(LOGGING) show_debug_message("Target square contains a door");
