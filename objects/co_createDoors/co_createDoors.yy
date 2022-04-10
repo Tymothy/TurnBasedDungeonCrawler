@@ -23,11 +23,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Control",
-    "path": "folders/Controllers/Game Control.yy",
+    "name": "Game Generation",
+    "path": "folders/Controllers/Game Control/Game Generation.yy",
   },
   "resourceVersion": "1.0",
-  "name": "co_fillRooms",
+  "name": "co_createDoors",
   "tags": [],
   "resourceType": "GMObject",
 }

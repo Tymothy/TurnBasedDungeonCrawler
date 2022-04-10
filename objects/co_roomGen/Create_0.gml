@@ -277,15 +277,27 @@ generateRoom = function(_x, _y, _roomType) {
 			switch(_roomType) {
 				case ROOMTYPE.NONE:
 					_floorStruct = new floorRoom(_x, _y);
-				break;
+					break;
 				
 				case ROOMTYPE.NORMAL:
 					_floorStruct = new normalRoom(_x, _y);
-				break;
+					break;
 				
 				case ROOMTYPE.SPAWN:
 					_floorStruct = new spawnRoom(_x, _y);
-				break;
+					break;
+				
+				case ROOMTYPE.BOSS:
+					_floorStruct = new bossRoom(_x, _y);
+					break;
+					
+				case ROOMTYPE.ITEM:
+					_floorStruct = new itemRoom(_x, _y);
+					break;			
+					
+				case ROOMTYPE.SHOP:
+					_floorStruct = new shopRoom(_x, _y);
+					break;								
 			}
 			ds_grid_set(levelGrid, _floorStruct.x, _floorStruct.y, _floorStruct);		
 	
@@ -351,8 +363,8 @@ generateEndRooms = function() {
 	_x = endRoomArray[_selection][0];
 	_y = endRoomArray[_selection][1];
 			
-	bossRoom(_x, _y);
 	if(LOGGING) show_debug_message("Boss room at: " + coords_string(_x, _y));
+	generateRoom(_x, _y, ROOMTYPE.BOSS);
 	array_delete(endRoomArray, _selection, 1); //Remove the room from the array so it's not used below
 	#endregion End Boss Room
 	
@@ -361,7 +373,7 @@ generateEndRooms = function() {
 	_selection = irandom(array_length(endRoomArray) - 1); //-1 is required as array starts at 0, but the randomizer is inclusive
 	_x = endRoomArray[_selection][0];
 	_y = endRoomArray[_selection][1];
-	itemRoom(_x, _y);
+	generateRoom(_x, _y, ROOMTYPE.ITEM);
 	if(LOGGING) show_debug_message("Item room at: " + coords_string(_x, _y));
 	array_delete(endRoomArray, _selection, 1); //Remove the room from the array so it's not used below
 	#endregion End Item Room
@@ -371,7 +383,7 @@ generateEndRooms = function() {
 	_selection = irandom(array_length(endRoomArray) - 1); //-1 is required as array starts at 0, but the randomizer is inclusive
 	_x = endRoomArray[_selection][0];
 	_y = endRoomArray[_selection][1];
-	shopRoom(_x, _y);
+	generateRoom(_x, _y, ROOMTYPE.SHOP);
 	if(LOGGING) show_debug_message("Shop room at: " + coords_string(_x, _y));
 	array_delete(endRoomArray, _selection, 1); //Remove the room from the array so it's not used below
 	#endregion End Item Room		
@@ -401,14 +413,11 @@ room_pack_reuse_tilemaps = true;
 
 roomMapJson = game_rooms(); //Generated from rooms starting with rm_ex
 
-//var _name = ds_map_find_first(roomMapJson);
 //Create a list of all rooms
 
 //Find the spawn room location
 
 //Create room type array
-
-
 
 //Fill arrays with the keys of each type of room
 var _size = ds_map_size(roomMapJson);
@@ -416,6 +425,7 @@ var _key = ds_map_find_first(roomMapJson);
 
 spawnRooms = array_create(1, 0);
 normalRooms = array_create(1, 0);
+emptyRooms = array_create(1, 0);
 
 for(var i = 0; i < _size; i++){
 	//Iterate through map, add keys to respective arrays
@@ -428,12 +438,18 @@ for(var i = 0; i < _size; i++){
 		//Checked key is a normal room
 		array_insert(normalRooms, 0, _key);
 	}
+	
+	if(string_count("empty", string(_key)) > 0) {
+		//Checked key is a normal room
+		array_insert(emptyRooms, 0, _key);
+	}
 	_key = ds_map_find_next(roomMapJson, _key);
 }
 
 //Remove the 0s from the arrays to make sure arrays only contain the keys
 array_pop(spawnRooms);
 array_pop(normalRooms);
+array_pop(emptyRooms);
 
 //Run through level grid and start placing the rooms as they are fit
 	for(var i = 0; i < ds_grid_width(levelGrid); i++) {
@@ -449,7 +465,19 @@ array_pop(normalRooms);
 				
 				case ROOMTYPE.NORMAL:
 					_randRoom = string(array_rand_value(normalRooms));
-					break;			
+					break;
+					
+				case ROOMTYPE.BOSS:
+					_randRoom = string(array_rand_value(emptyRooms));
+					break;		
+					
+				case ROOMTYPE.ITEM:
+					_randRoom = string(array_rand_value(emptyRooms));
+					break;					
+					
+				case ROOMTYPE.SHOP:
+					_randRoom = string(array_rand_value(emptyRooms));
+					break;										
 			}
 			
 			//If room should exist, create approriate room

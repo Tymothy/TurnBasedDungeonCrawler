@@ -47,7 +47,7 @@ function state_game_setup(_event){
 			instance_create_layer(x,y, "la_controllers", co_grid);
 
 			//Fill the rooms with content
-			instance_create_layer(x, y, "la_controllers", co_fillRooms);
+			instance_create_layer(x, y, "la_controllers", co_createDoors);
 			
 			//Restrict spawns
 			restrict_spawns_near_doors();
