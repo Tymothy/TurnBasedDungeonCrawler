@@ -93,6 +93,10 @@ enum STATES
 	//ATTACK //Already used above
 	//HURT //Already used above
 	
+	
+	//DOOR STATES
+	LOCKED,
+	OPEN,
 }
 
 enum DIFFICULTY

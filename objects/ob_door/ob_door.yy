@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sp_door",
-    "path": "sprites/sp_door/sp_door.yy",
+    "name": "sp_door_wave_white",
+    "path": "sprites/sp_door_wave_white/sp_door_wave_white.yy",
   },
   "solid": false,
   "visible": true,

@@ -17,6 +17,9 @@ truestate_create_state(STATES.PAUSED, state_game_paused, "PAUSED");
 truestate_set_default(STATES.INACTIVE);
 #endregion
 
+//Game controlling values
+hostilesInRoom = false; //Flag is checked every step and can be referenced by other objects
+
 function refreshRoomValues() {
 	currentRoomX = to_room_x(to_grid(ob_player.x));
 	currentRoomY = to_room_y(to_grid(ob_player.y));
