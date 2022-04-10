@@ -32,6 +32,11 @@ if(minimapRefresh == true && waitForLevelGen == false) {
 				case ROOMTYPE.NONE:
 					draw_set_color(c_black);
 				break;
+				
+				default:
+				//A room not on list, like a unique
+					draw_set_color(c_purple);
+					break;
 			}
 			//Draw the grid square with approriate color
 			draw_rectangle(i * _frWidth, j * _frHeight, i * _frWidth + _frWidth, j * _frHeight + _frHeight, false);							
