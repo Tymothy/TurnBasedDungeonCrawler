@@ -278,3 +278,7 @@ for(var i = 0; i < _floorWidth; i++) {
 
 	}
 }
+	
+removeWall = function (_x, _y)  {
+	tilemap_set(wallTileID, 0, _x, _y);
+}
