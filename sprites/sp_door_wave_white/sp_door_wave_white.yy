@@ -41,7 +41,7 @@
     "spriteId": {"name":"sp_door_wave_white","path":"sprites/sp_door_wave_white/sp_door_wave_white.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 30.0,
+    "playbackSpeed": 4.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
