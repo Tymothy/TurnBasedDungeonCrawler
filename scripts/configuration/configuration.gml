@@ -23,6 +23,7 @@ function init() {
 #macro FLOOR_MAX_HEIGHT 9
 
 #macro GAME_SPEED 30 //How many steps/frames per second, or FPS
+#macro LOGIC_TICK 5 //How many steps between logic ticks - Per object basis
 
 //Control and Movement
 #macro DRAG_TIME_MIN 45 //How long player has to hold on a tile after dragging a tile.  Time in steps to calculate dragging

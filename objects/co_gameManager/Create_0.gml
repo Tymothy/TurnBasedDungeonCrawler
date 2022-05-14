@@ -21,16 +21,47 @@ truestate_set_default(STATES.INACTIVE);
 hostilesInRoom = false; //Flag is checked every step and can be referenced by other objects
 
 function refreshRoomValues() {
+	hostileCount = getHostileCount(); //Gets count of enemies in room
 	currentRoomX = to_room_x(to_grid(ob_player.x));
 	currentRoomY = to_room_y(to_grid(ob_player.y));
+	currentFloor = global.currentFloor;
+	currentRoomType = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"roomType"];
 	leftGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX1"];
 	rightGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX2"];
 	topGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY1"];
 	bottomGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY2"];
-	
 }
 
+function checkConditions() {
+		show_debug_message("Current Room: " + string(currentRoomType));
+		show_debug_message("Boss Room Type: " + string(ROOMTYPE.BOSS));	
+	switch(currentRoomType) {
+
+		case ROOMTYPE.BOSS:
+			show_debug_message("We are in a boss room, checking conditions");
+			
+			
+			//If hostile count is less than 1, create a ladder down
+			if(hostileCount < 1 && !instance_exists(ob_ladderDown)){
+				show_debug_message("Creating a ladder down at grid: " + string(leftGridX + ROOM_SIZE_WIDTH / 2) + ", " + string(topGridY + ROOM_SIZE_HEIGHT / 2));
+				instance_create_layer(from_grid(leftGridX + ROOM_SIZE_WIDTH / 2 ) - TILE_SIZE / 2, from_grid(topGridY + ROOM_SIZE_HEIGHT / 2) + TILE_SIZE / 2, "la_doors", ob_ladderDown);
+				
+			}
+			break;
+	}
+	
+	
+}
 //Methods
+function getHostileCount () {
+	//Returns number of hostiles
+	//Could be expanded in the future to get specific counts
+		for (var i = 0; i <  instance_number(ob_par_hostile); i++) {
+			var _aiID = instance_find(ob_par_hostile, i);
+		}
+		return i;
+
+}
 
 function activateRoom(_roomX, _roomY)
 {

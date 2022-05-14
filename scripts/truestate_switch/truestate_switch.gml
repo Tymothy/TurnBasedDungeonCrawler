@@ -40,7 +40,7 @@ function truestate_switch() {
 	}
 	else
 	{
-	  show_debug_message("Tried to switch to a non-existent state("+string(argument[0])+").  Moving to default state.")
+	  show_debug_message(string(object_get_name(object_index)) + " tried to switch to a non-existent state("+string(argument[0])+").  Moving to default state.")
 	  truestate_next_state=truestate_default_state;
 	}
 

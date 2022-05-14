@@ -8,7 +8,7 @@ image_index = 0; //Set door to locked status
 
 truestate_create_state(STATES.LOCKED, state_door_locked, "Locked");
 truestate_create_state(STATES.OPEN, state_door_open, "Open");
-
+truestate_set_default(STATES.OPEN);
 d_image_speed = 0;
 
 open = false;

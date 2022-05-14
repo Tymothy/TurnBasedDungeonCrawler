@@ -103,6 +103,8 @@ function state_game_player_active(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			co_gameManager.refreshRoomValues(); //Refresh room values at the beginning of the turn to check conditions
+			co_gameManager.checkConditions();
 			ob_player.turnActive = true;
 			ob_player.endTurn = false;
 		}break;

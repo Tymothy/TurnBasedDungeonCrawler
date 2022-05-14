@@ -181,6 +181,7 @@
     {"id":{"name":"sp_satyr","path":"sprites/sp_satyr/sp_satyr.yy",},"order":19,},
     {"id":{"name":"sp_ts_coreTiles","path":"sprites/sp_ts_coreTiles/sp_ts_coreTiles.yy",},"order":3,},
     {"id":{"name":"game_rooms","path":"scripts/game_rooms/game_rooms.yy",},"order":16,},
+    {"id":{"name":"sp_stair_down","path":"sprites/sp_stair_down/sp_stair_down.yy",},"order":3,},
     {"id":{"name":"sp_toxicHound","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"order":29,},
     {"id":{"name":"ob_par_hostile","path":"objects/ob_par_hostile/ob_par_hostile.yy",},"order":1,},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"order":1,},

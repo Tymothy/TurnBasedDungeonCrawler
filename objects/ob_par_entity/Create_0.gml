@@ -8,6 +8,7 @@ d_image_speed = 1; //Set entities to animate at standard speed
 stateMachine = false;
 chosenAttack = noone; 
 targetObject = noone;
+alarm[0] = LOGIC_TICK;
 
 property =
 {
