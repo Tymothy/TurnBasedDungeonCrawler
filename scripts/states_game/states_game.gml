@@ -60,6 +60,7 @@ function state_game_setup(_event){
 			
 			//Create the overlay of tiles
 			instance_create_layer(x, y, "la_controllers", co_tileOverlay);
+	
 			
 			//Create the shooter controller
 			//Arrows have been disabled, don't really fit theme

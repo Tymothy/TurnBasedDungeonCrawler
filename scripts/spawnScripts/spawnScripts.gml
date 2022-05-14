@@ -51,9 +51,6 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 	var _x2 =  co_roomGen.levelGrid[# _roomX, _roomY][$"gridX2"];
 	var _y2 =  co_roomGen.levelGrid[# _roomX, _roomY][$"gridY2"];
 	
-	//var _y1 = _centerGridY - floor(ROOM_SIZE / 2);
-	//var _x2 = _x1 + ROOM_SIZE;
-	//var _y2 = _y1 + ROOM_SIZE;
 
 	var _maxSpawnAttempts = 500;
 	var _spawns = 0;

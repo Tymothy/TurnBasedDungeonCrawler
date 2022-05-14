@@ -109,4 +109,16 @@ function deactivateRoom(_roomX, _roomY)
 	refreshRoomValues();
 }
 
-
+function moveDownLevel() {
+	//Run transition
+	
+	//Set any 
+	//with(co_gameManager) {
+	//	if(id != other.id) {
+	//		instance_destroy();	
+	//	}
+	//}
+	
+	//truestate_switch(STATES.GAME_SETUP);
+	
+}
