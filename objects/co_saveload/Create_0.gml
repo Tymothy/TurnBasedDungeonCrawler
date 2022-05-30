@@ -16,6 +16,7 @@ save = function () {
 	
 		var _entityInfo = {
 			obj : object_get_name(_objID.object_index),
+			id : _objID.id,
 			x : _objID.x,
 			y : _objID.y,
 			image_index : _objID.image_index,

@@ -149,3 +149,17 @@ function getCountOfEntities() {
 	
 	return array_length(entityList);
 }
+	
+function removeEntityFromList(_inst) {
+	show_debug_message("Removing instance: " + string(_inst));
+	
+	_inst = string(_inst);
+	for(var i = 0; i < array_length(entityList); i++) {
+		if(_inst == entityList[i]) {
+			array_delete(entityList, i, 1);
+			return true;
+		}
+	}
+	show_debug_message("Tried to delete a instance from entity list that did not exist");
+	return false;
+}
