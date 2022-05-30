@@ -30,6 +30,7 @@ function refreshRoomValues() {
 	rightGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX2"];
 	topGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY1"];
 	bottomGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY2"];
+	co_minimap.refreshMinimap();
 }
 
 function checkConditions() {

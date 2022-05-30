@@ -3,6 +3,7 @@
 
 if(minimapRefresh == true && waitForLevelGen == false) {
 	//Refresh the minimap when changes are in
+	show_debug_message("Refreshing/Building Minimap");
 	minimapRefresh = false;
 	if(!surface_exists(mmSurf)) {
 		mmSurf = surface_create(minimapWidth * TILE_SIZE, minimapHeight * TILE_SIZE);
@@ -38,9 +39,14 @@ if(minimapRefresh == true && waitForLevelGen == false) {
 					draw_set_color(c_purple);
 					break;
 			}
+
+			if( i == co_gameManager.currentRoomX && j == co_gameManager.currentRoomY) {
+				draw_set_color(c_orange);
+			}	
+					
 			//Draw the grid square with approriate color
 			draw_rectangle(i * _frWidth, j * _frHeight, i * _frWidth + _frWidth, j * _frHeight + _frHeight, false);							
-			
+
 		}
 	}
 	

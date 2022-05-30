@@ -18,3 +18,7 @@ x2 = (xOff + minimapWidth) * TILE_SIZE;
 y2 = (yOff + minimapHeight) * TILE_SIZE;
 
 mmSurf = surface_create(minimapWidth * TILE_SIZE, minimapHeight * TILE_SIZE);
+
+refreshMinimap = function() {
+	minimapRefresh = true;
+}

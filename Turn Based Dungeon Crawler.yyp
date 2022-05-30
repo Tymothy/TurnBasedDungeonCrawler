@@ -139,6 +139,7 @@
     {"id":{"name":"sp_poisonGhost","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"order":20,},
     {"id":{"name":"sp_gelatinousCube","path":"sprites/sp_gelatinousCube/sp_gelatinousCube.yy",},"order":8,},
     {"id":{"name":"states_game","path":"scripts/states_game/states_game.yy",},"order":0,},
+    {"id":{"name":"Save System","path":"notes/Save System/Save System.yy",},"order":2,},
     {"id":{"name":"ts_decor_dungeon","path":"tilesets/ts_decor_dungeon/ts_decor_dungeon.yy",},"order":5,},
     {"id":{"name":"sp_mutilatedStumbler","path":"sprites/sp_mutilatedStumbler/sp_mutilatedStumbler.yy",},"order":19,},
     {"id":{"name":"s_tile","path":"sprites/s_tile/s_tile.yy",},"order":4,},
@@ -399,7 +400,7 @@
     {"CopyToMask":0,"filePath":"datafiles/GMLive","resourceVersion":"1.0","name":"std.ndll","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.3.0.625",
+    "IDEVersion": "2022.5.0.8",
   },
   "resourceVersion": "1.5",
   "name": "Turn Based Dungeon Crawler",
