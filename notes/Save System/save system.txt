@@ -1,0 +1,24 @@
+
+
+Right after floor is completely generated, save the entire floor
+ - Entity
+   - Entity type
+   - Entity grid X
+   - Entity grid Y
+   - 
+   
+
+To decide what needs saved, every object needs a save flag.  This will allow the save system to check if it needs saved
+
+Iterate through all objects, and if the save flag is true, save the struct of data in the object.  Each object will dictate what needs saved, based on it's save struct.
+
+object_info = {
+	object :object_get_name(object_index));
+	x : x,
+	y : y,
+	image_index, //Save the sprite it currently is
+
+}
+ 
+Load
+	Spawn Entity

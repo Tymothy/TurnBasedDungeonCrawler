@@ -123,3 +123,29 @@ function moveDownLevel() {
 	//truestate_switch(STATES.GAME_SETUP);
 	
 }
+
+function createListOfEntities() {
+	//Creates a master list of entities on the floor.  Must be run before deactivating instances
+	entityList = array_create(0);
+	var _countOfEntities = instance_number(ob_par_entity);
+	show_debug_message("Count of entities on floor: " + string(_countOfEntities));
+	
+	for (var i = 0; i < instance_number(ob_par_entity); ++i;) {
+		var _objID = instance_find(ob_par_entity, i);		
+		array_push(entityList, _objID);
+	}
+
+	var _string = json_stringify(entityList);
+	show_debug_message("List of created entities: ");
+	show_debug_message(_string);
+}
+
+function getListOfEntities() {
+	
+	return entityList;
+}
+
+function getCountOfEntities() {
+	
+	return array_length(entityList);
+}

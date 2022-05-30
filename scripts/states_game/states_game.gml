@@ -55,12 +55,17 @@ function state_game_setup(_event){
 			//Spawn entities in game room, including player
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
 			
+			//Get list of entities
+			createListOfEntities();
+			
 			//Create the turn order controller
 			instance_create_layer(x, y, "la_controllers", co_turnOrder);
 			
 			//Create the overlay of tiles
 			instance_create_layer(x, y, "la_controllers", co_tileOverlay);
 	
+	
+			instance_create_layer(x, y, "la_controllers", co_saveLoad);
 			
 			//Create the shooter controller
 			//Arrows have been disabled, don't really fit theme
