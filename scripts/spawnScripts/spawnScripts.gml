@@ -80,7 +80,8 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 			
 			//If spawn point is still valid, spawn ai.
 			if(_spawnValid == true) {
-				instance_create_layer(from_grid(_randX), from_grid(_randY), "la_ai", _obj);
+				//instance_create_layer(from_grid(_randX), from_grid(_randY), "la_ai", _obj);
+				spawn_entity(_obj, _randX, _randY);
 				//if(LOGGING) show_debug_message("Spawned AI " + string(_obj.property.name) + " at " + coords_string(_randX, _randY) + " after " + string(i) + " attempts");
 				_spawns++;
 			}
@@ -130,4 +131,8 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 		//	if(LOGGING && i == _maxSpawnAttempts -1) show_debug_message("Max spawn attempts reached, stopping spawn attempts");	
 		//}
 		
+}
+	
+function spawn_entity (_entity, _gridX, _gridY) {
+	instance_create_layer(from_grid(_gridX), from_grid(_gridY), "la_ai", _entity);
 }

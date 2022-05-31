@@ -36,6 +36,5 @@ for(var i = 0; i < ds_grid_width(co_roomGen.levelGrid); i++) {
 	}
 }
 
-
 done = true; //Spawning is done
 

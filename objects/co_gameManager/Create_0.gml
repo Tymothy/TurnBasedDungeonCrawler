@@ -24,7 +24,7 @@ function refreshRoomValues() {
 	hostileCount = getHostileCount(); //Gets count of enemies in room
 	currentRoomX = to_room_x(to_grid(ob_player.x));
 	currentRoomY = to_room_y(to_grid(ob_player.y));
-	currentFloor = global.currentFloor;
+	currentFloor = global.game.currentFloor;
 	currentRoomType = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"roomType"];
 	leftGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX1"];
 	rightGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX2"];

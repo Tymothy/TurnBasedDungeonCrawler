@@ -5,7 +5,7 @@ for(var i = 0; i < _testNum; i++) {
 	array[i] = goal_rooms();	
 }
 
-show_debug_message("Out of " + string(_testNum) + " gens, on floor " + string(global.currentFloor) + " this is the count of rooms: ");
+show_debug_message("Out of " + string(_testNum) + " gens, on floor " + string(global.game.currentFloor) + " this is the count of rooms: ");
 var _count = 0;
 for(var i = 0; i < 80; i++) {
 	for(var j = 0; j < array_length(array); j++) {

@@ -7,7 +7,7 @@
 //draw_text(global.width_gui * .97, global.height_gui * .03, "Debugger active");
 //if(wait == false) {
 //	if(instance_exists(co_gameManager)) {
-//		draw_text(global.width_gui * .97, global.height_gui * .06, "Current Floor: " + string(co_gameManager.currentFloor));		
+//		draw_text(global.width_gui * .97, global.height_gui * .06, "Current Floor: " + string(co_gameManager.game.currentFloor));		
 //		draw_text(global.width_gui * .97, global.height_gui * .09, "Current Room Type: " + string(co_gameManager.currentRoomType));		
 
 //	}

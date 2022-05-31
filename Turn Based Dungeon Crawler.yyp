@@ -17,6 +17,7 @@
     {"id":{"name":"sp_scarecrow","path":"sprites/sp_scarecrow/sp_scarecrow.yy",},"order":20,},
     {"id":{"name":"sp_sandGolem","path":"sprites/sp_sandGolem/sp_sandGolem.yy",},"order":25,},
     {"id":{"name":"GMLive_thread","path":"scripts/GMLive_thread/GMLive_thread.yy",},"order":4,},
+    {"id":{"name":"json_append","path":"scripts/json_append/json_append.yy",},"order":19,},
     {"id":{"name":"sp_timewornPharoh","path":"sprites/sp_timewornPharoh/sp_timewornPharoh.yy",},"order":6,},
     {"id":{"name":"rm_ex_normal_1","path":"rooms/rm_ex_normal_1/rm_ex_normal_1.yy",},"order":0,},
     {"id":{"name":"co_roomGen","path":"objects/co_roomGen/co_roomGen.yy",},"order":0,},
