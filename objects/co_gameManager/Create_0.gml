@@ -145,6 +145,21 @@ function getListOfEntities() {
 	return entityList;
 }
 
+function addEntityToList(_inst) {
+		show_debug_message("Adding instance: " + string(_inst));
+	
+	_inst = string(_inst);
+	for(var i = 0; i < array_length(entityList); i++) {
+		if(_inst == entityList[i]) {
+			show_debug_message("Instance already exists in list: " + string(_inst));
+			return false;
+		}
+	}
+	array_push(entityList, _inst);	
+	return true;
+	
+}
+
 function getCountOfEntities() {
 	
 	return array_length(entityList);
@@ -162,4 +177,9 @@ function removeEntityFromList(_inst) {
 	}
 	show_debug_message("Tried to delete a instance from entity list that did not exist");
 	return false;
+}
+	
+function setSeed(_seed) {
+	
+	
 }

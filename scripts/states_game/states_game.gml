@@ -40,6 +40,19 @@ function state_game_setup(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			//If we are loading a save, set seed and do not create entities
+			
+			//Set seed
+		//	var _loadFlag = co_saveLoad.loadGameSave; //Checks whether we are loading a game or not
+			//var _seed = global.
+		//	if(co_saveLoad.loadGameSave == true) {
+				//We are loading a saved game
+				
+				
+		//	}
+			//Create list of entities
+			createListOfEntities();
+			
 			//Run the packed room generation to generate the game room
 			instance_create_layer(x, y, "la_controllers",co_roomGen);
 
@@ -55,8 +68,7 @@ function state_game_setup(_event){
 			//Spawn entities in game room, including player
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
 			
-			//Get list of entities
-			createListOfEntities();
+			
 			
 			//Create the turn order controller
 			instance_create_layer(x, y, "la_controllers", co_turnOrder);

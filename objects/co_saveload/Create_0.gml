@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+loadGameSave = false; //If set to true, we want to load the save
+
 save = function () {
 	show_debug_message("Saving...");
 	
@@ -42,3 +44,15 @@ save = function () {
 	show_debug_message("Done saving!");
 }
 	
+loadGame = function() {
+	if(file_exists("gamesave.sav")) {
+		var _buffer = buffer_load("gamesave.sav");
+		var _string = buffer_read(_buffer, buffer_string);
+		buffer_delete(_buffer);
+		
+		var _loadData = json_parse(_string);
+		
+		show_debug_message("String: " + _string);
+		show_debug_message("loadData: "+ string(_loadData));
+	}
+}

@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 mp_add_entity();
+co_gameManager.addEntityToList(id);
 
 d_image_speed = 1; //Set entities to animate at standard speed
 stateMachine = false;
