@@ -89,6 +89,7 @@
     {"id":{"name":"co_debugger","path":"objects/co_debugger/co_debugger.yy",},"order":0,},
     {"id":{"name":"truestate_clear_history","path":"scripts/truestate_clear_history/truestate_clear_history.yy",},"order":0,},
     {"id":{"name":"sp_touch_indicator","path":"sprites/sp_touch_indicator/sp_touch_indicator.yy",},"order":5,},
+    {"id":{"name":"json_get_string_from_header","path":"scripts/json_get_string_from_header/json_get_string_from_header.yy",},"order":20,},
     {"id":{"name":"sp_zombieWarrior","path":"sprites/sp_zombieWarrior/sp_zombieWarrior.yy",},"order":35,},
     {"id":{"name":"truestate_step","path":"scripts/truestate_step/truestate_step.yy",},"order":3,},
     {"id":{"name":"sp_golemIce","path":"sprites/sp_golemIce/sp_golemIce.yy",},"order":12,},

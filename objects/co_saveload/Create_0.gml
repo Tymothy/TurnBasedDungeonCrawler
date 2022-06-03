@@ -50,9 +50,15 @@ loadGame = function() {
 		var _string = buffer_read(_buffer, buffer_string);
 		buffer_delete(_buffer);
 		
-		var _loadData = json_parse(_string);
+		var _header = "global";
+		var _data = json_get_string_from_header(_header, _string);
+		
+		show_debug_message("Seed before: " + string(global.game.seed));
+		global.game = _data;
+		show_debug_message("Seed after: " + string(global.game.seed));
+		
 		
 		show_debug_message("String: " + _string);
-		show_debug_message("loadData: "+ string(_loadData));
+		//show_debug_message("loadData: "+ string(_loadData));
 	}
 }
