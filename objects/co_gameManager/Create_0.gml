@@ -185,8 +185,3 @@ function loadSavedEntities(_data) {
 	entityList = _data;
 	show_debug_message("Loaded entities: " + string(_data));
 }
-
-function setSeed(_seed) {
-	
-	
-}
