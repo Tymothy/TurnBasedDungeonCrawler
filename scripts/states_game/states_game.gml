@@ -40,6 +40,18 @@ function state_game_setup(_event){
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			show_debug_message("Running game setup script");
+			//See if objects we want to create exist already.  If so, we need to delete them first.
+			instance_exists(co_roomGen){
+				instance_destroy(co_roomGen);
+				show_debug_message("Deleting some setup controllers before recreating them");
+			}
+			instance_exists(co_grid)			instance_destroy(co_grid);
+			instance_exists(co_createDoors)		instance_destroy(co_createDoors);
+			instance_exists(co_spawnManager)	instance_destroy(co_spawnManager);
+			instance_exists(co_turnOrder)		instance_destroy(co_turnOrder);
+			instance_exists(co_tileOverlay)		instance_destroy(co_tileOverlay);
+			instance_exists(co_saveLoad)		instance_destroy(co_saveLoad);
 			//If we are loading a save, set seed and do not create entities
 			
 			//Set seed
@@ -67,8 +79,6 @@ function state_game_setup(_event){
 			
 			//Spawn entities in game room, including player
 			instance_create_layer(x,y, "la_controllers", co_spawnManager);
-			
-			
 			
 			//Create the turn order controller
 			instance_create_layer(x, y, "la_controllers", co_turnOrder);
@@ -131,7 +141,13 @@ function state_game_player_active(_event){
 		case TRUESTATE_STEP:
 		{
 			//Watch for player to complete turn
-			if(ob_player.endTurn == true) truestate_switch(STATES.AI_ACTIVE);	
+			if(!instance_exists(ob_player)) {
+				//ob_player does not exist.  Go to inactive state as we are reloading.
+				truestate_switch(STATES.INACTIVE);
+			} else{
+				if(ob_player.endTurn == true) truestate_switch(STATES.AI_ACTIVE);	
+			}
+			//if(ob_player.endTurn == true) truestate_switch(STATES.GAME_SETUP);
 
 		}break;
 	
@@ -145,20 +161,20 @@ function state_game_player_active(_event){
 		case TRUESTATE_FINAL:
 		{
 			//This code will run once right before switching to a new state.
-			if(ob_player.movingRooms == true) {
-				//Player is in new room, deactivate old room
-				co_gameManager.deactivateRoom(to_room_x(ob_player.lastRoomGridX), to_room_y(ob_player.lastRoomGridY));
-				ob_player.movingRooms = false;		
-				co_turnOrder.createAiTurnOrder();
-
-				
-
-				truestate_switch(STATES.PLAYER_ACTIVE);
+			if(instance_exists(ob_player)) {
+				//Only run if ob_player exists
+				if(ob_player.movingRooms == true) {
+					//Player is in new room, deactivate old room
+					co_gameManager.deactivateRoom(to_room_x(ob_player.lastRoomGridX), to_room_y(ob_player.lastRoomGridY));
+					ob_player.movingRooms = false;		
+					co_turnOrder.createAiTurnOrder();
+					truestate_switch(STATES.PLAYER_ACTIVE);
+				}
+				else {
+					truestate_switch(STATES.AI_ACTIVE);	
+				}
+				co_grid.refreshRangeGrids();
 			}
-			else {
-				truestate_switch(STATES.AI_ACTIVE);	
-			}
-			co_grid.refreshRangeGrids();
 		}break;
 	}
 

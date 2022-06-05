@@ -23,7 +23,7 @@ save = function () {
 		var _instID = real(_entityList[i]);
 		var _tempStruct = new saveEntity(_instID);
 		_entityStruct.entities[i] = _tempStruct;
-
+		if(_entityStruct.entities[i]){}  //This line does absolutely nothing in code.  However it prevents IDE from throwing a warning above.
 		//tempStruct has what we want to put into entity struct
 
 	}	
@@ -75,11 +75,13 @@ loadGame = function() {
 		//Load the entity data
 		_header = "entities";
 		_data = json_get_string_from_header(_header, _string);
-		show_debug_message("Entities Loaded: " + string(_data));
+		//show_debug_message("Entities Loaded: " + string(_data));
 		
 		co_gameManager.loadSavedEntities(_data);
 		
 		//show_debug_message("String: " + _string);
 		//show_debug_message("loadData: "+ string(_loadData));
+		
+		
 	}
 }
