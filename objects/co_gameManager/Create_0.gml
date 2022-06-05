@@ -127,17 +127,20 @@ function moveDownLevel() {
 function createListOfEntities() {
 	//Creates a master list of entities on the floor.  Must be run before deactivating instances
 	entityList = array_create(0);
-	var _countOfEntities = instance_number(ob_par_entity);
-	show_debug_message("Count of entities on floor: " + string(_countOfEntities));
 	
-	for (var i = 0; i < instance_number(ob_par_entity); ++i;) {
-		var _objID = instance_find(ob_par_entity, i);		
-		array_push(entityList, _objID);
-	}
+	
+	
+	//var _countOfEntities = instance_number(ob_par_entity);
+	//show_debug_message("Count of entities on floor: " + string(_countOfEntities));
+	
+	//for (var i = 0; i < instance_number(ob_par_entity); ++i;) {
+	//	var _objID = instance_find(ob_par_entity, i);		
+	//	array_push(entityList, _objID);
+	//}
 
-	var _string = json_stringify(entityList);
-	show_debug_message("List of created entities: ");
-	show_debug_message(_string);
+	//var _string = json_stringify(entityList);
+	//show_debug_message("List of created entities: ");
+	//show_debug_message(_string);
 }
 
 function getListOfEntities() {
@@ -146,16 +149,19 @@ function getListOfEntities() {
 }
 
 function addEntityToList(_inst) {
-		show_debug_message("Adding instance: " + string(_inst));
+	show_debug_message("Adding instance: " + string(_inst));
 	
 	_inst = string(_inst);
+	//TODO: Fixs the entity list below as it's no longer considered an array
 	for(var i = 0; i < array_length(entityList); i++) {
 		if(_inst == entityList[i]) {
 			show_debug_message("Instance already exists in list: " + string(_inst));
 			return false;
 		}
 	}
-	array_push(entityList, _inst);	
+	var _tempStruct = new saveEntity(_inst);
+	
+	array_push(entityList, _tempStruct);	
 	return true;
 	
 }
@@ -181,7 +187,7 @@ function removeEntityFromList(_inst) {
 
 function loadSavedEntities(_data) {
 	//json_parse(_data);
-	entityList = array_create(0);
+	//entityList = array_create(0);
 	entityList = _data;
 	show_debug_message("Loaded entities: " + string(_data));
 }

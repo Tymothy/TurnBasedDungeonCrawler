@@ -59,6 +59,7 @@ save = function () {
 }
 	
 loadGame = function() {
+	loadGameSave = true;
 	if(file_exists("gamesave.sav")) {
 		var _buffer = buffer_load("gamesave.sav");
 		var _string = buffer_read(_buffer, buffer_string);
@@ -84,4 +85,6 @@ loadGame = function() {
 		
 		
 	}
+	//TODO: Make a better room restart function with animation an stuff
+	room_restart();	
 }

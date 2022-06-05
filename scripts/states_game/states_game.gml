@@ -41,30 +41,14 @@ function state_game_setup(_event){
 		case TRUESTATE_NEW:
 		{
 			show_debug_message("Running game setup script");
-			//See if objects we want to create exist already.  If so, we need to delete them first.
-			instance_exists(co_roomGen){
-				instance_destroy(co_roomGen);
-				show_debug_message("Deleting some setup controllers before recreating them");
-			}
-			instance_exists(co_grid)			instance_destroy(co_grid);
-			instance_exists(co_createDoors)		instance_destroy(co_createDoors);
-			instance_exists(co_spawnManager)	instance_destroy(co_spawnManager);
-			instance_exists(co_turnOrder)		instance_destroy(co_turnOrder);
-			instance_exists(co_tileOverlay)		instance_destroy(co_tileOverlay);
-			instance_exists(co_saveLoad)		instance_destroy(co_saveLoad);
-			//If we are loading a save, set seed and do not create entities
+			//If we are loading a save, set seed and create entities from save file
 			
-			//Set seed
-		//	var _loadFlag = co_saveLoad.loadGameSave; //Checks whether we are loading a game or not
-			//var _seed = global.
-		//	if(co_saveLoad.loadGameSave == true) {
-				//We are loading a saved game
-				
-				
-		//	}
+			//Set the game seed to whatever is in the game struct
+			random_set_seed(global.game.seed);
+			
 			//Create list of entities
 			createListOfEntities();
-			
+						
 			//Run the packed room generation to generate the game room
 			instance_create_layer(x, y, "la_controllers",co_roomGen);
 
@@ -87,7 +71,7 @@ function state_game_setup(_event){
 			instance_create_layer(x, y, "la_controllers", co_tileOverlay);
 	
 	
-			instance_create_layer(x, y, "la_controllers", co_saveLoad);
+
 			
 			//Create the shooter controller
 			//Arrows have been disabled, don't really fit theme
@@ -96,7 +80,7 @@ function state_game_setup(_event){
 			//Create the inital ai turn order.
 			co_gameManager.refreshRoomValues();
 			co_turnOrder.createAiTurnOrder();
-			
+			co_saveLoad.loadGameSave = false; //We are done loading the game, if we were loading in the first place.  Set to false.
 		}break;
 	
 		//STEP---------------------------------------

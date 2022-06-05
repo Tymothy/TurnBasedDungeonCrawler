@@ -27,5 +27,7 @@ instance_create_depth(x, y, -1000, co_tilesetMapping);
 instance_create_depth(x,y,0,co_display);
 instance_create_depth(x, y, -1000, co_touchMaster);
 instance_create_depth(x, y, -1000, co_gameManager);
+	//Create the save controller
+instance_create_depth(x, y, -1000, co_saveLoad);
 
 room_goto(rm_game);

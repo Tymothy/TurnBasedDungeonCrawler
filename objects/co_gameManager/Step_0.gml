@@ -11,3 +11,5 @@ if(instance_exists(ob_par_hostile)){
 else {
 	hostilesInRoom = false;	
 }
+
+

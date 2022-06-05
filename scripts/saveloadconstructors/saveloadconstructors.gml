@@ -11,7 +11,6 @@ function saveEntity(_instID) constructor{
 	obj = object_get_name(_instID.object_index);
 	x = to_grid(_instID.x);
 	y = to_grid(_instID.y);
-
 }
 
 //function floorRoom(_x, _y) constructor {

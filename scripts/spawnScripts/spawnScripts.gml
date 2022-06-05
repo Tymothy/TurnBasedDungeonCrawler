@@ -6,7 +6,12 @@ function <NAME>(_var1, _var2, _var3...) {
 //CODE
 }
 */
-function spawn_player(){
+function spawn_player(_x = -1, _y = -1){
+	//If we provide values, spawn player at those values.  Otherwise, place on spawn tile
+	if(_x != -1) {
+		instance_create_layer(from_grid(_x), from_grid(_y), "la_player", ob_player);
+	}
+	
 	//Loop through grid and find the spawn tile.  Spawn player on spawn tile.
 	if(instance_exists(co_grid)) 
 	{
@@ -134,5 +139,9 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 }
 	
 function spawn_entity (_entity, _gridX, _gridY) {
+	if(_entity == ob_player) {
+		spawn_player(_gridX, _gridY);
+		
+	}
 	instance_create_layer(from_grid(_gridX), from_grid(_gridY), "la_ai", _entity);
 }
