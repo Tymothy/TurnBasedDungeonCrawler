@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Constructors.yy",
   },
   "resourceVersion": "1.0",
-  "name": "roomConstructors",
+  "name": "saveLoadConstructors",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -178,7 +178,14 @@ function removeEntityFromList(_inst) {
 	show_debug_message("Tried to delete a instance from entity list that did not exist");
 	return false;
 }
-	
+
+function loadSavedEntities(_data) {
+	//json_parse(_data);
+	entityList = array_create(0);
+	entityList = _data;
+	show_debug_message("Loaded entities: " + string(_data));
+}
+
 function setSeed(_seed) {
 	
 	

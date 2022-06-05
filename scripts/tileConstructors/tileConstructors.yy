@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Constructors",
-    "path": "folders/Scripts/Room Generation/Constructors.yy",
+    "path": "folders/Scripts/Constructors.yy",
   },
   "resourceVersion": "1.0",
   "name": "tileConstructors",
