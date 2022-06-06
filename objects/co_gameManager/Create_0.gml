@@ -151,16 +151,24 @@ function getListOfEntities() {
 function addEntityToList(_inst) {
 	show_debug_message("Adding instance: " + string(_inst));
 	
-	_inst = string(_inst);
-	//TODO: Fixs the entity list below as it's no longer considered an array
-	for(var i = 0; i < array_length(entityList); i++) {
-		if(_inst == entityList[i]) {
-			show_debug_message("Instance already exists in list: " + string(_inst));
+	var _countOfEntities = co_gameManager.getCountOfEntities();
+	var _entityList = co_gameManager.getListOfEntities();
+	
+	var _entityStruct = {};
+	//New entity struct for saving
+	for (var i = 0; i < _countOfEntities; i++;) {
+		var _checkID = real(_entityList[i]);
+		if(_checkID == _inst) {
+			show_debug_message("Trying to add instance that already exists.  Not adding to list.");
 			return false;
 		}
+		
 	}
-	var _tempStruct = new saveEntity(_inst);
-	
+	//Entity does not exist in list.  Create it
+		var _tempStruct = new saveEntity(_inst);
+		_entityStruct.entities[i] = _tempStruct;
+		if(_entityStruct.entities[i]){}  //This line does absolutely nothing in code.  However it prevents IDE from throwing a warning above.
+		//tempStruct has what we want to put into entity struct	
 	array_push(entityList, _tempStruct);	
 	return true;
 	

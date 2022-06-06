@@ -20,7 +20,7 @@ save = function () {
 	var _entityStruct = {};
 	//New entity struct for saving
 	for (var i = 0; i < _countOfEntities; i++;) {
-		var _instID = real(_entityList[i]);
+		var _instID = _entityList[i];
 		var _tempStruct = new saveEntity(_instID);
 		_entityStruct.entities[i] = _tempStruct;
 		if(_entityStruct.entities[i]){}  //This line does absolutely nothing in code.  However it prevents IDE from throwing a warning above.

@@ -10,12 +10,13 @@ if(co_saveLoad.loadGameSave == true) {
 		 //var _inst = 0;
 		 tempList = {};
 		 tempList = co_gameManager.getListOfEntities();
-		for(var i = 0; i < array_length(co_gameManager.entityList); i++) {
+		 var _countOfEntities = co_gameManager.getCountOfEntities();
+		for(var i = 0; i < _countOfEntities; i++) {
 			//var _inst = co_gameManager.entityList[i];
 			spawn_entity(asset_get_index(co_gameManager.entityList[i].obj), co_gameManager.entityList[i].x, co_gameManager.entityList[i].y);
 		}
 	
-	
+
 	//while(array_length(_entityData) > 0) {
 	//	var _loadEntity = array_pop(_entityData);
 	//	spawn_entity(asset_get_index(_loadEntity.obj), _loadEntity.x, _loadEntity.y);
