@@ -85,6 +85,7 @@ loadGame = function() {
 		
 		
 	}
+	
 	//TODO: Make a better room restart function with animation an stuff
 	room_restart();	
 }

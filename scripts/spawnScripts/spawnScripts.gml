@@ -11,34 +11,37 @@ function spawn_player(_x = -1, _y = -1){
 	if(_x != -1) {
 		instance_create_layer(from_grid(_x), from_grid(_y), "la_player", ob_player);
 	}
+	//We are not loading, so just spawn the player
+	else {
 	
-	//Loop through grid and find the spawn tile.  Spawn player on spawn tile.
-	if(instance_exists(co_grid)) 
-	{
-		//Grid exists, find the spawn tile
-		for(var i = 0; i < room_height / TILE_SIZE; i++)
+		//Loop through grid and find the spawn tile.  Spawn player on spawn tile.
+		if(instance_exists(co_grid)) 
 		{
-			//Create all rows in a column before moving to next column
-			for(var j = 0; j < room_width / TILE_SIZE; j++)
+			//Grid exists, find the spawn tile
+			for(var i = 0; i < room_height / TILE_SIZE; i++)
 			{
-				var _spawnTile = co_grid.tileGrid[# i, j][$ "id"];//Show the id of the ds grid
-				if(_spawnTile == CORETILES.SPAWN)
+				//Create all rows in a column before moving to next column
+				for(var j = 0; j < room_width / TILE_SIZE; j++)
 				{
-					instance_create_layer(i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2, "la_player", ob_player);	
-					//if(LOGGING) show_debug_message("Player spawned at grid coords: " + string(i) + ", " + string(j));
-					return 1;
+					var _spawnTile = co_grid.tileGrid[# i, j][$ "id"];//Show the id of the ds grid
+					if(_spawnTile == CORETILES.SPAWN)
+					{
+						instance_create_layer(i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2, "la_player", ob_player);	
+						//if(LOGGING) show_debug_message("Player spawned at grid coords: " + string(i) + ", " + string(j));
+						return 1;
+					}
 				}
 			}
-		}
-		if(LOGGING) show_debug_message("ERROR: NO SPAWNABLE TILE EXISTS, CANNOT SPAWN PLAYER");
-		return -1;
+			if(LOGGING) show_debug_message("ERROR: NO SPAWNABLE TILE EXISTS, CANNOT SPAWN PLAYER");
+			return -1;
 
-	}
-	else 
-	{
-	// Grid does not exist, thus cannot spawn player
-		if(LOGGING) show_debug_message("ERROR: NO GRID EXISTS, CANNOT SPAWN PLAYER");
-		return -1;
+		}
+		else 
+		{
+		// Grid does not exist, thus cannot spawn player
+			if(LOGGING) show_debug_message("ERROR: NO GRID EXISTS, CANNOT SPAWN PLAYER");
+			return -1;
+		}
 	}
 }
 
