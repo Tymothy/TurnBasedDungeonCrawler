@@ -96,7 +96,7 @@ refreshRangeGrids = function(){
 	for(var i = 0; i < ROOM_SIZE_WIDTH; i++) {
 		for(var j = 0; j < ROOM_SIZE_HEIGHT; j++) {
 			var _line = check_range_line_attack(_gridPlayerX, _gridPlayerY, self, i + _offX, j + _offY, ROOM_SIZE_HEIGHT);
-			var _diag = check_range_diag_attack(_gridPlayerX, _gridPlayerY, self, i + _offX, j + _offY, ROOM_SIZE_HEIGHT)
+			var _diag = check_range_diag_attack(_gridPlayerX, _gridPlayerY, self, i + _offX, j + _offY, ROOM_SIZE_HEIGHT);
 			
 			if(_line != false){
 				var _dist = abs(point_distance(_gridPlayerX, _gridPlayerY, i + _offX, j + _offY));
