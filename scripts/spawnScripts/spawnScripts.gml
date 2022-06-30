@@ -146,5 +146,7 @@ function spawn_entity (_entity, _gridX, _gridY) {
 		spawn_player(_gridX, _gridY);
 		
 	}
+	else {
 	instance_create_layer(from_grid(_gridX), from_grid(_gridY), "la_ai", _entity);
+	}
 }
