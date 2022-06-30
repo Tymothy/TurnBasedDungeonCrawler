@@ -10,25 +10,11 @@ if(co_saveLoad.loadGameSave == true) {
 		 //var _inst = 0;
 		 tempList = {};
 		 tempList = co_gameManager.getListOfEntities();
-		// var _countOfEntities = co_gameManager.getCountOfEntities();
-		var _tempStruct = co_gameManager.entityStruct;
 
 		for(var i = 0; i < array_length(co_gameManager.entityStruct.entities); i++) {
-			//var _inst = co_gameManager.entityList[i];
-			//spawn_entity(asset_get_index(co_gameManager.entityStruct[i].obj), co_gameManager.entityStruct[i].x, co_gameManager.entityStruct[i].y);
 			spawn_entity(asset_get_index(co_gameManager.entityStruct.entities[i].obj), co_gameManager.entityStruct.entities[i].x, co_gameManager.entityStruct.entities[i].y);
-			//if(LOGGING) show_debug_message("Loaded " + string(object_get_name(co_gameManager.entityStruct.entities[i].object_index)));
 		}
 	if(LOGGING) show_debug_message("Done Loading.  Entities loaded: " + string(i));
-
-	//while(array_length(_entityData) > 0) {
-	//	var _loadEntity = array_pop(_entityData);
-	//	spawn_entity(asset_get_index(_loadEntity.obj), _loadEntity.x, _loadEntity.y);
-		
-	//}
-
-	
-	//spawn_entity //Spawn the ai
 	
 } else {
 
