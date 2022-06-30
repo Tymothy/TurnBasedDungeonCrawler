@@ -151,7 +151,7 @@ function state_player_idle(_event){
 									//tile touched is a valid tile to get to
 									
 									//Check for an empty room
-									if(!instance_exists(ob_par_hostile)) {
+									if(co_gameManager.hostileCount == 0) {
 										_move = true;	
 									}
 									
