@@ -179,7 +179,7 @@ function addEntityToList(_inst) {
 		_entityStruct.entities[i] = _tempStruct;
 		if(_entityStruct.entities[i]){}  //This line does absolutely nothing in code.  However it prevents IDE from throwing a warning above.
 		//tempStruct has what we want to put into entity struct	
-	array_push(entityList, _tempStruct);	
+	array_push(entityList, _inst);	
 	return true;
 	
 }

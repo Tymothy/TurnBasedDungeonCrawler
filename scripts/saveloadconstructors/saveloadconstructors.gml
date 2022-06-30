@@ -8,6 +8,8 @@ function <NAME>(_var1, _var2, _var3...) {
 */
 function saveEntity(_instID) constructor{
 	//All the info we want to save from an entity
+	//var _objIndex = _instID.object_index;
+	
 	obj = object_get_name(_instID.object_index);
 	x = to_grid(_instID.x);
 	y = to_grid(_instID.y);
