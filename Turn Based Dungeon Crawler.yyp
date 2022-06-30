@@ -238,6 +238,7 @@
     {"id":{"name":"sp_bloodthirstyCount","path":"sprites/sp_bloodthirstyCount/sp_bloodthirstyCount.yy",},"order":3,},
     {"id":{"name":"GMLive_token","path":"scripts/GMLive_token/GMLive_token.yy",},"order":7,},
     {"id":{"name":"co_touchIndicator","path":"objects/co_touchIndicator/co_touchIndicator.yy",},"order":1,},
+    {"id":{"name":"is_instance_in_current_room","path":"scripts/is_instance_in_current_room/is_instance_in_current_room.yy",},"order":14,},
     {"id":{"name":"sp_door_sh_green","path":"sprites/sp_door_sh_green/sp_door_sh_green.yy",},"order":0,},
     {"id":{"name":"truestate_switch","path":"scripts/truestate_switch/truestate_switch.yy",},"order":6,},
     {"id":{"name":"copar_GUI","path":"objects/copar_GUI/copar_GUI.yy",},"order":0,},
@@ -404,7 +405,7 @@
     {"CopyToMask":0,"filePath":"datafiles/GMLive","resourceVersion":"1.0","name":"std.ndll","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.5.0.8",
+    "IDEVersion": "2022.5.1.16",
   },
   "resourceVersion": "1.5",
   "name": "Turn Based Dungeon Crawler",

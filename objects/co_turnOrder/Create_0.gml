@@ -16,13 +16,12 @@ aiTurnNum = 0; //Tracks where ai are at in turn order
 
 //Deactivate all ai objects as they will be activated as player enters each room
 //The code below can be commented out in order to see all enemies in a floor
-instance_deactivate_object(ob_par_ai);
+//instance_deactivate_object(ob_par_ai);
 
 //Called when player enters a new room
 function createAiTurnOrder()
 {
-	//Create AI turn order with all available AI.  AI outside the room should be deactivated
-	//If AI are not deactivated, they will be put into the queue.
+	//Create AI turn order with all available AI. 
 	//Create aiQueue if needed
 		aiQueue = ds_priority_create();	
 		aiCurrentTurnQueue = ds_priority_create();
@@ -33,18 +32,15 @@ function createAiTurnOrder()
 	
 	//Cycle through all ai in the room and add them to the turn order
 	for (var i = 0; i <  instance_number(ob_par_ai); i++) {
-		var _aiID = instance_find(ob_par_ai, i);
-		var _aiSpeed = _aiID.property.turnSpeed;
-		
-		////Find if turn speed already exists, if so, add .01 until no match to avoid mismatches
-		//var _prio = ds_priority_find_priority(aiQueue, _aiSpeed);
-		//while(_prio != undefined) {
-		//	_aiSpeed += .01;
-		//	_prio = ds_priority_find_priority(aiQueue, _aiSpeed);
-		//}
-		if(LOGGING) show_debug_message("Adding " + string(_aiID.property.name) + "/" + string(_aiID) 
+
+		var _aiID = instance_find(ob_par_ai, i);		
+		var _inRoom = is_instance_in_current_room(_aiID);
+		if(_inRoom == true) {
+			var _aiSpeed = _aiID.property.turnSpeed;
+			if(LOGGING) show_debug_message("Adding " + string(_aiID.property.name) + "/" + string(_aiID) 
 										+ " with value " + string(_aiSpeed) + " to the turn order.");
-		ds_priority_add(aiQueue, _aiID, _aiSpeed);
+			ds_priority_add(aiQueue, _aiID, _aiSpeed);
+		}
 	}
 	if(LOGGING) show_debug_message("Created AI Turn successfully");
 }
@@ -76,4 +72,8 @@ function removeFromQueue(inst) {
 	
 		ds_priority_delete_value(aiQueue, inst);
 		ds_priority_delete_value(aiCurrentTurnQueue, inst);
+}
+	
+function getAiInQueue() {
+	var _ret = 	ds_priority_size(aiCurrentTurnQueue)
 }

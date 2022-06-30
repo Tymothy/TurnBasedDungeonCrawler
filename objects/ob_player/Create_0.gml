@@ -33,7 +33,7 @@ movingRoomsFunc = function() {
 	
 	if(LOGGING) show_debug_message("Player is leaving room at: " + coords_string(to_room_x(lastRoomGridX), to_room_y(lastRoomGridY)));
 	//Activate instances in the room we are going to prior to actually moving there
-	co_gameManager.activateRoom(to_room_x(to_grid(targX)), to_room_y(to_grid(targY)));
+	//co_gameManager.activateRoom(to_room_x(to_grid(targX)), to_room_y(to_grid(targY)));
 }
 
 #endregion
