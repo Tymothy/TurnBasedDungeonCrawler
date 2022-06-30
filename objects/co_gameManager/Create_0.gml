@@ -21,7 +21,6 @@ truestate_set_default(STATES.INACTIVE);
 hostilesInRoom = false; //Flag is checked every step and can be referenced by other objects
 
 function refreshRoomValues() {
-	hostileCount = getHostileCount(); //Gets count of enemies in room
 	currentRoomX = to_room_x(to_grid(ob_player.x));
 	currentRoomY = to_room_y(to_grid(ob_player.y));
 	currentFloor = global.game.currentFloor;
@@ -31,6 +30,7 @@ function refreshRoomValues() {
 	topGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY1"];
 	bottomGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY2"];
 	co_minimap.refreshMinimap();
+	hostileCount = getHostileCount(); //Gets count of enemies in room
 }
 
 function checkConditions() {
@@ -57,10 +57,20 @@ function checkConditions() {
 function getHostileCount () {
 	//Returns number of hostiles
 	//Could be expanded in the future to get specific counts
-		for (var i = 0; i <  instance_number(ob_par_hostile); i++) {
-			var _aiID = instance_find(ob_par_hostile, i);
+		//for (var i = 0; i <  instance_number(ob_par_hostile); i++) {
+		//	var _aiID = instance_find(ob_par_hostile, i);
+		//}
+		//return i;
+		var _count = 0;
+		for (var i = 0; i <  instance_number(ob_par_ai); i++) {
+
+		var _aiID = instance_find(ob_par_ai, i);		
+		var _inRoom = is_instance_in_current_room(_aiID);
+		if(_inRoom == true) {
+			_count++;
 		}
-		return i;
+	}
+	return _count;
 
 }
 

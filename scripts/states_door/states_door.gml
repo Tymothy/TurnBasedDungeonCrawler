@@ -14,7 +14,7 @@ function state_door_locked(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
-			if(co_turnOrder.getAiInQueue() == 0) {
+			if(co_gameManager.hostileCount == 0) {
 				truestate_switch(STATES.OPEN);	
 			}
 			
@@ -50,7 +50,7 @@ function state_door_open(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{ 
-			if(co_turnOrder.getAiInQueue() > 1 && ob_player.truestate_current_state == STATES.IDLE) {
+			if(co_gameManager.hostileCount > 0 && ob_player.truestate_current_state == STATES.IDLE) {
 				truestate_switch(STATES.LOCKED);	
 			}
 
