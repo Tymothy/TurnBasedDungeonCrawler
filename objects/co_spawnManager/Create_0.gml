@@ -10,12 +10,16 @@ if(co_saveLoad.loadGameSave == true) {
 		 //var _inst = 0;
 		 tempList = {};
 		 tempList = co_gameManager.getListOfEntities();
-		 var _countOfEntities = co_gameManager.getCountOfEntities();
-		for(var i = 0; i < _countOfEntities; i++) {
+		// var _countOfEntities = co_gameManager.getCountOfEntities();
+		 //var _tempStruct = co_gameManager.entityStruct;
+
+		for(var i = 0; i < array_length(co_gameManager.entityStruct.entities); i++) {
 			//var _inst = co_gameManager.entityList[i];
-			spawn_entity(asset_get_index(co_gameManager.entityList[i].obj), co_gameManager.entityList[i].x, co_gameManager.entityList[i].y);
+			//spawn_entity(asset_get_index(co_gameManager.entityStruct[i].obj), co_gameManager.entityStruct[i].x, co_gameManager.entityStruct[i].y);
+			spawn_entity(asset_get_index(co_gameManager.entityStruct.entities[i].obj), co_gameManager.entityStruct.entities[i].x, co_gameManager.entityStruct.entities[i].y);
+			if(LOGGING) show_debug_message("Loaded " + string(asset_get_index(co_gameManager.entityStruct.entities[i].obj)));
 		}
-	
+	if(LOGGING) show_debug_message("Done Loading.  Entities loaded: " + string(i));
 
 	//while(array_length(_entityData) > 0) {
 	//	var _loadEntity = array_pop(_entityData);

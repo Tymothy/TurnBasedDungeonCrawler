@@ -159,7 +159,7 @@ function getListOfEntities() {
 }
 
 function addEntityToList(_inst) {
-	show_debug_message("Adding instance: " + string(_inst));
+	show_debug_message("Adding instance: " + string(_inst) + " | " + string(object_get_name(_inst.object_index)));
 	
 	var _countOfEntities = co_gameManager.getCountOfEntities();
 	var _entityList = co_gameManager.getListOfEntities();
@@ -205,7 +205,7 @@ function removeEntityFromList(_inst) {
 
 function loadSavedEntities(_data) {
 	//json_parse(_data);
-	//entityList = array_create(0);
-	entityList = _data;
+	entityList = array_create(0);
+	entityStruct = _data;
 	show_debug_message("Loaded entities: " + string(_data));
 }
