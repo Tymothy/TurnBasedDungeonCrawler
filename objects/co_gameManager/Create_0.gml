@@ -120,19 +120,6 @@ function deactivateRoom(_roomX, _roomY)
 	refreshRoomValues();
 }
 
-function moveDownLevel() {
-	//Run transition
-	
-	//Set any 
-	//with(co_gameManager) {
-	//	if(id != other.id) {
-	//		instance_destroy();	
-	//	}
-	//}
-	
-	//truestate_switch(STATES.GAME_SETUP);
-	
-}
 
 function createListOfEntities() {
 	//Creates a master list of entities on the floor.  Must be run before deactivating instances
@@ -208,4 +195,22 @@ function loadSavedEntities(_data) {
 	entityList = array_create(0);
 	entityStruct = _data;
 	show_debug_message("Loaded entities: " + string(_data));
+}
+	
+function resetRoom() {
+	
+	room_restart();
+	
+}
+
+function moveDownLevel() {
+	//Run transition
+
+	//TODO: Incorporate anything that needs saved on current floor
+	global.game.currentFloor += 1;
+
+	//Change values for the next room
+
+	resetRoom();
+	
 }

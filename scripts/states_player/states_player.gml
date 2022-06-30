@@ -542,12 +542,20 @@ function state_player_end(_event){
 		{
 			endTurn = true;					
 			turnActive = false;
+			
+			//Check if we ended turn on anything important
+			if(place_meeting(x, y, ob_ladderDown)) {
+				co_gameManager.moveDownLevel();
+				
+			}
+			
 		}break;
 	
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
 			//This code will be run during step event
+			
 			
 			//Handled all end turn items, go back to waiting for next turn
 			truestate_switch(STATES.WAIT);
