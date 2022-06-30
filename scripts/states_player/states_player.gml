@@ -544,10 +544,10 @@ function state_player_end(_event){
 			turnActive = false;
 			
 			//Check if we ended turn on anything important
-			if(place_meeting(x, y, ob_ladderDown)) {
-				co_gameManager.moveDownLevel();
+			//if(place_meeting(x, y, ob_ladderDown)) {
+			//	co_gameManager.moveDownLevel();
 				
-			}
+			//}
 			
 		}break;
 	

@@ -38,7 +38,9 @@ function mp_clear_entity(inst = self.id) {
 	var _y = to_grid(inst.y);
 	mp_grid_clear_cell(co_grid.mpGrid_entity, _x, _y);
 	with(co_grid) {
+		if variable_struct_exists(co_grid.tileGrid, "_entityInTile"){
 		co_grid.tileGrid[# _x, _y][$ "_entityInTile"] = false;
+		}
 	}
 }
 
@@ -48,7 +50,9 @@ function mp_add_entity() {
 	var _y = to_grid(self.y);
 	mp_grid_add_cell(co_grid.mpGrid_entity, _x, _y);
 	with(co_grid) {
+		if variable_struct_exists(co_grid.tileGrid, "_entityInTile"){
 		co_grid.tileGrid[# _x, _y][$ "_entityInTile"] = true;
+		}
 	}
 }
 
