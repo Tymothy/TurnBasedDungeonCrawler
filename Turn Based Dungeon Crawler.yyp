@@ -20,6 +20,7 @@
     {"id":{"name":"json_append","path":"scripts/json_append/json_append.yy",},"order":11,},
     {"id":{"name":"sp_timewornPharoh","path":"sprites/sp_timewornPharoh/sp_timewornPharoh.yy",},"order":6,},
     {"id":{"name":"rm_ex_normal_1","path":"rooms/rm_ex_normal_1/rm_ex_normal_1.yy",},"order":0,},
+    {"id":{"name":"Button System","path":"notes/Button System/Button System.yy",},"order":3,},
     {"id":{"name":"co_roomGen","path":"objects/co_roomGen/co_roomGen.yy",},"order":0,},
     {"id":{"name":"sp_projectile_arrow","path":"sprites/sp_projectile_arrow/sp_projectile_arrow.yy",},"order":3,},
     {"id":{"name":"rm_ex_normal_2","path":"rooms/rm_ex_normal_2/rm_ex_normal_2.yy",},"order":1,},
@@ -405,7 +406,7 @@
     {"CopyToMask":0,"filePath":"datafiles/GMLive","resourceVersion":"1.0","name":"std.ndll","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.5.1.16",
+    "IDEVersion": "2022.6.0.23",
   },
   "resourceVersion": "1.5",
   "name": "Turn Based Dungeon Crawler",

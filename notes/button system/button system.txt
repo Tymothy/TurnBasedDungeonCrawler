@@ -1,0 +1,9 @@
+Needs
+- Dynamically changes with the shape of the screen
+- 
+
+Design
+ - Touch states
+	- Game Active (When players touch a tile one screen
+	- Pause active (Game does not react)
+	- Hierarchy of menus
