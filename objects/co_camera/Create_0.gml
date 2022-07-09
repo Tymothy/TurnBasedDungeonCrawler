@@ -62,9 +62,14 @@ set_fullscreen = function() {
 
 }
 	
-set_window = function(_width, _height) {
-
+set_window = function(_scale) {
+	window_set_fullscreen(false);
+	window_set_size(NATIVE_WIDTH * _scale, NATIVE_HEIGHT * _scale);
 	
 }
+//TODO: Update this so set_fullscreen is not required to update variables for set_window
 set_fullscreen();
+
+//TODO: Polish resolution settings
+set_window(3);
 
