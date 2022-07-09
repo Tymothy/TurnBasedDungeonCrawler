@@ -2,12 +2,13 @@
 function init() {
 	global.minDistToFire = 40; //Minimum distance to fire	
 	global.pixelArtScale = 2;
-	
+	global.resolutionScale = 1;
 	global.gameVersion = "Alpha 0.1 - WORK IN PROGRESS";
 }
 //Macros for the global vars
 #macro MIN_DIST_TO_FIRE global.minDistToFire;
 #macro PIXEL_ART_SCALE global.pixelArtScale;
+#macro RESOLUTION_SCALE global.resolutionScale
 
 //How many tiles should the game target to display on screen. 
 #macro DESIGN_TILES_WIDE 9 

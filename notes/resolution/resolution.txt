@@ -1,0 +1,19 @@
+
+Defined Variables
+Minimum pixel width
+ - TILE_SIZE * amount of tiles wide we need
+ - Add any padding we need for UI elements
+Minimum pixel height
+ - TILE _SIZE * amount of tiles we need
+ - Add any padding we need for UI elements
+
+Get resolution of screen
+ - Need height of screen in pixels
+ - Need width of screen in pixels
+ 
+Set aspect ratio 
+ 
+Scale image up by largest integer
+ - For example if height is 3.2x bigger and width is 5.4x bigger, scale all images up by 3x
+ 
+ 

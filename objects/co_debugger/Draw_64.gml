@@ -26,3 +26,10 @@
 //draw_text(global.width_gui * .97, global.height_gui * .15, "spawnManager exists");		
 //}
 
+//Draw a grid on GUI
+draw_set_alpha(.2);
+draw_set_color(c_gray);
+draw_rectangle(global.width_gui/2 - 1, 0, global.width_gui/2 + 1, global.height_gui, false);
+draw_rectangle(0, global.height_gui/2 - 1, global.width_gui, global.height_gui/2 + 1, false);
+
+draw_rectangle(global.width_gui/2 - 1, 0, global.width_gui/2 + 1, global.height_gui, false);

@@ -3,6 +3,8 @@
 
 #macro WIDTH global.ideal_width
 #macro HEIGHT global.ideal_height
+#macro NATIVE_WIDTH 640 //This is 3x smaller than 1080P
+#macro NATIVE_HEIGHT  480 //This is 3x smaller than 1080P
 
 //Core Tiles Enum
 enum CORETILES

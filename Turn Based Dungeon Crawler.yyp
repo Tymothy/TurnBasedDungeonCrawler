@@ -213,6 +213,7 @@
     {"id":{"name":"tileConstructors","path":"scripts/tileConstructors/tileConstructors.yy",},"order":1,},
     {"id":{"name":"ts_coreTiles","path":"tilesets/ts_coreTiles/ts_coreTiles.yy",},"order":0,},
     {"id":{"name":"delta","path":"scripts/delta/delta.yy",},"order":0,},
+    {"id":{"name":"Resolution","path":"notes/Resolution/Resolution.yy",},"order":4,},
     {"id":{"name":"truestate_draw_current","path":"scripts/truestate_draw_current/truestate_draw_current.yy",},"order":1,},
     {"id":{"name":"sp_elementalEarth","path":"sprites/sp_elementalEarth/sp_elementalEarth.yy",},"order":3,},
     {"id":{"name":"sp_floor_dungeon_white","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},"order":0,},

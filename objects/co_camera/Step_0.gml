@@ -10,4 +10,6 @@ if(instance_exists(ob_player)){
 	targY = roomY * TILE_SIZE * ROOM_SIZE_HEIGHT;
 }
 
-camera_set_view_pos(camID, targX - xOffset, targY - yOffset);
+camera_set_view_pos(camID, 
+targX - xOffset, 
+targY - yOffset);

@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "test": {"option_html5_loadingbar":"Use Default","option_html5_index":"use_default","option_html5_webgl":"2",},
+  },
   "option_html5_browser_title": "Created with GameMaker Studio 2",
   "option_html5_version": "1.0.0.0",
   "option_html5_foldername": "html5game",
