@@ -12,12 +12,12 @@ waitForLevelGen = true;
 xOff = 1;
 yOff = 1;
 
-x1 = xOff * TILE_SIZE;
-y1 = yOff * TILE_SIZE;
-x2 = (xOff + minimapWidth) * TILE_SIZE;
-y2 = (yOff + minimapHeight) * TILE_SIZE;
+x1 = xOff * TILE_SIZE * RESOLUTION_SCALE;
+y1 = yOff * TILE_SIZE* RESOLUTION_SCALE;
+x2 = (xOff + minimapWidth) * TILE_SIZE * RESOLUTION_SCALE;
+y2 = (yOff + minimapHeight) * TILE_SIZE * RESOLUTION_SCALE;
 
-mmSurf = surface_create(minimapWidth * TILE_SIZE, minimapHeight * TILE_SIZE);
+mmSurf = surface_create(minimapWidth * TILE_SIZE* RESOLUTION_SCALE, minimapHeight * TILE_SIZE* RESOLUTION_SCALE);
 
 refreshMinimap = function() {
 	minimapRefresh = true;

@@ -123,11 +123,11 @@ function set_gui_size(_width, _height) {
 
 	if 0 then return argument[0];
 	
-	if _height == undefined then _height = HEIGHT * _width / WIDTH;
+	if _height == undefined then _height = NATIVE_HEIGHT * _width / NATIVE_WIDTH;
 	display_set_gui_size(_width, _height);
 		
-	global.width_gui = _width;
-	global.height_gui = _height;
+	global.gui_width = _width;
+	global.gui_height = _height;
 }
 
 function test_resolution(_scale)
