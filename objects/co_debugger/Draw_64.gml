@@ -27,9 +27,25 @@
 //}
 
 //Draw a grid on GUI
-draw_set_alpha(.2);
-draw_set_color(c_gray);
-draw_rectangle(global.gui_width/2 - 1, 0, global.gui_width/2 + 1, global.gui_height, false);
-draw_rectangle(0, global.gui_height/2 - 1, global.gui_width, global.gui_height/2 + 1, false);
+if(false) {
+	draw_set_alpha(.2);
+	draw_set_color(c_gray);
+	draw_rectangle(global.gui_width/2 - 1, 0, global.gui_width/2 + 1, global.gui_height, false);
+	draw_rectangle(0, global.gui_height/2 - 1, global.gui_width, global.gui_height/2 + 1, false);
 
-draw_rectangle(global.gui_width/2 - 1, 0, global.gui_width/2 + 1, global.gui_height, false);
+	draw_rectangle(global.gui_width/2 - 1, 0, global.gui_width/2 + 1, global.gui_height, false);
+	draw_set_alpha(1);
+}
+
+if(true) {
+	//Draw around the playable area
+	draw_set_alpha(.5);
+	draw_set_color(c_lime);
+	var _x1 = global.guiPlayableX1;
+	var _y1 = global.guiPlayableY1;
+	var _x2 = global.guiPlayableX2;
+	var _y2 = global.guiPlayableY2;
+	
+	draw_rectangle(_x1, _y1, _x2, _y2, true);
+	
+}

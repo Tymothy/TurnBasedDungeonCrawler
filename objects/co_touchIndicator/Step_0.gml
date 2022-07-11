@@ -4,6 +4,8 @@
 
 x = device_mouse_x(my_touch);
 y = device_mouse_y(my_touch);
+var guiX = device_mouse_x_to_gui(my_touch);
+var guiY = device_mouse_y_to_gui(my_touch);
 
 //Check grid coords, if not the same, set dragging to true
 var _gridX = to_grid(x);
@@ -26,7 +28,10 @@ else {
 	dragging = false;
 }
 
-set_touch_grid(my_touch, id, x, y, dragging);
+touchIntent = touch_determine_intent(guiX, guiY);
+show_debug_message("Touch Intent: " + string(touchIntent));
+
+set_touch_grid(my_touch, id, x, y, dragging, touchIntent);
 
 //Destroy on release
 if (device_mouse_check_button_released(my_touch, mb_any))

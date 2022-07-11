@@ -3,6 +3,18 @@ function init() {
 	global.minDistToFire = 40; //Minimum distance to fire	
 	global.pixelArtScale = 2;
 	global.resolutionScale = 1;
+	
+	global.tilesZoomOut = 2; //How many tiles to zoom out vertically in the game.  Can be set to a higher number to see more of the map.  Default is 2
+	
+	//Set the gui rectangle of the playable area
+	global.guiPlayableX1 = 1200;
+	global.guiPlayableY1 = 186;
+	global.guiPlayableX2 = 2652;
+	global.guiPlayableY2 = 1972;
+	//purposely making an error line to not forget this spot
+	
+	//Get room X,Y
+	
 	global.gameVersion = "Alpha 0.1 - WORK IN PROGRESS";
 }
 //Macros for the global vars

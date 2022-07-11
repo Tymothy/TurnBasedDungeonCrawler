@@ -15,6 +15,8 @@ set_fullscreen = function() {
 	global.MonitorH = display_get_height();
 	global.Xoffset = (global.MonitorW - NATIVE_WIDTH) / 2;
 	global.Yoffset = (global.MonitorH - NATIVE_HEIGHT) / 2;
+	
+	
 	application_surface_draw_enable(false);
 	set_gui_size(global.MonitorW); 
 
@@ -29,7 +31,7 @@ set_fullscreen = function() {
 	
 	window_set_fullscreen(true);
 	var base_w = NATIVE_WIDTH;
-	var base_h = NATIVE_HEIGHT;
+	var base_h = NATIVE_HEIGHT + TILE_SIZE * global.tilesZoomOut;
 	var max_w = display_get_width();
 	var max_h = display_get_height();
 	var aspect = display_get_width() / display_get_height();

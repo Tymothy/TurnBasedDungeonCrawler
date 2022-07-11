@@ -42,7 +42,10 @@ if(currentTouch != -1) {
 else {
 	hasTouch = false;	
 }
-if(currentTouch != -1)	dragging = get_touch_drag(currentTouch);		
+if(currentTouch != -1){
+	dragging = get_touch_drag(currentTouch);
+	touchIntent = get_touch_intent(currentTouch);	
+}
 switch(hasTouch) {
 	case true:
 	//Screen is being touched

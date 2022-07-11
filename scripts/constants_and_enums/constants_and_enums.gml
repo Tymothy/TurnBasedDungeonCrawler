@@ -110,6 +110,14 @@ enum DIFFICULTY
 	HARD,
 }
 
+enum INTENT 
+{
+	NONE,
+	PLAY_AREA,
+	MENU
+	
+}
+
 #region TrueState
 #macro G global
 

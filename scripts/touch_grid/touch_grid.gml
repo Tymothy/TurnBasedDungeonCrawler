@@ -6,7 +6,7 @@ function <NAME>(_var1, _var2, _var3...) {
 //CODE
 }
 */
-function set_touch_grid(_my_touch, _id, _x, _y, _dragging){
+function set_touch_grid(_my_touch, _id, _x, _y, _dragging, _touchIntent){
 		/*
 		Columns are each individual touch instance
 		Rows track the data of each instance
@@ -29,11 +29,12 @@ function set_touch_grid(_my_touch, _id, _x, _y, _dragging){
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 4, to_grid(_x));
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 5, to_grid(_y));
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 6, _dragging);
+	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 7, _touchIntent);
 }
 
 function remove_from_touch_grid(_my_touch){
 	//Clear the touch instance from grid by setting to all -1 in the col	
-	ds_grid_set_region(co_touchMaster.touchGrid, _my_touch, 0, _my_touch, 6, -1);
+	ds_grid_set_region(co_touchMaster.touchGrid, _my_touch, 0, _my_touch, 7, -1);
 
 }
 
@@ -80,6 +81,11 @@ function get_touch_drag(_my_touch) {
 	return _ret;
 }
 
+function get_touch_intent(_my_touch) {
+	var _ret = ds_grid_get(co_touchMaster.touchGrid, _my_touch, 7);	
+	return _ret;	
+}
+
 function get_touch_state_on_change() {
 	if(instance_exists(co_touchMaster))
 	{
@@ -121,4 +127,26 @@ function get_drag(){
 	var _ret = co_touchMaster.dragging;
 	return _ret;
 	}
+}
+
+function get_intent(){
+	if(instance_exists(co_touchMaster)) {
+	var _ret = co_touchMaster.touchIntent;
+	return _ret;
+	}
+}
+
+function touch_determine_intent(_x, _y){
+	//TODO: Check menus first
+	
+	//Check if we are in play area
+	if(_x >= global.guiPlayableX1 &&
+	_x <= global.guiPlayableX2 &&
+	_y >= global.guiPlayableY1 &&
+	_y <= global.guiPlayableY2) {
+		return INTENT.PLAY_AREA;	
+	}
+	
+	return INTENT.NONE;
+	
 }

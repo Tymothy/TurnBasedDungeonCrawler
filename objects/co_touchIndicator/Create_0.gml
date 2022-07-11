@@ -12,6 +12,8 @@ gridY = to_grid(y);
 dragging = false;
 dragTimer = -1;
 
+touchIntent = INTENT.NONE;
+
 //if(LOGGING) show_debug_message("Clicked: " + string(xStart) + ", " + string(yStart));
 var _qt = false
 if(_qt) show_debug_message("Grid coord: " + string(gridX) + ", " + string(gridY));

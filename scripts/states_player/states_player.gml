@@ -93,7 +93,7 @@ function state_player_idle(_event){
 					
 					case STATES.RELEASE:
 						if(_qt) show_debug_message("TOUCH_STATE Change: Release");	
-						if(get_drag() == false) {
+						if(get_drag() == false && get_intent() == INTENT.PLAY_AREA) {
 							//If dragging, we don't want to move
 							var _move = true;
 						
