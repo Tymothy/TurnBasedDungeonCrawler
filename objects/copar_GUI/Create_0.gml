@@ -1,7 +1,8 @@
 /// @description Init GUI
 //rows = ceil(HEIGHT / TILE_SIZE);
 //cols = ceil(WIDTH / TILE_SIZE);
-
+gw = global.gui_width;
+gh = global.gui_height;
 //Create an anchoring system
 
 create_surface = function() {

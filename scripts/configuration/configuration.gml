@@ -25,7 +25,7 @@ function init() {
 	//purposely making an error line to not forget this spot
 	
 	//Get room X,Y
-	global.gameVersion = "Alpha 0.1 - WORK IN PROGRESS";
+	global.gameVersion = "PreAlpha 0.1 - WORK IN PROGRESS";
 }
 //Macros for the global vars
 #macro MIN_DIST_TO_FIRE global.minDistToFire;
