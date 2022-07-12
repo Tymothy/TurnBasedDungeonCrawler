@@ -1,16 +1,27 @@
 //Variables that can be possibly changed after compile
 function init() {
+	
+	
 	global.minDistToFire = 40; //Minimum distance to fire	
 	global.pixelArtScale = 2;
 	global.resolutionScale = 1;
 	
-	global.tilesZoomOut = 2; //How many tiles to zoom out vertically in the game.  Can be set to a higher number to see more of the map.  Default is 2
-	
+	global.tilesZoomOut = 4; //How many tiles to zoom out vertically in the game.  Can be set to a higher number to see more of the map.  Default is 2
+	global.MonitorW = window_get_x(); 
+	global.MonitorH = window_get_y();
+	global.Xoffset = (global.MonitorW - NATIVE_WIDTH) / 2;
+	global.Yoffset = (global.MonitorH - NATIVE_HEIGHT) / 2;	
 	//Set the gui rectangle of the playable area
-	global.guiPlayableX1 = 1200;
-	global.guiPlayableY1 = 186;
-	global.guiPlayableX2 = 2652;
-	global.guiPlayableY2 = 1972;
+	set_gui_size(global.MonitorW); 
+	//global.gui_height set in function
+	//global.gui_width set in function
+	//global.gui_tile_size set in function
+
+	
+	global.guiPlayableX1 = (global.gui_width / 2) - (global.gui_tile_size * (ROOM_SIZE_WIDTH / 2)); 
+	global.guiPlayableY1 =(global.gui_height / 2) - (global.gui_tile_size * (ROOM_SIZE_HEIGHT / 2));
+	global.guiPlayableX2 = global.guiPlayableX1 + (global.gui_tile_size * ROOM_SIZE_WIDTH);
+	global.guiPlayableY2 = global.guiPlayableY1 + (global.gui_tile_size * ROOM_SIZE_HEIGHT);
 	//purposely making an error line to not forget this spot
 	
 	//Get room X,Y
@@ -22,7 +33,7 @@ function init() {
 #macro RESOLUTION_SCALE global.resolutionScale
 
 //How many tiles should the game target to display on screen. 
-#macro DESIGN_TILES_WIDE 9 
+#macro DESIGN_TILES_HEIGHT 9 
 #macro PLAY_AREA_OFFSET_Y 4 //Sets how far up or down the play area is
 
 //Size of the tiles in game, displayed in pixels.  Sprites do not adjust to tile size

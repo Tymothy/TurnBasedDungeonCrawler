@@ -125,7 +125,11 @@ function set_gui_size(_width, _height) {
 	
 	if _height == undefined then _height = NATIVE_HEIGHT * _width / NATIVE_WIDTH;
 	display_set_gui_size(_width, _height);
-		
+	show_debug_message("Height: " +string(_height));
+	show_debug_message("Width: " +string(_width));
+	global.gui_tile_size = _height / (DESIGN_TILES_HEIGHT + global.tilesZoomOut);
+	show_debug_message("Tile size: " + string(global.gui_tile_size));
+	show_debug_message("Tiles estimated across: " + string(_width / global.gui_tile_size));
 	global.gui_width = _width;
 	global.gui_height = _height;
 }
@@ -133,7 +137,7 @@ function set_gui_size(_width, _height) {
 function test_resolution(_scale)
 {
 	//Make sure to call window_center() one step after this runs
-	var _designHeight = TILE_SIZE * DESIGN_TILES_WIDE;
+	var _designHeight = TILE_SIZE * DESIGN_TILES_HEIGHT;
 	_designHeight = _designHeight * _scale;
 	
 	set_resolution (_designHeight, false, true,  false);

@@ -1,5 +1,5 @@
 /// @description Handle resolution and scaling
-//var _designWidth = TILE_SIZE * DESIGN_TILES_WIDE * 6;
+//var _designWidth = TILE_SIZE * DESIGN_TILES_HEIGHT * 6;
 
 //set_resolution(_designWidth, false, false,  false);
 

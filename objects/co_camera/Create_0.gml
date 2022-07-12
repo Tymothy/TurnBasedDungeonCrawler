@@ -11,14 +11,15 @@ view_camera[0] = camera_create_view(0, 0, NATIVE_WIDTH, NATIVE_HEIGHT);
 
 
 set_fullscreen = function() {
-	global.MonitorW = display_get_width();
-	global.MonitorH = display_get_height();
-	global.Xoffset = (global.MonitorW - NATIVE_WIDTH) / 2;
-	global.Yoffset = (global.MonitorH - NATIVE_HEIGHT) / 2;
+	//Move to init
+	//global.MonitorW = display_get_width();
+	//global.MonitorH = display_get_height();
+	//global.Xoffset = (global.MonitorW - NATIVE_WIDTH) / 2;
+	//global.Yoffset = (global.MonitorH - NATIVE_HEIGHT) / 2;
 	
 	
 	application_surface_draw_enable(false);
-	set_gui_size(global.MonitorW); 
+	//set_gui_size(global.MonitorW);  //Moved to init function
 
 	var _scale = 1;
 
@@ -30,8 +31,9 @@ set_fullscreen = function() {
 	RESOLUTION_SCALE = _scale;
 	
 	window_set_fullscreen(true);
+	//TODO: THIS IS JANK AF, we should have additional math to not set width and height seperately
 	var base_w = NATIVE_WIDTH;
-	var base_h = NATIVE_HEIGHT + TILE_SIZE * global.tilesZoomOut;
+	var base_h = (DESIGN_TILES_HEIGHT * TILE_SIZE) + (TILE_SIZE * global.tilesZoomOut);
 	var max_w = display_get_width();
 	var max_h = display_get_height();
 	var aspect = display_get_width() / display_get_height();
