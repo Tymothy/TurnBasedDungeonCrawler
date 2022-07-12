@@ -19,7 +19,7 @@ create_surface = function() {
 	//Surfaces should be created as a power of 2 to increase compatibility
 	//show_message("Surface size: " + string(power(2, _power)));
 	surf = surface_create(power(2, _power), power(2, _power));
-	draw_clear_alpha(c_black, 0); //Clear the surface just in case
+	draw_clear_alpha(c_black, 1); //Clear the surface just in case
 	
 	//Get coords of where to cut out play area
 	

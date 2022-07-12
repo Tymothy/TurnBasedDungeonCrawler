@@ -1,4 +1,4 @@
-/// @description Create Slime
+/// @description Create Enemy
 
 // Inherit the parent event
 event_inherited();

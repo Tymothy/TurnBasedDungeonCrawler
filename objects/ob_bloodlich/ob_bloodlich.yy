@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sp_exhumedCleric",
-    "path": "sprites/sp_exhumedCleric/sp_exhumedCleric.yy",
+    "name": "sp_bloodLich",
+    "path": "sprites/sp_bloodLich/sp_bloodLich.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,19 +24,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Normal",
-    "path": "folders/Objects/Entities/AI/Hostile/Normal.yy",
+    "name": "Boss",
+    "path": "folders/Objects/Entities/AI/Hostile/Boss.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ob_exhumedCleric",
+  "name": "ob_bloodLich",
   "tags": [],
   "resourceType": "GMObject",
 }

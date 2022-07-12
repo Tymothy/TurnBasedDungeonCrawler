@@ -37,7 +37,7 @@ if(false) {
 	draw_set_alpha(1);
 }
 
-if(true) {
+if(false) {
 	//Draw around the playable area
 	draw_set_alpha(.5);
 	draw_set_color(c_lime);
@@ -47,5 +47,5 @@ if(true) {
 	var _y2 = global.guiPlayableY2;
 	
 	draw_rectangle(_x1, _y1, _x2, _y2, true);
-	
+	draw_set_alpha(1);
 }

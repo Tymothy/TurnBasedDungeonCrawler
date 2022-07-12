@@ -1,4 +1,4 @@
-/// @description Draw Minimap
+/// @description Draw Cover Area
 
 
 if(refresh == true && waitForLevelGen == false) {
@@ -11,9 +11,10 @@ if(refresh == true && waitForLevelGen == false) {
 	}
 	
 	surface_set_target(surf);
-	//draw_clear_alpha(c_black, 1); //Set a black background to the minimap surface	
+	draw_clear_alpha(c_black, 1); //Set a black background to the minimap surface	
 	
 	////Draw the background
+	draw_set_alpha(1);
 	draw_set_color(c_black);	
 	
 	//Set alpha to .7 for debugging the playable area

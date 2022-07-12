@@ -1,17 +1,11 @@
 {
-  "spriteId": {
-    "name": "sp_exhumedCleric",
-    "path": "sprites/sp_exhumedCleric/sp_exhumedCleric.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "ob_par_hostile",
-    "path": "objects/ob_par_hostile/ob_par_hostile.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,17 +20,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Normal",
-    "path": "folders/Objects/Entities/AI/Hostile/Normal.yy",
+    "name": "Projectiles",
+    "path": "folders/Objects/Entities/Projectiles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ob_exhumedCleric",
+  "name": "ob_fireball",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -32,8 +32,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Hostile",
-    "path": "folders/Objects/Entities/AI/Hostile.yy",
+    "name": "Normal",
+    "path": "folders/Objects/Entities/AI/Hostile/Normal.yy",
   },
   "resourceVersion": "1.0",
   "name": "ob_bonySoldier",

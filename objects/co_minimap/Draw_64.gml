@@ -5,16 +5,16 @@ if(minimapRefresh == true && waitForLevelGen == false) {
 	//Refresh the minimap when changes are in
 	show_debug_message("Refreshing/Building Minimap");
 	minimapRefresh = false;
-	if(!surface_exists(mmSurf)) {
-		mmSurf = surface_create(minimapWidth * TILE_SIZE, minimapHeight * TILE_SIZE);
+	if(!surface_exists(surf)) {
+		create_surface();
 	}
 	
-	surface_set_target(mmSurf);
+	surface_set_target(surf);
 	//draw_clear_alpha(c_black, 1); //Set a black background to the minimap surface	
 	
 	//TODO: Sizing isn't very accurate
-	var _frWidth = ceil(minimapWidth * floor(TILE_SIZE / FLOOR_MAX_WIDTH));
-	var _frHeight = ceil(minimapHeight * floor(TILE_SIZE / FLOOR_MAX_HEIGHT));
+	var _frWidth = ceil((x2 - x1) / FLOOR_MAX_WIDTH);
+	var _frHeight = ceil((y2 - y1) / FLOOR_MAX_HEIGHT);
 
 	//Get the height for each cell
 	for(var i = 0; i < FLOOR_MAX_WIDTH; i++) {
@@ -53,10 +53,10 @@ if(minimapRefresh == true && waitForLevelGen == false) {
 	//Draw the grid lines over the minimap
 	draw_set_color(c_gray);	
 	for(var i = 0; i <= FLOOR_MAX_WIDTH; i++) {
-		draw_rectangle(i * _frWidth, 0, i * _frWidth + gridLineWidth, minimapHeight * TILE_SIZE, false);			
+		draw_rectangle(i * _frWidth, 0, i * _frWidth + gridLineWidth, _frHeight * FLOOR_MAX_HEIGHT, false);			
 	}
 	for(var j = 0; j <= FLOOR_MAX_HEIGHT; j++) {
-		draw_rectangle(0, j * _frHeight, minimapWidth * TILE_SIZE, j * _frHeight + gridLineWidth, false);	
+		draw_rectangle(0, j * _frHeight, _frWidth * FLOOR_MAX_WIDTH, j * _frHeight + gridLineWidth, false);	
 
 	}
 
@@ -66,6 +66,6 @@ if(minimapRefresh == true && waitForLevelGen == false) {
 }
 
 //Always draw the surface
-if(surface_exists(mmSurf)){
-	draw_surface(mmSurf, x1, y1);
+if(surface_exists(surf)){
+	draw_surface(surf, x1, y1);
 }

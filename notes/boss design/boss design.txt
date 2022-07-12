@@ -1,0 +1,67 @@
+Bosses could be boring if the fight is the same every time.  Bosses should not be fully solvable.  Give bosses special abilities to account for this
+
+List of possible abilities
+
+- Spawning minions
+	Description:
+		Spawn minions around the boss
+
+	Pros:
+		Introduces a lot of uncertainity
+	 
+	Cons:
+		Could become overwhelming fast
+		Not really "new" combat
+		
+	Notes:
+		Should probably be done only a limited number of times.
+		Could be done to give a time element to a boss.  The longer it takes to defeat, the more minions are created
+		The new AI would need to be added to turn order
+		
+- Ranged attacks
+	Description: Sent a wave of attacks across the room
+	
+	Pros:
+		Allows fair ranged attacks that could trap the player into difficult decisions
+	
+	Cons:
+		
+	
+	Notes:
+		Should have a pattern to be a bit predictable
+		Each tile that will be under "attack" should be marked at least one turn prior
+	
+	
+- Moveable Fire Lines
+	Description: A line of fire, or other damaging material, is set along a path and stays for multiple turns
+	
+	Pros:
+		Restricts movement
+		Could force player to use resources to avoid and play around
+		
+	Cons: 
+		
+	
+	Notes:	
+		Lines should stay for multiple turns, but not forever.  Maybe having a 3 on 3 off would be good
+		AI would need to learn to account for "Dangerous" tiles to not walk into danger
+		
+- Large Melee Attack
+	Description: Boss hits a larger area like 2x2 or even 3x2 area
+	
+	Pros:
+	
+	Cons:
+	
+	Notes:	
+	
+- Health Orbs
+	Description: Boss can only be damaged by hitting health orbs in the room
+	
+	Pros: 
+		Gives the boss more health, while sticking with the 1 HP mantra
+		Forces player to move around the room
+	
+	Cons:
+	
+	Notes:	

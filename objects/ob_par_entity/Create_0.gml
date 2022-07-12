@@ -31,6 +31,13 @@ property =
 		rangeDiag : false, //Determines if the entity can attack in a diagonal line
 		
 	},
+	
+	special:
+	{
+		fireball : false, //Allows casting of a fireball
+		
+	},
+	
 	meleeAttackRange : 0, //How far away melee attack can hit
 	meleeAttackPower : 0, //How strong melee attack is
 	
