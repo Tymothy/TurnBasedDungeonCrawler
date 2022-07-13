@@ -131,6 +131,7 @@
     {"id":{"name":"co_display","path":"objects/co_display/co_display.yy",},"order":1,},
     {"id":{"name":"sp_door_sh_pink","path":"sprites/sp_door_sh_pink/sp_door_sh_pink.yy",},"order":2,},
     {"id":{"name":"sp_gargoyle","path":"sprites/sp_gargoyle/sp_gargoyle.yy",},"order":7,},
+    {"id":{"name":"ob_graveRevenant","path":"objects/ob_graveRevenant/ob_graveRevenant.yy",},"order":2,},
     {"id":{"name":"sp_elementalWater","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"order":5,},
     {"id":{"name":"GMLive_vm_init","path":"scripts/GMLive_vm_init/GMLive_vm_init.yy",},"order":7,},
     {"id":{"name":"ob_par_environment","path":"objects/ob_par_environment/ob_par_environment.yy",},"order":1,},

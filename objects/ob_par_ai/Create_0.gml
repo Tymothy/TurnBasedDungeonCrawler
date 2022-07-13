@@ -5,6 +5,7 @@
 event_inherited();
 
 aiActive = false; //Controlled by co_gameManager on when this object can go
+moveCounter = 0; //Counts number of moves completed on a turn.  Reset to 0 ever time we go to idle/wait
 
 stateMachine = true;
 truestate_create_state(STATES.WAIT, state_ai_wait);

@@ -5,8 +5,15 @@ function state_ai_wait(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			if(moveCounter != 0 && moveCounter < property.moveSpeed) {
+				show_debug_message("Move counter: " + string(moveCounter));
+				truestate_switch(STATES.MOVE);	
+			} else {
+				aiActive = false;
+				moveCounter = 0;				
+			}
 			//This code will run once when the state is brand new.
-			aiActive = false;
+				
 			truestate_clear_history();
 		}break;
 	
@@ -16,7 +23,7 @@ function state_ai_wait(_event) {
 			//Enemy waits it's turn before being allowed to go
 			
 			//When AI turn starts, determine movement
-			if(aiActive == true) {
+			if(aiActive == true && moveCounter == 0) {
 				//Start attack phase
 				truestate_switch(STATES.ATTACK);
 			}
@@ -143,6 +150,8 @@ function state_ai_move(_event) {
 		//NEW---------------------------------------
 		case TRUESTATE_NEW:
 		{
+			moveCounter++;
+			
 			switch(property.movePattern) {
 				case MOVE.NONE:
 					targArr = move_direct(self.property.collisionGrid, self.x, self.y);	
@@ -236,7 +245,8 @@ function state_ai_move(_event) {
 		{
 			if(move_entity(targArr[0], targArr[1])){
 				//When entity is done moving, end entities turn
-				truestate_switch(STATES.WAIT);			
+					truestate_switch(STATES.WAIT);			
+
 			}
 		}break;
 	

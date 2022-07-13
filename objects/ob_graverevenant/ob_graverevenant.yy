@@ -1,13 +1,16 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sp_graveRevenant",
+    "path": "sprites/sp_graveRevenant/sp_graveRevenant.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "ob_par_entity",
-    "path": "objects/ob_par_entity/ob_par_entity.yy",
+    "name": "ob_par_hostile",
+    "path": "objects/ob_par_hostile/ob_par_hostile.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,15 +26,17 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "AI",
-    "path": "folders/Objects/Entities/AI.yy",
+    "name": "Normal",
+    "path": "folders/Objects/Entities/AI/Hostile/Normal.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ob_par_ai",
+  "name": "ob_graveRevenant",
   "tags": [],
   "resourceType": "GMObject",
 }
