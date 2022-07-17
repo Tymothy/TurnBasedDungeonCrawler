@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -32,7 +33,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Environment",
-    "path": "folders/Objects/Environment.yy",
+    "path": "folders/Objects/Entities/Environment.yy",
   },
   "resourceVersion": "1.0",
   "name": "ob_ladderDown",

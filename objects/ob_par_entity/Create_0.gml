@@ -19,6 +19,7 @@ property =
 	collisionGrid : co_grid.mpGrid_noCollision, //collision grid to use for colliding
 
 	movePattern : MOVE.SEEK_DIRECT,
+	moveSpeed : 1,
 	//Create a move setup like attacks
 	attacks:
 	{
