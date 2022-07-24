@@ -17,8 +17,8 @@ function set_touch_grid(_my_touch, _id, _x, _y, _dragging, _touchIntent){
 		1 = ID of the instance
 		2 = x
 		3 = y
-		4 = gridX
-		5 = gridY
+		4 = guiX
+		5 = guiY
 		6 = 
 		*/
 	
@@ -26,8 +26,8 @@ function set_touch_grid(_my_touch, _id, _x, _y, _dragging, _touchIntent){
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 1, _id);
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 2, _x);
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 3, _y);
-	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 4, to_grid(_x));
-	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 5, to_grid(_y));
+	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 4, device_mouse_x_to_gui(_my_touch));
+	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 5, device_mouse_y_to_gui(_my_touch));
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 6, _dragging);
 	ds_grid_set(co_touchMaster.touchGrid, _my_touch, 7, _touchIntent);
 }
@@ -56,23 +56,33 @@ function get_current_touch() {
 			}
 }
 
-function get_touch_x(_my_touch){
-	var _ret = ds_grid_get(co_touchMaster.touchGrid,_my_touch, 2);
+function get_touch_x(){
+	var _ret = co_touchMaster.touchX;
 	return _ret;
 }
 
-function get_touch_y(_my_touch){
-	var _ret = ds_grid_get(co_touchMaster.touchGrid,_my_touch, 3);
+function get_touch_y(){
+	var _ret = co_touchMaster.touchY;
 	return _ret;
 }
 
+function get_touch_gui_x() {
+	var _ret = co_touchMaster.touchGuiX;
+	return _ret;	
+	
+}
+
+function get_touch_gui_y(){
+	var _ret = co_touchMaster.touchGuiY;
+	return _ret;
+}
 function get_touch_gridX(_my_touch){
-	var _ret = ds_grid_get(co_touchMaster.touchGrid,_my_touch, 4);
+	var _ret = to_grid(get_touch_x());
 	return _ret;
 }
 
 function get_touch_gridY(_my_touch){
-	var _ret = ds_grid_get(co_touchMaster.touchGrid,_my_touch, 5);
+	var _ret = to_grid(get_touch_y());
 	return _ret;
 }
 

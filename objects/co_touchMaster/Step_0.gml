@@ -53,16 +53,19 @@ switch(hasTouch) {
 			case -1: 
 				//Touch is new from idle.  We will want to do something
 				TOUCH_STATE = STATES.NEW_TOUCH;
+				touch_set();
 			break;
 					
 			default:
 				if(oldTouch == currentTouch) {
 					//This is the same touch, nothing new
 					TOUCH_STATE = STATES.SAME_TOUCH;
+					touch_set();
 				}
 				else {
 					//Screen was being touched before, and it still is, but with different finger.	
 					TOUCH_STATE = STATES.DIFFERENT_TOUCH;
+					touch_set();
 				}
 			break;
 		}
@@ -76,11 +79,13 @@ switch(hasTouch) {
 			case -1:
 				//No change, stay idle.
 				TOUCH_STATE = STATES.IDLE;
+				
 			break;
 					
 			default:
 				//There was a release, see if we want to execute
 				TOUCH_STATE = STATES.RELEASE;
+				touch_reset();
 				//switch(dragging) {
 				//	case false:
 				//		//We were not dragging, we want to perform action/movement
