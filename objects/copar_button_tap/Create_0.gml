@@ -1,10 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-
-
 // Inherit the parent event
 event_inherited();
+text = "Tap";
 
 interact = function() {
 	show_debug_message("Tap interact message.");

@@ -1,4 +1,5 @@
 /// @description Create parent button
+text = "NaN";
 active = true;
 clicked = false;
 touchState = get_touch_state_on_change();

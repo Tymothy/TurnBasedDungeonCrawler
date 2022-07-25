@@ -102,6 +102,7 @@
     {"id":{"name":"truestate_step","path":"scripts/truestate_step/truestate_step.yy",},"order":3,},
     {"id":{"name":"sp_golemIce","path":"sprites/sp_golemIce/sp_golemIce.yy",},"order":12,},
     {"id":{"name":"truestate_switch_previous","path":"scripts/truestate_switch_previous/truestate_switch_previous.yy",},"order":7,},
+    {"id":{"name":"button_save","path":"objects/button_save/button_save.yy",},"order":0,},
     {"id":{"name":"sp_fire_orange_07","path":"sprites/sp_fire_orange_07/sp_fire_orange_07.yy",},"order":6,},
     {"id":{"name":"sp_door","path":"sprites/sp_door/sp_door.yy",},"order":1,},
     {"id":{"name":"sp_bloodLich","path":"sprites/sp_bloodLich/sp_bloodLich.yy",},"order":1,},
@@ -389,6 +390,7 @@
     {"folderPath":"folders/Objects/Entities/AI/Hostile/Boss.yy","order":4,"resourceVersion":"1.0","name":"Boss","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Environment/Fire.yy","order":5,"resourceVersion":"1.0","name":"Fire","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Controllers/GUI/Buttons.yy","order":5,"resourceVersion":"1.0","name":"Buttons","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Controllers/GUI/Buttons/Tap Buttons.yy","order":3,"resourceVersion":"1.0","name":"Tap Buttons","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
