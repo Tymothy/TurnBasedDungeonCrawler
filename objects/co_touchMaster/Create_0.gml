@@ -50,4 +50,9 @@ touch_set = function() {
 	touchGuiY = ds_grid_get(co_touchMaster.touchGrid, currentTouch, 5);
 	
 }
+
+touch_button_check = function() {
+	
+	
+}
 #endregion

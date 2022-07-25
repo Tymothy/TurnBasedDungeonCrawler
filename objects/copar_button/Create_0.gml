@@ -14,3 +14,7 @@ activate_button = function() {
 interact_button = function() {
 	show_debug_message("Default interact_button message.");
 }
+
+on_click_button = function() {
+	show_debug_message("Default on_click_button message.");
+}
