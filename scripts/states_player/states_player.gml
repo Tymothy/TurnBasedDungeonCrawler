@@ -60,18 +60,18 @@ function state_player_idle(_event){
 			//Player waits for a touch
 			var _qt = false //quick testing below.  Should be false to disable messages
 
-				var _ts = get_touch_state_on_change();	
-				gridX = get_gridX();
-				gridY = get_gridY();
-
+				var _ts = get_touch_state_on_change();
+				if(_ts == STATES.RELEASE) {
+					gridX = to_grid(get_touch_release_x());
+					gridY = to_grid(get_touch_release_y());
+				}
+				else {
+					gridX = get_gridX();
+					gridY = get_gridY();
+				}
 				targX = from_grid(gridX);
 				targY = from_grid(gridY);
-				
-				//BUG TODO: THIS IS A FAIL SAFE TO PREVENT CRASHES, BUT DOES CAUSE SOME PLAYER INPUT TO NOT RESPOND FIX!!!!
-				//This is caused by gridX/gridY somehow being -1 on a valid touch.  Possibly due to a race condition?
-				if(gridX == -1 || gridY == -1) {
-					var _ts = false;
-				}
+
 				switch(_ts) {
 					case -1:
 						//No state change, don't do anything

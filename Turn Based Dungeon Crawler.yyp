@@ -81,6 +81,7 @@
     {"id":{"name":"co_minimap","path":"objects/co_minimap/co_minimap.yy",},"order":1,},
     {"id":{"name":"sp_minotaur","path":"sprites/sp_minotaur/sp_minotaur.yy",},"order":17,},
     {"id":{"name":"states_ai","path":"scripts/states_ai/states_ai.yy",},"order":2,},
+    {"id":{"name":"gui_master","path":"objects/gui_master/gui_master.yy",},"order":6,},
     {"id":{"name":"get_touch_intent","path":"scripts/get_touch_intent/get_touch_intent.yy",},"order":15,},
     {"id":{"name":"sp_deathKnight","path":"sprites/sp_deathKnight/sp_deathKnight.yy",},"order":10,},
     {"id":{"name":"ob_ladderDown","path":"objects/ob_ladderDown/ob_ladderDown.yy",},"order":2,},

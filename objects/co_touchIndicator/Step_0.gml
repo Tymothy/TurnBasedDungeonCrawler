@@ -29,7 +29,7 @@ else {
 }
 
 touchIntent = touch_determine_intent(guiX, guiY);
-show_debug_message("Touch Intent: " + string(touchIntent));
+//show_debug_message("Touch Intent: " + string(touchIntent));
 
 set_touch_grid(my_touch, id, x, y, dragging, touchIntent);
 

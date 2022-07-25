@@ -22,11 +22,7 @@ oldTouchState = STATES.IDLE;
 currentTouch = -1; //used to track the current touch to work with later on
 gridX = -1;
 gridY = -1;
-			
-oldTouch = currentTouch;
-oldGridX = gridX;
-oldGridY = gridY;
-			
+		
 hasTouch = false; //True when we are tracking a touch
 dragging = false;
 
@@ -35,6 +31,12 @@ touchX = -1;
 touchY = -1;
 touchGuiX = -1;
 touchGuiY = -1;
+
+//Tracks values at last release
+releaseX = -1;
+releaseY = -1;
+releaseGuiX = -1;
+releaseGuiY = -1;
 #region Methods
 touch_reset = function() {
 	touchX = -1;
@@ -48,6 +50,10 @@ touch_set = function() {
 	touchY = ds_grid_get(co_touchMaster.touchGrid, currentTouch, 3);
 	touchGuiX = ds_grid_get(co_touchMaster.touchGrid, currentTouch, 4);
 	touchGuiY = ds_grid_get(co_touchMaster.touchGrid, currentTouch, 5);
+	releaseX = touchX;
+	releaseY = touchY;
+	releaseGuiX = touchGuiX;
+	releaseGuiY = touchGuiY;
 	
 }
 
@@ -56,3 +62,11 @@ touch_button_check = function() {
 	
 }
 #endregion
+
+oldTouch = currentTouch;
+oldGridX = gridX;
+oldGridY = gridY;
+oldTouchX = touchX;
+oldTouchY = touchY;
+oldTouchGuiX = touchGuiX;
+oldTouchGuiY = touchGuiY;

@@ -69,7 +69,6 @@ function get_touch_y(){
 function get_touch_gui_x() {
 	var _ret = co_touchMaster.touchGuiX;
 	return _ret;	
-	
 }
 
 function get_touch_gui_y(){
@@ -83,6 +82,26 @@ function get_touch_gridX(_my_touch){
 
 function get_touch_gridY(_my_touch){
 	var _ret = to_grid(get_touch_y());
+	return _ret;
+}
+
+function get_touch_release_x() {
+	var _ret = co_touchMaster.releaseX;
+	return _ret;
+}
+
+function get_touch_release_y() {
+	var _ret = co_touchMaster.releaseY;
+	return _ret;
+}
+
+function get_touch_release_gui_x() {
+	var _ret = co_touchMaster.releaseGuiX;
+	return _ret;
+}
+
+function get_touch_release_gui_y() {
+	var _ret = co_touchMaster.releaseGuiY;
 	return _ret;
 }
 

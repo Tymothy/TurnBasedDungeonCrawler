@@ -1,5 +1,7 @@
 /// @description Create parent button
 active = true;
+clicked = false;
+touchState = get_touch_state_on_change();
 gh = global.gui_height;
 gw = global.gui_width;
 tile = global.gui_tile_size;
@@ -11,11 +13,15 @@ designY = gh * .5;
 designWidth = 3;
 designHeight = 2;
 
-interact = function() {
-	if(active) {
-		activate_button();	
-	}
-}
+width = designWidth * tile;
+height = designHeight * tile;
+
+x1 = designX;
+y1 = designY;
+x2 = designX + width;
+y2 = designY + height;
+
+drawColor = c_lime;
 
 activate_button = function() {
 	show_debug_message("Default activate_button message.");

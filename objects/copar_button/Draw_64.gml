@@ -1,6 +1,5 @@
 /// @description Draw to GUI
-realX = designWidth * tile;
-realY = designHeight * tile;
-draw_set_color(c_lime);
-draw_rectangle(designX, designY, designX + realX, designY + realY, false);
+
+draw_set_color(drawColor);
+draw_rectangle(x1, y1, x2, y2, false);
 

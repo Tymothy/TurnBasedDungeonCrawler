@@ -85,6 +85,10 @@ switch(hasTouch) {
 			default:
 				//There was a release, see if we want to execute
 				TOUCH_STATE = STATES.RELEASE;
+				releaseX = touchX;
+				releaseY = touchY;
+				releaseGuiX = touchGuiX;
+				releaseGuiY = touchGuiY;
 				touch_reset();
 				//switch(dragging) {
 				//	case false:
