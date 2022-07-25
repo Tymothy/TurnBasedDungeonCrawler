@@ -59,13 +59,16 @@ function state_player_idle(_event){
 			//If a tile is touched, act on touch if possible
 			//Player waits for a touch
 			var _qt = false //quick testing below.  Should be false to disable messages
-			var _ts = get_touch_state_on_change();
 
+				var _ts = get_touch_state_on_change();	
 				gridX = get_gridX();
 				gridY = get_gridY();
-				
+
 				targX = from_grid(gridX);
 				targY = from_grid(gridY);
+				if(gridX == -1 || gridY == -1) {
+					var _ts = false;
+				}
 				switch(_ts) {
 					case -1:
 						//No state change, don't do anything

@@ -8,19 +8,14 @@ minimapRefresh = false; //Used to track when to update the minimap, we want to c
 minimapWidth = 4; //Width in tiles
 minimapHeight = 4;
 
-
-
 waitForLevelGen = true;
-
-xOff = 1;
-yOff = 1;
 
 //Use _gh to use the smaller of the values for a square minimap.
 x1 = gh * .03;
 y1 = gh * .03;
 x2 = gh * .3;
 y2 = gh * .3;
-gridLineWidth = gh / 200;
+gridLineWidth = gw / NATIVE_WIDTH; //Lines are 
 //mmSurf = surface_create(minimapWidth * TILE_SIZE* RESOLUTION_SCALE, minimapHeight * TILE_SIZE* RESOLUTION_SCALE);
 
 refreshMinimap = function() {

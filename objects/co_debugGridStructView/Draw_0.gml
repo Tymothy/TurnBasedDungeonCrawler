@@ -8,7 +8,7 @@ if(instance_exists(co_grid))
 	{
 		for(var j = 0; j < room_width / TILE_SIZE; j++)
 		{
-			var _structValue = co_grid.tileGrid[# i, j][$ "_collidePlayer"];//Find if the player can collide with current tile
+			var _structValue = co_grid.tileGrid[# i, j][$ "_entityInTile"];//Find if the player can collide with current tile
 			//var _structValue = co_grid.tileGrid[# i, j][$ "_aiSpawnable"];//Find if the player can collide with current tile
 			switch(_structValue)
 			{

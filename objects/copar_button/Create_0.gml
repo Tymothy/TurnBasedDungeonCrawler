@@ -1,5 +1,15 @@
 /// @description Create parent button
 active = true;
+gh = global.gui_height;
+gw = global.gui_width;
+tile = global.gui_tile_size;
+//X and Y location on GUI layer
+designX = gw * .5;
+designY = gh * .5;
+
+//Design in tiles
+designWidth = 3;
+designHeight = 2;
 
 interact = function() {
 	if(active) {

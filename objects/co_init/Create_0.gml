@@ -24,7 +24,6 @@ global.game = {
 instance_create_depth(x, y, -1000, co_tilesetMapping);
 
 //Init scaling
-instance_create_depth(x,y,0,co_display);
 instance_create_depth(x, y, -1000, co_touchMaster);
 instance_create_depth(x, y, -1000, co_gameManager);
 	//Create the save controller
