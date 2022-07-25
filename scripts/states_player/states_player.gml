@@ -66,6 +66,9 @@ function state_player_idle(_event){
 
 				targX = from_grid(gridX);
 				targY = from_grid(gridY);
+				
+				//BUG TODO: THIS IS A FAIL SAFE TO PREVENT CRASHES, BUT DOES CAUSE SOME PLAYER INPUT TO NOT RESPOND FIX!!!!
+				//This is caused by gridX/gridY somehow being -1 on a valid touch.  Possibly due to a race condition?
 				if(gridX == -1 || gridY == -1) {
 					var _ts = false;
 				}
