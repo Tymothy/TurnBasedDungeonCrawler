@@ -64,6 +64,7 @@ function init() {
 #macro live_enabled 0 // flip this value to 0 to disable GMLive!
 #macro ZOOM 0
 #macro DOOR_UNLOCK 0 //Controls whether doors are locked to allow pathing
+#macro TEST 0
 
 #macro test:ADMIN 1
 #macro test:LOGGING 1
@@ -73,3 +74,4 @@ function init() {
 #macro test:live_enabled 1 // flip this value to 0 to disable GMLive!
 #macro test:ZOOM 1
 #macro test:DOOR_UNLOCK 0
+#macro test:TEST 1

@@ -10,6 +10,7 @@ stateMachine = false;
 chosenAttack = noone; 
 targetObject = noone;
 alarm[0] = LOGIC_TICK;
+alive = true;
 
 property =
 {
@@ -45,7 +46,7 @@ property =
 	rangeAttackRange : 0, //How far away range attack can hit
 	rangeAttackPower : 0, //How strong range attack is
 	
-	hp : 1, 
+	hp : 1,
 }
 	
 
@@ -61,4 +62,14 @@ takeDamage = function (_damage) {
 	}
 	if(LOGGING) show_debug_message(string(property.name) + " took " + string(_damage) + " damage.");
 	if(LOGGING) show_debug_message(string(property.name) + " has " + string(property.hp) + " health left.");
+}
+
+entityDead = function() {
+	alive = false;
+	remove_entity(id);
+}
+
+playerDead = function() {
+	alive = false;
+	
 }

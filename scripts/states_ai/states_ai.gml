@@ -273,11 +273,9 @@ function state_ai_hurt(_event) {
 		case TRUESTATE_NEW:
 		{
 			//Calculate if AI is dead
-			var _removeEntity = false;
-			if(property.hp <= 0) _removeEntity = true;
-			
-			//Remove entity
-			if (_removeEntity == true) remove_entity(id);
+			if(property.hp <= 0) {
+				entityDead();
+			}
 			
 		}break;
 	

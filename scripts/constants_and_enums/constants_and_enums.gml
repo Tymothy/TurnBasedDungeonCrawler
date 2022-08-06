@@ -79,6 +79,7 @@ enum STATES
 	HURT,
 	ITEM_GET,
 	END,
+	DEAD,
 	
 	//Touch States
 	//IDLE, //This already exists, that's why it's commented out

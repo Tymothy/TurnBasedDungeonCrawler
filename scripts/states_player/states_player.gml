@@ -8,6 +8,7 @@ function state_player_wait(_event){
 			//This code will run once when the state is brand new.
 			//truestate_clear_history();
 			targetObject = noone;
+			
 		}break;
 	
 		//STEP---------------------------------------
@@ -17,7 +18,7 @@ function state_player_wait(_event){
 			if(turnActive == true) {
 				truestate_switch(STATES.IDLE);
 			}
-
+		if(alive == false) truestate_switch(STATES.DEAD);
 		}break;
 	
 		//DRAW---------------------------------------
@@ -56,6 +57,7 @@ function state_player_idle(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
+			if(alive == false) truestate_switch(STATES.DEAD);
 			//If a tile is touched, act on touch if possible
 			//Player waits for a touch
 			var _qt = false //quick testing below.  Should be false to disable messages
@@ -485,6 +487,9 @@ function state_player_hurt(_event){
 		case TRUESTATE_NEW:
 		{
 			//This code will run once when the state is brand new.
+			if(property.hp <= 0) {
+				playerDead();
+			}
 			
 		}break;
 	
@@ -565,6 +570,38 @@ function state_player_end(_event){
 			
 			//Handled all end turn items, go back to waiting for next turn
 			truestate_switch(STATES.WAIT);
+
+		}break;
+	
+		//DRAW---------------------------------------
+		case TRUESTATE_DRAW:
+		{
+			//And this code will be exeucted during the draw event
+		}break;
+	
+		//FINAL---------------------------------------
+		case TRUESTATE_FINAL:
+		{
+			//This code will run once right before switching to a new state.
+		}break;
+	}
+}
+	
+function state_player_dead(_event){
+	switch(_event)
+	{
+		//NEW---------------------------------------
+		case TRUESTATE_NEW:
+		{
+			//This code will run once when the state is brand new.
+			alive = false;
+			turnActive = false;
+		}break;
+	
+		//STEP---------------------------------------
+		case TRUESTATE_STEP:
+		{
+			//This code will be run during step event
 
 		}break;
 	
