@@ -13,17 +13,19 @@ interact = function() {
 
 activate_button = function() {
 	show_debug_message("Tap activate_button message.");
-	drawColor = c_red;
+	//Overwrite this in below buttons to do something
+	//drawColor = c_red;
 	
 }
 
 on_click_button = function() {
 	show_debug_message("Tap on_click_button message.");
-	drawColor = c_aqua;
+	drawColor = property.onClickColor;
 	clicked = true;
 }
 
 unclick_button = function() {
 	show_debug_message("Unclicked.");
 	clicked = false;	
+	drawColor = property.defaultColor;
 }

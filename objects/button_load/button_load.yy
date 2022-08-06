@@ -6,8 +6,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "copar_button",
-    "path": "objects/copar_button/copar_button.yy",
+    "name": "copar_button_tap",
+    "path": "objects/copar_button_tap/copar_button_tap.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -22,17 +22,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Buttons",
-    "path": "folders/Controllers/GUI/Buttons.yy",
+    "name": "Tap Buttons",
+    "path": "folders/Controllers/GUI/Buttons/Tap Buttons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "copar_button_tap",
+  "name": "button_load",
   "tags": [],
   "resourceType": "GMObject",
 }

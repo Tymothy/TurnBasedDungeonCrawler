@@ -5,7 +5,11 @@ if(room == rm_game) {
 	
 	
 	//Create the buttons
-	instance_create_layer(x, y, "la_gui_buttons", copar_button_tap);
+	//instance_create_layer(G.gw, y, "la_gui_text", co_gui_version);
+	//TODO: Create an anchoring system for buttons
+	//TODO: Locations of GUI is in objects themselves.  Control them from here with anchoring system
+	instance_create_layer(x, y, "la_gui_buttons", button_save);
+	instance_create_layer(x, y, "la_gui_buttons", button_load);
 }
 
 instance_create_layer(x, y, "la_gui_text", co_gui_version);
