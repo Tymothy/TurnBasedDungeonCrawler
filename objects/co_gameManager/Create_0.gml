@@ -120,28 +120,13 @@ function deactivateRoom(_roomX, _roomY)
 	refreshRoomValues();
 }
 
-
 function createListOfEntities() {
-	//Creates a master list of entities on the floor.  Must be run before deactivating instances
+	//Creates a master list of entities on the floor.
 	entityList = array_create(0);
 	
-	
-	
-	//var _countOfEntities = instance_number(ob_par_entity);
-	//show_debug_message("Count of entities on floor: " + string(_countOfEntities));
-	
-	//for (var i = 0; i < instance_number(ob_par_entity); ++i;) {
-	//	var _objID = instance_find(ob_par_entity, i);		
-	//	array_push(entityList, _objID);
-	//}
-
-	//var _string = json_stringify(entityList);
-	//show_debug_message("List of created entities: ");
-	//show_debug_message(_string);
 }
 
 function getListOfEntities() {
-	
 	return entityList;
 }
 
@@ -149,17 +134,16 @@ function addEntityToList(_inst) {
 	show_debug_message("Adding instance: " + string(_inst) + " | " + string(object_get_name(_inst.object_index)));
 	
 	var _countOfEntities = co_gameManager.getCountOfEntities();
-	var _entityList = co_gameManager.getListOfEntities();
-	
+	var _entityList = co_gameManager.getListOfEntities();	
 	var _entityStruct = {};
 	//New entity struct for saving
 	for (var i = 0; i < _countOfEntities; i++;) {
-		var _checkID = real(_entityList[i]);
+		//var _checkID = real(_entityList[i]);
+		var _checkID = _entityList[i];
 		if(_checkID == _inst) {
 			show_debug_message("Trying to add instance that already exists.  Not adding to list.");
 			return false;
-		}
-		
+		}		
 	}
 	//Entity does not exist in list.  Create it
 		var _tempStruct = new saveEntity(_inst);
@@ -168,11 +152,9 @@ function addEntityToList(_inst) {
 		//tempStruct has what we want to put into entity struct	
 	array_push(entityList, _inst);	
 	return true;
-	
 }
 
 function getCountOfEntities() {
-	
 	return array_length(entityList);
 }
 	
@@ -181,7 +163,8 @@ function removeEntityFromList(_inst) {
 	
 	_inst = string(_inst);
 	for(var i = 0; i < array_length(entityList); i++) {
-		if(_inst == entityList[i]) {
+		//show_debug_message("Checking if " +string(_inst) + " matches " + string(entityList[i])); //Old line of code that allowed me to figure what checks were happening since profiler couldn't show me array values
+		if(string(_inst) == string(entityList[i])) { //Convert both to strings as a tough bug here was because ids are stored as ref #, but you aren't able to refer to compare IDs then
 			array_delete(entityList, i, 1);
 			return true;
 		}
@@ -198,9 +181,7 @@ function loadSavedEntities(_data) {
 }
 	
 function resetRoom() {
-	
 	room_restart();
-	
 }
 
 function moveDownLevel() {
