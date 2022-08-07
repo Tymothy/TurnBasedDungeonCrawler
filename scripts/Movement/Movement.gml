@@ -14,7 +14,7 @@ function move_entity(_targX, _targY, _timeMulti = 1, _twerpType = TwerpType.inou
 	static twerpTimer = 0;
 	x = twerp(_twerpType, x, _targX, twerpTimer / (global.moveTime * _timeMulti));
 	y = twerp(_twerpType, y, _targY, twerpTimer / (global.moveTime * _timeMulti));
-	twerpTimer += d(1);
+	twerpTimer += 1;//POSSIBLE BUG: Removed delta from here
 	
 	if(floor(x) == floor(_targX) && floor(y) == floor(_targY)) {
 		twerpTimer = 0;

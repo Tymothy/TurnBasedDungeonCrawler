@@ -2,7 +2,6 @@
   "resources": [
     {"id":{"name":"states_door","path":"scripts/states_door/states_door.yy",},"order":3,},
     {"id":{"name":"copar_button_tap","path":"objects/copar_button_tap/copar_button_tap.yy",},"order":1,},
-    {"id":{"name":"ob_delta","path":"objects/ob_delta/ob_delta.yy",},"order":3,},
     {"id":{"name":"sp_fire_orange_01","path":"sprites/sp_fire_orange_01/sp_fire_orange_01.yy",},"order":0,},
     {"id":{"name":"sp_fire_orange_05","path":"sprites/sp_fire_orange_05/sp_fire_orange_05.yy",},"order":4,},
     {"id":{"name":"sp_door_sh_white","path":"sprites/sp_door_sh_white/sp_door_sh_white.yy",},"order":5,},
@@ -239,7 +238,6 @@
     {"id":{"name":"sp_vampireBat","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"order":33,},
     {"id":{"name":"tileConstructors","path":"scripts/tileConstructors/tileConstructors.yy",},"order":1,},
     {"id":{"name":"ts_coreTiles","path":"tilesets/ts_coreTiles/ts_coreTiles.yy",},"order":0,},
-    {"id":{"name":"delta","path":"scripts/delta/delta.yy",},"order":0,},
     {"id":{"name":"Resolution","path":"notes/Resolution/Resolution.yy",},"order":4,},
     {"id":{"name":"truestate_draw_current","path":"scripts/truestate_draw_current/truestate_draw_current.yy",},"order":1,},
     {"id":{"name":"sp_elementalEarth","path":"sprites/sp_elementalEarth/sp_elementalEarth.yy",},"order":3,},
@@ -358,7 +356,6 @@
     {"folderPath":"folders/Objects/Entities.yy","order":0,"resourceVersion":"1.0","name":"Entities","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Entities/AI.yy","order":0,"resourceVersion":"1.0","name":"AI","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Entities/AI/Hostile.yy","order":1,"resourceVersion":"1.0","name":"Hostile","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Scripts/Extension Scripts (No Modifying)/delta.yy","order":1,"resourceVersion":"1.0","name":"delta","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Extension Scripts (No Modifying).yy","order":6,"resourceVersion":"1.0","name":"Extension Scripts (No Modifying)","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Rooms/Exported Game Rooms/Normal.yy","order":3,"resourceVersion":"1.0","name":"Normal","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Controllers/GUI.yy","order":6,"resourceVersion":"1.0","name":"GUI","tags":[],"resourceType":"GMFolder",},

@@ -8,7 +8,7 @@ function state_door_locked(_event){
 			//This code will run once when the state is brand new.
 			truestate_clear_history();
 			if(!DOOR_UNLOCK) lockDoor(); //Only allow locked doors with DOOR_UNLOCK
-			
+			image_index = 0;
 		}break;
 	
 		//STEP---------------------------------------

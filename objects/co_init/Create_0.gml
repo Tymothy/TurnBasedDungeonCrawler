@@ -9,9 +9,8 @@ room_pack_blank_object = co_blank;
 
 //Setup functions
 game_set_speed(GAME_SPEED, gamespeed_fps);
-delta_init();
 
-global.moveTime = seconds(MOVE_LENGTH);
+global.moveTime = GAME_SPEED * MOVE_LENGTH;
 
 
 //Variables we want to save
