@@ -1,19 +1,21 @@
 /*
 function <NAME>(_var1, _var2, _var3...) {
-/// @desc ...
-/// @arg ....
-/// @arg ....
+
 //CODE
 }
 */
 function addSound(_soundInst, _sound, _priority, _type, _loop, _fadeIn, _fadeOut) constructor{
-	inst = _soundInst;
-	sound = _sound;
-	priority = _priority;
-	type = _type;
-	loop = _loop;
-	fadeIn = _fadeIn;
-	fadeOut = _fadeOut;
+	/// @desc Creates the a struct to track all the data about the sound being played
+
+	inst = _soundInst; //Instance ID of the sound being played
+	sound = _sound; //The sound asset being played
+	priority = _priority; //Priority of the sound being played
+	type = _type; //Type of sound, VOL_TYPE enum
+	loop = _loop; //Whether to loop the sound or not
+	fadeIn = _fadeIn; //Whether to fade the sound in when being played
+	fadeOut = _fadeOut; //Whether to fade the sound out when not being played
+	
+	//Variables below are used by the audio engine and not set by other objects	
 	allowMultiple = false; //Whether or not multiple sounds of the sound asset are allowed to exist
 	keepPlaying = true; //Used to track when a looped sound has stopped being played
 }
@@ -32,4 +34,5 @@ function audio_play_music(_sound, _crossfade) {
 	/// @arg sound
 	/// @arg crossfade[optional]
 	
+	//TODO: Unfinished function
 }
