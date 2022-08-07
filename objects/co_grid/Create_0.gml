@@ -81,12 +81,13 @@ mp_forbid_cells(co_grid.mpGrid_collideOther, "_collideOther");
 mp_forbid_cells(co_grid.mpGrid_collideProjectile, "_collideProjectile");
 mp_forbid_cells(co_grid.mpGrid_entity, "_entityInTile");
 
-open_door = function(_x, _y) {
+createDoor = function(_x, _y) {
 	tileStruct = new DoorOpen(_x, _y);
 	ds_grid_set(tileGrid, _x, _y, tileStruct);
 }
 
 refreshRangeGrids = function(){
+	//Range grids are used to find the closest attack to a player
 	var _gridPlayerX = to_grid(ob_player.x);
 	var _gridPlayerY = to_grid(ob_player.y);
 	var _offX = co_gameManager.leftGridX;

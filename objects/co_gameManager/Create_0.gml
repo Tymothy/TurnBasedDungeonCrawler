@@ -26,14 +26,12 @@ function refreshRoomValues() {
 	currentFloor = global.game.currentFloor;
 	currentRoomType = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"roomType"];
 	leftGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX1"];
-	rightGridX = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridX2"];
 	topGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY1"];
-	bottomGridY = co_roomGen.levelGrid[# currentRoomX, currentRoomY][$"gridY2"];
 	co_minimap.refreshMinimap();
 	hostileCount = getHostileCount(); //Gets count of enemies in room
 }
 
-function checkConditions() {
+function runRoomConditions() {
 		show_debug_message("Current Room: " + string(currentRoomType));
 		show_debug_message("Boss Room Type: " + string(ROOMTYPE.BOSS));	
 	switch(currentRoomType) {
@@ -54,6 +52,36 @@ function checkConditions() {
 	
 }
 //Methods
+	
+function resetRoom() {
+	//Resets the entire game room, not just a floor cell.  Acts as if room is being entered for the first time
+	room_restart();
+}
+
+function moveDownLevel() {
+	//Run transition
+
+	//TODO: Incorporate anything that needs saved on current floor
+	global.game.currentFloor += 1;
+
+	//Change values for the next room
+
+	resetRoom();
+	
+}
+
+#region Entity functions
+function hurtHostiles() {
+	for (var i = 0; i <  instance_number(ob_par_hostile); i++) {
+
+			var _aiID = instance_find(ob_par_hostile, i);		
+			var _inRoom = is_instance_in_current_room(_aiID);
+			if(_inRoom == true) {
+				_aiID.takeDamage(1);
+			}
+		}
+		if(LOGGING) show_debug_message("Damaged all hostiles in room by 1");	
+}
 function getHostileCount () {
 	//Returns number of hostiles
 	//Could be expanded in the future to get specific counts
@@ -74,62 +102,14 @@ function getHostileCount () {
 
 }
 
-function activateRoom(_roomX, _roomY)
-{
-	var _x = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX1"];
-	var _y = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY1"];
-	
-	var _width = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX2"] - _x;
-	var _height = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY2"] - _y;
-	
-	//Change grid coords to actual coords
-	_x = from_grid(_x);
-	_y = from_grid(_y);
-	_width = from_grid(_width);
-	_height = from_grid(_height);
-	
-	
-	//Activate the enemy instances
-	instance_activate_region(_x, _y, _width, _height, true);	
-	
-}
-
-function deactivateRoom(_roomX, _roomY)
-{
-	var _x = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX1"];
-	var _y = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY1"];
-	
-	var _width = co_roomGen.levelGrid[# _roomX, _roomY][$"gridX2"] - _x ; 
-	var _height = co_roomGen.levelGrid[# _roomX, _roomY][$"gridY2"] - _y  ;
-	
-	//Change grid coords to actual coords
-	_x = from_grid(_x);
-	_y = from_grid(_y);
-	_width = from_grid(_width) - (TILE_SIZE /4); // The minus is to keep the bounding box in the room
-	_height = from_grid(_height)- (TILE_SIZE /4);
-	
-	
-	//Activate the enemy instances
-	instance_deactivate_region(_x, _y, _width, _height, true, true);
-	
-	//Draw the deactivate square for debugging
-	//co_debugger.drawX1 = _x; 
-	//co_debugger.drawY1 = _y;
-	//co_debugger.drawX2 = _x + _width;
-	//co_debugger.drawY2 = _y + _height;
-	refreshRoomValues();
-}
-
-function createListOfEntities() {
-	//Creates a master list of entities on the floor.
-	entityList = array_create(0);
-	
-}
-
 function getListOfEntities() {
 	return entityList;
 }
-
+	
+function getCountOfEntities() {
+	return array_length(entityList);
+}
+	
 function addEntityToList(_inst) {
 	show_debug_message("Adding instance: " + string(_inst) + " | " + string(object_get_name(_inst.object_index)));
 	
@@ -154,10 +134,6 @@ function addEntityToList(_inst) {
 	return true;
 }
 
-function getCountOfEntities() {
-	return array_length(entityList);
-}
-	
 function removeEntityFromList(_inst) {
 	show_debug_message("Removing instance: " + string(_inst));
 	
@@ -179,31 +155,4 @@ function loadSavedEntities(_data) {
 	entityStruct = _data;
 	show_debug_message("Loaded entities: " + string(_data));
 }
-	
-function resetRoom() {
-	room_restart();
-}
-
-function moveDownLevel() {
-	//Run transition
-
-	//TODO: Incorporate anything that needs saved on current floor
-	global.game.currentFloor += 1;
-
-	//Change values for the next room
-
-	resetRoom();
-	
-}
-
-function hurtHostiles() {
-	for (var i = 0; i <  instance_number(ob_par_hostile); i++) {
-
-			var _aiID = instance_find(ob_par_hostile, i);		
-			var _inRoom = is_instance_in_current_room(_aiID);
-			if(_inRoom == true) {
-				_aiID.takeDamage(1);
-			}
-		}
-		if(LOGGING) show_debug_message("Damaged all hostiles in room by 1");	
-}
+#endregion	

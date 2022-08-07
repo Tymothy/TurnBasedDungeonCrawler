@@ -47,7 +47,7 @@ function state_game_setup(_event){
 			random_set_seed(global.game.seed);
 			
 			//Create list of entities
-			createListOfEntities();
+			entityList = array_create(0);
 						
 			//Run the packed room generation to generate the game room
 			instance_create_layer(x, y, "la_controllers",co_roomGen);
@@ -116,7 +116,7 @@ function state_game_player_active(_event){
 		case TRUESTATE_NEW:
 		{
 			co_gameManager.refreshRoomValues(); //Refresh room values at the beginning of the turn to check conditions
-			co_gameManager.checkConditions();
+			co_gameManager.runRoomConditions();
 			ob_player.turnActive = true;
 			ob_player.endTurn = false;
 		}break;
