@@ -68,13 +68,41 @@ playSound = function(_sound, _type, _priority = VOL_PRIORITY.NORMAL, _loop = fal
 		
 	}
 	if(_allowSoundToPlay == true) {
+		//Play the sound
 		var _soundInst = audio_play_sound(_sound,_priority, _loop);
 		var _soundStruct = new addSound(_soundInst, _sound, _priority, _type, _loop, _fadeIn, _fadeOut);
 		addSoundToArray(_soundStruct);
-		
 	}
+	
+	//Set the volume level of all tracks
+	setSoundLevel();
+
 }
 
+setSoundLevel = function() {
+	//TODO/BUG: This will overwrite any fading
+	var _volSfx = global.volumeMaster * global.volumeSFX;
+	var _volMusic = global.volumeMaster * global.volumeMusic;
+	var _volEnvrionment = global.volumeMaster * global.volumeEnvironment;
+	
+	for(var i = 0; i < array_length(soundsPlaying); i++) {
+		switch(soundsPlaying[i].type) {
+			case VOL_TYPE.SFX:
+				audio_sound_gain(soundsPlaying[i].inst, _volSfx, 0);
+			break;
+			
+			case VOL_TYPE.MUSIC:
+				audio_sound_gain(soundsPlaying[i].inst, _volMusic, 0);
+			break;
+			
+			case VOL_TYPE.ENVIRONMENT:
+				audio_sound_gain(soundsPlaying[i].inst, _volEnvrionment, 0);
+			break;
+			
+		}
+	}
+	
+}
 
 addSoundToArray = function(_soundStruct) {
 	

@@ -8,7 +8,7 @@ text = "Tap";
 interact = function() {
 	show_debug_message("Tap interact message.");
 	if(enabled && clicked) {
-		audio_play_SFX(property.soundActivate);
+		audio_play_sfx(property.soundActivate);
 		activate_button();	
 	}
 	//if(
@@ -23,7 +23,7 @@ activate_button = function() {
 
 on_click_button = function() {
 	show_debug_message("Tap on_click_button message.");
-	audio_play_SFX(property.soundOnClick);
+	audio_play_sfx(property.soundOnClick);
 	//co_audioManager.playSound(property.soundOnClick, VOL_TYPE.SFX, VOL_PRIORITY.HIGH);
 	drawColor = property.onClickColor;
 	clicked = true;
@@ -32,7 +32,7 @@ on_click_button = function() {
 unclick_button = function() {
 	show_debug_message("Unclicked.");
 	//Audio should play "off click" if activate does not work
-	//audio_play_SFX(property.soundOffClick);
+	//audio_play_sfx(property.soundOffClick);
 	clicked = false;	
 	drawColor = property.defaultColor;
 }
