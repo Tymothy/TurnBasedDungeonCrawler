@@ -9,12 +9,12 @@ property.moveSpeed = 1;
 property.name = "Player";
 property.collisionGrid = co_grid.mpGrid_collidePlayer;
 targetObject = noone;
-property.hp = 5;
 property.meleeAttackRange = 1;
 property.meleeAttackPower = 1;
 property.attacks.meleeDirect = true;
 property.attacks.meleeSlide = true;
 property.hp = 3;
+property.energy = 2;
 
 //Variables that aren't configured
 xGridCoord = to_grid(x);
@@ -59,7 +59,54 @@ truestate_create_state(STATES.DEAD, state_player_dead, "Dead");
 truestate_set_default(STATES.WAIT);
 #endregion
 
-has_sword=false;
+has_sword = false;
 movingRooms = false;
 lastRoomGridX = xGridCoord;
 lastRoomGridY = xGridCoord;
+
+activateSpell = function (_spell) {
+	switch(_spell) {
+		case SPELL.MOVE:
+			ob_player.modifier.moveSpell.active = true;
+			ob_player.modifier.moveSpell.speed += 1;
+		break;
+			
+	}	
+	
+}
+
+
+deactivateSpell = function(_spell) {
+	switch(_spell) {
+		case SPELL.MOVE:
+			if(ob_player.modifier.moveSpell.active == true) {
+				ob_player.modifier.moveSpell.active = false;
+				ob_player.modifier.moveSpell.speed -= 1;
+				if(instance_exists(button_moveSpell)) {
+					if(button_moveSpell.active == true) {
+						button_moveSpell.interact();	
+					}
+				}
+			}
+		break;
+			
+	}
+	
+}
+
+canCastSpell = function(_spell) {
+	//checks if a certain spell can currently be cast
+	var _cost = 0;
+	var _enabled = false;
+	
+	switch(_spell) {
+		case SPELL.MOVE:
+			_cost = ob_player.modifier.moveSpell.cost;
+			_enabled = ob_player.modifier.moveSpell.enabled;
+		break;
+	}
+	if(_cost <= ob_player.property.energy && _enabled == true){
+		return true;			
+	}
+	return false;
+}

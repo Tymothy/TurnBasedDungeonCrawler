@@ -21,6 +21,7 @@ property =
 
 	movePattern : MOVE.SEEK_DIRECT,
 	moveSpeed : 1,
+
 	//Create a move setup like attacks
 	attacks:
 	{
@@ -47,8 +48,20 @@ property =
 	rangeAttackPower : 0, //How strong range attack is
 	
 	hp : 1,
+	energy : 5,
 }
+
+modifier = 
+{
+	moveSpell :
+	{
+		enabled : true, //Tracks if the spell can be used
+		active : false, //Tracks if spell is actively being used by the player
+		speed : 1,
+		cost : 1,
+	}
 	
+}
 
 takeDamage = function (_damage) {
 	if(stateMachine == true) {

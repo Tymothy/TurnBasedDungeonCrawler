@@ -9,11 +9,13 @@ property = {
 	defaultColor : c_gray,
 	onClickColor : c_white,
 	//Possibly could be improved by adding a list element here to create like a dropdown?
+	activeColor : c_lime,
+	disabledColor : c_dkgray,
 }
 
 //Init variables
 drawColor = c_aqua;
-active = true;
+enabled = true;
 clicked = false;
 touchState = get_touch_state_on_change();
 gh = global.gui_height;
@@ -42,12 +44,28 @@ update = function() {
 	x2 = x1 + realWidth;
 	y2 = y1 + realHeight;
 }
+conditions = function() {	
+	//If false is returned, button will be disabled
+	//if true is returned, button will be enabled
 
+	return true;
+}
+enable_button = function(){
+	show_debug_message("Default enable_button message.");
+	enabled = true;	
+	drawColor = property.defaultColor;
+}
+
+disable_button = function(){
+	show_debug_message("Default disable_button message.");
+	enabled = false;	
+	drawColor = property.disabledColor;
+}
 activate_button = function() {
 	show_debug_message("Default activate_button message.");
 }
 
-interact_button = function() {
+interact = function() {
 	show_debug_message("Default interact_button message.");
 }
 

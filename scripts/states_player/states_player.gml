@@ -147,10 +147,23 @@ function state_player_idle(_event){
 							}
 						
 							//Check if touch is inside of movement area
-							if(abs(to_grid(x) - gridX) <= property.moveSpeed && abs(to_grid(y) - gridY) <= property.moveSpeed)
-							{
+							
+							if(abs(to_grid(x) - gridX) <= property.moveSpeed && abs(to_grid(y) - gridY) <= property.moveSpeed) {
 								//Touch is inside of movement area, do not disallow movement
+								//Do not use move speed modifier
 							}
+							
+							else if (modifier.moveSpell.active == true) {
+								//Player is using the move spell, see if move is possible with move spell
+								if(abs(to_grid(x) - gridX) <= property.moveSpeed + modifier.moveSpell.speed && abs(to_grid(y) - gridY) <= property.moveSpeed + modifier.moveSpell.speed) {
+								//Touch is inside of movement area with move spell, use the moveSpell to move
+
+								property.energy = property.energy - modifier.moveSpell.cost;
+								ob_player.deactivateSpell(SPELL.MOVE);
+							}
+								
+							}
+							
 							else {
 								_move = false;
 								
@@ -596,6 +609,7 @@ function state_player_dead(_event){
 			//This code will run once when the state is brand new.
 			alive = false;
 			turnActive = false;
+			instance_create_layer(x, y, "la_gui_text", co_gui_message_gameOver);
 		}break;
 	
 		//STEP---------------------------------------

@@ -4,11 +4,13 @@
 event_inherited();
 text = "Tap";
 
+
 interact = function() {
 	show_debug_message("Tap interact message.");
-	if(active && clicked) {
+	if(enabled && clicked) {
 		activate_button();	
 	}
+	//if(
 }
 
 activate_button = function() {

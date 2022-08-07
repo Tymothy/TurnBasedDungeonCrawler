@@ -12,9 +12,14 @@ if(room == rm_game) {
 	instance_create_layer(x, y, "la_gui_buttons", button_load);
 	
 	
+	instance_create_layer(x, y, "la_gui_buttons", button_restart);
+	
+	
+	instance_create_layer(x, y, "la_gui_buttons", button_moveSpell);	
+
 	//Create tool buttons if we are in test environment
 	if(TEST) {
-		instance_create_layer(x, y, "la_gui_buttons", button_hurtPlayer);
+		//instance_create_layer(x, y, "la_gui_buttons", button_hurtPlayer);
 		instance_create_layer(x, y, "la_gui_buttons", button_hurtHostiles);
 	}
 }

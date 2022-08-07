@@ -132,6 +132,12 @@ enum ANCHOR {
 	BOTTOM_RIGHT,
 	
 }
+	
+enum SPELL
+{
+	MOVE,	
+	
+}
 #region TrueState
 #macro G global
 
