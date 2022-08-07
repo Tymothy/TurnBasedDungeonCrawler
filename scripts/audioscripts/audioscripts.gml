@@ -15,6 +15,7 @@ function addSound(_soundInst, _sound, _priority, _type, _loop, _fadeIn, _fadeOut
 	fadeIn = _fadeIn;
 	fadeOut = _fadeOut;
 	allowMultiple = false; //Whether or not multiple sounds of the sound asset are allowed to exist
+	keepPlaying = true; //Used to track when a looped sound has stopped being played
 }
 
 function audio_play_sfx(_sound, _loop = false, _fadeIn = 0, _fadeOut = 0) {

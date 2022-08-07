@@ -62,6 +62,11 @@ playSound = function(_sound, _type, _priority = VOL_PRIORITY.NORMAL, _loop = fal
 			//Sound matches an existing sound.  Check if we can play it multiple times
 			if(soundsPlaying[i].allowMultiple == false) {
 				_allowSoundToPlay = false;
+			} 
+			if (soundsPlaying[i].keepPlaying == false) {
+				//We want to keep playing the sound
+				soundsPlaying[i].keepPlaying = true;
+				
 			}
 			//_allowSoundToPlay was created as true, we don't need to set true here
 		}
@@ -109,6 +114,17 @@ addSoundToArray = function(_soundStruct) {
 	array_push(soundsPlaying, _soundStruct);
 }
 
+stopSound = function(_soundInst) {
+	for(var i = 0; i < array_length(soundsPlaying); i++) {
+		if(soundsPlaying[i].inst == _soundInst) {
+			if(audio_is_playing(soundsPlaying[i].inst)){
+				audio_stop_sound(soundsPlaying[i].inst);
+			}
+			array_delete(soundsPlaying, i , 1);	
+		}
+	}	
+}
+
 stepEnd = function() {
 	//Go through array and flip the justStarted flag from true to false so the same sound can be played next frame if desired
 	for(var i = 0; i < array_length(soundsPlaying); i++) {
@@ -117,12 +133,32 @@ stepEnd = function() {
 			//Do not allow multiple, so we leave it alone
 			//We do not set to false as it's created with false and if something else sets it we don't
 			//want to override it
+			
+			//We want to check if the sound has been played again this step, if so keep it going
+			//Otherwise, stop the stound
+			if(soundsPlaying[i].keepPlaying == false) {
+				stopSound(soundsPlaying[i].inst);
+				i--;
+				break; //stopSound removes the sound from the array, so we need to -1 to i and start for loop over
+			} else {
+				//Set to false so if we do not play the sound again next frame, we will stop the sound.
+				soundsPlaying[i].keepPlaying = false;	
+			}
+			
 		}
 		else if(soundsPlaying[i].allowMultiple == false) {
 			//Allow multiple sounds to start playing
 			soundsPlaying[i].allowMultiple = true;
 			
-		}		
+		}
+		
+		//Check if the audio is done, if so, clean it up
+		if(!audio_is_playing(soundsPlaying[i].inst)){
+			stopSound(soundsPlaying[i].inst);
+			i--;
+			break;
+		}
+		
 	}
 	
 }

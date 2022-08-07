@@ -231,6 +231,7 @@ function state_player_move(_event){
 		//STEP---------------------------------------
 		case TRUESTATE_STEP:
 		{
+			#region Logic
 			//targX/targY
 			var _repeatMove = false;
 			//targArr holds the pathed variables
@@ -336,7 +337,13 @@ function state_player_move(_event){
 					truestate_switch(STATES.ATTACK);			
 				}
 			}								
-
+		#endregion
+			
+			#region audio
+			//While we are in the movement state, we want to play foot steps
+			audio_play_sfx(snd_move_01, true); //Since we are looping, we want to play until we stop
+			
+			#endregion
 		}break;
 	
 		//DRAW---------------------------------------
