@@ -1,4 +1,8 @@
 /// @description Create the tiles
+tmFloor1 = ts_floor_dungeon_gray;
+tmFloor2 = ts_floor_dungeon_white;
+
+tmWall1 = ts_wall_dungeon_white;
 
 //Get Founcation layer to determine tiles
 foundationLayerID = layer_get_id("ts_foundation");
@@ -20,11 +24,11 @@ wallTileID = layer_tilemap_get_id(wallLayerID);
 decorBottomLayerID = layer_get_id("ts_decor_bottom");
 decorBottomTileID = layer_tilemap_get_id(decorBottomLayerID);
 //Set the floor tilesets
-tilemap_tileset(floorTileID, ts_floor_dungeon_gray);
-tilemap_tileset(floorTile2ID, ts_floor_dungeon_white);
+tilemap_tileset(floorTileID, tmFloor1);
+tilemap_tileset(floorTile2ID, tmFloor2);
 
 //Set wall tileset
-tilemap_tileset(wallTileID, ts_wall_dungeon_white);
+tilemap_tileset(wallTileID, tmWall1);
 
 //Get floor width/heights in tiles
 var _floorWidth = ROOM_SIZE_WIDTH * FLOOR_MAX_WIDTH;
