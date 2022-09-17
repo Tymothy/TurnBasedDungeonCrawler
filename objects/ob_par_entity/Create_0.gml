@@ -1,5 +1,5 @@
 /// @description Create parent entity
-
+if(live_call()) return live_result;
 // Inherit the parent event
 event_inherited();
 mp_add_entity();

@@ -2,52 +2,9 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 // Most of the functions that you are actually supposed to touch are here
-if(live_enabled)
-function live_temp_path_init(){
-	return "gmlive-"+gml_std_Std_stringify(gml_std_Date_now().h_getTime());
-}
-
-if(live_enabled)
-function live_script_get_index(l_name){
-	return asset_get_index(l_name);
-}
-
-if(live_enabled)
-function live_log_impl(l_text,l_level){
-	show_debug_message(l_text);
-}
-
-if(live_enabled)
-function live_log(l_s,l_level){
-	live_log_script(("[live]["+date_datetime_string(gml_std_Date_now().h_date)+"] "+l_s),l_level);
-}
-
-function live_update_script_impl(l_name,l_ident,l_code){
-	if(live_enabled){
-		var l_data=variable_struct_get(live_live_map.h_obj,l_ident);
-		if(l_data==undefined){
-			l_data=live_cache_data_create();
-			variable_struct_set(live_live_map.h_obj,l_ident,l_data);
-		}
-		var l_pg=live_gmlive_patcher_compile_ex(l_name,l_code);
-		if(l_pg==undefined){
-			live_log("Error in "+l_name+":",2);
-			live_log(live_gmlive_patcher_error_text,2);
-			return 0;
-		}
-		if(l_pg.h_error_text!=undefined){
-			live_log("Warning in "+l_name+":",2);
-			live_log(l_pg.h_error_text,2);
-		}
-		l_pg.h_live_ident=l_ident;
-		live_log("Reloaded "+l_name+".",0);
-		if(l_data[0]!=undefined)l_data[0].h_destroy();
-		l_data[@0]=l_pg;
-	}
-}
-
 function sprite_set_live(l_spr,l_live1){
 	if(live_enabled){
 		var l_i;
@@ -63,6 +20,83 @@ function sprite_set_live(l_spr,l_live1){
 			l_i=ds_list_find_index(live_live_sprites_start,l_spr);
 			if(l_i>=0)ds_list_delete(live_live_sprites_start,l_i);
 			ds_list_add(live_live_sprites_stop,l_spr);
+		}
+	}
+}
+
+function path_set_live(l_pt,l_live1){
+	if(live_enabled){
+		var l_i;
+		if(l_live1){
+			if(ds_map_exists(live_live_point_paths,l_pt))return 0;
+			ds_map_set(live_live_point_paths,l_pt,true);
+			l_i=ds_list_find_index(live_live_point_paths_stop,l_pt);
+			if(l_i>=0)ds_list_delete(live_live_point_paths_stop,l_i);
+			ds_list_add(live_live_point_paths_start,l_pt);
+		} else {
+			if(!ds_map_exists(live_live_point_paths,l_pt))return 0;
+			ds_map_delete(live_live_point_paths,l_pt);
+			l_i=ds_list_find_index(live_live_point_paths_start,l_pt);
+			if(l_i>=0)ds_list_delete(live_live_point_paths_start,l_i);
+			ds_list_add(live_live_point_paths_stop,l_pt);
+		}
+	}
+}
+
+function file_set_live(l_path1,l_callback,l_kind){
+	if(false)show_debug_message(argument[2]);
+	if(live_enabled){
+		var l_i;
+		if(l_callback!=undefined){
+			if(ds_map_exists(live_live_included_files,l_path1))return 0;
+			var l_k;
+			if(l_kind==undefined){
+				switch(string_lower(filename_ext(l_path1))){
+					case ".csv":l_k=4;break;
+					case ".json":l_k=2;break;
+					case ".txt":l_k=1;break;
+					case ".bin":l_k=0;break;
+					case ".b64":case ".base64":l_k=3;break;
+					default:
+						show_error("Cannot auto-detect kind for \""+l_path1+"\"",false);
+						return 0;
+				}
+			} else switch(l_kind){
+				case "text":l_k=1;break;
+				case "json":l_k=2;break;
+				case "csv":l_k=4;break;
+				case "base64":l_k=3;break;
+				case "buffer":l_k=0;break;
+				case "auto":
+					switch(string_lower(filename_ext(l_path1))){
+						case ".csv":l_k=4;break;
+						case ".json":l_k=2;break;
+						case ".txt":l_k=1;break;
+						case ".bin":l_k=0;break;
+						case ".b64":case ".base64":l_k=3;break;
+						default:
+							show_error("Cannot auto-detect kind for \""+l_path1+"\"",false);
+							return 0;
+					}
+					break;
+				default:
+					show_error("Unrecognized kind \""+gml_std_Std_stringify(l_kind)+"\"",false);
+					return 0;
+			}
+			ds_map_set(live_live_included_files,l_path1,{func:l_callback,kind:l_k});
+			l_i=ds_list_find_index(live_live_included_files_stop,l_path1);
+			if(l_i>=0)ds_list_delete(live_live_included_files_stop,l_i);
+			ds_list_add(live_live_included_files_start,l_path1);
+		} else {
+			if(!ds_map_exists(live_live_included_files,l_path1))return 0;
+			if(l_kind!=undefined){
+				show_error("Kind should not be specified without a callback",false);
+				return 0;
+			}
+			ds_map_delete(live_live_included_files,l_path1);
+			l_i=ds_list_find_index(live_live_included_files_start,l_path1);
+			if(l_i>=0)ds_list_delete(live_live_included_files_start,l_i);
+			ds_list_add(live_live_included_files_stop,l_path1);
 		}
 	}
 }
@@ -91,7 +125,7 @@ function room_goto_live(l_rm){
 	if(live_enabled){
 		if(ds_map_exists(live_live_rooms,l_rm)&&ds_map_exists(live_live_room_data,l_rm)){
 			live_live_room=l_rm;
-			if(!room_exists(live_blank_room))throw gml_std_haxe_Exception_thrown("Please add a completely empty room, add live_room_start(); to it's Creation Code, and assign it to live_blank_room in obj_gmlive's create event.");
+			if(!room_exists(live_blank_room))show_error("Please add a completely empty room, add live_room_start(); to it's Creation Code, and assign it to live_blank_room in obj_gmlive's create event.",true);
 			room_goto(live_blank_room);
 			return 0;
 		}
@@ -102,6 +136,50 @@ function room_goto_live(l_rm){
 if(live_enabled)
 function live_room_updated_impl(l_rm){
 	room_goto_live(l_rm);
+}
+
+if(live_enabled)
+function live_temp_path_init(){
+	return "gmlive-"+gml_std_Std_stringify(gml_std_Date_now().h_getTime());
+}
+
+if(live_enabled)
+function live_script_get_index(l_name){
+	return asset_get_index(l_name);
+}
+
+if(live_enabled)
+function live_log_impl(l_text,l_level){
+	show_debug_message(l_text);
+}
+
+if(live_enabled)
+function live_log(l_s,l_level){
+	live_log_script(("[live]["+date_datetime_string(gml_std_Date_now().h_date)+"] "+l_s),l_level);
+}
+
+function live_update_script_impl(l_name,l_ident,l_code){
+	if(live_enabled){
+		var l_data=live_live_map.h_obj[$ l_ident];
+		if(l_data==undefined){
+			l_data=live_cache_data_create();
+			live_live_map.h_obj[$ l_ident]=l_data;
+		}
+		var l_pg=live_gmlive_patcher_compile_ex(l_name,l_code);
+		if(l_pg==undefined){
+			live_log("Error in "+l_name+":",2);
+			live_log(live_gmlive_patcher_error_text,2);
+			return 0;
+		}
+		if(l_pg.h_error_text!=undefined){
+			live_log("Warning in "+l_name+":",2);
+			live_log(l_pg.h_error_text,2);
+		}
+		l_pg.h_live_ident=l_ident;
+		live_log("Reloaded "+l_name+".",0);
+		if(l_data[0]!=undefined)l_data[0].h_destroy();
+		l_data[@0]=l_pg;
+	}
 }
 
 function live_constant_add(l_name,l_value){
@@ -130,89 +208,9 @@ function live_variable_delete(l_name){
 
 function live_function_add(l_signature,l_func){
 	if(live_enabled){
-		var l_s=l_signature;
-		var l_p0=gml_std_string_pos_ext_haxe(l_s,"(")+1;
-		var l_p1=gml_std_string_pos_ext_haxe(l_s,")");
-		var l_argv=gml_std_StringTools_trim(gml_std_string_substring(l_s,l_p0,l_p1));
-		var l_flags=gml_std_string_substring(l_s,l_p1+1);
-		var l_argc,l_arg1;
-		var l_arg0=-1;
-		var l_argt;
-		var l_rest=gml_type_check_any;
-		if(l_argv==""){
-			l_argc=0;
-			l_arg1=0;
-			l_argt=array_create(0);
-		} else {
-			var l_args1=gml_std_string_split(l_argv,",");
-			l_argc=array_length(l_args1);
-			l_arg1=l_argc;
-			l_argt=array_create(l_argc);
-			var l_tmap=gml_type_check_map;
-			var l_isJS=gml_std_haxe_boot_isJS;
-			var l_i=0;
-			for(var l__g1=l_argc;l_i<l__g1;l_i++){
-				var l_arg=l_args1[l_i];
-				var l_pos=gml_std_string_pos_ext_haxe(l_arg,"=");
-				var l_opt=false;
-				if(l_pos>=0){
-					l_opt=true;
-					l_arg=gml_std_string_substring(l_arg,0,l_pos);
-				} else if(gml_std_string_pos_ext_haxe(l_arg,"...")>=0){
-					l_arg1=81;
-					l_argc=-1;
-					l_opt=true;
-				}
-				l_pos=gml_std_string_pos_ext_haxe(l_arg,":");
-				if(l_pos>=0){
-					if(gml_std_string_pos_ext_haxe(gml_std_string_substring(l_arg,0,l_pos),"?")>=0)l_opt=true;
-					var l_type=gml_std_StringTools_trim(gml_std_string_substring(l_arg,l_pos+1));
-					if(l_isJS&&l_type=="id")l_type="index";
-					if(variable_struct_exists(l_tmap.h_obj,l_type)){
-						var l_tfun=variable_struct_get(l_tmap.h_obj,l_type);
-						if(gml_std_string_pos_ext_haxe(l_arg,"...")>=0)l_rest=l_tfun;
-						l_argt[@l_i]=l_tfun;
-					} else throw gml_std_haxe_Exception_thrown("\""+l_type+"\" is not a known type (in argument["+string(l_i)+"] \""+l_arg+"\" in \""+l_signature+"\")");
-				} else l_argt[@l_i]=gml_type_check_any;
-				if(l_opt&&l_arg0<0)l_arg0=l_i;
-			}
-			if(gml_std_string_pos_ext_haxe(l_argv,"...")>=0||gml_std_string_pos_ext_haxe(l_argv,"?")>=0||gml_std_string_pos_ext_haxe(l_argv,"=")>=0)l_argc=-1;
-		}
-		if(l_argc<0){
-			if(l_arg0<0)l_arg0=0;
-		} else {
-			l_arg1=l_argc;
-			l_arg0=l_argc;
-		}
-		var l_i=0;
-		var l_inst=0;
-		if(string_ord_at(l_s,l_i+1)==58){
-			l_i++;
-			l_inst++;
-		}
-		if(string_ord_at(l_s,l_i+1)==58){
-			l_i++;
-			l_inst++;
-		}
-		if(string_ord_at(l_s,l_i+1)==58){
-			l_i++;
-			l_inst++;
-		}
-		if(string_ord_at(l_s,l_i+1)==36&&string_ord_at(l_s,l_i+1+1)==123){
-			var l_k=gml_std_string_pos_ext_haxe(l_s,"}",l_i+2);
-			if(l_k<0)throw gml_std_haxe_Exception_thrown("Unclosed $(meta)");
-			if(gml_std_string_substring(l_s,l_i+2,l_k)=="raw")l_inst=-5; else throw gml_std_haxe_Exception_thrown("Unknown meta $("+gml_std_string_substring(l_s,l_i+2,l_k)+")");
-			l_i=l_k+1;
-		}
-		var l_name=gml_parse_name(l_s,l_i);
-		if(l_inst!=0)variable_struct_set(gml_inst_data.h_obj,l_name,l_inst);
-		variable_struct_set(gml_func_eval.h_obj,l_name,(gml_std_string_pos_ext_haxe(l_flags,"#")>=0));
-		variable_struct_set(gml_func_args.h_obj,l_name,l_argt);
-		variable_struct_set(gml_func_rest.h_obj,l_name,l_rest);
-		variable_struct_set(gml_func_arg0.h_obj,l_name,l_arg0);
-		variable_struct_set(gml_func_arg1.h_obj,l_name,l_arg1);
-		variable_struct_set(gml_func_script.h_obj,l_name,l_func);
-		variable_struct_set(gml_func_sig.h_obj,l_name,l_s);
+		var l_f=new gml_func();
+		l_f.h_set(l_signature,l_func);
+		gml_func_map.h_obj[$ l_f.h_name]=l_f;
 	}
 }
 
@@ -224,7 +222,7 @@ function live_function_delete(l_name){
 
 function live_throw_error(l_text){
 	if(live_enabled){
-		throw gml_std_haxe_Exception_thrown(l_text);
+		gml_thread_error(l_text);
 	}
 }
 
@@ -245,7 +243,7 @@ function live_execute_string(l_gml_code){
 				l_i++;
 			}
 			var l_th=l_pg.h_call_v("execute_string",l_argv,false);
-			if(l_th.h_status[0]==3){
+			if(l_th.h_status==3){
 				l_ok=true;
 				live_result=l_th.h_result;
 			} else {
@@ -279,7 +277,7 @@ function live_snippet_create(l_gml_code,l_name){
 
 function live_snippet_destroy(l_snippet){
 	if(live_enabled){
-		if(l_snippet.h_script_array!=undefined)l_snippet.h_destroy(); else throw gml_std_haxe_Exception_thrown("This snippet is already destroyed");
+		if(l_snippet.h_script_array!=undefined)l_snippet.h_destroy(); else show_error("This snippet is already destroyed",true);
 	}
 }
 
@@ -300,7 +298,7 @@ function live_snippet_call(l_snippet){
 		if(l_th==undefined){
 			live_result="(script missing)";
 			return false;
-		} else if(l_th.h_status[0]==3){
+		} else if(l_th.h_status==3){
 			live_result=l_th.h_result;
 			return true;
 		} else {
@@ -320,7 +318,7 @@ function live_update(){
 				live_request_time=l_now+live_request_rate*1000;
 				var l_url;
 				if(live_request_guid==undefined){
-					l_url=live_request_url+"/init?password="+live_request_password+"&version="+string(105)+"&config="+live_config+"&runtime="+live_runtime_version+"&buildDate="+gml_std_Std_stringify(live_build_date);
+					l_url=live_request_url+"/init?password="+live_request_password+"&version="+string(106)+"&config="+live_config+"&runtime="+live_runtime_version+"&buildDate="+gml_std_Std_stringify(live_build_date);
 				} else {
 					l_url=live_request_url+"/update?guid="+((live_request_guid==undefined?"null":live_request_guid));
 					var l_sl=live_live_sprites_stop;
@@ -383,6 +381,46 @@ function live_update(){
 						}
 						ds_list_clear(l_rl);
 					}
+					var l_rl=live_live_point_paths_stop;
+					var l_rln=ds_list_size(l_rl);
+					if(l_rln>0){
+						l_url+="&paths"+string(0)+"="+path_get_name(ds_list_find_value(l_rl,0));
+						var l_i=1;
+						for(var l__g1=l_rln;l_i<l__g1;l_i++){
+							l_url+="+"+path_get_name(ds_list_find_value(l_rl,l_i));
+						}
+						ds_list_clear(l_rl);
+					}
+					var l_rl=live_live_point_paths_start;
+					var l_rln=ds_list_size(l_rl);
+					if(l_rln>0){
+						l_url+="&paths"+string(1)+"="+path_get_name(ds_list_find_value(l_rl,0));
+						var l_i=1;
+						for(var l__g1=l_rln;l_i<l__g1;l_i++){
+							l_url+="+"+path_get_name(ds_list_find_value(l_rl,l_i));
+						}
+						ds_list_clear(l_rl);
+					}
+					var l_rl=live_live_included_files_stop;
+					var l_rln=ds_list_size(l_rl);
+					if(l_rln>0){
+						l_url+="&incFiles"+string(0)+"="+ds_list_find_value(l_rl,0);
+						var l_i=1;
+						for(var l__g1=l_rln;l_i<l__g1;l_i++){
+							l_url+="+"+ds_list_find_value(l_rl,l_i);
+						}
+						ds_list_clear(l_rl);
+					}
+					var l_rl=live_live_included_files_start;
+					var l_rln=ds_list_size(l_rl);
+					if(l_rln>0){
+						l_url+="&incFiles"+string(1)+"="+ds_list_find_value(l_rl,0);
+						var l_i=1;
+						for(var l__g1=l_rln;l_i<l__g1;l_i++){
+							l_url+="+"+ds_list_find_value(l_rl,l_i);
+						}
+						ds_list_clear(l_rl);
+					}
 				}
 				live_request_id=http_get(l_url);
 			}
@@ -441,7 +479,7 @@ function live_init(l_updateRate,l_url,l_password){
 		if(l_url==undefined)for(l_i=100000;script_exists(l_i);l_i++){
 			l_s=script_get_name(l_i);
 			gml_func_add(l_s+"(...)",l_i);
-			variable_struct_set(gml_func_script_id.h_obj,l_s,l_i);
+			gml_func_script_id.h_obj[$ l_s]=l_i;
 		}
 		live_log("Indexed OK!",0);
 	}
@@ -478,7 +516,8 @@ function live_preinit_project(){
 	gml_func_add("live_snippet_call(snip, ...rest):",live_snippet_call);
 	gml_func_add("live_snippet_destroy(snip):",live_snippet_destroy);
 	gml_func_add("sprite_set_live(spr:index, status:bool)",sprite_set_live);
-	gml_func_add("shader_set_live(sh:index, status:bool)",sprite_set_live);
-	gml_func_add("room_set_live(rm:index, status:bool)",sprite_set_live);
+	gml_func_add("shader_set_live(sh:index, status:bool)",shader_set_live);
+	gml_func_add("path_set_live(pt:index, status:bool)",path_set_live);
+	gml_func_add("room_set_live(rm:index, status:bool)",room_set_live);
 	gml_func_add("room_goto_live(rm:index)",room_goto_live);
 }

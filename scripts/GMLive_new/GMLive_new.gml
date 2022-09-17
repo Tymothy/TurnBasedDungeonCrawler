@@ -2,6 +2,7 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 // because there is no script_execute_ext for new X(...)
 if(live_enabled)

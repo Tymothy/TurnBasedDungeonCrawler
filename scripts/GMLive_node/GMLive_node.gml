@@ -2,6 +2,7 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 // AST nodes
 if(live_enabled)/// @interface {gml_node}
@@ -15,15 +16,15 @@ function mc_gml_node()constructor{
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_undefined():mc_gml_node()constructor{
+function mc_gml_node_undefined_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
 	static __enumIndex__=0;
 }
 
 if(live_enabled)
-function gml_node_undefined(l_h_d){
-	var l_this=new mc_gml_node_undefined();
+function gml_node_undefined_hx(l_h_d){
+	var l_this=new mc_gml_node_undefined_hx();
 	l_this.h_d=l_h_d;
 	return l_this
 }
@@ -248,30 +249,30 @@ function gml_node_ident(l_h_d,l_h_id){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_self():mc_gml_node()constructor{
+function mc_gml_node_self_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
 	static __enumIndex__=13;
 }
 
 if(live_enabled)
-function gml_node_self(l_h_d){
-	var l_this=new mc_gml_node_self();
+function gml_node_self_hx(l_h_d){
+	var l_this=new mc_gml_node_self_hx();
 	l_this.h_d=l_h_d;
 	return l_this
 }
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_other():mc_gml_node()constructor{
+function mc_gml_node_other_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
 	static __enumIndex__=14;
 }
 
 if(live_enabled)
-function gml_node_other(l_h_d){
-	var l_this=new mc_gml_node_other();
+function gml_node_other_hx(l_h_d){
+	var l_this=new mc_gml_node_other_hx();
 	l_this.h_d=l_h_d;
 	return l_this
 }
@@ -515,17 +516,17 @@ if(live_enabled)
 /// @implements {gml_node}
 function mc_gml_node_call_func():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_funcName
+	/// @hint {gml_func} :h_fn
 	/// @hint {array<ast_GmlNode>} :h_args
-	static __enumParams__=["h_d","h_funcName","h_args"];
+	static __enumParams__=["h_d","h_fn","h_args"];
 	static __enumIndex__=28;
 }
 
 if(live_enabled)
-function gml_node_call_func(l_h_d,l_h_funcName,l_h_args){
+function gml_node_call_func(l_h_d,l_h_fn,l_h_args){
 	var l_this=new mc_gml_node_call_func();
 	l_this.h_d=l_h_d;
-	l_this.h_funcName=l_h_funcName;
+	l_this.h_fn=l_h_fn;
 	l_this.h_args=l_h_args;
 	return l_this
 }
@@ -688,12 +689,29 @@ function gml_node_set_op(l_h_d,l_h_o,l_h_a,l_h_b){
 
 if(live_enabled)
 /// @implements {gml_node}
+function mc_gml_node_delete_hx():mc_gml_node()constructor{
+	/// @hint {ast_GmlNodeData} :h_d
+	/// @hint {ast_GmlNode} :h_x
+	static __enumParams__=["h_d","h_x"];
+	static __enumIndex__=37;
+}
+
+if(live_enabled)
+function gml_node_delete_hx(l_h_d,l_h_x){
+	var l_this=new mc_gml_node_delete_hx();
+	l_this.h_d=l_h_d;
+	l_this.h_x=l_h_x;
+	return l_this
+}
+
+if(live_enabled)
+/// @implements {gml_node}
 function mc_gml_node_null_co():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_a
 	/// @hint {ast_GmlNode} :h_b
 	static __enumParams__=["h_d","h_a","h_b"];
-	static __enumIndex__=37;
+	static __enumIndex__=38;
 }
 
 if(live_enabled)
@@ -711,7 +729,7 @@ function mc_gml_node_to_bool():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_v"];
-	static __enumIndex__=38;
+	static __enumIndex__=39;
 }
 
 if(live_enabled)
@@ -728,7 +746,7 @@ function mc_gml_node_from_bool():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_v"];
-	static __enumIndex__=39;
+	static __enumIndex__=40;
 }
 
 if(live_enabled)
@@ -747,7 +765,7 @@ function mc_gml_node_in():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_val
 	/// @hint {bool} :h_not
 	static __enumParams__=["h_d","h_fd","h_val","h_not"];
-	static __enumIndex__=40;
+	static __enumIndex__=41;
 }
 
 if(live_enabled)
@@ -762,16 +780,16 @@ function gml_node_in(l_h_d,l_h_fd,l_h_val,l_h_not){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_local():mc_gml_node()constructor{
+function mc_gml_node_local_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {string} :h_id
 	static __enumParams__=["h_d","h_id"];
-	static __enumIndex__=41;
+	static __enumIndex__=42;
 }
 
 if(live_enabled)
-function gml_node_local(l_h_d,l_h_id){
-	var l_this=new mc_gml_node_local();
+function gml_node_local_hx(l_h_d,l_h_id){
+	var l_this=new mc_gml_node_local_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_id=l_h_id;
 	return l_this
@@ -784,7 +802,7 @@ function mc_gml_node_local_set():mc_gml_node()constructor{
 	/// @hint {string} :h_id
 	/// @hint {ast_GmlNode} :h_val
 	static __enumParams__=["h_d","h_id","h_val"];
-	static __enumIndex__=42;
+	static __enumIndex__=43;
 }
 
 if(live_enabled)
@@ -804,7 +822,7 @@ function mc_gml_node_local_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_op
 	/// @hint {ast_GmlNode} :h_val
 	static __enumParams__=["h_d","h_id","h_op","h_val"];
-	static __enumIndex__=43;
+	static __enumIndex__=44;
 }
 
 if(live_enabled)
@@ -819,16 +837,16 @@ function gml_node_local_aop(l_h_d,l_h_id,l_h_op,l_h_val){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_global():mc_gml_node()constructor{
+function mc_gml_node_global_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {string} :h_id
 	static __enumParams__=["h_d","h_id"];
-	static __enumIndex__=44;
+	static __enumIndex__=45;
 }
 
 if(live_enabled)
-function gml_node_global(l_h_d,l_h_id){
-	var l_this=new mc_gml_node_global();
+function gml_node_global_hx(l_h_d,l_h_id){
+	var l_this=new mc_gml_node_global_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_id=l_h_id;
 	return l_this
@@ -841,7 +859,7 @@ function mc_gml_node_global_set():mc_gml_node()constructor{
 	/// @hint {string} :h_id
 	/// @hint {ast_GmlNode} :h_val
 	static __enumParams__=["h_d","h_id","h_val"];
-	static __enumIndex__=45;
+	static __enumIndex__=46;
 }
 
 if(live_enabled)
@@ -861,7 +879,7 @@ function mc_gml_node_global_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_op
 	/// @hint {ast_GmlNode} :h_val
 	static __enumParams__=["h_d","h_id","h_op","h_val"];
-	static __enumIndex__=46;
+	static __enumIndex__=47;
 }
 
 if(live_enabled)
@@ -881,7 +899,7 @@ function mc_gml_node_field():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {string} :h_fd
 	static __enumParams__=["h_d","h_x","h_fd"];
-	static __enumIndex__=47;
+	static __enumIndex__=48;
 }
 
 if(live_enabled)
@@ -901,7 +919,7 @@ function mc_gml_node_field_set():mc_gml_node()constructor{
 	/// @hint {string} :h_fd
 	/// @hint {ast_GmlNode} :h_val
 	static __enumParams__=["h_d","h_x","h_fd","h_val"];
-	static __enumIndex__=48;
+	static __enumIndex__=49;
 }
 
 if(live_enabled)
@@ -923,7 +941,7 @@ function mc_gml_node_field_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_op
 	/// @hint {ast_GmlNode} :h_val
 	static __enumParams__=["h_d","h_x","h_fd","h_op","h_val"];
-	static __enumIndex__=49;
+	static __enumIndex__=50;
 }
 
 if(live_enabled)
@@ -941,16 +959,16 @@ if(live_enabled)
 /// @implements {gml_node}
 function mc_gml_node_env():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_id
-	static __enumParams__=["h_d","h_id"];
-	static __enumIndex__=50;
+	/// @hint {api_api_var} :h_v
+	static __enumParams__=["h_d","h_v"];
+	static __enumIndex__=51;
 }
 
 if(live_enabled)
-function gml_node_env(l_h_d,l_h_id){
+function gml_node_env(l_h_d,l_h_v){
 	var l_this=new mc_gml_node_env();
 	l_this.h_d=l_h_d;
-	l_this.h_id=l_h_id;
+	l_this.h_v=l_h_v;
 	return l_this
 }
 
@@ -958,17 +976,17 @@ if(live_enabled)
 /// @implements {gml_node}
 function mc_gml_node_env_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_id
+	/// @hint {api_api_var} :h_v
 	/// @hint {ast_GmlNode} :h_val
-	static __enumParams__=["h_d","h_id","h_val"];
-	static __enumIndex__=51;
+	static __enumParams__=["h_d","h_v","h_val"];
+	static __enumIndex__=52;
 }
 
 if(live_enabled)
-function gml_node_env_set(l_h_d,l_h_id,l_h_val){
+function gml_node_env_set(l_h_d,l_h_v,l_h_val){
 	var l_this=new mc_gml_node_env_set();
 	l_this.h_d=l_h_d;
-	l_this.h_id=l_h_id;
+	l_this.h_v=l_h_v;
 	l_this.h_val=l_h_val;
 	return l_this
 }
@@ -977,18 +995,18 @@ if(live_enabled)
 /// @implements {gml_node}
 function mc_gml_node_env_aop():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_id
+	/// @hint {api_api_var} :h_v
 	/// @hint {gml_op} :h_op
 	/// @hint {ast_GmlNode} :h_val
-	static __enumParams__=["h_d","h_id","h_op","h_val"];
-	static __enumIndex__=52;
+	static __enumParams__=["h_d","h_v","h_op","h_val"];
+	static __enumIndex__=53;
 }
 
 if(live_enabled)
-function gml_node_env_aop(l_h_d,l_h_id,l_h_op,l_h_val){
+function gml_node_env_aop(l_h_d,l_h_v,l_h_op,l_h_val){
 	var l_this=new mc_gml_node_env_aop();
 	l_this.h_d=l_h_d;
-	l_this.h_id=l_h_id;
+	l_this.h_v=l_h_v;
 	l_this.h_op=l_h_op;
 	l_this.h_val=l_h_val;
 	return l_this
@@ -999,17 +1017,17 @@ if(live_enabled)
 function mc_gml_node_env_fd():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
-	/// @hint {string} :h_fd
-	static __enumParams__=["h_d","h_x","h_fd"];
-	static __enumIndex__=53;
+	/// @hint {api_api_var} :h_av
+	static __enumParams__=["h_d","h_x","h_av"];
+	static __enumIndex__=54;
 }
 
 if(live_enabled)
-function gml_node_env_fd(l_h_d,l_h_x,l_h_fd){
+function gml_node_env_fd(l_h_d,l_h_x,l_h_av){
 	var l_this=new mc_gml_node_env_fd();
 	l_this.h_d=l_h_d;
 	l_this.h_x=l_h_x;
-	l_this.h_fd=l_h_fd;
+	l_this.h_av=l_h_av;
 	return l_this
 }
 
@@ -1018,18 +1036,18 @@ if(live_enabled)
 function mc_gml_node_env_fd_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
-	/// @hint {string} :h_fd
+	/// @hint {api_api_var} :h_av
 	/// @hint {ast_GmlNode} :h_v
-	static __enumParams__=["h_d","h_x","h_fd","h_v"];
-	static __enumIndex__=54;
+	static __enumParams__=["h_d","h_x","h_av","h_v"];
+	static __enumIndex__=55;
 }
 
 if(live_enabled)
-function gml_node_env_fd_set(l_h_d,l_h_x,l_h_fd,l_h_v){
+function gml_node_env_fd_set(l_h_d,l_h_x,l_h_av,l_h_v){
 	var l_this=new mc_gml_node_env_fd_set();
 	l_this.h_d=l_h_d;
 	l_this.h_x=l_h_x;
-	l_this.h_fd=l_h_fd;
+	l_this.h_av=l_h_av;
 	l_this.h_v=l_h_v;
 	return l_this
 }
@@ -1039,19 +1057,19 @@ if(live_enabled)
 function mc_gml_node_env_fd_aop():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
-	/// @hint {string} :h_fd
+	/// @hint {api_api_var} :h_av
 	/// @hint {gml_op} :h_op
 	/// @hint {ast_GmlNode} :h_v
-	static __enumParams__=["h_d","h_x","h_fd","h_op","h_v"];
-	static __enumIndex__=55;
+	static __enumParams__=["h_d","h_x","h_av","h_op","h_v"];
+	static __enumIndex__=56;
 }
 
 if(live_enabled)
-function gml_node_env_fd_aop(l_h_d,l_h_x,l_h_fd,l_h_op,l_h_v){
+function gml_node_env_fd_aop(l_h_d,l_h_x,l_h_av,l_h_op,l_h_v){
 	var l_this=new mc_gml_node_env_fd_aop();
 	l_this.h_d=l_h_d;
 	l_this.h_x=l_h_x;
-	l_this.h_fd=l_h_fd;
+	l_this.h_av=l_h_av;
 	l_this.h_op=l_h_op;
 	l_this.h_v=l_h_v;
 	return l_this
@@ -1061,17 +1079,17 @@ if(live_enabled)
 /// @implements {gml_node}
 function mc_gml_node_env1d():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_id
+	/// @hint {api_api_var} :h_v
 	/// @hint {ast_GmlNode} :h_k
-	static __enumParams__=["h_d","h_id","h_k"];
-	static __enumIndex__=56;
+	static __enumParams__=["h_d","h_v","h_k"];
+	static __enumIndex__=57;
 }
 
 if(live_enabled)
-function gml_node_env1d(l_h_d,l_h_id,l_h_k){
+function gml_node_env1d(l_h_d,l_h_v,l_h_k){
 	var l_this=new mc_gml_node_env1d();
 	l_this.h_d=l_h_d;
-	l_this.h_id=l_h_id;
+	l_this.h_v=l_h_v;
 	l_this.h_k=l_h_k;
 	return l_this
 }
@@ -1080,18 +1098,18 @@ if(live_enabled)
 /// @implements {gml_node}
 function mc_gml_node_env1d_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_id
+	/// @hint {api_api_var} :h_v
 	/// @hint {ast_GmlNode} :h_k
 	/// @hint {ast_GmlNode} :h_val
-	static __enumParams__=["h_d","h_id","h_k","h_val"];
-	static __enumIndex__=57;
+	static __enumParams__=["h_d","h_v","h_k","h_val"];
+	static __enumIndex__=58;
 }
 
 if(live_enabled)
-function gml_node_env1d_set(l_h_d,l_h_id,l_h_k,l_h_val){
+function gml_node_env1d_set(l_h_d,l_h_v,l_h_k,l_h_val){
 	var l_this=new mc_gml_node_env1d_set();
 	l_this.h_d=l_h_d;
-	l_this.h_id=l_h_id;
+	l_this.h_v=l_h_v;
 	l_this.h_k=l_h_k;
 	l_this.h_val=l_h_val;
 	return l_this
@@ -1101,19 +1119,19 @@ if(live_enabled)
 /// @implements {gml_node}
 function mc_gml_node_env1d_aop():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_id
+	/// @hint {api_api_var} :h_v
 	/// @hint {ast_GmlNode} :h_k
 	/// @hint {gml_op} :h_op
 	/// @hint {ast_GmlNode} :h_val
-	static __enumParams__=["h_d","h_id","h_k","h_op","h_val"];
-	static __enumIndex__=58;
+	static __enumParams__=["h_d","h_v","h_k","h_op","h_val"];
+	static __enumIndex__=59;
 }
 
 if(live_enabled)
-function gml_node_env1d_aop(l_h_d,l_h_id,l_h_k,l_h_op,l_h_val){
+function gml_node_env1d_aop(l_h_d,l_h_v,l_h_k,l_h_op,l_h_val){
 	var l_this=new mc_gml_node_env1d_aop();
 	l_this.h_d=l_h_d;
-	l_this.h_id=l_h_id;
+	l_this.h_v=l_h_v;
 	l_this.h_k=l_h_k;
 	l_this.h_op=l_h_op;
 	l_this.h_val=l_h_val;
@@ -1127,7 +1145,7 @@ function mc_gml_node_alarm():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {ast_GmlNode} :h_i
 	static __enumParams__=["h_d","h_x","h_i"];
-	static __enumIndex__=59;
+	static __enumIndex__=60;
 }
 
 if(live_enabled)
@@ -1141,18 +1159,18 @@ function gml_node_alarm(l_h_d,l_h_x,l_h_i){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_alarm_set():mc_gml_node()constructor{
+function mc_gml_node_alarm_set_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {ast_GmlNode} :h_i
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_i","h_v"];
-	static __enumIndex__=60;
+	static __enumIndex__=61;
 }
 
 if(live_enabled)
-function gml_node_alarm_set(l_h_d,l_h_x,l_h_i,l_h_v){
-	var l_this=new mc_gml_node_alarm_set();
+function gml_node_alarm_set_hx(l_h_d,l_h_x,l_h_i,l_h_v){
+	var l_this=new mc_gml_node_alarm_set_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_x=l_h_x;
 	l_this.h_i=l_h_i;
@@ -1169,7 +1187,7 @@ function mc_gml_node_alarm_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_op
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_i","h_op","h_v"];
-	static __enumIndex__=61;
+	static __enumIndex__=62;
 }
 
 if(live_enabled)
@@ -1190,7 +1208,7 @@ function mc_gml_node_index():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {ast_GmlNode} :h_id
 	static __enumParams__=["h_d","h_x","h_id"];
-	static __enumIndex__=62;
+	static __enumIndex__=63;
 }
 
 if(live_enabled)
@@ -1210,7 +1228,7 @@ function mc_gml_node_index_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_id
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_id","h_v"];
-	static __enumIndex__=63;
+	static __enumIndex__=64;
 }
 
 if(live_enabled)
@@ -1232,7 +1250,7 @@ function mc_gml_node_index_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_id","h_o","h_v"];
-	static __enumIndex__=64;
+	static __enumIndex__=65;
 }
 
 if(live_enabled)
@@ -1248,55 +1266,13 @@ function gml_node_index_aop(l_h_d,l_h_x,l_h_id,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_index_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=65;
-}
-
-if(live_enabled)
-function gml_node_index_prefix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_index_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_index_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=66;
-}
-
-if(live_enabled)
-function gml_node_index_postfix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_index_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_index2d():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {ast_GmlNode} :h_i1
 	/// @hint {ast_GmlNode} :h_i2
 	static __enumParams__=["h_d","h_x","h_i1","h_i2"];
-	static __enumIndex__=67;
+	static __enumIndex__=66;
 }
 
 if(live_enabled)
@@ -1318,7 +1294,7 @@ function mc_gml_node_index2d_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_i2
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_i1","h_i2","h_v"];
-	static __enumIndex__=68;
+	static __enumIndex__=67;
 }
 
 if(live_enabled)
@@ -1342,7 +1318,7 @@ function mc_gml_node_index2d_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_i1","h_i2","h_o","h_v"];
-	static __enumIndex__=69;
+	static __enumIndex__=68;
 }
 
 if(live_enabled)
@@ -1359,58 +1335,12 @@ function gml_node_index2d_aop(l_h_d,l_h_x,l_h_i1,l_h_i2,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_index2d_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {ast_GmlNode} :h_k
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_k","h_inc"];
-	static __enumIndex__=70;
-}
-
-if(live_enabled)
-function gml_node_index2d_prefix(l_h_d,l_h_x,l_h_i,l_h_k,l_h_inc){
-	var l_this=new mc_gml_node_index2d_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_k=l_h_k;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_index2d_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {ast_GmlNode} :h_k
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_k","h_inc"];
-	static __enumIndex__=71;
-}
-
-if(live_enabled)
-function gml_node_index2d_postfix(l_h_d,l_h_x,l_h_i,l_h_k,l_h_inc){
-	var l_this=new mc_gml_node_index2d_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_k=l_h_k;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_raw_id():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {ast_GmlNode} :h_id
 	static __enumParams__=["h_d","h_x","h_id"];
-	static __enumIndex__=72;
+	static __enumIndex__=69;
 }
 
 if(live_enabled)
@@ -1430,7 +1360,7 @@ function mc_gml_node_raw_id_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_id
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_id","h_v"];
-	static __enumIndex__=73;
+	static __enumIndex__=70;
 }
 
 if(live_enabled)
@@ -1452,7 +1382,7 @@ function mc_gml_node_raw_id_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_id","h_o","h_v"];
-	static __enumIndex__=74;
+	static __enumIndex__=71;
 }
 
 if(live_enabled)
@@ -1468,55 +1398,13 @@ function gml_node_raw_id_aop(l_h_d,l_h_x,l_h_id,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_raw_id_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=75;
-}
-
-if(live_enabled)
-function gml_node_raw_id_prefix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_raw_id_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_raw_id_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=76;
-}
-
-if(live_enabled)
-function gml_node_raw_id_postfix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_raw_id_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_raw_id2d():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {ast_GmlNode} :h_i1
 	/// @hint {ast_GmlNode} :h_i2
 	static __enumParams__=["h_d","h_x","h_i1","h_i2"];
-	static __enumIndex__=77;
+	static __enumIndex__=72;
 }
 
 if(live_enabled)
@@ -1538,7 +1426,7 @@ function mc_gml_node_raw_id2d_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_i2
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_i1","h_i2","h_v"];
-	static __enumIndex__=78;
+	static __enumIndex__=73;
 }
 
 if(live_enabled)
@@ -1562,7 +1450,7 @@ function mc_gml_node_raw_id2d_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_i1","h_i2","h_o","h_v"];
-	static __enumIndex__=79;
+	static __enumIndex__=74;
 }
 
 if(live_enabled)
@@ -1579,58 +1467,12 @@ function gml_node_raw_id2d_aop(l_h_d,l_h_x,l_h_i1,l_h_i2,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_raw_id2d_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {ast_GmlNode} :h_k
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_k","h_inc"];
-	static __enumIndex__=80;
-}
-
-if(live_enabled)
-function gml_node_raw_id2d_prefix(l_h_d,l_h_x,l_h_i,l_h_k,l_h_inc){
-	var l_this=new mc_gml_node_raw_id2d_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_k=l_h_k;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_raw_id2d_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {ast_GmlNode} :h_k
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_k","h_inc"];
-	static __enumIndex__=81;
-}
-
-if(live_enabled)
-function gml_node_raw_id2d_postfix(l_h_d,l_h_x,l_h_i,l_h_k,l_h_inc){
-	var l_this=new mc_gml_node_raw_id2d_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_k=l_h_k;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_ds_list():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_lx
 	/// @hint {ast_GmlNode} :h_id
 	static __enumParams__=["h_d","h_lx","h_id"];
-	static __enumIndex__=82;
+	static __enumIndex__=75;
 }
 
 if(live_enabled)
@@ -1644,18 +1486,18 @@ function gml_node_ds_list(l_h_d,l_h_lx,l_h_id){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_ds_list_set():mc_gml_node()constructor{
+function mc_gml_node_ds_list_set_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_lx
 	/// @hint {ast_GmlNode} :h_id
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_lx","h_id","h_v"];
-	static __enumIndex__=83;
+	static __enumIndex__=76;
 }
 
 if(live_enabled)
-function gml_node_ds_list_set(l_h_d,l_h_lx,l_h_id,l_h_v){
-	var l_this=new mc_gml_node_ds_list_set();
+function gml_node_ds_list_set_hx(l_h_d,l_h_lx,l_h_id,l_h_v){
+	var l_this=new mc_gml_node_ds_list_set_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_lx=l_h_lx;
 	l_this.h_id=l_h_id;
@@ -1672,7 +1514,7 @@ function mc_gml_node_ds_list_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_lx","h_id","h_o","h_v"];
-	static __enumIndex__=84;
+	static __enumIndex__=77;
 }
 
 if(live_enabled)
@@ -1688,54 +1530,12 @@ function gml_node_ds_list_aop(l_h_d,l_h_lx,l_h_id,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_ds_list_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=85;
-}
-
-if(live_enabled)
-function gml_node_ds_list_prefix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_ds_list_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_ds_list_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=86;
-}
-
-if(live_enabled)
-function gml_node_ds_list_postfix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_ds_list_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_ds_map():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_lx
 	/// @hint {ast_GmlNode} :h_id
 	static __enumParams__=["h_d","h_lx","h_id"];
-	static __enumIndex__=87;
+	static __enumIndex__=78;
 }
 
 if(live_enabled)
@@ -1749,18 +1549,18 @@ function gml_node_ds_map(l_h_d,l_h_lx,l_h_id){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_ds_map_set():mc_gml_node()constructor{
+function mc_gml_node_ds_map_set_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_lx
 	/// @hint {ast_GmlNode} :h_id
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_lx","h_id","h_v"];
-	static __enumIndex__=88;
+	static __enumIndex__=79;
 }
 
 if(live_enabled)
-function gml_node_ds_map_set(l_h_d,l_h_lx,l_h_id,l_h_v){
-	var l_this=new mc_gml_node_ds_map_set();
+function gml_node_ds_map_set_hx(l_h_d,l_h_lx,l_h_id,l_h_v){
+	var l_this=new mc_gml_node_ds_map_set_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_lx=l_h_lx;
 	l_this.h_id=l_h_id;
@@ -1777,7 +1577,7 @@ function mc_gml_node_ds_map_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_lx","h_id","h_o","h_v"];
-	static __enumIndex__=89;
+	static __enumIndex__=80;
 }
 
 if(live_enabled)
@@ -1793,55 +1593,13 @@ function gml_node_ds_map_aop(l_h_d,l_h_lx,l_h_id,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_ds_map_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=90;
-}
-
-if(live_enabled)
-function gml_node_ds_map_prefix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_ds_map_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_ds_map_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=91;
-}
-
-if(live_enabled)
-function gml_node_ds_map_postfix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_ds_map_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_ds_grid():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_lx
 	/// @hint {ast_GmlNode} :h_i1
 	/// @hint {ast_GmlNode} :h_i2
 	static __enumParams__=["h_d","h_lx","h_i1","h_i2"];
-	static __enumIndex__=92;
+	static __enumIndex__=81;
 }
 
 if(live_enabled)
@@ -1856,19 +1614,19 @@ function gml_node_ds_grid(l_h_d,l_h_lx,l_h_i1,l_h_i2){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_ds_grid_set():mc_gml_node()constructor{
+function mc_gml_node_ds_grid_set_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_lx
 	/// @hint {ast_GmlNode} :h_i1
 	/// @hint {ast_GmlNode} :h_i2
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_lx","h_i1","h_i2","h_v"];
-	static __enumIndex__=93;
+	static __enumIndex__=82;
 }
 
 if(live_enabled)
-function gml_node_ds_grid_set(l_h_d,l_h_lx,l_h_i1,l_h_i2,l_h_v){
-	var l_this=new mc_gml_node_ds_grid_set();
+function gml_node_ds_grid_set_hx(l_h_d,l_h_lx,l_h_i1,l_h_i2,l_h_v){
+	var l_this=new mc_gml_node_ds_grid_set_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_lx=l_h_lx;
 	l_this.h_i1=l_h_i1;
@@ -1887,7 +1645,7 @@ function mc_gml_node_ds_grid_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_lx","h_i1","h_i2","h_o","h_v"];
-	static __enumIndex__=94;
+	static __enumIndex__=83;
 }
 
 if(live_enabled)
@@ -1904,58 +1662,12 @@ function gml_node_ds_grid_aop(l_h_d,l_h_lx,l_h_i1,l_h_i2,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_ds_grid_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {ast_GmlNode} :h_k
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_k","h_inc"];
-	static __enumIndex__=95;
-}
-
-if(live_enabled)
-function gml_node_ds_grid_prefix(l_h_d,l_h_x,l_h_i,l_h_k,l_h_inc){
-	var l_this=new mc_gml_node_ds_grid_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_k=l_h_k;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_ds_grid_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {ast_GmlNode} :h_k
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_k","h_inc"];
-	static __enumIndex__=96;
-}
-
-if(live_enabled)
-function gml_node_ds_grid_postfix(l_h_d,l_h_x,l_h_i,l_h_k,l_h_inc){
-	var l_this=new mc_gml_node_ds_grid_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_k=l_h_k;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_key_id():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
 	/// @hint {ast_GmlNode} :h_id
 	static __enumParams__=["h_d","h_x","h_id"];
-	static __enumIndex__=97;
+	static __enumIndex__=84;
 }
 
 if(live_enabled)
@@ -1975,7 +1687,7 @@ function mc_gml_node_key_id_set():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_id
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_id","h_v"];
-	static __enumIndex__=98;
+	static __enumIndex__=85;
 }
 
 if(live_enabled)
@@ -1997,7 +1709,7 @@ function mc_gml_node_key_id_aop():mc_gml_node()constructor{
 	/// @hint {gml_op} :h_o
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_x","h_id","h_o","h_v"];
-	static __enumIndex__=99;
+	static __enumIndex__=86;
 }
 
 if(live_enabled)
@@ -2013,54 +1725,12 @@ function gml_node_key_id_aop(l_h_d,l_h_x,l_h_id,l_h_o,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_key_id_prefix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=100;
-}
-
-if(live_enabled)
-function gml_node_key_id_prefix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_key_id_prefix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_key_id_postfix():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {ast_GmlNode} :h_i
-	/// @hint {bool} :h_inc
-	static __enumParams__=["h_d","h_x","h_i","h_inc"];
-	static __enumIndex__=101;
-}
-
-if(live_enabled)
-function gml_node_key_id_postfix(l_h_d,l_h_x,l_h_i,l_h_inc){
-	var l_this=new mc_gml_node_key_id_postfix();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_i=l_h_i;
-	l_this.h_inc=l_h_inc;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
 function mc_gml_node_var_decl():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {string} :h_name
 	/// @hint {ast_GmlNode?} :h_value
 	static __enumParams__=["h_d","h_name","h_value"];
-	static __enumIndex__=102;
+	static __enumIndex__=87;
 }
 
 if(live_enabled)
@@ -2079,7 +1749,7 @@ function mc_gml_node_block():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {array<ast_GmlNode>} :h_nodes
 	static __enumParams__=["h_d","h_nodes"];
-	static __enumIndex__=103;
+	static __enumIndex__=88;
 }
 
 if(live_enabled)
@@ -2098,7 +1768,7 @@ function mc_gml_node_if_then():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_then
 	/// @hint {ast_GmlNode?} :h_not
 	static __enumParams__=["h_d","h_cond","h_then","h_not"];
-	static __enumIndex__=104;
+	static __enumIndex__=89;
 }
 
 if(live_enabled)
@@ -2120,7 +1790,7 @@ function mc_gml_node_ternary():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_then
 	/// @hint {ast_GmlNode} :h_not
 	static __enumParams__=["h_d","h_cond","h_then","h_not"];
-	static __enumIndex__=105;
+	static __enumIndex__=90;
 }
 
 if(live_enabled)
@@ -2135,18 +1805,18 @@ function gml_node_ternary(l_h_d,l_h_cond,l_h_then,l_h_not){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_switch():mc_gml_node()constructor{
+function mc_gml_node_switch_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_expr
 	/// @hint {array<ast_GmlNodeCase>} :h_list
 	/// @hint {ast_GmlNode?} :h_def
 	static __enumParams__=["h_d","h_expr","h_list","h_def"];
-	static __enumIndex__=106;
+	static __enumIndex__=91;
 }
 
 if(live_enabled)
-function gml_node_switch(l_h_d,l_h_expr,l_h_list,l_h_def){
-	var l_this=new mc_gml_node_switch();
+function gml_node_switch_hx(l_h_d,l_h_expr,l_h_list,l_h_def){
+	var l_this=new mc_gml_node_switch_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_expr=l_h_expr;
 	l_this.h_list=l_h_list;
@@ -2161,7 +1831,7 @@ function mc_gml_node_wait():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_time
 	static __enumParams__=["h_d","h_time"];
-	static __enumIndex__=107;
+	static __enumIndex__=92;
 }
 
 if(live_enabled)
@@ -2177,7 +1847,7 @@ if(live_enabled)
 function mc_gml_node_fork():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
-	static __enumIndex__=108;
+	static __enumIndex__=93;
 }
 
 if(live_enabled)
@@ -2189,17 +1859,17 @@ function gml_node_fork(l_h_d){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_while():mc_gml_node()constructor{
+function mc_gml_node_while_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_cond
 	/// @hint {ast_GmlNode} :h_node
 	static __enumParams__=["h_d","h_cond","h_node"];
-	static __enumIndex__=109;
+	static __enumIndex__=94;
 }
 
 if(live_enabled)
-function gml_node_while(l_h_d,l_h_cond,l_h_node){
-	var l_this=new mc_gml_node_while();
+function gml_node_while_hx(l_h_d,l_h_cond,l_h_node){
+	var l_this=new mc_gml_node_while_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_cond=l_h_cond;
 	l_this.h_node=l_h_node;
@@ -2213,7 +1883,7 @@ function mc_gml_node_do_until():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_node
 	/// @hint {ast_GmlNode} :h_cond
 	static __enumParams__=["h_d","h_node","h_cond"];
-	static __enumIndex__=110;
+	static __enumIndex__=95;
 }
 
 if(live_enabled)
@@ -2232,7 +1902,7 @@ function mc_gml_node_do_while():mc_gml_node()constructor{
 	/// @hint {ast_GmlNode} :h_node
 	/// @hint {ast_GmlNode} :h_cond
 	static __enumParams__=["h_d","h_node","h_cond"];
-	static __enumIndex__=111;
+	static __enumIndex__=96;
 }
 
 if(live_enabled)
@@ -2246,17 +1916,17 @@ function gml_node_do_while(l_h_d,l_h_node,l_h_cond){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_repeat():mc_gml_node()constructor{
+function mc_gml_node_repeat_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_times
 	/// @hint {ast_GmlNode} :h_node
 	static __enumParams__=["h_d","h_times","h_node"];
-	static __enumIndex__=112;
+	static __enumIndex__=97;
 }
 
 if(live_enabled)
-function gml_node_repeat(l_h_d,l_h_times,l_h_node){
-	var l_this=new mc_gml_node_repeat();
+function gml_node_repeat_hx(l_h_d,l_h_times,l_h_node){
+	var l_this=new mc_gml_node_repeat_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_times=l_h_times;
 	l_this.h_node=l_h_node;
@@ -2265,19 +1935,19 @@ function gml_node_repeat(l_h_d,l_h_times,l_h_node){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_for():mc_gml_node()constructor{
+function mc_gml_node_for_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_pre
 	/// @hint {ast_GmlNode} :h_cond
 	/// @hint {ast_GmlNode} :h_post
 	/// @hint {ast_GmlNode} :h_loop
 	static __enumParams__=["h_d","h_pre","h_cond","h_post","h_loop"];
-	static __enumIndex__=113;
+	static __enumIndex__=98;
 }
 
 if(live_enabled)
-function gml_node_for(l_h_d,l_h_pre,l_h_cond,l_h_post,l_h_loop){
-	var l_this=new mc_gml_node_for();
+function gml_node_for_hx(l_h_d,l_h_pre,l_h_cond,l_h_post,l_h_loop){
+	var l_this=new mc_gml_node_for_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_pre=l_h_pre;
 	l_this.h_cond=l_h_cond;
@@ -2288,17 +1958,17 @@ function gml_node_for(l_h_d,l_h_pre,l_h_cond,l_h_post,l_h_loop){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_with():mc_gml_node()constructor{
+function mc_gml_node_with_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_ctx
 	/// @hint {ast_GmlNode} :h_node
 	static __enumParams__=["h_d","h_ctx","h_node"];
-	static __enumIndex__=114;
+	static __enumIndex__=99;
 }
 
 if(live_enabled)
-function gml_node_with(l_h_d,l_h_ctx,l_h_node){
-	var l_this=new mc_gml_node_with();
+function gml_node_with_hx(l_h_d,l_h_ctx,l_h_node){
+	var l_this=new mc_gml_node_with_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_ctx=l_h_ctx;
 	l_this.h_node=l_h_node;
@@ -2311,7 +1981,7 @@ function mc_gml_node_once():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_node
 	static __enumParams__=["h_d","h_node"];
-	static __enumIndex__=115;
+	static __enumIndex__=100;
 }
 
 if(live_enabled)
@@ -2324,16 +1994,16 @@ function gml_node_once(l_h_d,l_h_node){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_return():mc_gml_node()constructor{
+function mc_gml_node_return_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_v
 	static __enumParams__=["h_d","h_v"];
-	static __enumIndex__=116;
+	static __enumIndex__=101;
 }
 
 if(live_enabled)
-function gml_node_return(l_h_d,l_h_v){
-	var l_this=new mc_gml_node_return();
+function gml_node_return_hx(l_h_d,l_h_v){
+	var l_this=new mc_gml_node_return_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_v=l_h_v;
 	return l_this
@@ -2341,45 +2011,45 @@ function gml_node_return(l_h_d,l_h_v){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_exit():mc_gml_node()constructor{
+function mc_gml_node_exit_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
-	static __enumIndex__=117;
+	static __enumIndex__=102;
 }
 
 if(live_enabled)
-function gml_node_exit(l_h_d){
-	var l_this=new mc_gml_node_exit();
+function gml_node_exit_hx(l_h_d){
+	var l_this=new mc_gml_node_exit_hx();
 	l_this.h_d=l_h_d;
 	return l_this
 }
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_break():mc_gml_node()constructor{
+function mc_gml_node_break_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
-	static __enumIndex__=118;
+	static __enumIndex__=103;
 }
 
 if(live_enabled)
-function gml_node_break(l_h_d){
-	var l_this=new mc_gml_node_break();
+function gml_node_break_hx(l_h_d){
+	var l_this=new mc_gml_node_break_hx();
 	l_this.h_d=l_h_d;
 	return l_this
 }
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_continue():mc_gml_node()constructor{
+function mc_gml_node_continue_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
-	static __enumIndex__=119;
+	static __enumIndex__=104;
 }
 
 if(live_enabled)
-function gml_node_continue(l_h_d){
-	var l_this=new mc_gml_node_continue();
+function gml_node_continue_hx(l_h_d){
+	var l_this=new mc_gml_node_continue_hx();
 	l_this.h_d=l_h_d;
 	return l_this
 }
@@ -2389,7 +2059,7 @@ if(live_enabled)
 function mc_gml_node_debugger():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	static __enumParams__=["h_d"];
-	static __enumIndex__=120;
+	static __enumIndex__=105;
 }
 
 if(live_enabled)
@@ -2407,7 +2077,7 @@ function mc_gml_node_try_catch():mc_gml_node()constructor{
 	/// @hint {string} :h_cap
 	/// @hint {ast_GmlNode} :h_cat
 	static __enumParams__=["h_d","h_node","h_cap","h_cat"];
-	static __enumIndex__=121;
+	static __enumIndex__=106;
 }
 
 if(live_enabled)
@@ -2422,150 +2092,17 @@ function gml_node_try_catch(l_h_d,l_h_node,l_h_cap,l_h_cat){
 
 if(live_enabled)
 /// @implements {gml_node}
-function mc_gml_node_throw():mc_gml_node()constructor{
+function mc_gml_node_throw_hx():mc_gml_node()constructor{
 	/// @hint {ast_GmlNodeData} :h_d
 	/// @hint {ast_GmlNode} :h_x
 	static __enumParams__=["h_d","h_x"];
-	static __enumIndex__=122;
+	static __enumIndex__=107;
 }
 
 if(live_enabled)
-function gml_node_throw(l_h_d,l_h_x){
-	var l_this=new mc_gml_node_throw();
+function gml_node_throw_hx(l_h_d,l_h_x){
+	var l_this=new mc_gml_node_throw_hx();
 	l_this.h_d=l_h_d;
 	l_this.h_x=l_h_x;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_comment_line():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_s
-	static __enumParams__=["h_d","h_s"];
-	static __enumIndex__=123;
-}
-
-if(live_enabled)
-function gml_node_comment_line(l_h_d,l_h_s){
-	var l_this=new mc_gml_node_comment_line();
-	l_this.h_d=l_h_d;
-	l_this.h_s=l_h_s;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_comment_line_pre():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_s
-	/// @hint {ast_GmlNode} :h_x
-	static __enumParams__=["h_d","h_s","h_x"];
-	static __enumIndex__=124;
-}
-
-if(live_enabled)
-function gml_node_comment_line_pre(l_h_d,l_h_s,l_h_x){
-	var l_this=new mc_gml_node_comment_line_pre();
-	l_this.h_d=l_h_d;
-	l_this.h_s=l_h_s;
-	l_this.h_x=l_h_x;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_comment_line_post():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {string} :h_s
-	static __enumParams__=["h_d","h_x","h_s"];
-	static __enumIndex__=125;
-}
-
-if(live_enabled)
-function gml_node_comment_line_post(l_h_d,l_h_x,l_h_s){
-	var l_this=new mc_gml_node_comment_line_post();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_s=l_h_s;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_comment_line_sep():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_s
-	/// @hint {ast_GmlNode} :h_x
-	static __enumParams__=["h_d","h_s","h_x"];
-	static __enumIndex__=126;
-}
-
-if(live_enabled)
-function gml_node_comment_line_sep(l_h_d,l_h_s,l_h_x){
-	var l_this=new mc_gml_node_comment_line_sep();
-	l_this.h_d=l_h_d;
-	l_this.h_s=l_h_s;
-	l_this.h_x=l_h_x;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_comment_block():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_s
-	static __enumParams__=["h_d","h_s"];
-	static __enumIndex__=127;
-}
-
-if(live_enabled)
-function gml_node_comment_block(l_h_d,l_h_s){
-	var l_this=new mc_gml_node_comment_block();
-	l_this.h_d=l_h_d;
-	l_this.h_s=l_h_s;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_comment_block_pre():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {string} :h_s
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {bool} :h_pl
-	static __enumParams__=["h_d","h_s","h_x","h_pl"];
-	static __enumIndex__=128;
-}
-
-if(live_enabled)
-function gml_node_comment_block_pre(l_h_d,l_h_s,l_h_x,l_h_pl){
-	var l_this=new mc_gml_node_comment_block_pre();
-	l_this.h_d=l_h_d;
-	l_this.h_s=l_h_s;
-	l_this.h_x=l_h_x;
-	l_this.h_pl=l_h_pl;
-	return l_this
-}
-
-if(live_enabled)
-/// @implements {gml_node}
-function mc_gml_node_comment_block_post():mc_gml_node()constructor{
-	/// @hint {ast_GmlNodeData} :h_d
-	/// @hint {ast_GmlNode} :h_x
-	/// @hint {string} :h_s
-	/// @hint {bool} :h_pl
-	static __enumParams__=["h_d","h_x","h_s","h_pl"];
-	static __enumIndex__=129;
-}
-
-if(live_enabled)
-function gml_node_comment_block_post(l_h_d,l_h_x,l_h_s,l_h_pl){
-	var l_this=new mc_gml_node_comment_block_post();
-	l_this.h_d=l_h_d;
-	l_this.h_x=l_h_x;
-	l_this.h_s=l_h_s;
-	l_this.h_pl=l_h_pl;
 	return l_this
 }

@@ -2,12 +2,18 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 // because script_execute_ext isn't always the very best
 if(live_enabled)
-function vm_gml_thread_exec_slice_error(){
-	gml_thread_error("Calls only support up to "+string(81)+" arguments at this time");
-	return undefined;
+function vm_gml_thread_exec_slice_longcall(l_fn,l_arr,l_ofs,l_argc){
+	if(is_method(l_fn)){
+		var l_scr=method_get_index(l_fn);
+		var l_me=method_get_self(l_fn);
+		if(l_me==undefined)return script_execute_ext(l_scr,l_arr,l_ofs,l_argc); else with (l_me) return script_execute_ext(l_scr,l_arr,l_ofs,l_argc);
+		gml_thread_error("Instance that the function is bound to no longer exists");
+		return undefined;
+	} else return script_execute_ext(l_fn,l_arr,l_ofs,l_argc);
 }
 
 if(live_enabled)

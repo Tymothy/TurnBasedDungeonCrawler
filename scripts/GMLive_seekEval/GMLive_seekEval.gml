@@ -2,6 +2,7 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 if(live_enabled)
 function gml_seek_eval_node_to_value(l_node){
@@ -10,7 +11,7 @@ function gml_seek_eval_node_to_value(l_node){
 		case 0:return undefined;
 		case 1:return l__g.h_value;
 		case 2:return l__g.h_value;
-		case 18:return variable_struct_get(gml_const_val.h_obj,l__g.h_id);
+		case 18:return gml_const_val.h_obj[$ l__g.h_id];
 		case 4:return l__g.h_ctr.h_value;
 		case 17:return l__g.h_id;
 		default:return gml_seek_eval_invalid_value;
@@ -20,9 +21,9 @@ function gml_seek_eval_node_to_value(l_node){
 if(live_enabled)
 function gml_seek_eval_value_to_node(l_val,l_d){
 	if(is_bool(l_val))return gml_node_number(l_d,(l_val?1:0),undefined);
-	if(is_numeric(l_val))return gml_node_number(l_d,l_val,undefined);
+	if(gml_std_gml_NativeTypeHelper_isNumber(l_val))return gml_node_number(l_d,l_val,undefined);
 	if(is_string(l_val))return gml_node_cstring(l_d,l_val);
-	if(l_val==undefined)return gml_node_undefined(l_d);
+	if(l_val==undefined)return gml_node_undefined_hx(l_d);
 	if(is_ptr(l_val))return gml_node_other_const(l_d,l_val);
 	return undefined;
 }
@@ -75,8 +76,8 @@ function gml_seek_eval_proc(l_q,l_st){
 								l_z=false;
 							}
 						}
-					} else if(is_numeric(l_v1)){
-						if(is_numeric(l_v2)){
+					} else if(gml_std_gml_NativeTypeHelper_isNumber(l_v1)){
+						if(gml_std_gml_NativeTypeHelper_isNumber(l_v2)){
 							gml_std_haxe_enum_tools_setTo(l_q,gml_node_number(l_d,l_v1+l_v2,undefined));
 						} else {
 							gml_seek_eval_error_text="Can't add "+gml_std_Type_enumConstructor(l_a)+" and "+gml_std_Type_enumConstructor(l_b)+" at compile time";
@@ -121,7 +122,7 @@ function gml_seek_eval_proc(l_q,l_st){
 				if(l_z){
 					l_v1=gml_seek_eval_node_to_value(l_a1);
 					l_v2=gml_seek_eval_node_to_value(l_b1);
-					if(is_numeric(l_v1)&&is_numeric(l_v2)){
+					if(gml_std_gml_NativeTypeHelper_isNumber(l_v1)&&gml_std_gml_NativeTypeHelper_isNumber(l_v2)){
 						l_f1=l_v1;
 						l_f2=l_v2;
 						switch(l_o){
@@ -130,7 +131,10 @@ function gml_seek_eval_proc(l_q,l_st){
 							case 0:l_f1*=l_f2;break;
 							case 1:l_f1/=l_f2;break;
 							case 2:l_f1%=l_f2;break;
-							case 3:l_f1=(l_f1 div l_f2);break;
+							case 3:
+								if(l_f2==0&&is_int64(l_f2)&&is_int64(l_f1))show_error("Division by zero",true);
+								l_f1/=l_f2;
+								break;
 							case 49:l_f1=(l_f1&l_f2);break;
 							case 48:l_f1=(l_f1|l_f2);break;
 							case 50:l_f1=(l_f1^l_f2);break;
@@ -159,13 +163,13 @@ function gml_seek_eval_proc(l_q,l_st){
 			}
 			break;
 		case 28:
-			var l_name=l__g.h_funcName;
+			var l_fn=l__g.h_fn;
 			var l_args1=l__g.h_args;
 			l_n=array_length(l_args1);
 			for(l_i=0;l_i<l_n;l_i++){
 				if(gml_seek_eval_proc(l_args1[l_i],l_st))l_z=false;
 			}
-			if(l_z&&variable_struct_get(gml_func_eval.h_obj,l_name)){
+			if(l_z&&l_fn.h_is_const){
 				var l_evalArgs=array_create(l_n);
 				var l_val;
 				l_i=0;
@@ -184,14 +188,11 @@ function gml_seek_eval_proc(l_q,l_st){
 					}
 					var l_th0=gml_thread_current;
 					gml_thread_current=l_th;
-					l_th.h_status=gml_thread_status_running;
-					var l_sf;
-					if(l_n<81){
-						l_sf=vm_gml_thread_exec_slice_funcs[l_n];
-						l_val=l_sf(variable_struct_get(gml_func_script.h_obj,l_name),l_evalArgs,0);
-					} else l_val=vm_gml_thread_exec_slice_error();
+					l_th.h_status=1;
+					var l_fn1=l_fn.h_func;
+					l_val=(l_n<81?vm_gml_thread_exec_slice_funcs[l_n](l_fn1,l_evalArgs,0):vm_gml_thread_exec_slice_longcall(l_fn1,l_evalArgs,0,l_n));
 					gml_thread_current=l_th0;
-					if(l_th.h_status!=gml_thread_status_error){
+					if(l_th.h_status!=4){
 						var l_next=gml_seek_eval_value_to_node(l_val,gml_std_haxe_enum_tools_getParameter(l_q,0));
 						if(l_next!=undefined){
 							gml_std_haxe_enum_tools_setTo(l_q,l_next);

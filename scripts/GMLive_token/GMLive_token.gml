@@ -2,6 +2,7 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 // Parser tokens
 if(live_enabled)/// @interface {gml_token}
@@ -203,15 +204,15 @@ function gml_token_ident(l_h_d,l_h_id){
 
 if(live_enabled)
 /// @implements {gml_token}
-function mc_gml_token_undefined():mc_gml_token()constructor{
+function mc_gml_token_undefined_hx():mc_gml_token()constructor{
 	/// @hint {gml_pos} :h_d
 	static __enumParams__=["h_d"];
 	static __enumIndex__=12;
 }
 
 if(live_enabled)
-function gml_token_undefined(l_h_d){
-	var l_this=new mc_gml_token_undefined();
+function gml_token_undefined_hx(l_h_d){
+	var l_this=new mc_gml_token_undefined_hx();
 	l_this.h_d=l_h_d;
 	return l_this
 }
@@ -454,5 +455,24 @@ if(live_enabled)
 function gml_token_null_co_set(l_h_d){
 	var l_this=new mc_gml_token_null_co_set();
 	l_this.h_d=l_h_d;
+	return l_this
+}
+
+if(live_enabled)
+/// @implements {gml_token}
+function mc_gml_token_pragma():mc_gml_token()constructor{
+	/// @hint {gml_pos} :h_d
+	/// @hint {string} :h_name
+	/// @hint {string} :h_value
+	static __enumParams__=["h_d","h_name","h_value"];
+	static __enumIndex__=28;
+}
+
+if(live_enabled)
+function gml_token_pragma(l_h_d,l_h_name,l_h_value){
+	var l_this=new mc_gml_token_pragma();
+	l_this.h_d=l_h_d;
+	l_this.h_name=l_h_name;
+	l_this.h_value=l_h_value;
 	return l_this
 }

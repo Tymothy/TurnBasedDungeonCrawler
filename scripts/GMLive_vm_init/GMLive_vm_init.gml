@@ -2,11 +2,12 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 if(live_enabled)
 function vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,l_name,l_fn){
-	var l_id=variable_struct_get(l_map.h_obj,l_name);
-	if(l_id!=undefined)l_funcs[@l_id]=l_fn; else throw gml_std_haxe_Exception_thrown("Can't find "+l_name);
+	var l_id=l_map.h_obj[$ l_name];
+	if(l_id!=undefined)l_funcs[@l_id]=l_fn; else show_error("Can't find "+l_name,true);
 }
 
 if(live_enabled)
@@ -16,7 +17,9 @@ function vm_v2_gml_thread_v2_handlers_init(){
 	var l_funcs=array_create(array_length(l_names),undefined);
 	var l_i=0;
 	for(var l__g1=array_length(l_names);l_i<l__g1;l_i++){
-		variable_struct_set(l_map.h_obj,l_names[l_i],l_i);
+		var l_name=l_names[l_i];
+		if(gml_std_StringTools_endsWith(l_name,"_hx"))l_name=gml_std_string_substring(l_name,0,string_length(l_name)-3);
+		l_map.h_obj[$ l_name]=l_i;
 		l_funcs[@l_i]=vm_v2_gml_thread_v2_on_unknown;
 	}
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"discard",vm_group_stack_on_discard);
@@ -56,7 +59,21 @@ function vm_v2_gml_thread_v2_handlers_init(){
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"field",vm_group_field_on_field);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"field_set",vm_group_field_on_field_set);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"field_aop",vm_group_field_on_field_aop);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"self_field",vm_group_field_on_self_field);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"self_field_set",vm_group_field_on_self_field_set);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"self_field_aop",vm_group_field_on_self_field_aop);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fast_self_field",vm_group_field_on_fast_self_field);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fast_self_field_set",vm_group_field_on_fast_self_field_set);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fast_self_field_aop",vm_group_field_on_fast_self_field_aop);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"local_field",vm_group_field_on_local_field);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"local_field_set",vm_group_field_on_local_field_set);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"local_field_aop",vm_group_field_on_local_field_aop);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fast_local_field",vm_group_field_on_fast_local_field);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fast_local_field_set",vm_group_field_on_fast_local_field_set);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fast_local_field_aop",vm_group_field_on_fast_local_field_aop);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fast_field_aop",vm_group_field_on_fast_field_aop);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"in",vm_group_field_on_in);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"in_const",vm_group_field_on_in_const);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"with_pre",vm_group_with_on_with_pre);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"with_next",vm_group_with_on_with_next);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"with_post",vm_group_with_on_with_post);
@@ -93,6 +110,7 @@ function vm_v2_gml_thread_v2_handlers_init(){
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"break",vm_group_jump_on_break);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"continue",vm_group_jump_on_continue);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"return",vm_group_jump_on_return);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"return_const",vm_group_jump_on_return_const);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"wait",vm_group_special_on_wait);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"fork",vm_group_special_on_fork);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"try",vm_group_special_on_try);
@@ -105,7 +123,27 @@ function vm_v2_gml_thread_v2_handlers_init(){
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func",vm_group_call_on_call_func);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_field",vm_group_call_on_call_field);
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"construct",vm_group_call_on_construct);
-	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"func_literal",vm_group_call_on_func_literal);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"func_literal",vm_v2_gml_thread_group_func_literal_on_func_literal);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func0",vm_group_fast_call_on_call_func0);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func0o",vm_group_fast_call_on_call_func0o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func1",vm_group_fast_call_on_call_func1);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func1o",vm_group_fast_call_on_call_func1o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func2",vm_group_fast_call_on_call_func2);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func2o",vm_group_fast_call_on_call_func2o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func3",vm_group_fast_call_on_call_func3);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func3o",vm_group_fast_call_on_call_func3o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func4",vm_group_fast_call_on_call_func4);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func4o",vm_group_fast_call_on_call_func4o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local0",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local0);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local0o",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local0o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local1",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local1);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local1o",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local1o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local2",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local2);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local2o",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local2o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local3",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local3);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local3o",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local3o);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local4",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local4);
+	vm_v2_gml_thread_v2_handlers_init_set(l_funcs,l_map,"call_func_with_local4o",vm_v2_gml_thread_group_fast_call_with_local_on_call_func_with_local4o);
 	return l_funcs;
 }
 
@@ -115,7 +153,7 @@ function vm_v2_gml_thread_v2_ready(){
 }
 
 if(live_enabled)
-function vm_v2_gml_thread_v2_on_unknown(l_th,l_act){
+function vm_v2_gml_thread_v2_on_unknown(l_th,l_act,l_scope,l_st){
 	l_th.h_proc_error("Can't execute "+gml_std_Type_enumConstructor(l_act),l_act);
-	return gml_thread_proc_result_error;
+	return 1;
 }

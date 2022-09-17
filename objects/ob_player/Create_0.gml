@@ -1,4 +1,5 @@
 /// @description Create Player
+if(live_call()) return live_result;
 event_inherited();
 //Put into a JSON file to allow easy changing and reference
 sprite = sp_player_hero1;
@@ -13,7 +14,7 @@ property.meleeAttackRange = 1;
 property.meleeAttackPower = 1;
 property.attacks.meleeDirect = true;
 property.attacks.meleeSlide = true;
-property.hp = 3;
+property.hp = 5;
 property.energy = 2;
 
 //Variables that aren't configured

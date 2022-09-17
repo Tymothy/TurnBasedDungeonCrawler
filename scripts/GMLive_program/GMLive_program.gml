@@ -2,6 +2,7 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 // VM "programs"
 if(live_enabled)
@@ -47,8 +48,8 @@ function gml_program(l_sources)constructor{
 	static h_call_v=function(l_name,l_args1,l_copy){
 		if(l_copy==undefined)l_copy=true;
 		if(false)show_debug_message(argument[2]);
-		if(variable_struct_exists(self.h_script_map.h_obj,l_name)){
-			var l_scr=variable_struct_get(self.h_script_map.h_obj,l_name);
+		var l_scr=self.h_script_map.h_obj[$ l_name];
+		if(l_scr!=undefined){
 			var l_locals=array_create(l_scr.h_locals);
 			if(l_copy)l_args1=gml_value_list_copy(l_args1);
 			gml_value_list_pad_to_size_with_null(l_args1,l_scr.h_arguments);
@@ -60,14 +61,27 @@ function gml_program(l_sources)constructor{
 		} else return undefined;
 	}
 	static h_print=function(){
-		var l_r="";
+		var l_r=new gml_std_StringBuf();
 		var l_i=0;
 		for(var l__g1=array_length(self.h_script_array);l_i<l__g1;l_i++){
-			if(l_i>0)l_r+="\n";
+			if(l_i>0)l_r.h_addChar(10);
 			var l_scr=self.h_script_array[l_i];
-			l_r+="#define "+l_scr.h_name+"\n"+gml_action_list_print(l_scr.h_actions);
+			l_r.h_add("#define ");
+			l_r.h_add(l_scr.h_name);
+			l_r.h_add("\n// locals: {");
+			var l_localNames=l_scr.h_local_names;
+			var l_k=0;
+			for(var l__g3=array_length(l_localNames);l_k<l__g3;l_k++){
+				if(l_k>0)l_r.h_add(", "); else l_r.h_add(" ");
+				l_r.h_add(l_k);
+				l_r.h_add(": \"");
+				l_r.h_add(l_localNames[l_k]);
+				l_r.h_add("\"");
+			}
+			l_r.h_add(" }\n");
+			l_r.h_add(gml_action_list_print(l_scr.h_actions));
 		}
-		return l_r;
+		return l_r.h_toString();
 	}
 	static h_seek=function(l_f,l_st){
 		if(l_st==undefined)l_st=false;
@@ -113,15 +127,15 @@ function gml_program(l_sources)constructor{
 		switch(l__g.__enumIndex__){
 			case 1:l_r=l__g.h_value;break;
 			case 2:l_r=l__g.h_value;break;
-			case 47:
+			case 48:
 				var l__hx_tmp=l__g.h_x;
 				if(l__hx_tmp.__enumIndex__==12){
 					var l_d=l__g.h_d;
 					var l_s=l__hx_tmp.h_id;
 					var l_f=l__g.h_fd;
-					var l_e=variable_struct_get(self.h_enum_map.h_obj,l_s);
+					var l_e=self.h_enum_map.h_obj[$ l_s];
 					if(l_e!=undefined){
-						var l_c=variable_struct_get(l_e.h_ctr_map.h_obj,l_f);
+						var l_c=l_e.h_ctr_map.h_obj[$ l_f];
 						if(l_c!=undefined){
 							l_r=l_c.h_value;
 							if(l_r==undefined)return self.h_error("Value of "+l_s+"."+l_f+" is not known here",l_d);
@@ -140,7 +154,12 @@ function gml_program(l_sources)constructor{
 					case 0:l_r*=l_v;break;
 					case 1:l_r/=l_v;break;
 					case 2:l_r%=l_v;break;
-					case 3:l_r=(l_r div l_v);break;
+					case 3:
+						var l_a=l_r;
+						var l_b=l_v;
+						if(l_b==0&&is_int64(l_b)&&is_int64(l_a))show_error("Division by zero",true);
+						l_r=l_a/l_b;
+						break;
 					case 49:l_r&=l_v;break;
 					case 48:l_r|=l_v;break;
 					case 50:l_r^=l_v;break;
@@ -173,7 +192,7 @@ function gml_program(l_sources)constructor{
 		var l_src=l_sources[l__g];
 		l__g++;
 		var l_b=new gml_builder(self,l_src);
-		gml_std_gml_internal_ArrayImpl_push(l_builders,l_b);
+		array_push(l_builders,l_b);
 		if(l_b.h_error_text==undefined){
 			var l_main=l_src.h_main;
 			var l__g1=0;
@@ -183,9 +202,9 @@ function gml_program(l_sources)constructor{
 				l__g1++;
 				if(variable_struct_exists(self.h_script_map.h_obj,l_scr.h_name)){
 					if(l_scr.h_name==l_main){
-						var l__g3=variable_struct_get(self.h_script_map.h_obj,l_main).h_node;
+						var l__g3=self.h_script_map.h_obj[$ l_main].h_node;
 						var l_tmp;
-						if(l__g3.__enumIndex__==103)l_tmp=array_length(l__g3.h_nodes)==0; else l_tmp=false;
+						if(l__g3.__enumIndex__==88)l_tmp=array_length(l__g3.h_nodes)==0; else l_tmp=false;
 						if(l_tmp){
 							var l_w=self.h_script_array;
 							var l_i=0;
@@ -198,18 +217,18 @@ function gml_program(l_sources)constructor{
 									l_w[@l_n-1]=l_scr;
 								} else l_i++;
 							}
-							variable_struct_set(self.h_script_map.h_obj,l_scr.h_name,l_scr);
+							self.h_script_map.h_obj[$ l_scr.h_name]=l_scr;
 						} else {
 							self.h_error("Cannot override prefix-script \""+l_main+"\" because it is not empty",l_scr.h_pos);
 							return 0;
 						}
 					} else {
-						self.h_error("Script "+l_scr.h_name+" is already defined at "+variable_struct_get(self.h_script_map.h_obj,l_scr.h_name).h_pos.h_to_string(),l_scr.h_pos);
+						self.h_error("Script "+l_scr.h_name+" is already defined at "+self.h_script_map.h_obj[$ l_scr.h_name].h_pos.h_to_string(),l_scr.h_pos);
 						return 0;
 					}
 				} else {
-					gml_std_gml_internal_ArrayImpl_push(self.h_script_array,l_scr);
-					variable_struct_set(self.h_script_map.h_obj,l_scr.h_name,l_scr);
+					array_push(self.h_script_array,l_scr);
+					self.h_script_map.h_obj[$ l_scr.h_name]=l_scr;
 				}
 			}
 			var l__g5=0;
@@ -217,15 +236,15 @@ function gml_program(l_sources)constructor{
 			while(l__g5<array_length(l__g6)){
 				var l_e=l__g6[l__g5];
 				l__g5++;
-				gml_std_gml_internal_ArrayImpl_push(self.h_enum_array,l_e);
-				variable_struct_set(self.h_enum_map.h_obj,l_e.h_name,l_e);
+				array_push(self.h_enum_array,l_e);
+				self.h_enum_map.h_obj[$ l_e.h_name]=l_e;
 			}
 			var l_mcrNames=l_b.h_macro_names;
 			var l_mcrNodes=l_b.h_macro_nodes;
 			var l_mcrMap=self.h_macro_map;
 			var l_i1=0;
 			for(var l__g8=array_length(l_mcrNames);l_i1<l__g8;l_i1++){
-				variable_struct_set(l_mcrMap.h_obj,l_mcrNames[l_i1],l_mcrNodes[l_i1]);
+				l_mcrMap.h_obj[$ l_mcrNames[l_i1]]=l_mcrNodes[l_i1];
 			}
 		} else if(l_src.h_opt){
 			var l_errorNext=l_b.h_error_text;

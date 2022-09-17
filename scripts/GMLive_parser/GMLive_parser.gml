@@ -2,15 +2,18 @@
 // PLEASE DO NOT FORGET to remove paid extensions from your project when publishing the source code!
 // And if you are using git, you can exclude GMLive by adding
 // `scripts/GMLive*` and `extensions/GMLive/` lines to your `.gitignore`.
+// Feather disable all
 
 // tokenizes the source code!
 if(live_enabled)
-function gml_parser_set_gml23(l_val){
-	gml_parser_gml23=l_val;
-	gml_parser_has_func_literal=l_val;
-	gml_parser_has_try_catch=l_val;
-	gml_parser_has_constructor=l_val;
-	return l_val;
+function gml_parser_set_version(l_ver){
+	if(l_ver<10){
+		show_error("Supported versions are 14,20,23",true);
+	} else if(l_ver<20){
+		gml_parser_default_version=api_api_version_v1;
+	} else if(l_ver<23){
+		gml_parser_default_version=api_api_version_v2;
+	} else gml_parser_default_version=api_api_version_v23;
 }
 
 if(live_enabled)
@@ -35,6 +38,11 @@ function gml_parser_run(l_src,l_temStart){
 	if(l_temStart==undefined)l_temStart=-1;
 	if(false)show_debug_message(argument[1]);
 	var l_z,l_s,l_i,l_n,l_row,l_rowStart,l_pos,l_tks;
+	var l_ver=l_src.h_version;
+	if(l_ver==undefined){
+		l_ver=gml_parser_default_version;
+		l_src.h_version=l_ver;
+	}
 	var l_out=ds_list_create();
 	if(l_temStart>=0){
 		l_row=gml_parser_tem_row;
@@ -104,37 +112,39 @@ function gml_parser_run(l_src,l_temStart){
 				} else ds_list_add(l_out,gml_token_qmark(l_d));
 				break;
 			case 64:
-				l_c=buffer_peek(l_buf,l_pos,buffer_u8);
-				if(l_c==34||l_c==39){
-					l_pos++;
-					l_n=l_pos;
-					l_i=buffer_peek(l_buf,l_pos,buffer_u8);
-					if(l_c>=192){
-						if(l_c>=224){
-							if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
-						} else l_rowStart++;
-					}
-					while(l_i!=l_c&&l_pos<l_len){
-						if(l_i==10){
-							l_row++;
-							l_rowStart=l_pos;
-						}
+				if(l_ver.h_has_literal_strings){
+					l_c=buffer_peek(l_buf,l_pos,buffer_u8);
+					if(l_c==34||l_c==39){
 						l_pos++;
+						l_n=l_pos;
 						l_i=buffer_peek(l_buf,l_pos,buffer_u8);
 						if(l_c>=192){
 							if(l_c>=224){
 								if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
 							} else l_rowStart++;
 						}
-					}
-					if(l_pos<l_len){
-						l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_n,l_pos++);
-					} else {
-						ds_list_destroy(l_out);
-						gml_parser_error("Unclosed string",l_d,l_out);
-						l_s=undefined;
-					}
-					ds_list_add(l_out,gml_token_cstring(l_d,l_s));
+						while(l_i!=l_c&&l_pos<l_len){
+							if(l_i==10){
+								l_row++;
+								l_rowStart=l_pos;
+							}
+							l_pos++;
+							l_i=buffer_peek(l_buf,l_pos,buffer_u8);
+							if(l_c>=192){
+								if(l_c>=224){
+									if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+								} else l_rowStart++;
+							}
+						}
+						if(l_pos<l_len){
+							l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_n,l_pos++);
+						} else {
+							ds_list_destroy(l_out);
+							gml_parser_error("Unclosed string",l_d,l_out);
+							l_s=undefined;
+						}
+						ds_list_add(l_out,gml_token_cstring(l_d,l_s));
+					} else ds_list_add(l_out,gml_token_at_sign(l_d));
 				} else ds_list_add(l_out,gml_token_at_sign(l_d));
 				break;
 			case 61:
@@ -369,124 +379,189 @@ function gml_parser_run(l_src,l_temStart){
 				} else ds_list_add(l_out,gml_token_cub_close(l_d));
 				break;
 			case 34:
-				l_z=true;
-				l_c=buffer_peek(l_buf,l_pos,buffer_u8);
-				if(l_c>=192){
-					if(l_c>=224){
-						if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
-					} else l_rowStart++;
-				}
-				while(l_pos<l_len){
-					switch(l_c){
-						case 34:break;
-						case 10:case 13:
-							ds_list_destroy(l_out);
-							return gml_parser_error("Unclosed string",l_d,l_out);
-						case 92:
-							if(l_z){
-								l_z=false;
-								buffer_seek(l_str,buffer_seek_start,0);
-							}
-							l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos);
-							buffer_write(l_str,buffer_text,l_s);
-							l_pos++;
-							l_c=buffer_peek(l_buf,l_pos,buffer_u8);
-							if(l_c>=192){
-								if(l_c>=224){
-									if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
-								} else l_rowStart++;
-							}
-							switch(l_c){
-								case 114:buffer_write(l_str,buffer_u8,13);break;
-								case 110:buffer_write(l_str,buffer_u8,10);break;
-								case 116:buffer_write(l_str,buffer_u8,9);break;
-								case 98:buffer_write(l_str,buffer_u8,8);break;
-								case 102:buffer_write(l_str,buffer_u8,12);break;
-								case 118:buffer_write(l_str,buffer_u8,11);break;
-								case 92:buffer_write(l_str,buffer_u8,92);break;
-								case 97:buffer_write(l_str,buffer_u8,7);break;
-								case 10:
-									l_row++;
-									l_rowStart=l_pos;
-									break;
-								case 117:case 120:
-									l_n=0;
-									if(l_c==117)l_i=12; else l_i=4;
-									while(l_i>=0){
-										l_pos++;
-										l_c=buffer_peek(l_buf,l_pos,buffer_u8);
-										if(l_c>=48&&l_c<=57){
-											l_c-=48;
-										} else if(l_c>=65&&l_c<=70){
-											l_c-=55;
-										} else if(l_c>=97&&l_c<=102){
-											l_c-=87;
-										} else l_c=0;
-										l_n|=(l_c<<l_i);
-										l_i-=4;
-									}
-									if(l_n<=127){
-										buffer_write(l_str,buffer_u8,l_n);
-									} else if(l_n<=2047){
-										buffer_write(l_str,buffer_u8,(192|(l_n>>6)));
-										buffer_write(l_str,buffer_u8,(128|(l_n&63)));
-									} else if(l_n<=65535){
-										buffer_write(l_str,buffer_u8,(192|(l_n>>12)));
-										buffer_write(l_str,buffer_u8,(128|((l_n>>6)&63)));
-										buffer_write(l_str,buffer_u8,(128|(l_n&63)));
-									} else {
-										buffer_write(l_str,buffer_u8,(192|(l_n>>18)));
-										buffer_write(l_str,buffer_u8,(128|((l_n>>12)&63)));
-										buffer_write(l_str,buffer_u8,(128|((l_n>>6)&63)));
-										buffer_write(l_str,buffer_u8,(128|(l_n&63)));
-									}
-									break;
-								default:
-									buffer_write(l_str,buffer_u8,l_c);
-									if(l_c==13){
-										l_pos++;
-										if(buffer_peek(l_buf,l_pos,buffer_u8)==10)buffer_write(l_str,buffer_u8,10); else l_pos--;
-									}
-							}
-							l_start=l_pos;
-							l_pos++;
-							l_c=buffer_peek(l_buf,l_pos,buffer_u8);
-							if(l_c>=192){
-								if(l_c>=224){
-									if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
-								} else l_rowStart++;
-							}
-							continue;
-						default:
-							l_pos++;
-							l_c=buffer_peek(l_buf,l_pos,buffer_u8);
-							if(l_c>=192){
-								if(l_c>=224){
-									if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
-								} else l_rowStart++;
-							}
-							continue;
+				if(l_ver.h_has_string_escape_characters){
+					l_z=true;
+					l_c=buffer_peek(l_buf,l_pos,buffer_u8);
+					if(l_c>=192){
+						if(l_c>=224){
+							if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+						} else l_rowStart++;
 					}
-					break;
-				}
-				if(l_pos>=l_len){
-					ds_list_destroy(l_out);
-					return gml_parser_error("Unclosed string",l_d,l_out);
-				} else l_pos++;
-				if(l_z){
-					l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos-1);
+					while(l_pos<l_len){
+						switch(l_c){
+							case 34:break;
+							case 10:case 13:
+								ds_list_destroy(l_out);
+								return gml_parser_error("Unclosed string",l_d,l_out);
+							case 92:
+								if(l_z){
+									l_z=false;
+									buffer_seek(l_str,buffer_seek_start,0);
+								}
+								l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos);
+								buffer_write(l_str,buffer_text,l_s);
+								l_pos++;
+								l_c=buffer_peek(l_buf,l_pos,buffer_u8);
+								if(l_c>=192){
+									if(l_c>=224){
+										if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+									} else l_rowStart++;
+								}
+								switch(l_c){
+									case 114:buffer_write(l_str,buffer_u8,13);break;
+									case 110:buffer_write(l_str,buffer_u8,10);break;
+									case 116:buffer_write(l_str,buffer_u8,9);break;
+									case 98:buffer_write(l_str,buffer_u8,8);break;
+									case 102:buffer_write(l_str,buffer_u8,12);break;
+									case 118:buffer_write(l_str,buffer_u8,11);break;
+									case 92:buffer_write(l_str,buffer_u8,92);break;
+									case 97:buffer_write(l_str,buffer_u8,7);break;
+									case 10:
+										l_row++;
+										l_rowStart=l_pos;
+										break;
+									case 117:case 120:
+										l_n=0;
+										if(l_c==117)l_i=12; else l_i=4;
+										while(l_i>=0){
+											l_pos++;
+											l_c=buffer_peek(l_buf,l_pos,buffer_u8);
+											if(l_c>=48&&l_c<=57){
+												l_c-=48;
+											} else if(l_c>=65&&l_c<=70){
+												l_c-=55;
+											} else if(l_c>=97&&l_c<=102){
+												l_c-=87;
+											} else l_c=0;
+											l_n|=(l_c<<l_i);
+											l_i-=4;
+										}
+										if(l_n<=127){
+											buffer_write(l_str,buffer_u8,l_n);
+										} else if(l_n<=2047){
+											buffer_write(l_str,buffer_u8,(192|(l_n>>6)));
+											buffer_write(l_str,buffer_u8,(128|(l_n&63)));
+										} else if(l_n<=65535){
+											buffer_write(l_str,buffer_u8,(192|(l_n>>12)));
+											buffer_write(l_str,buffer_u8,(128|((l_n>>6)&63)));
+											buffer_write(l_str,buffer_u8,(128|(l_n&63)));
+										} else {
+											buffer_write(l_str,buffer_u8,(192|(l_n>>18)));
+											buffer_write(l_str,buffer_u8,(128|((l_n>>12)&63)));
+											buffer_write(l_str,buffer_u8,(128|((l_n>>6)&63)));
+											buffer_write(l_str,buffer_u8,(128|(l_n&63)));
+										}
+										break;
+									default:
+										buffer_write(l_str,buffer_u8,l_c);
+										if(l_c==13){
+											l_pos++;
+											if(buffer_peek(l_buf,l_pos,buffer_u8)==10)buffer_write(l_str,buffer_u8,10); else l_pos--;
+										}
+								}
+								l_start=l_pos;
+								l_pos++;
+								l_c=buffer_peek(l_buf,l_pos,buffer_u8);
+								if(l_c>=192){
+									if(l_c>=224){
+										if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+									} else l_rowStart++;
+								}
+								continue;
+							default:
+								l_pos++;
+								l_c=buffer_peek(l_buf,l_pos,buffer_u8);
+								if(l_c>=192){
+									if(l_c>=224){
+										if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+									} else l_rowStart++;
+								}
+								continue;
+						}
+						break;
+					}
+					if(l_pos>=l_len){
+						ds_list_destroy(l_out);
+						return gml_parser_error("Unclosed string",l_d,l_out);
+					} else l_pos++;
+					if(l_z){
+						l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos-1);
+					} else {
+						l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos-1);
+						buffer_write(l_str,buffer_text,l_s);
+						buffer_write(l_str,buffer_u8,0);
+						buffer_seek(l_str,buffer_seek_start,0);
+						l_s=buffer_read(l_str,buffer_string);
+					}
+					ds_list_add(l_out,gml_token_cstring(l_d,l_s));
 				} else {
-					l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos-1);
-					buffer_write(l_str,buffer_text,l_s);
-					buffer_write(l_str,buffer_u8,0);
-					buffer_seek(l_str,buffer_seek_start,0);
-					l_s=buffer_read(l_str,buffer_string);
+					l_n=l_pos;
+					l_i=buffer_peek(l_buf,l_pos,buffer_u8);
+					if(l_c>=192){
+						if(l_c>=224){
+							if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+						} else l_rowStart++;
+					}
+					while(l_i!=l_c&&l_pos<l_len){
+						if(l_i==10){
+							l_row++;
+							l_rowStart=l_pos;
+						}
+						l_pos++;
+						l_i=buffer_peek(l_buf,l_pos,buffer_u8);
+						if(l_c>=192){
+							if(l_c>=224){
+								if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+							} else l_rowStart++;
+						}
+					}
+					if(l_pos<l_len){
+						l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_n,l_pos++);
+					} else {
+						ds_list_destroy(l_out);
+						gml_parser_error("Unclosed string",l_d,l_out);
+						l_s=undefined;
+					}
+					if(l_s==undefined)return undefined;
+					ds_list_add(l_out,gml_token_cstring(l_d,gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos-1)));
 				}
-				ds_list_add(l_out,gml_token_cstring(l_d,l_s));
 				break;
 			case 39:
-				ds_list_destroy(l_out);
-				return gml_parser_error("Single quotes are not allowed for strings.",l_d,l_out);
+				if(l_ver.h_has_string_escape_characters){
+					ds_list_destroy(l_out);
+					return gml_parser_error("Single quotes are not allowed for strings.",l_d,l_out);
+				} else {
+					l_n=l_pos;
+					l_i=buffer_peek(l_buf,l_pos,buffer_u8);
+					if(l_c>=192){
+						if(l_c>=224){
+							if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+						} else l_rowStart++;
+					}
+					while(l_i!=l_c&&l_pos<l_len){
+						if(l_i==10){
+							l_row++;
+							l_rowStart=l_pos;
+						}
+						l_pos++;
+						l_i=buffer_peek(l_buf,l_pos,buffer_u8);
+						if(l_c>=192){
+							if(l_c>=224){
+								if(l_c>=240)l_rowStart+=3; else l_rowStart+=2;
+							} else l_rowStart++;
+						}
+					}
+					if(l_pos<l_len){
+						l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_n,l_pos++);
+					} else {
+						ds_list_destroy(l_out);
+						gml_parser_error("Unclosed string",l_d,l_out);
+						l_s=undefined;
+					}
+					if(l_s==undefined)return undefined;
+					ds_list_add(l_out,gml_token_cstring(l_d,gml_parser_buf_sub(l_buf,l_sub_buf,l_start+1,l_pos-1)));
+				}
+				break;
 			case 35:
 				l_start=l_pos;
 				while(l_pos<l_len){
@@ -580,7 +655,7 @@ function gml_parser_run(l_src,l_temStart){
 						case "false":ds_list_add(l_out,gml_token_number(l_d,0,undefined));break;
 						case "all":ds_list_add(l_out,gml_token_number(l_d,-3,undefined));break;
 						case "noone":ds_list_add(l_out,gml_token_number(l_d,-4,undefined));break;
-						case "undefined":ds_list_add(l_out,gml_token_undefined(l_d));break;
+						case "undefined":ds_list_add(l_out,gml_token_undefined_hx(l_d));break;
 						case "begin":ds_list_add(l_out,gml_token_cub_open(l_d));break;
 						case "end":ds_list_add(l_out,gml_token_cub_close(l_d));break;
 						case "globalvar":ds_list_add(l_out,gml_token_keyword(l_d,1));break;
@@ -602,11 +677,12 @@ function gml_parser_run(l_src,l_temStart){
 						case "return":ds_list_add(l_out,gml_token_keyword(l_d,18));break;
 						case "break":ds_list_add(l_out,gml_token_keyword(l_d,17));break;
 						case "continue":ds_list_add(l_out,gml_token_keyword(l_d,16));break;
-						case "try":if(gml_parser_has_try_catch)ds_list_add(l_out,gml_token_keyword(l_d,21)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
-						case "catch":if(gml_parser_has_try_catch)ds_list_add(l_out,gml_token_keyword(l_d,22)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
-						case "throw":if(gml_parser_has_try_catch)ds_list_add(l_out,gml_token_keyword(l_d,23)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
-						case "new":if(gml_parser_has_constructor)ds_list_add(l_out,gml_token_keyword(l_d,25)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
-						case "function":if(gml_parser_has_func_literal)ds_list_add(l_out,gml_token_keyword(l_d,24)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
+						case "try":if(l_ver.h_has_try_catch)ds_list_add(l_out,gml_token_keyword(l_d,21)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
+						case "catch":if(l_ver.h_has_try_catch)ds_list_add(l_out,gml_token_keyword(l_d,22)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
+						case "throw":if(l_ver.h_has_try_catch)ds_list_add(l_out,gml_token_keyword(l_d,23)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
+						case "new":if(l_ver.h_has_constructor)ds_list_add(l_out,gml_token_keyword(l_d,25)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
+						case "delete":if(l_ver.h_has_delete)ds_list_add(l_out,gml_token_keyword(l_d,29)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
+						case "function":if(l_ver.h_has_func_literal)ds_list_add(l_out,gml_token_keyword(l_d,24)); else ds_list_add(l_out,gml_token_ident(l_d,l_s));break;
 						case "div":ds_list_add(l_out,gml_token_bin_op(l_d,3));break;
 						case "mod":ds_list_add(l_out,gml_token_bin_op(l_d,2));break;
 						case "and":ds_list_add(l_out,gml_token_bin_op(l_d,80));break;
@@ -675,7 +751,14 @@ function gml_parser_run(l_src,l_temStart){
 								}
 							}
 							l_s=gml_parser_buf_sub(l_buf,l_sub_buf,l_start,l_pos);
-							ds_list_add(l_out,gml_token_number(l_d,gml_std_Std_parseFloat(l_s),l_s));
+							var l_f=gml_std_Std_parseFloat(l_s);
+							if(!l_z){
+								if(string_format(l_f,0,0)!=l_s){
+									var l_i64=int64(l_s);
+									if(string(l_i64)==l_s)l_f=l_i64;
+								}
+							}
+							ds_list_add(l_out,gml_token_number(l_d,l_f,l_s));
 						}
 					}
 				} else {
