@@ -1,7 +1,11 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "co_blank",
   "spriteId": null,
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -22,10 +26,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Initalize",
-    "path": "folders/Controllers/Initalize.yy",
+    "path": "folders/Objects/Controllers/Initalize.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "co_blank",
-  "tags": [],
-  "resourceType": "GMObject",
 }

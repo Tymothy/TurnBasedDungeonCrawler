@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "button_hurtHostiles",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -22,16 +25,12 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "Tools",
-    "path": "folders/Controllers/GUI/Buttons/Tap Buttons/Tools.yy",
+    "path": "folders/Objects/Controllers/GUI/Buttons/Tap Buttons/Tools.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "button_hurtHostiles",
-  "tags": [],
-  "resourceType": "GMObject",
 }

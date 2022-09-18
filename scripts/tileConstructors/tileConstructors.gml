@@ -17,7 +17,6 @@ function Tile(_x, _y, _id) constructor {
 	_entityInTile = false;
 	_aiSpawnable = false;
 	_description = "Default tile"; //Used to track the name of the tile, mainly for debugging	
-	
 	_door = false;
 }
 

@@ -84,7 +84,17 @@ function spawn_ai(_obj, _spawnNum, _roomX, _roomY) {
 				if(_distX <= MIN_SPAWN_TILES && _distY <= MIN_SPAWN_TILES) {
 					_spawnValid = false;
 				}
+				
+				//Check if another entity exists in same spot
+				if(co_grid.tileGrid[# _randX, _randY][$"_entityInTile"] == true) {
+					_spawnValid = false;
+					//show_message("Tried to spawn in same spot at: " + coords_string(_randX, _randY));
+				}
+				
 			}
+			
+			
+			
 			
 			//If spawn point is still valid, spawn ai.
 			if(_spawnValid == true) {

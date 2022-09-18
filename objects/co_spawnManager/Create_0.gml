@@ -21,6 +21,7 @@ if(co_saveLoad.loadGameSave == true) {
 	//Spawn Player on spawn tile
 	var _spawnPlayer = spawn_player(); //If player is spawned, return 1
 
+	//TODO: Incorporate more complex spawning elements
 	//Iterate through all rooms and spawn enemies
 	for(var i = 0; i < ds_grid_width(co_roomGen.levelGrid); i++) {
 		for(var j = 0; j < ds_grid_height(co_roomGen.levelGrid); j++) {

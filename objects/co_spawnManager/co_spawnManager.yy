@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "co_spawnManager",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -19,16 +22,12 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "Spawning",
-    "path": "folders/Controllers/Game Control/Spawning.yy",
+    "path": "folders/Objects/Controllers/Game Control/Spawning.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "co_spawnManager",
-  "tags": [],
-  "resourceType": "GMObject",
 }
