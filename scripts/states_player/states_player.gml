@@ -341,7 +341,7 @@ function state_player_move(_event){
 			
 			#region audio
 			//While we are in the movement state, we want to play foot steps
-			audio_play_sfx(snd_move_01, true); //Since we are looping, we want to play until we stop
+			audioMan_play_sfx(snd_steps_01, true); //Since we are looping, we want to play until we stop
 			
 			#endregion
 		}break;

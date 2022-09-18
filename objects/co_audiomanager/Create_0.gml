@@ -51,18 +51,23 @@ playSound = function(_sound, _type, _priority = VOL_PRIORITY.NORMAL, _loop = fal
 	}
 	if(_allowSoundToPlay == true) {
 		//Play the sound
-		var _soundInst = audio_play_sound(_sound,_priority, _loop);
+		var _soundInst = audio_play_sound(_sound,_priority, _loop, 0);
+		audio_sound_gain(_soundInst, 1, _fadeIn);	//Fade in to the fade in value provided
+			
+		
+		
 		var _soundStruct = new addSound(_soundInst, _sound, _priority, _type, _loop, _fadeIn, _fadeOut);
 		addSoundToArray(_soundStruct);
 	}
 	
 	//Set the volume level of all tracks
-	setSoundLevel();
+	
+	//setSoundLevel();
 
 }
 
 setSoundLevel = function() {
-	//TODO/BUG: This will overwrite any fading
+	//WARN: This will overwrite any fading.  Only call on menu change
 	var _volSfx = global.volumeMaster * global.volumeSFX;
 	var _volMusic = global.volumeMaster * global.volumeMusic;
 	var _volEnvrionment = global.volumeMaster * global.volumeEnvironment;
@@ -91,16 +96,40 @@ addSoundToArray = function(_soundStruct) {
 	array_push(soundsPlaying, _soundStruct);
 }
 
+removeSound = function (_soundInst) {
+	for(var i = 0; i < array_length(soundsPlaying); i++) {
+		
+		//Find the sound instance we want to stop
+		if(soundsPlaying[i].inst == _soundInst) {
+			audio_stop_sound(_soundInst);
+			array_delete(soundsPlaying, i , 1);				
+			
+		}
+	}
+
+}
+
 stopSound = function(_soundInst) {
 	for(var i = 0; i < array_length(soundsPlaying); i++) {
-		if(soundsPlaying[i].inst == _soundInst) {
-			if(audio_is_playing(soundsPlaying[i].inst)){
-				audio_stop_sound(soundsPlaying[i].inst);
-			}
-			array_delete(soundsPlaying, i , 1);	
+		
+		//Find the sound instance we want to stop
+		if(soundsPlaying[i].inst == _soundInst && soundsPlaying[i].isStopping == false) {
+			var _fadeOut = soundsPlaying[i].fadeOut / 1000;//Divide period by 1000 to track milliseconds
+			
+			//Start fading out.  If there is no fadeout, it's instant.
+			audio_sound_gain(soundsPlaying[i].inst, 0, soundsPlaying[i].fadeOut);
+			soundsPlaying[i].isStopping = true;
+			var _soundHandle = time_source_create(time_source_game, _fadeOut, time_source_units_seconds, removeSound,[_soundInst], 1, time_source_expire_after);
+			time_source_start(_soundHandle);
+			//removeSound(soundsPlaying[i].inst);
+			//var _handle = call_later(_fadeOut, time_source_units_seconds, removeSound(_soundInst), false); 
+			//var _handle = call_later(0, time_source_units_seconds, audio_get_name(_soundInst), false); 
+			break;
 		}
 	}	
 }
+
+
 
 stepEnd = function() {
 	//Go through array and flip the justStarted flag from true to false so the same sound can be played next frame if desired
