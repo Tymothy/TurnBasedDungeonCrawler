@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_door",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -103,12 +106,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c0f63763-3dca-4fa8-b889-fad75366e2b7","path":"sprites/sp_door/sp_door.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c0f63763-3dca-4fa8-b889-fad75366e2b7","path":"sprites/sp_door/sp_door.yy",},"LayerId":{"name":"5a8120e6-f608-4d6c-ab17-da5bb02c3c07","path":"sprites/sp_door/sp_door.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_door","path":"sprites/sp_door/sp_door.yy",},"resourceVersion":"1.0","name":"c0f63763-3dca-4fa8-b889-fad75366e2b7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c0f63763-3dca-4fa8-b889-fad75366e2b7",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_door","path":"sprites/sp_door/sp_door.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_door",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -119,9 +122,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"9950b04f-7177-42d9-8c6a-5366b7722b08","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c0f63763-3dca-4fa8-b889-fad75366e2b7","path":"sprites/sp_door/sp_door.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -137,22 +140,13 @@
     "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_door","path":"sprites/sp_door/sp_door.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_door",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5a8120e6-f608-4d6c-ab17-da5bb02c3c07","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5a8120e6-f608-4d6c-ab17-da5bb02c3c07","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Environment",
     "path": "folders/Sprites/Environment.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_door",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

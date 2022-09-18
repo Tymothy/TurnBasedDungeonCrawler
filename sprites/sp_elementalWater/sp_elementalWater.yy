@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_elementalWater",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f2fd873d-0279-4849-83cd-0d6b23f8e5e2","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f2fd873d-0279-4849-83cd-0d6b23f8e5e2","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":{"name":"6e967909-4fa1-4d21-aca8-2724e8e81561","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_elementalWater","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"f2fd873d-0279-4849-83cd-0d6b23f8e5e2","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c997827c-2b1e-4ddc-89a6-f6138cd05d16","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c997827c-2b1e-4ddc-89a6-f6138cd05d16","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":{"name":"6e967909-4fa1-4d21-aca8-2724e8e81561","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_elementalWater","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"c997827c-2b1e-4ddc-89a6-f6138cd05d16","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4074c268-3808-4d25-806b-f4cac4e20c20","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4074c268-3808-4d25-806b-f4cac4e20c20","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":{"name":"6e967909-4fa1-4d21-aca8-2724e8e81561","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_elementalWater","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"4074c268-3808-4d25-806b-f4cac4e20c20","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"598de7aa-d803-45d1-9e5b-5638382c4de5","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"598de7aa-d803-45d1-9e5b-5638382c4de5","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"LayerId":{"name":"6e967909-4fa1-4d21-aca8-2724e8e81561","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_elementalWater","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","name":"598de7aa-d803-45d1-9e5b-5638382c4de5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f2fd873d-0279-4849-83cd-0d6b23f8e5e2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c997827c-2b1e-4ddc-89a6-f6138cd05d16",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4074c268-3808-4d25-806b-f4cac4e20c20",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"598de7aa-d803-45d1-9e5b-5638382c4de5",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_elementalWater","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_elementalWater",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"eeb8d92a-6ace-4e64-a4a8-0c1645d97fb5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f2fd873d-0279-4849-83cd-0d6b23f8e5e2","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"dd548fec-d7ee-4fde-affc-418b42dd0963","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c997827c-2b1e-4ddc-89a6-f6138cd05d16","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"66bd2ea0-62ab-447c-bb99-9e9e1dad97bf","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4074c268-3808-4d25-806b-f4cac4e20c20","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"55801f69-10da-49fe-bbdd-4864ddf38524","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"598de7aa-d803-45d1-9e5b-5638382c4de5","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_elementalWater","path":"sprites/sp_elementalWater/sp_elementalWater.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_elementalWater",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6e967909-4fa1-4d21-aca8-2724e8e81561","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6e967909-4fa1-4d21-aca8-2724e8e81561","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Monster",
     "path": "folders/Sprites/Entities/AI/Monster.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_elementalWater",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_bonySolider",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"2d7d2ca8-5d16-4c10-9bf8-8361f50acc5d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2d7d2ca8-5d16-4c10-9bf8-8361f50acc5d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":{"name":"3084f29b-1182-4549-b35a-e7547b59cad8","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_bonySolider","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"2d7d2ca8-5d16-4c10-9bf8-8361f50acc5d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"707e1ea6-4011-4e38-a26e-157dc4d0ec2d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"707e1ea6-4011-4e38-a26e-157dc4d0ec2d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":{"name":"3084f29b-1182-4549-b35a-e7547b59cad8","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_bonySolider","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"707e1ea6-4011-4e38-a26e-157dc4d0ec2d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b36e3b0a-28ac-4db8-bccc-e07f7d2ba433","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b36e3b0a-28ac-4db8-bccc-e07f7d2ba433","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":{"name":"3084f29b-1182-4549-b35a-e7547b59cad8","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_bonySolider","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"b36e3b0a-28ac-4db8-bccc-e07f7d2ba433","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b190e9ea-59df-4206-9df5-bd76f72724a7","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b190e9ea-59df-4206-9df5-bd76f72724a7","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"LayerId":{"name":"3084f29b-1182-4549-b35a-e7547b59cad8","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_bonySolider","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","name":"b190e9ea-59df-4206-9df5-bd76f72724a7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2d7d2ca8-5d16-4c10-9bf8-8361f50acc5d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"707e1ea6-4011-4e38-a26e-157dc4d0ec2d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b36e3b0a-28ac-4db8-bccc-e07f7d2ba433",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b190e9ea-59df-4206-9df5-bd76f72724a7",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_bonySolider","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_bonySolider",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -46,15 +43,15 @@
     "autoRecord": true,
     "volume": 1.0,
     "length": 4.0,
-    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MessageEventKeyframe",},
-    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"eadc483c-7360-4b9b-9e31-d36c46dca08b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2d7d2ca8-5d16-4c10-9bf8-8361f50acc5d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"732aff2a-ed98-437b-9e56-2f8c5bf81175","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"707e1ea6-4011-4e38-a26e-157dc4d0ec2d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"b102b61a-a52e-4fb7-b7cb-73b648b73c14","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b36e3b0a-28ac-4db8-bccc-e07f7d2ba433","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-            {"id":"9499431c-4444-419d-9974-33f553d71b5a","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b190e9ea-59df-4206-9df5-bd76f72724a7","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"eadc483c-7360-4b9b-9e31-d36c46dca08b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2d7d2ca8-5d16-4c10-9bf8-8361f50acc5d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"732aff2a-ed98-437b-9e56-2f8c5bf81175","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"707e1ea6-4011-4e38-a26e-157dc4d0ec2d","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b102b61a-a52e-4fb7-b7cb-73b648b73c14","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b36e3b0a-28ac-4db8-bccc-e07f7d2ba433","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9499431c-4444-419d-9974-33f553d71b5a","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b190e9ea-59df-4206-9df5-bd76f72724a7","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_bonySolider","path":"sprites/sp_bonySolider/sp_bonySolider.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_bonySolider",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3084f29b-1182-4549-b35a-e7547b59cad8","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3084f29b-1182-4549-b35a-e7547b59cad8","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_bonySolider",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

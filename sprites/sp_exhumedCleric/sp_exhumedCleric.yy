@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_exhumedCleric",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"aa7c941b-78f6-4784-b6bd-3cbca34d8b38","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"aa7c941b-78f6-4784-b6bd-3cbca34d8b38","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":{"name":"7972d72d-640d-4cbb-95ca-212a9d3ea270","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_exhumedCleric","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"aa7c941b-78f6-4784-b6bd-3cbca34d8b38","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"23363df9-8719-47ef-b2b8-0941fa357d4e","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"23363df9-8719-47ef-b2b8-0941fa357d4e","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":{"name":"7972d72d-640d-4cbb-95ca-212a9d3ea270","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_exhumedCleric","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"23363df9-8719-47ef-b2b8-0941fa357d4e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a28d9f41-b1a0-41a3-b207-aefdf4bd417e","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a28d9f41-b1a0-41a3-b207-aefdf4bd417e","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":{"name":"7972d72d-640d-4cbb-95ca-212a9d3ea270","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_exhumedCleric","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"a28d9f41-b1a0-41a3-b207-aefdf4bd417e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"9e84aa2f-2b1b-4923-b339-ac50dec2ce5b","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9e84aa2f-2b1b-4923-b339-ac50dec2ce5b","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"LayerId":{"name":"7972d72d-640d-4cbb-95ca-212a9d3ea270","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_exhumedCleric","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","name":"9e84aa2f-2b1b-4923-b339-ac50dec2ce5b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aa7c941b-78f6-4784-b6bd-3cbca34d8b38",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"23363df9-8719-47ef-b2b8-0941fa357d4e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a28d9f41-b1a0-41a3-b207-aefdf4bd417e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9e84aa2f-2b1b-4923-b339-ac50dec2ce5b",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_exhumedCleric","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_exhumedCleric",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"60057560-61e0-4743-b4e6-f9a9b36d19ba","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"aa7c941b-78f6-4784-b6bd-3cbca34d8b38","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"144652e6-2035-4dff-b2e0-6d3ee8434040","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"23363df9-8719-47ef-b2b8-0941fa357d4e","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f9c3a97c-24b2-4ec9-9968-bc46d89813ac","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a28d9f41-b1a0-41a3-b207-aefdf4bd417e","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"5b6531bd-7755-4856-9c9d-6c4cc20cd667","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9e84aa2f-2b1b-4923-b339-ac50dec2ce5b","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_exhumedCleric","path":"sprites/sp_exhumedCleric/sp_exhumedCleric.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_exhumedCleric",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7972d72d-640d-4cbb-95ca-212a9d3ea270","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7972d72d-640d-4cbb-95ca-212a9d3ea270","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_exhumedCleric",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

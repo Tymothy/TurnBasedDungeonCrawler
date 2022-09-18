@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_poisonGhost",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c0e70027-41c4-4ea0-8ec4-a80c1039b77e","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c0e70027-41c4-4ea0-8ec4-a80c1039b77e","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":{"name":"eec0ccd9-09de-458b-b3a2-d65944830e43","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_poisonGhost","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"c0e70027-41c4-4ea0-8ec4-a80c1039b77e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"09a900d0-a5be-4404-af08-c7c11f6c5c94","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"09a900d0-a5be-4404-af08-c7c11f6c5c94","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":{"name":"eec0ccd9-09de-458b-b3a2-d65944830e43","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_poisonGhost","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"09a900d0-a5be-4404-af08-c7c11f6c5c94","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"00cd2ac5-8f59-4a1b-a69b-5e07bb20e197","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"00cd2ac5-8f59-4a1b-a69b-5e07bb20e197","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":{"name":"eec0ccd9-09de-458b-b3a2-d65944830e43","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_poisonGhost","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"00cd2ac5-8f59-4a1b-a69b-5e07bb20e197","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"3d0d7e29-bfc0-456f-ae28-33fda2b40ae1","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3d0d7e29-bfc0-456f-ae28-33fda2b40ae1","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"LayerId":{"name":"eec0ccd9-09de-458b-b3a2-d65944830e43","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_poisonGhost","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","name":"3d0d7e29-bfc0-456f-ae28-33fda2b40ae1","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c0e70027-41c4-4ea0-8ec4-a80c1039b77e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"09a900d0-a5be-4404-af08-c7c11f6c5c94",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"00cd2ac5-8f59-4a1b-a69b-5e07bb20e197",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3d0d7e29-bfc0-456f-ae28-33fda2b40ae1",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_poisonGhost","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_poisonGhost",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"592f42c5-8477-4fa9-a32c-745d956acc72","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c0e70027-41c4-4ea0-8ec4-a80c1039b77e","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"deaa2d9b-8096-4339-a8e4-0823c6cda462","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"09a900d0-a5be-4404-af08-c7c11f6c5c94","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"419b5a03-5909-45df-818a-afeb16efdd7c","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"00cd2ac5-8f59-4a1b-a69b-5e07bb20e197","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"3d6206ab-b873-4081-b9fb-143f0e171917","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3d0d7e29-bfc0-456f-ae28-33fda2b40ae1","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_poisonGhost","path":"sprites/sp_poisonGhost/sp_poisonGhost.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_poisonGhost",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"eec0ccd9-09de-458b-b3a2-d65944830e43","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"eec0ccd9-09de-458b-b3a2-d65944830e43","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_poisonGhost",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

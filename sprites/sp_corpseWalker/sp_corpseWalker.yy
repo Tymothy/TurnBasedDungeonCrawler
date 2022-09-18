@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_corpseWalker",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"558a6219-0bdf-4fbe-be56-9c31080e75c1","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"558a6219-0bdf-4fbe-be56-9c31080e75c1","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":{"name":"0ff9c36d-a7b7-4ef2-990f-3dae0643b8a4","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_corpseWalker","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"558a6219-0bdf-4fbe-be56-9c31080e75c1","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"5ef30e42-a8c1-4f40-a84a-cfae5e668c3b","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5ef30e42-a8c1-4f40-a84a-cfae5e668c3b","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":{"name":"0ff9c36d-a7b7-4ef2-990f-3dae0643b8a4","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_corpseWalker","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"5ef30e42-a8c1-4f40-a84a-cfae5e668c3b","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"679876cd-b862-451f-83ce-2e55cf63a39e","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"679876cd-b862-451f-83ce-2e55cf63a39e","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":{"name":"0ff9c36d-a7b7-4ef2-990f-3dae0643b8a4","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_corpseWalker","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"679876cd-b862-451f-83ce-2e55cf63a39e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"6244cd4b-673c-4de7-8d00-77df4fdaaa97","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6244cd4b-673c-4de7-8d00-77df4fdaaa97","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"LayerId":{"name":"0ff9c36d-a7b7-4ef2-990f-3dae0643b8a4","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_corpseWalker","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","name":"6244cd4b-673c-4de7-8d00-77df4fdaaa97","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"558a6219-0bdf-4fbe-be56-9c31080e75c1",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5ef30e42-a8c1-4f40-a84a-cfae5e668c3b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"679876cd-b862-451f-83ce-2e55cf63a39e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6244cd4b-673c-4de7-8d00-77df4fdaaa97",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_corpseWalker","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_corpseWalker",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"3bc56bef-2f7f-46bb-a8d7-fcc1d2ecfe52","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"558a6219-0bdf-4fbe-be56-9c31080e75c1","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"e0c9728e-21f7-4af0-88cc-5acf5da945c7","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5ef30e42-a8c1-4f40-a84a-cfae5e668c3b","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"ca11ee4d-4117-494b-97ce-563f6ac51c8c","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"679876cd-b862-451f-83ce-2e55cf63a39e","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"ee49100c-4d9d-4da4-97b2-5deafb3a50fb","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6244cd4b-673c-4de7-8d00-77df4fdaaa97","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_corpseWalker","path":"sprites/sp_corpseWalker/sp_corpseWalker.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_corpseWalker",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0ff9c36d-a7b7-4ef2-990f-3dae0643b8a4","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0ff9c36d-a7b7-4ef2-990f-3dae0643b8a4","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_corpseWalker",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

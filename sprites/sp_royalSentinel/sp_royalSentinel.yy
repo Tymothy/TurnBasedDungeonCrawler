@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_royalSentinel",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7cca527f-d9b9-4989-88ca-810ce8711dc4","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7cca527f-d9b9-4989-88ca-810ce8711dc4","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":{"name":"ab96cec5-eb98-4644-b098-0971caf0c776","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_royalSentinel","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"7cca527f-d9b9-4989-88ca-810ce8711dc4","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c5f78a50-b756-4356-b280-429b711a1371","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c5f78a50-b756-4356-b280-429b711a1371","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":{"name":"ab96cec5-eb98-4644-b098-0971caf0c776","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_royalSentinel","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"c5f78a50-b756-4356-b280-429b711a1371","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"53be3fa3-0645-4734-8fb2-6aa9f8ed1081","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"53be3fa3-0645-4734-8fb2-6aa9f8ed1081","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":{"name":"ab96cec5-eb98-4644-b098-0971caf0c776","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_royalSentinel","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"53be3fa3-0645-4734-8fb2-6aa9f8ed1081","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e11d2116-79b6-4de7-9b80-4ecc3a77af5a","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e11d2116-79b6-4de7-9b80-4ecc3a77af5a","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"LayerId":{"name":"ab96cec5-eb98-4644-b098-0971caf0c776","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_royalSentinel","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","name":"e11d2116-79b6-4de7-9b80-4ecc3a77af5a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7cca527f-d9b9-4989-88ca-810ce8711dc4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c5f78a50-b756-4356-b280-429b711a1371",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"53be3fa3-0645-4734-8fb2-6aa9f8ed1081",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e11d2116-79b6-4de7-9b80-4ecc3a77af5a",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_royalSentinel","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_royalSentinel",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"bf0017cd-74b2-4398-a99a-c66a9e6a72b7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7cca527f-d9b9-4989-88ca-810ce8711dc4","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c7d981d0-5b07-414c-801c-b25b780cf498","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c5f78a50-b756-4356-b280-429b711a1371","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"98df71b0-2d62-4ce9-accb-5a85bcff4ba8","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"53be3fa3-0645-4734-8fb2-6aa9f8ed1081","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"a3002e70-ad56-4c33-bb12-345e2d7b7b74","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e11d2116-79b6-4de7-9b80-4ecc3a77af5a","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_royalSentinel","path":"sprites/sp_royalSentinel/sp_royalSentinel.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_royalSentinel",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ab96cec5-eb98-4644-b098-0971caf0c776","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ab96cec5-eb98-4644-b098-0971caf0c776","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_royalSentinel",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

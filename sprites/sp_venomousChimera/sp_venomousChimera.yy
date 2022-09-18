@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_venomousChimera",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,33 +27,19 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d6c5dc02-023e-4758-a55c-ae6d33a9dd77","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d6c5dc02-023e-4758-a55c-ae6d33a9dd77","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"d6c5dc02-023e-4758-a55c-ae6d33a9dd77","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"ab3fcdc7-ce84-4776-ab54-0add2793dc81","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ab3fcdc7-ce84-4776-ab54-0add2793dc81","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"ab3fcdc7-ce84-4776-ab54-0add2793dc81","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4709e0b2-7dac-4901-b195-f850f6064344","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4709e0b2-7dac-4901-b195-f850f6064344","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"4709e0b2-7dac-4901-b195-f850f6064344","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"49355883-a31d-4625-80df-e420870d8120","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"49355883-a31d-4625-80df-e420870d8120","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"49355883-a31d-4625-80df-e420870d8120","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"1771a532-28b5-4a4b-958f-47bd6e10033a","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1771a532-28b5-4a4b-958f-47bd6e10033a","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"1771a532-28b5-4a4b-958f-47bd6e10033a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"50058486-456f-4f5c-a840-e1dbfdf6159d","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"50058486-456f-4f5c-a840-e1dbfdf6159d","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"50058486-456f-4f5c-a840-e1dbfdf6159d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"3ee2943a-2bc3-4590-b1bc-b3ac7c027cb1","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3ee2943a-2bc3-4590-b1bc-b3ac7c027cb1","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"3ee2943a-2bc3-4590-b1bc-b3ac7c027cb1","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c2e81814-b250-4171-91c2-64f94ed398f6","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c2e81814-b250-4171-91c2-64f94ed398f6","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"LayerId":{"name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","name":"c2e81814-b250-4171-91c2-64f94ed398f6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d6c5dc02-023e-4758-a55c-ae6d33a9dd77",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ab3fcdc7-ce84-4776-ab54-0add2793dc81",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4709e0b2-7dac-4901-b195-f850f6064344",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"49355883-a31d-4625-80df-e420870d8120",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1771a532-28b5-4a4b-958f-47bd6e10033a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"50058486-456f-4f5c-a840-e1dbfdf6159d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3ee2943a-2bc3-4590-b1bc-b3ac7c027cb1",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c2e81814-b250-4171-91c2-64f94ed398f6",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_venomousChimera",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -61,7 +50,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"e4b07206-b12b-4a8d-8c27-b4153e2db94a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d6c5dc02-023e-4758-a55c-ae6d33a9dd77","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"430a4898-8908-46a6-b441-17ce4abf9afa","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ab3fcdc7-ce84-4776-ab54-0add2793dc81","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"1c74218d-4888-45ee-ac18-397f82800b7a","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4709e0b2-7dac-4901-b195-f850f6064344","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -70,7 +59,7 @@
             {"id":"30ce8b13-4b66-4d73-ae01-72d37c9aa563","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"50058486-456f-4f5c-a840-e1dbfdf6159d","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"5935ab96-485d-42f0-b725-882d3f4a6d4e","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3ee2943a-2bc3-4590-b1bc-b3ac7c027cb1","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c160774e-f3d5-4f96-995b-45b90a84e6ff","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c2e81814-b250-4171-91c2-64f94ed398f6","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -86,22 +75,13 @@
     "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_venomousChimera","path":"sprites/sp_venomousChimera/sp_venomousChimera.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_venomousChimera",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ff42f06b-2e1c-4a82-adc9-0f18c262ba6e","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Boss",
     "path": "folders/Sprites/Entities/AI/Boss.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_venomousChimera",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

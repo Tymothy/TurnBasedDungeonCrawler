@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_unholySkull",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"487e895e-582d-44c4-9e42-336594866183","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"487e895e-582d-44c4-9e42-336594866183","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":{"name":"dff32b33-95ac-41d5-b9b4-38a75ccb8d2e","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_unholySkull","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"487e895e-582d-44c4-9e42-336594866183","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"647732da-6dc8-43a8-b74f-5e5ece21cc93","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"647732da-6dc8-43a8-b74f-5e5ece21cc93","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":{"name":"dff32b33-95ac-41d5-b9b4-38a75ccb8d2e","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_unholySkull","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"647732da-6dc8-43a8-b74f-5e5ece21cc93","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"db22d58c-28c3-4c6b-b270-1de2ec93334e","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"db22d58c-28c3-4c6b-b270-1de2ec93334e","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":{"name":"dff32b33-95ac-41d5-b9b4-38a75ccb8d2e","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_unholySkull","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"db22d58c-28c3-4c6b-b270-1de2ec93334e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"ac10b1c0-76a9-4775-8309-afc255bcdc65","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ac10b1c0-76a9-4775-8309-afc255bcdc65","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"LayerId":{"name":"dff32b33-95ac-41d5-b9b4-38a75ccb8d2e","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_unholySkull","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","name":"ac10b1c0-76a9-4775-8309-afc255bcdc65","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"487e895e-582d-44c4-9e42-336594866183",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"647732da-6dc8-43a8-b74f-5e5ece21cc93",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"db22d58c-28c3-4c6b-b270-1de2ec93334e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ac10b1c0-76a9-4775-8309-afc255bcdc65",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_unholySkull","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_unholySkull",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"c84aa1b2-6cd4-439c-a916-b34cbb900aaf","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"487e895e-582d-44c4-9e42-336594866183","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"2dfa5e7b-02f8-4d29-9ceb-0dc8dd3f6c4b","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"647732da-6dc8-43a8-b74f-5e5ece21cc93","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c4d025f3-21c0-4e9a-8a04-a2dc42c8635f","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"db22d58c-28c3-4c6b-b270-1de2ec93334e","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"40d6e281-945a-4e6d-827b-1697678fa98f","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ac10b1c0-76a9-4775-8309-afc255bcdc65","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 9,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_unholySkull","path":"sprites/sp_unholySkull/sp_unholySkull.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_unholySkull",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"dff32b33-95ac-41d5-b9b4-38a75ccb8d2e","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dff32b33-95ac-41d5-b9b4-38a75ccb8d2e","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_unholySkull",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

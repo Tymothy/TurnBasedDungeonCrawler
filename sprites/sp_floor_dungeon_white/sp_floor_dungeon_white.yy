@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_floor_dungeon_white",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1167374f-6b46-42c5-922f-cafc3aa59c78","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1167374f-6b46-42c5-922f-cafc3aa59c78","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},"LayerId":{"name":"d42e1da6-4cd4-49c6-b957-f7699b0b80f0","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_floor_dungeon_white","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},"resourceVersion":"1.0","name":"1167374f-6b46-42c5-922f-cafc3aa59c78","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1167374f-6b46-42c5-922f-cafc3aa59c78",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_floor_dungeon_white","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_floor_dungeon_white",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"ca42502f-d435-45cb-8d0e-7b78c7d1de21","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1167374f-6b46-42c5-922f-cafc3aa59c78","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 96,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_floor_dungeon_white","path":"sprites/sp_floor_dungeon_white/sp_floor_dungeon_white.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_floor_dungeon_white",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d42e1da6-4cd4-49c6-b957-f7699b0b80f0","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d42e1da6-4cd4-49c6-b957-f7699b0b80f0","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Floor",
     "path": "folders/Sprites/Tilesets/Floor.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_floor_dungeon_white",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

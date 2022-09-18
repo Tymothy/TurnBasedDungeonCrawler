@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_toxicHound",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"4cc08752-399a-4304-803e-3a54ee545cba","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4cc08752-399a-4304-803e-3a54ee545cba","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":{"name":"fbaec634-e8f0-472c-b704-e9f094665e3d","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_toxicHound","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"4cc08752-399a-4304-803e-3a54ee545cba","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"48af7e51-a61b-44cb-8e46-17c356acced8","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"48af7e51-a61b-44cb-8e46-17c356acced8","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":{"name":"fbaec634-e8f0-472c-b704-e9f094665e3d","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_toxicHound","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"48af7e51-a61b-44cb-8e46-17c356acced8","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"af6ace48-9291-4a81-aae7-71eda2605768","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"af6ace48-9291-4a81-aae7-71eda2605768","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":{"name":"fbaec634-e8f0-472c-b704-e9f094665e3d","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_toxicHound","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"af6ace48-9291-4a81-aae7-71eda2605768","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"9b31b557-302f-4af2-9e3d-3a6a3127df52","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9b31b557-302f-4af2-9e3d-3a6a3127df52","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"LayerId":{"name":"fbaec634-e8f0-472c-b704-e9f094665e3d","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_toxicHound","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","name":"9b31b557-302f-4af2-9e3d-3a6a3127df52","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4cc08752-399a-4304-803e-3a54ee545cba",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"48af7e51-a61b-44cb-8e46-17c356acced8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"af6ace48-9291-4a81-aae7-71eda2605768",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9b31b557-302f-4af2-9e3d-3a6a3127df52",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_toxicHound","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_toxicHound",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"629d2849-c455-43f2-8148-ec4869df10b7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4cc08752-399a-4304-803e-3a54ee545cba","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"ba345577-7f03-4130-afd6-657d2bc688e9","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"48af7e51-a61b-44cb-8e46-17c356acced8","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"4b421b51-3656-49f1-9356-20e46b98de7a","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"af6ace48-9291-4a81-aae7-71eda2605768","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"d70ae483-0094-41a4-b032-91660d50264a","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9b31b557-302f-4af2-9e3d-3a6a3127df52","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_toxicHound","path":"sprites/sp_toxicHound/sp_toxicHound.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_toxicHound",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"fbaec634-e8f0-472c-b704-e9f094665e3d","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"fbaec634-e8f0-472c-b704-e9f094665e3d","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_toxicHound",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

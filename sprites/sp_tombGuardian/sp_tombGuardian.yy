@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_tombGuardian",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"e867ab4e-f520-4de3-b9a7-1b7dce418d01","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e867ab4e-f520-4de3-b9a7-1b7dce418d01","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":{"name":"24765be7-c857-4e73-a4f2-80ebe734bc5e","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_tombGuardian","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"e867ab4e-f520-4de3-b9a7-1b7dce418d01","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"64c4d34f-b0bf-4b9e-b064-f0ab2d23bed4","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"64c4d34f-b0bf-4b9e-b064-f0ab2d23bed4","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":{"name":"24765be7-c857-4e73-a4f2-80ebe734bc5e","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_tombGuardian","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"64c4d34f-b0bf-4b9e-b064-f0ab2d23bed4","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f4b16c5f-be6d-445d-960f-547bd522c7ad","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f4b16c5f-be6d-445d-960f-547bd522c7ad","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":{"name":"24765be7-c857-4e73-a4f2-80ebe734bc5e","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_tombGuardian","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"f4b16c5f-be6d-445d-960f-547bd522c7ad","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"ea2b6ba3-e38d-4882-a847-52e3389a9426","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ea2b6ba3-e38d-4882-a847-52e3389a9426","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"LayerId":{"name":"24765be7-c857-4e73-a4f2-80ebe734bc5e","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_tombGuardian","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","name":"ea2b6ba3-e38d-4882-a847-52e3389a9426","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e867ab4e-f520-4de3-b9a7-1b7dce418d01",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"64c4d34f-b0bf-4b9e-b064-f0ab2d23bed4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f4b16c5f-be6d-445d-960f-547bd522c7ad",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ea2b6ba3-e38d-4882-a847-52e3389a9426",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_tombGuardian","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_tombGuardian",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"da42306c-3a09-4fda-bc38-7f938cb136b3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e867ab4e-f520-4de3-b9a7-1b7dce418d01","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"2e22a408-a14e-4678-833d-ea0ea3d7c8fa","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"64c4d34f-b0bf-4b9e-b064-f0ab2d23bed4","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"ec10c9cf-8385-4db4-9260-a1d938ccd30e","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f4b16c5f-be6d-445d-960f-547bd522c7ad","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f1c1d98d-769c-482b-bd14-7c6f64c93f41","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ea2b6ba3-e38d-4882-a847-52e3389a9426","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_tombGuardian","path":"sprites/sp_tombGuardian/sp_tombGuardian.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_tombGuardian",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"24765be7-c857-4e73-a4f2-80ebe734bc5e","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"24765be7-c857-4e73-a4f2-80ebe734bc5e","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_tombGuardian",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

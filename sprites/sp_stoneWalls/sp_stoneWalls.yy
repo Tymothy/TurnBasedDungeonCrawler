@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_stoneWalls",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"0af720bd-cd4f-4e06-bfb4-13e52fd44dd5","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0af720bd-cd4f-4e06-bfb4-13e52fd44dd5","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},"LayerId":{"name":"90272195-447d-4ec7-b9f7-faa2a4c9a19c","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_stoneWalls","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},"resourceVersion":"1.0","name":"0af720bd-cd4f-4e06-bfb4-13e52fd44dd5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0af720bd-cd4f-4e06-bfb4-13e52fd44dd5",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_stoneWalls","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_stoneWalls",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"284bbf02-1d1d-4a05-a7c6-09392ad27e9b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0af720bd-cd4f-4e06-bfb4-13e52fd44dd5","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 64,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_stoneWalls","path":"sprites/sp_stoneWalls/sp_stoneWalls.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_stoneWalls",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"90272195-447d-4ec7-b9f7-faa2a4c9a19c","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"90272195-447d-4ec7-b9f7-faa2a4c9a19c","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Tiles",
     "path": "folders/Sprites/Markers/Tiles.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_stoneWalls",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_vampireBat",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"519781a2-5889-4639-9205-05a6d8cb6271","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"519781a2-5889-4639-9205-05a6d8cb6271","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":{"name":"2c954dc8-6d50-47a6-829c-08027129efbb","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_vampireBat","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"519781a2-5889-4639-9205-05a6d8cb6271","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"78e9bf4e-bb17-4660-894f-b671b493a87f","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"78e9bf4e-bb17-4660-894f-b671b493a87f","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":{"name":"2c954dc8-6d50-47a6-829c-08027129efbb","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_vampireBat","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"78e9bf4e-bb17-4660-894f-b671b493a87f","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c92a339d-05d5-420c-bf5c-0fcd88e3393b","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c92a339d-05d5-420c-bf5c-0fcd88e3393b","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":{"name":"2c954dc8-6d50-47a6-829c-08027129efbb","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_vampireBat","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"c92a339d-05d5-420c-bf5c-0fcd88e3393b","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c83088c2-8798-4c37-9335-34c7a316ae58","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c83088c2-8798-4c37-9335-34c7a316ae58","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"LayerId":{"name":"2c954dc8-6d50-47a6-829c-08027129efbb","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_vampireBat","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","name":"c83088c2-8798-4c37-9335-34c7a316ae58","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"519781a2-5889-4639-9205-05a6d8cb6271",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"78e9bf4e-bb17-4660-894f-b671b493a87f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c92a339d-05d5-420c-bf5c-0fcd88e3393b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c83088c2-8798-4c37-9335-34c7a316ae58",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_vampireBat","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_vampireBat",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"784241d8-ef2d-4c69-9234-41e9c68298b2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"519781a2-5889-4639-9205-05a6d8cb6271","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"9a09e7d3-69a3-49f6-b487-2e3a209bbdc1","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"78e9bf4e-bb17-4660-894f-b671b493a87f","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"9289cc17-e723-4aa3-ad38-270df30820a2","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c92a339d-05d5-420c-bf5c-0fcd88e3393b","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"cd3f47e2-d35f-4e5d-be40-e767a9b81c40","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c83088c2-8798-4c37-9335-34c7a316ae58","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_vampireBat","path":"sprites/sp_vampireBat/sp_vampireBat.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_vampireBat",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2c954dc8-6d50-47a6-829c-08027129efbb","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2c954dc8-6d50-47a6-829c-08027129efbb","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_vampireBat",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

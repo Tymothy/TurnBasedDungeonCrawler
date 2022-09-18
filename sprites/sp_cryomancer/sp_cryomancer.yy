@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_cryomancer",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"6544f9b5-fbe5-4eca-9ad9-234e9a5e5bfa","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6544f9b5-fbe5-4eca-9ad9-234e9a5e5bfa","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":{"name":"2ff1e905-012d-4283-9ac6-4559919d23ef","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_cryomancer","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"6544f9b5-fbe5-4eca-9ad9-234e9a5e5bfa","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c7cb1e1f-43cf-4e8b-a51b-1fb1cf8aa265","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c7cb1e1f-43cf-4e8b-a51b-1fb1cf8aa265","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":{"name":"2ff1e905-012d-4283-9ac6-4559919d23ef","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_cryomancer","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"c7cb1e1f-43cf-4e8b-a51b-1fb1cf8aa265","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"66e0eaad-b02d-4217-9f8e-019f407c7631","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"66e0eaad-b02d-4217-9f8e-019f407c7631","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":{"name":"2ff1e905-012d-4283-9ac6-4559919d23ef","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_cryomancer","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"66e0eaad-b02d-4217-9f8e-019f407c7631","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"97985e5a-e9e7-4408-9ad4-bc2ab2173218","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"97985e5a-e9e7-4408-9ad4-bc2ab2173218","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"LayerId":{"name":"2ff1e905-012d-4283-9ac6-4559919d23ef","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_cryomancer","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","name":"97985e5a-e9e7-4408-9ad4-bc2ab2173218","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6544f9b5-fbe5-4eca-9ad9-234e9a5e5bfa",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c7cb1e1f-43cf-4e8b-a51b-1fb1cf8aa265",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"66e0eaad-b02d-4217-9f8e-019f407c7631",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"97985e5a-e9e7-4408-9ad4-bc2ab2173218",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_cryomancer","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_cryomancer",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"339afd50-9144-48bf-abf7-c117c2722425","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6544f9b5-fbe5-4eca-9ad9-234e9a5e5bfa","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f0c7ff47-9842-45e4-8a08-a67d5c7ed2e7","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c7cb1e1f-43cf-4e8b-a51b-1fb1cf8aa265","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"24472ae6-9f5d-4bf0-91d0-1669272aa465","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"66e0eaad-b02d-4217-9f8e-019f407c7631","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"07efb4c4-4050-4b31-bb32-439515f4e92c","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"97985e5a-e9e7-4408-9ad4-bc2ab2173218","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_cryomancer","path":"sprites/sp_cryomancer/sp_cryomancer.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_cryomancer",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2ff1e905-012d-4283-9ac6-4559919d23ef","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2ff1e905-012d-4283-9ac6-4559919d23ef","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Humanoid",
     "path": "folders/Sprites/Entities/AI/Humanoid.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_cryomancer",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

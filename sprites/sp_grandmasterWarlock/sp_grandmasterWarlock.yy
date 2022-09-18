@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_grandmasterWarlock",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,36 +27,20 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"4a736838-0c32-4e2e-b9a1-187e8df94fdb","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4a736838-0c32-4e2e-b9a1-187e8df94fdb","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"4a736838-0c32-4e2e-b9a1-187e8df94fdb","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4e3e581f-7b1f-431e-b5e4-0c802c2a011e","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4e3e581f-7b1f-431e-b5e4-0c802c2a011e","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"4e3e581f-7b1f-431e-b5e4-0c802c2a011e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b665fe34-1b76-4680-959c-270b54a73ec0","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b665fe34-1b76-4680-959c-270b54a73ec0","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"b665fe34-1b76-4680-959c-270b54a73ec0","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"799eba5a-8d74-48d8-a2f4-e84821bb5c37","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"799eba5a-8d74-48d8-a2f4-e84821bb5c37","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"799eba5a-8d74-48d8-a2f4-e84821bb5c37","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b7065612-308d-484d-98ce-34d8652ee011","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b7065612-308d-484d-98ce-34d8652ee011","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"b7065612-308d-484d-98ce-34d8652ee011","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f1ae60c5-54e6-4a90-8dd0-1b09a99feec5","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f1ae60c5-54e6-4a90-8dd0-1b09a99feec5","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"f1ae60c5-54e6-4a90-8dd0-1b09a99feec5","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"afc517b5-1521-4a0c-86ff-01bc74ba11db","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"afc517b5-1521-4a0c-86ff-01bc74ba11db","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"afc517b5-1521-4a0c-86ff-01bc74ba11db","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a5b2b6f3-fb79-41aa-9780-304036284ee5","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a5b2b6f3-fb79-41aa-9780-304036284ee5","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"a5b2b6f3-fb79-41aa-9780-304036284ee5","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"b42a3c08-961e-44c3-86c9-3b74652ef88f","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b42a3c08-961e-44c3-86c9-3b74652ef88f","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"LayerId":{"name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","name":"b42a3c08-961e-44c3-86c9-3b74652ef88f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4a736838-0c32-4e2e-b9a1-187e8df94fdb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4e3e581f-7b1f-431e-b5e4-0c802c2a011e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b665fe34-1b76-4680-959c-270b54a73ec0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"799eba5a-8d74-48d8-a2f4-e84821bb5c37",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b7065612-308d-484d-98ce-34d8652ee011",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f1ae60c5-54e6-4a90-8dd0-1b09a99feec5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"afc517b5-1521-4a0c-86ff-01bc74ba11db",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a5b2b6f3-fb79-41aa-9780-304036284ee5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b42a3c08-961e-44c3-86c9-3b74652ef88f",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_grandmasterWarlock",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -64,7 +51,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"766e4857-0f6d-432b-b954-486ec0877fea","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4a736838-0c32-4e2e-b9a1-187e8df94fdb","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"b4f80bd2-2591-4a0a-861d-6958cc25f1c1","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4e3e581f-7b1f-431e-b5e4-0c802c2a011e","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"b7053d56-6ba1-41e0-916d-90095e9cbb0c","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b665fe34-1b76-4680-959c-270b54a73ec0","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -74,7 +61,7 @@
             {"id":"1d99cb38-a117-400d-8a27-d8cf9c83b0d6","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"afc517b5-1521-4a0c-86ff-01bc74ba11db","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"b51f2d57-2f02-4307-af1d-498c7c0eac55","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a5b2b6f3-fb79-41aa-9780-304036284ee5","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c559768a-18d1-4628-bf41-542a857c5cba","Key":8.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b42a3c08-961e-44c3-86c9-3b74652ef88f","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -90,22 +77,13 @@
     "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_grandmasterWarlock","path":"sprites/sp_grandmasterWarlock/sp_grandmasterWarlock.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_grandmasterWarlock",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1ffd78ba-20a5-4b03-8dd5-9cf7cafeda29","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Boss",
     "path": "folders/Sprites/Entities/AI/Boss.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_grandmasterWarlock",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

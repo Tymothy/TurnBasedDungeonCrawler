@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_skeletalMage",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"39b742db-fe72-416d-b492-87230593abd7","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"39b742db-fe72-416d-b492-87230593abd7","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":{"name":"c0c8a874-6ae5-4762-b9c7-f0074eab67a7","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_skeletalMage","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"39b742db-fe72-416d-b492-87230593abd7","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e61f617b-bb6c-4f3c-9d74-4e4926322dff","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e61f617b-bb6c-4f3c-9d74-4e4926322dff","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":{"name":"c0c8a874-6ae5-4762-b9c7-f0074eab67a7","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_skeletalMage","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"e61f617b-bb6c-4f3c-9d74-4e4926322dff","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"3ce50560-d1ca-4062-a47c-b6a55d0670fb","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3ce50560-d1ca-4062-a47c-b6a55d0670fb","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":{"name":"c0c8a874-6ae5-4762-b9c7-f0074eab67a7","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_skeletalMage","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"3ce50560-d1ca-4062-a47c-b6a55d0670fb","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"9d34f1d9-75e2-4448-89f3-d005e57d0b98","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9d34f1d9-75e2-4448-89f3-d005e57d0b98","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"LayerId":{"name":"c0c8a874-6ae5-4762-b9c7-f0074eab67a7","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_skeletalMage","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","name":"9d34f1d9-75e2-4448-89f3-d005e57d0b98","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"39b742db-fe72-416d-b492-87230593abd7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e61f617b-bb6c-4f3c-9d74-4e4926322dff",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3ce50560-d1ca-4062-a47c-b6a55d0670fb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9d34f1d9-75e2-4448-89f3-d005e57d0b98",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_skeletalMage","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_skeletalMage",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"2e51d7fc-2f94-4b01-a98a-ccc501314b4c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"39b742db-fe72-416d-b492-87230593abd7","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"1759cd44-cd1f-4bd9-8104-6bdb0301e820","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e61f617b-bb6c-4f3c-9d74-4e4926322dff","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"4f82d2de-535b-499d-a4c7-39be8b329227","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3ce50560-d1ca-4062-a47c-b6a55d0670fb","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"e18ff486-c6fb-4ac1-bc3d-2db40d7022f7","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9d34f1d9-75e2-4448-89f3-d005e57d0b98","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_skeletalMage","path":"sprites/sp_skeletalMage/sp_skeletalMage.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_skeletalMage",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c0c8a874-6ae5-4762-b9c7-f0074eab67a7","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c0c8a874-6ae5-4762-b9c7-f0074eab67a7","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_skeletalMage",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

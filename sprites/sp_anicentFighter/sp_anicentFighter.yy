@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_anicentFighter",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"62a8a1ec-7859-4fe9-983e-afb7f9175d2d","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"62a8a1ec-7859-4fe9-983e-afb7f9175d2d","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":{"name":"afb2bc6c-eddb-40a5-a066-9503c3df1e69","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_anicentFighter","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"62a8a1ec-7859-4fe9-983e-afb7f9175d2d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e26e71c5-e9e8-4f0e-989f-c49716325e56","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e26e71c5-e9e8-4f0e-989f-c49716325e56","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":{"name":"afb2bc6c-eddb-40a5-a066-9503c3df1e69","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_anicentFighter","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"e26e71c5-e9e8-4f0e-989f-c49716325e56","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"de2ad477-cd15-4892-83cb-c04796231b17","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"de2ad477-cd15-4892-83cb-c04796231b17","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":{"name":"afb2bc6c-eddb-40a5-a066-9503c3df1e69","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_anicentFighter","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"de2ad477-cd15-4892-83cb-c04796231b17","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"3b5ec196-3aa3-4ac3-a668-958c3ebfb838","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3b5ec196-3aa3-4ac3-a668-958c3ebfb838","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"LayerId":{"name":"afb2bc6c-eddb-40a5-a066-9503c3df1e69","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_anicentFighter","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","name":"3b5ec196-3aa3-4ac3-a668-958c3ebfb838","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"62a8a1ec-7859-4fe9-983e-afb7f9175d2d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e26e71c5-e9e8-4f0e-989f-c49716325e56",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"de2ad477-cd15-4892-83cb-c04796231b17",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3b5ec196-3aa3-4ac3-a668-958c3ebfb838",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_anicentFighter","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_anicentFighter",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"63cb438e-6dfa-4b3b-8b1d-cb716a0540b4","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"62a8a1ec-7859-4fe9-983e-afb7f9175d2d","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"8b4e7110-492e-449a-8b86-e6306288e036","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e26e71c5-e9e8-4f0e-989f-c49716325e56","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"57cef894-7986-4a5b-8fa9-287218b167fd","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"de2ad477-cd15-4892-83cb-c04796231b17","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"e5ddf313-0099-4efb-8cca-fed27f14abbb","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3b5ec196-3aa3-4ac3-a668-958c3ebfb838","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_anicentFighter","path":"sprites/sp_anicentFighter/sp_anicentFighter.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_anicentFighter",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"afb2bc6c-eddb-40a5-a066-9503c3df1e69","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"afb2bc6c-eddb-40a5-a066-9503c3df1e69","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Undead",
     "path": "folders/Sprites/Entities/AI/Undead.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_anicentFighter",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

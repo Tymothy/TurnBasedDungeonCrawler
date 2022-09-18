@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_illusionist",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,21 +27,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"33c56a8e-4735-4dfb-94ea-6b1a7297ab92","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"33c56a8e-4735-4dfb-94ea-6b1a7297ab92","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":{"name":"456458da-f03b-4f1d-b0d9-1343a1eb68ed","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_illusionist","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"33c56a8e-4735-4dfb-94ea-6b1a7297ab92","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c35df846-5a61-4a8e-8053-a1aaecd4997c","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c35df846-5a61-4a8e-8053-a1aaecd4997c","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":{"name":"456458da-f03b-4f1d-b0d9-1343a1eb68ed","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_illusionist","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"c35df846-5a61-4a8e-8053-a1aaecd4997c","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"fac8b59c-547b-4bb7-9daf-9ba4b2d09fdc","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fac8b59c-547b-4bb7-9daf-9ba4b2d09fdc","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":{"name":"456458da-f03b-4f1d-b0d9-1343a1eb68ed","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_illusionist","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"fac8b59c-547b-4bb7-9daf-9ba4b2d09fdc","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"8a7db635-232a-4b02-8711-276d5bc19df4","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8a7db635-232a-4b02-8711-276d5bc19df4","path":"sprites/sp_illusionist/sp_illusionist.yy",},"LayerId":{"name":"456458da-f03b-4f1d-b0d9-1343a1eb68ed","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_illusionist","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","name":"8a7db635-232a-4b02-8711-276d5bc19df4","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"33c56a8e-4735-4dfb-94ea-6b1a7297ab92",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c35df846-5a61-4a8e-8053-a1aaecd4997c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fac8b59c-547b-4bb7-9daf-9ba4b2d09fdc",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8a7db635-232a-4b02-8711-276d5bc19df4",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_illusionist","path":"sprites/sp_illusionist/sp_illusionist.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_illusionist",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -49,12 +46,12 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"b7da21fb-52fd-4746-b4b1-e2be4650b429","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"33c56a8e-4735-4dfb-94ea-6b1a7297ab92","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"46df4da5-2d9c-4576-b935-e978d231f637","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c35df846-5a61-4a8e-8053-a1aaecd4997c","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"7b360168-8960-4e6c-bcb1-3c5a239a4377","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fac8b59c-547b-4bb7-9daf-9ba4b2d09fdc","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"d57041c6-64bd-4944-ad30-d72144f9793d","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8a7db635-232a-4b02-8711-276d5bc19df4","path":"sprites/sp_illusionist/sp_illusionist.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -70,22 +67,13 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_illusionist","path":"sprites/sp_illusionist/sp_illusionist.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_illusionist",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"456458da-f03b-4f1d-b0d9-1343a1eb68ed","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"456458da-f03b-4f1d-b0d9-1343a1eb68ed","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Humanoid",
     "path": "folders/Sprites/Entities/AI/Humanoid.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_illusionist",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

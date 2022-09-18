@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sp_golemSteel",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,33 +27,19 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"625d5e26-4e70-43c6-9cb6-da945041dde0","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"625d5e26-4e70-43c6-9cb6-da945041dde0","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"625d5e26-4e70-43c6-9cb6-da945041dde0","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"255c179c-5d57-4dba-8239-6473b3f46a19","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"255c179c-5d57-4dba-8239-6473b3f46a19","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"255c179c-5d57-4dba-8239-6473b3f46a19","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"ac8b6153-c5a4-4d45-92c1-d02203bac1c2","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ac8b6153-c5a4-4d45-92c1-d02203bac1c2","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"ac8b6153-c5a4-4d45-92c1-d02203bac1c2","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"23c45940-ed98-4ddc-b77f-d039d1cef51e","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"23c45940-ed98-4ddc-b77f-d039d1cef51e","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"23c45940-ed98-4ddc-b77f-d039d1cef51e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e02a9754-3a58-4f2d-8d8b-6cff399fc63a","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e02a9754-3a58-4f2d-8d8b-6cff399fc63a","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"e02a9754-3a58-4f2d-8d8b-6cff399fc63a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e4dcbdad-5bff-417f-82b7-324fae15377e","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e4dcbdad-5bff-417f-82b7-324fae15377e","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"e4dcbdad-5bff-417f-82b7-324fae15377e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"5ac49cce-4bc6-4954-87cf-f70aabb08073","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5ac49cce-4bc6-4954-87cf-f70aabb08073","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"5ac49cce-4bc6-4954-87cf-f70aabb08073","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"f1bca38c-16ff-46eb-bf8e-e52bdb797c9b","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f1bca38c-16ff-46eb-bf8e-e52bdb797c9b","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"LayerId":{"name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","name":"f1bca38c-16ff-46eb-bf8e-e52bdb797c9b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"625d5e26-4e70-43c6-9cb6-da945041dde0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"255c179c-5d57-4dba-8239-6473b3f46a19",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ac8b6153-c5a4-4d45-92c1-d02203bac1c2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"23c45940-ed98-4ddc-b77f-d039d1cef51e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e02a9754-3a58-4f2d-8d8b-6cff399fc63a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e4dcbdad-5bff-417f-82b7-324fae15377e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5ac49cce-4bc6-4954-87cf-f70aabb08073",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f1bca38c-16ff-46eb-bf8e-e52bdb797c9b",},
   ],
   "sequence": {
-    "spriteId": {"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sp_golemSteel",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 4.0,
@@ -61,7 +50,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"3cdc9017-4b5b-4b7e-8569-bf8879532dca","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"625d5e26-4e70-43c6-9cb6-da945041dde0","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"bbd026e6-6a3e-4f4f-a43d-c4abc352693d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"255c179c-5d57-4dba-8239-6473b3f46a19","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"d010205e-fa70-4b63-bcba-2ffccb3f8479","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ac8b6153-c5a4-4d45-92c1-d02203bac1c2","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -70,7 +59,7 @@
             {"id":"4c4f8426-c4eb-49dc-b6d8-ae37241959e4","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e4dcbdad-5bff-417f-82b7-324fae15377e","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"45c1b50d-abf7-4868-bf1f-edc18b599215","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5ac49cce-4bc6-4954-87cf-f70aabb08073","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"55382022-95f9-440a-a661-19f5aecf255a","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f1bca38c-16ff-46eb-bf8e-e52bdb797c9b","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -86,22 +75,13 @@
     "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sp_golemSteel","path":"sprites/sp_golemSteel/sp_golemSteel.yy",},
-    "resourceVersion": "1.4",
-    "name": "sp_golemSteel",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dd7feaa9-51dc-4cd9-9ac1-463a4a3c8733","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Boss",
     "path": "folders/Sprites/Entities/AI/Boss.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sp_golemSteel",
-  "tags": [],
-  "resourceType": "GMSprite",
 }
