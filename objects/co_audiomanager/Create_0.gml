@@ -91,46 +91,36 @@ setSoundLevel = function() {
 	
 }
 
-addSoundToArray = function(_soundStruct) {
-	
-	array_push(soundsPlaying, _soundStruct);
-}
 
-removeSound = function (_soundInst) {
-	for(var i = 0; i < array_length(soundsPlaying); i++) {
-		
-		//Find the sound instance we want to stop
-		if(soundsPlaying[i].inst == _soundInst) {
-			audio_stop_sound(_soundInst);
-			array_delete(soundsPlaying, i , 1);				
-			
-		}
-	}
-
-}
 
 stopSound = function(_soundInst) {
+	//Search through sound IDs first to see which one to stop.
 	for(var i = 0; i < array_length(soundsPlaying); i++) {
-		
 		//Find the sound instance we want to stop
-		if(soundsPlaying[i].inst == _soundInst && soundsPlaying[i].isStopping == false) {
+		var _inst = soundsPlaying[i].inst;
+		var _sound = soundsPlaying[i].sound;
+		var _isStopping = soundsPlaying[i].isStopping;
+		
+		//Check to see if given value is the sound instance or the sound name itself.
+		if((_inst == _soundInst && _isStopping == false) || (_sound == _soundInst && _isStopping == false)) {
 			var _fadeOut = soundsPlaying[i].fadeOut / 1000;//Divide period by 1000 to track milliseconds
 			
 			//Start fading out.  If there is no fadeout, it's instant.
 			audio_sound_gain(soundsPlaying[i].inst, 0, soundsPlaying[i].fadeOut);
 			soundsPlaying[i].isStopping = true;
-			var _soundHandle = time_source_create(time_source_game, _fadeOut, time_source_units_seconds, removeSound,[_soundInst], 1, time_source_expire_after);
+			var _soundHandle = time_source_create(time_source_game, _fadeOut, time_source_units_seconds, removeSound,[_soundInst]);
 			time_source_start(_soundHandle);
 			//removeSound(soundsPlaying[i].inst);
 			//var _handle = call_later(_fadeOut, time_source_units_seconds, removeSound(_soundInst), false); 
 			//var _handle = call_later(0, time_source_units_seconds, audio_get_name(_soundInst), false); 
+			//return; //This return will end the function, skipping the for loop below since we have already found the sound we want to stop
 			break;
 		}
 	}	
 }
 
 
-
+#region Methods only used by AudioMan, do not call
 stepEnd = function() {
 	//Go through array and flip the justStarted flag from true to false so the same sound can be played next frame if desired
 	for(var i = 0; i < array_length(soundsPlaying); i++) {
@@ -167,4 +157,20 @@ stepEnd = function() {
 		
 	}
 	
+}
+addSoundToArray = function(_soundStruct) {
+	
+	array_push(soundsPlaying, _soundStruct);
+}
+removeSound = function (_soundInst) {
+	for(var i = 0; i < array_length(soundsPlaying); i++) {
+		
+		//Find the sound instance we want to stop
+		if(soundsPlaying[i].inst == _soundInst) {
+			audio_stop_sound(_soundInst);
+			array_delete(soundsPlaying, i , 1);				
+			
+		}
+	}
+
 }

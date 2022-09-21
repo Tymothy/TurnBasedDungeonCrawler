@@ -1,6 +1,4 @@
-/// @description Play Music
-
-
+/// @description Toggle Music
 
 if(playMusic)
 {

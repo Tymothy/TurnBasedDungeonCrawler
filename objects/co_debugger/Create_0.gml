@@ -10,5 +10,3 @@ drawX1 = 0;
 drawX2 = 0;
 drawY1 = 0;
 drawY2 = 0;
-
-playMusic = false;

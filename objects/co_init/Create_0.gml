@@ -25,6 +25,7 @@ instance_create_depth(x, y, -1000, co_tilesetMapping);
 //Init scaling
 instance_create_depth(x, y, -1000, co_touchMaster);
 instance_create_depth(x, y, -1000, co_gameManager);
+instance_create_depth(x, y, -1000, co_music);
 	//Create the save controller
 instance_create_depth(x, y, -1000, co_saveLoad);
 

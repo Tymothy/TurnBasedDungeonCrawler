@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Audio Manager",
-    "path": "folders/Objects/Controllers/Audio Manager.yy",
+    "name": "AudioMan",
+    "path": "folders/Extensions/AudioMan.yy",
   },
 }
