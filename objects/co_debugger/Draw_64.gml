@@ -27,6 +27,9 @@
 //}
 
 //Draw a grid on GUI
+var _gh = global.gui_height;
+var _gw = global.gui_width;
+
 if(false) {
 	draw_set_alpha(.2);
 	draw_set_color(c_gray);
@@ -48,4 +51,16 @@ if(false) {
 	
 	draw_rectangle(_x1, _y1, _x2, _y2, true);
 	draw_set_alpha(1);
+}
+
+//Draw some vars
+if(true) {
+	//Draw music info
+	draw_set_color(c_lime);
+	draw_set_font(fo_debugNormal);
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_right);
+	
+	draw_text(_gw - 4, 100, "Playing music var: " + string(co_music.playMusic));
+	
 }

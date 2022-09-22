@@ -38,17 +38,29 @@ playSound = function(_sound, _type, _priority = VOL_PRIORITY.NORMAL, _loop = fal
 		if(soundsPlaying[i].sound == _sound) {
 			//Sound matches an existing sound.  Check if we can play it multiple times
 			if(soundsPlaying[i].allowMultiple == false) {
+				//If the sound asset is already playing, and we don't want multiple instances of this asset, don't play again
 				_allowSoundToPlay = false;
 			} 
+			
 			if (soundsPlaying[i].keepPlaying == false) {
 				//We want to keep playing the sound
 				soundsPlaying[i].keepPlaying = true;
-				
 			}
+			
 			//_allowSoundToPlay was created as true, we don't need to set true here
 		}
+		if(_allowSoundToPlay == false) {
+		//Check to see if sound was stopping, but we want to start playing it again
+			if(soundsPlaying[i].keepPlaying == true && soundsPlaying[i].isStopping == true) {
+				soundsPlaying[i].isStopping = false; //Since we are no longer stopping the sound, we don't want to track sound as stopping
+				audio_sound_gain(soundsPlaying[i].inst, 1, _fadeIn);
+				
+			}
 		
+		}
 	}
+
+	
 	if(_allowSoundToPlay == true) {
 		//Play the sound
 		var _soundInst = audio_play_sound(_sound,_priority, _loop, 0);
@@ -134,8 +146,8 @@ stepEnd = function() {
 			//Otherwise, stop the stound
 			if(soundsPlaying[i].keepPlaying == false) {
 				stopSound(soundsPlaying[i].inst);
-				i--;
-				break; //stopSound removes the sound from the array, so we need to -1 to i and start for loop over
+				//i--;
+				//break; //stopSound removes the sound from the array, so we need to -1 to i and start for loop over
 			} else {
 				//Set to false so if we do not play the sound again next frame, we will stop the sound.
 				soundsPlaying[i].keepPlaying = false;	
@@ -149,11 +161,11 @@ stepEnd = function() {
 		}
 		
 		//Check if the audio is done, if so, clean it up
-		if(!audio_is_playing(soundsPlaying[i].inst)){
-			stopSound(soundsPlaying[i].inst);
-			i--;
-			break;
-		}
+		//if(!audio_is_playing(soundsPlaying[i].inst)){
+			//stopSound(soundsPlaying[i].inst);
+			//i--;
+			//break;
+		//}
 		
 	}
 	
@@ -164,11 +176,13 @@ addSoundToArray = function(_soundStruct) {
 }
 removeSound = function (_soundInst) {
 	for(var i = 0; i < array_length(soundsPlaying); i++) {
-		
 		//Find the sound instance we want to stop
 		if(soundsPlaying[i].inst == _soundInst) {
-			audio_stop_sound(_soundInst);
-			array_delete(soundsPlaying, i , 1);				
+			if(soundsPlaying[i].isStopping == true) {
+				//Check if we still actually want to stop.
+				audio_stop_sound(_soundInst);
+				array_delete(soundsPlaying, i , 1);				
+			}
 			
 		}
 	}
